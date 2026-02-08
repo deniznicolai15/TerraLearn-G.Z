@@ -18,7 +18,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M15.7 14.4A5 5 0 0 0 19 8a5 5 0 0 0-10 0 5 5 0 0 0 3.3 6.4"/><path d="M13 16v-4"/></svg>
       <span>TerraLearn G.Z.</span>
     </div>
-    <div class="navbar-links">
+    <div class="navbar-links" id="navbar-links">
       <a href="#home">HOME</a>
       <a href="#topics">TOPICS</a>
       <a href="#about">ABOUT</a>
@@ -39,21 +39,168 @@
       alt="Misty river surrounded by tropical forest mountains at sunrise"
     />
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-tag">Discover</p>
-      <h1 class="hero-title">
-        Terra Learn<br /><em>at Mt. Pamitinan</em>
-      </h1>
-      <a href="#topics" class="hero-btn">Tara learn!</a>
+    <div class="hero-inner">
+      <!-- Left: text -->
+      <div class="hero-content">
+        <p class="hero-tag">Discover</p>
+        <h1 class="hero-title">
+          Terra Learn<br /><em>at Mt. Pamitinan</em>
+        </h1>
+        <a href="#topics" class="hero-btn">Tara learn!</a>
+      </div>
+      <!-- Right: Philippines outline map -->
+      <div class="hero-map-wrapper">
+        <div class="hero-map" id="hero-map">
+          <!-- Philippines outline SVG -->
+          <svg class="ph-map-svg" viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+            <!-- Luzon -->
+            <path class="ph-island" d="
+              M195 45 L210 38 L230 42 L248 55 L260 48 L272 55 L280 72
+              L285 95 L278 110 L282 130 L275 148 L268 160 L258 168
+              L250 185 L245 200 L235 210 L228 225 L218 232 L205 228
+              L195 235 L182 240 L170 235 L158 225 L148 212 L142 198
+              L135 182 L130 168 L128 150 L132 135 L138 120 L145 108
+              L152 95 L160 82 L168 68 L178 55 Z
+            "/>
+            <!-- Mindoro -->
+            <path class="ph-island" d="
+              M138 260 L155 252 L165 262 L168 278 L160 292 L148 298
+              L135 290 L130 275 Z
+            "/>
+            <!-- Palawan -->
+            <path class="ph-island" d="
+              M62 280 L72 270 L80 278 L85 295 L82 315 L75 335
+              L68 355 L60 375 L52 395 L48 410 L42 425 L38 440
+              L35 450 L30 442 L32 425 L36 408 L42 390 L48 372
+              L52 355 L55 338 L58 318 L57 298 Z
+            "/>
+            <!-- Panay -->
+            <path class="ph-island" d="
+              M148 325 L168 318 L180 328 L182 345 L175 358 L162 362
+              L148 355 L142 340 Z
+            "/>
+            <!-- Negros -->
+            <path class="ph-island" d="
+              M188 340 L202 332 L212 342 L215 360 L210 378 L198 385
+              L185 378 L182 360 Z
+            "/>
+            <!-- Cebu -->
+            <path class="ph-island" d="
+              M222 330 L228 322 L235 330 L238 350 L236 370 L232 385
+              L225 390 L220 380 L218 360 L220 345 Z
+            "/>
+            <!-- Bohol -->
+            <path class="ph-island" d="
+              M240 385 L255 378 L265 388 L262 402 L250 408 L238 400 Z
+            "/>
+            <!-- Leyte -->
+            <path class="ph-island" d="
+              M260 310 L275 302 L285 312 L288 332 L282 348 L272 355
+              L262 348 L258 330 Z
+            "/>
+            <!-- Samar -->
+            <path class="ph-island" d="
+              M285 275 L305 268 L318 278 L322 298 L315 315 L302 322
+              L290 315 L285 298 Z
+            "/>
+            <!-- Mindanao -->
+            <path class="ph-island" d="
+              M195 420 L215 408 L235 412 L255 418 L275 425 L290 420
+              L308 430 L320 445 L328 462 L330 480 L325 498 L315 512
+              L302 522 L288 528 L270 530 L255 525 L240 530 L225 535
+              L210 528 L195 518 L182 505 L175 488 L170 470 L172 452
+              L178 438 L188 428 Z
+            "/>
+            <!-- Tree Pin at Mt. Pamitinan location -->
+            <g class="map-pin" id="map-pin" transform="translate(222, 180)">
+              <!-- Pulse ring -->
+              <circle class="pin-pulse" cx="0" cy="0" r="8" fill="none" stroke="#8EB09A" stroke-width="1.5" opacity="0.6"/>
+              <!-- Tree trunk -->
+              <rect x="-2" y="0" width="4" height="10" rx="1" fill="#6B4226"/>
+              <!-- Tree canopy layers -->
+              <polygon points="0,-18 -10,-4 -6,-4" fill="#4B6B55"/>
+              <polygon points="0,-24 -8,-10 -5,-10" fill="#5a8a6a"/>
+              <polygon points="0,-30 -6,-18 -4,-18" fill="#8EB09A"/>
+              <polygon points="0,-18 6,-4 10,-4" fill="#4B6B55"/>
+              <polygon points="0,-24 5,-10 8,-10" fill="#5a8a6a"/>
+              <polygon points="0,-30 4,-18 6,-18" fill="#8EB09A"/>
+              <!-- Clickable hit area -->
+              <rect x="-14" y="-32" width="28" height="44" fill="transparent" class="pin-hitarea"/>
+            </g>
+            <!-- Label -->
+            <text x="245" y="172" class="pin-label">Mt. Pamitinan</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- ===== MAP POPUP (guide panel) ===== -->
+  <div class="map-popup-overlay" id="map-popup-overlay"></div>
+  <div class="map-popup" id="map-popup">
+    <button class="map-popup-close" id="map-popup-close" aria-label="Close guide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div class="map-popup-scroll">
+      <!-- Image placeholder -->
+      <div class="map-popup-image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span>Trail photo coming soon</span>
+      </div>
+      <!-- Guide content -->
+      <div class="map-popup-content">
+        <h2>How to Get to Mt. Pamitinan</h2>
+        <p class="map-popup-subtitle">Complete trail guide &mdash; Montalban, Rizal</p>
+
+        <h3>Step 1: Getting to Montalban</h3>
+        <p>From Manila, take a jeepney or UV Express from Cubao (Aurora Blvd.) bound for Rodriguez (Montalban), Rizal. The ride takes approximately 1 to 1.5 hours depending on traffic. You can also drive via Marcos Highway or Batasan Road and head toward Montalban town proper.</p>
+
+        <h3>Step 2: Registration at the Brgy. Hall</h3>
+        <p>Upon arriving at Montalban, proceed to Barangay San Rafael. You need to register at the Barangay Hall and pay the environmental fee. This is also where you can hire a local guide, which is required for all hikers. Make sure to bring a valid ID for registration.</p>
+
+        <h3>Step 3: The Jump-Off Point</h3>
+        <p>From the Barangay Hall, you will walk or take a tricycle to the Wawa Dam area which serves as the jump-off point. The scenic Wawa Dam is the starting landmark. Cross the hanging bridge and follow the trail markers along the riverbank.</p>
+
+        <h3>Step 4: The Trail to the Summit</h3>
+        <p>The trail is a mix of river trekking, rock scrambling, and jungle hiking. The total hike to the summit takes about 2 to 3 hours at a moderate pace. There are steep rocky sections that require using ropes (usually set up by your guide). The difficulty is rated 4/9 on the Philippine mountaineering scale.</p>
+
+        <h3>Step 5: At the Summit</h3>
+        <p>The summit offers a panoramic view of Montalban, the Sierra Madre mountain range, Wawa Dam, and Metro Manila in the distance. The summit features the famous Pamitinan Cave, which holds historical significance as the site where Andres Bonifacio and the Katipuneros shouted "Long Live the Philippines!" in 1896.</p>
+
+        <h3>Step 6: Return Trip</h3>
+        <p>Descend via the same trail back to the Wawa Dam area. The descent typically takes 1.5 to 2 hours. You can cool off at the Wawa Dam or the Daranak Falls nearby before heading back to Manila.</p>
+
+        <h3>What to Bring</h3>
+        <ul>
+          <li>At least 2 liters of water</li>
+          <li>Trail food and packed lunch</li>
+          <li>Comfortable hiking shoes with good grip</li>
+          <li>Rain jacket or poncho (during wet season)</li>
+          <li>Sunscreen and insect repellent</li>
+          <li>Extra clothes and towel</li>
+          <li>Flashlight or headlamp</li>
+          <li>First aid kit</li>
+          <li>Trash bag (Leave No Trace)</li>
+          <li>Valid ID for registration</li>
+        </ul>
+
+        <h3>Important Reminders</h3>
+        <ul>
+          <li>Always hike with a registered local guide</li>
+          <li>Check weather conditions before your trip</li>
+          <li>Do not litter &mdash; practice Leave No Trace</li>
+          <li>Respect the local community and wildlife</li>
+          <li>Best months to visit: November to May (dry season)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== TOPICS (Expandable Grid) ===== -->
   <section class="topics-section" id="topics">
     <div class="topics-header">
       <h2>Tara Explore</h2>
     </div>
-
     <div class="topics-grid" id="topics-grid">
       <!-- Cards built by JS -->
     </div>
