@@ -6,7 +6,7 @@ import { ChevronRight, ChevronLeft, X, MapPin, Clock, Mountain } from "lucide-re
 const treks = [
   {
     id: 1,
-    label: "TREK 01",
+    label: "TOPIC 01",
     name: "Misty Pine Trail",
     color: "#A8B7B5",
     description:
@@ -15,7 +15,7 @@ const treks = [
   },
   {
     id: 2,
-    label: "TREK 02",
+    label: "TOPIC 02",
     name: "Wild Sage Path",
     color: "#8EB09A",
     description:
@@ -24,12 +24,39 @@ const treks = [
   },
   {
     id: 3,
-    label: "TREK 03",
+    label: "TOPIC 03",
     name: "Deep Moss Canyon",
     color: "#4B6B55",
     description:
       "Descend into a lush canyon where moss blankets every surface. Ancient trees tower overhead while a crystal stream carves through the forest floor.",
     details: { location: "Western Gorge", duration: "6-8 hours", elevation: "2,400m" },
+  },
+  {
+    id: 4,
+    label: "TOPIC 04",
+    name: "River Fog Basin",
+    color: "#7A9E8C",
+    description:
+      "Navigate through a low-lying basin where morning fog clings to a winding river. The humid air supports a rich diversity of ferns and mosses.",
+    details: { location: "Southern Basin", duration: "4-5 hours", elevation: "800m" },
+  },
+  {
+    id: 5,
+    label: "TOPIC 05",
+    name: "Canopy Walkway",
+    color: "#5C8A6E",
+    description:
+      "Ascend into the treetops on elevated walkways that thread between ancient hardwoods. Observe bird species and epiphytic plants from a unique perspective.",
+    details: { location: "Central Forest", duration: "2-3 hours", elevation: "600m" },
+  },
+  {
+    id: 6,
+    label: "TOPIC 06",
+    name: "Sunrise Summit",
+    color: "#3D5A47",
+    description:
+      "An early morning ascent to catch the golden sunrise over misty valleys. This challenging route passes through multiple vegetation zones.",
+    details: { location: "Peak Region", duration: "7-9 hours", elevation: "3,100m" },
   },
 ]
 
@@ -50,73 +77,101 @@ export function TrekCarousel() {
       {/* Section header */}
       <div className="flex items-center justify-between mb-12">
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-          Join the treks
+          Explore Topics
         </h2>
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={handlePrev}
-            className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
-            aria-label="Previous trek"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors"
-            aria-label="Next trek"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
+        <span className="text-muted-foreground text-sm">
+          {currentIndex + 1} / {treks.length}
+        </span>
       </div>
 
-      {/* Carousel viewport */}
-      <div className="overflow-hidden rounded-2xl">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      {/* Carousel with side buttons */}
+      <div className="flex items-center gap-4">
+        {/* Prev button - vertically centered beside the image */}
+        <button
+          type="button"
+          onClick={handlePrev}
+          className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full border border-border items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+          aria-label="Previous slide"
         >
-          {treks.map((trek) => (
-            <div key={trek.id} className="w-full flex-shrink-0 px-2 first:pl-0 last:pr-0">
-              <button
-                type="button"
-                onClick={() => setSelectedTrek(trek)}
-                className="relative w-full aspect-[16/9] rounded-2xl border-2 border-border bg-card flex items-center justify-center overflow-hidden group cursor-pointer text-left transition-all hover:border-primary/50"
-              >
-                {/* Empty placeholder box with subtle color tint */}
-                <div
-                  className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20"
-                  style={{ backgroundColor: trek.color }}
-                />
+          <ChevronLeft className="h-5 w-5" />
+        </button>
 
-                {/* Label overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
-                  <span className="text-xs tracking-widest text-primary uppercase font-medium">
-                    {trek.label}
-                  </span>
-                  <p className="text-foreground font-serif text-xl mt-1">
-                    {trek.name}
-                  </p>
-                </div>
-
-                {/* Centered placeholder indicator */}
-                <div className="relative z-10 flex flex-col items-center gap-2">
+        {/* Carousel viewport */}
+        <div className="flex-1 overflow-hidden rounded-2xl">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {treks.map((trek) => (
+              <div key={trek.id} className="w-full flex-shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setSelectedTrek(trek)}
+                  className="relative w-full aspect-[16/9] rounded-2xl border-2 border-border bg-card flex items-center justify-center overflow-hidden group cursor-pointer text-left transition-all hover:border-primary/50"
+                >
+                  {/* Empty placeholder box with subtle color tint */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                    className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20"
                     style={{ backgroundColor: trek.color }}
-                  >
-                    <Mountain className="h-7 w-7 text-card" />
+                  />
+
+                  {/* Label overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
+                    <span className="text-xs tracking-widest text-primary uppercase font-medium">
+                      {trek.label}
+                    </span>
+                    <p className="text-foreground font-serif text-xl mt-1">
+                      {trek.name}
+                    </p>
                   </div>
-                  <span className="text-muted-foreground text-xs tracking-wide">
-                    Click for info
-                  </span>
-                </div>
-              </button>
-            </div>
-          ))}
+
+                  {/* Centered placeholder indicator */}
+                  <div className="relative z-10 flex flex-col items-center gap-2">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                      style={{ backgroundColor: trek.color }}
+                    >
+                      <Mountain className="h-7 w-7 text-card" />
+                    </div>
+                    <span className="text-muted-foreground text-xs tracking-wide">
+                      Click for info
+                    </span>
+                  </div>
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Next button - vertically centered beside the image */}
+        <button
+          type="button"
+          onClick={handleNext}
+          className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center hover:bg-primary/90 transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Mobile buttons below */}
+      <div className="flex md:hidden items-center justify-center gap-4 mt-6">
+        <button
+          type="button"
+          onClick={handlePrev}
+          className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
+          className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Dots indicator */}
@@ -139,9 +194,7 @@ export function TrekCarousel() {
       {/* Info modal */}
       {selectedTrek && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
-          <div
-            className="relative w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-2xl"
-          >
+          <div className="relative w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedTrek(null)}

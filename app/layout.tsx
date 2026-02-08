@@ -8,8 +8,8 @@ const _inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const _playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'ALPESS - Stunning High Treks',
-  description: 'Discover stunning high treks and mountain adventures',
+  title: 'TerraLearn G.Z.',
+  description: 'Explore nature and learn about the earth with TerraLearn G.Z.',
 }
 
 export default function RootLayout({
