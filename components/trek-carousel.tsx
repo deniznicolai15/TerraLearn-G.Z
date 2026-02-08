@@ -1,16 +1,41 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { ChevronRight, ChevronLeft } from "lucide-react"
+import { ChevronRight, ChevronLeft, X, MapPin, Clock, Mountain } from "lucide-react"
 
 const treks = [
-  { id: 1, label: "TREK 01" },
-  { id: 2, label: "TREK 02" },
-  { id: 3, label: "TREK 03" },
+  {
+    id: 1,
+    label: "TREK 01",
+    name: "Misty Pine Trail",
+    color: "#A8B7B5",
+    description:
+      "A serene walk through ancient pine forests blanketed in mist. This trail offers breathtaking views of the valley below and connects to several alpine meadows.",
+    details: { location: "Northern Alps", duration: "3-4 hours", elevation: "1,200m" },
+  },
+  {
+    id: 2,
+    label: "TREK 02",
+    name: "Wild Sage Path",
+    color: "#8EB09A",
+    description:
+      "Wind through rolling hills covered in wild sage and aromatic herbs. This moderate trek rewards hikers with panoramic views at the summit ridge.",
+    details: { location: "Eastern Ridge", duration: "5-6 hours", elevation: "1,800m" },
+  },
+  {
+    id: 3,
+    label: "TREK 03",
+    name: "Deep Moss Canyon",
+    color: "#4B6B55",
+    description:
+      "Descend into a lush canyon where moss blankets every surface. Ancient trees tower overhead while a crystal stream carves through the forest floor.",
+    details: { location: "Western Gorge", duration: "6-8 hours", elevation: "2,400m" },
+  },
 ]
 
 export function TrekCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedTrek, setSelectedTrek] = useState<(typeof treks)[0] | null>(null)
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % treks.length)
@@ -55,9 +80,16 @@ export function TrekCarousel() {
         >
           {treks.map((trek) => (
             <div key={trek.id} className="w-full flex-shrink-0 px-2 first:pl-0 last:pr-0">
-              <div className="relative w-full aspect-[16/9] rounded-2xl border-2 border-border bg-card flex items-center justify-center overflow-hidden group">
-                {/* Empty placeholder box - replace with your image later */}
-                <div className="absolute inset-0 bg-card" />
+              <button
+                type="button"
+                onClick={() => setSelectedTrek(trek)}
+                className="relative w-full aspect-[16/9] rounded-2xl border-2 border-border bg-card flex items-center justify-center overflow-hidden group cursor-pointer text-left transition-all hover:border-primary/50"
+              >
+                {/* Empty placeholder box with subtle color tint */}
+                <div
+                  className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20"
+                  style={{ backgroundColor: trek.color }}
+                />
 
                 {/* Label overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
@@ -65,15 +97,23 @@ export function TrekCarousel() {
                     {trek.label}
                   </span>
                   <p className="text-foreground font-serif text-xl mt-1">
-                    Your image here
+                    {trek.name}
                   </p>
                 </div>
 
-                {/* Centered placeholder text */}
-                <span className="relative z-10 text-muted-foreground text-sm tracking-wide">
-                  Image Placeholder
-                </span>
-              </div>
+                {/* Centered placeholder indicator */}
+                <div className="relative z-10 flex flex-col items-center gap-2">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                    style={{ backgroundColor: trek.color }}
+                  >
+                    <Mountain className="h-7 w-7 text-card" />
+                  </div>
+                  <span className="text-muted-foreground text-xs tracking-wide">
+                    Click for info
+                  </span>
+                </div>
+              </button>
             </div>
           ))}
         </div>
@@ -95,6 +135,59 @@ export function TrekCarousel() {
           />
         ))}
       </div>
+
+      {/* Info modal */}
+      {selectedTrek && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
+          <div
+            className="relative w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-2xl"
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedTrek(null)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Close"
+            >
+              <X className="h-4 w-4" />
+            </button>
+
+            {/* Color swatch */}
+            <div className="flex items-center gap-4 mb-6">
+              <div
+                className="w-14 h-14 rounded-xl"
+                style={{ backgroundColor: selectedTrek.color }}
+              />
+              <div>
+                <h3 className="text-foreground font-serif text-2xl font-bold">
+                  {selectedTrek.name}
+                </h3>
+                <span className="text-muted-foreground text-xs tracking-widest uppercase">
+                  {selectedTrek.label}
+                </span>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              {selectedTrek.description}
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.location}</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <Clock className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.duration}</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <Mountain className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.elevation}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

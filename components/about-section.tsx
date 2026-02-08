@@ -1,11 +1,11 @@
-import { Mountain } from "lucide-react"
+import { Trees } from "lucide-react"
 
 export function AboutSection() {
   return (
     <section id="about" className="py-20 px-6 md:px-16 border-t border-border bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 mb-8">
-          <Mountain className="h-5 w-5 text-primary" />
+          <Trees className="h-5 w-5 text-primary" />
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">ABOUT US</h2>
         </div>
 
