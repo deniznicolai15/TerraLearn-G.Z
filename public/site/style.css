@@ -193,21 +193,20 @@ ul { list-style: none; }
   width: 100%;
 }
 
-/* PNG map image - invert to get white outlines, screen blend to remove black bg */
+/* PNG map image - transparent bg, invert black outlines to match theme */
 .ph-map-img {
   width: 100%;
   height: auto;
   display: block;
-  filter: invert(1) brightness(1.2) sepia(0.3) saturate(0.5) hue-rotate(80deg);
-  mix-blend-mode: screen;
-  opacity: 0.5;
+  filter: invert(1) sepia(0.2) saturate(0.8) hue-rotate(80deg) brightness(0.8);
+  opacity: 0.45;
   transition: opacity 0.3s;
   user-select: none;
   pointer-events: none;
 }
 
 .hero-map:hover .ph-map-img {
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 /* SVG overlay for the pin - positioned on top of the image */
