@@ -61,7 +61,7 @@
           <!-- SVG overlay for tree pin only -->
           <svg class="ph-map-pin-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <!-- Tree Pin at Mt. Pamitinan (Rizal, northeast of Manila on Luzon) -->
-            <g class="map-pin" id="map-pin" transform="translate(56, 31)">
+            <g class="map-pin" id="map-pin" transform="translate(52, 29)">
               <!-- Pulse ring animation -->
               <circle class="pin-pulse" cx="0" cy="2" r="2" fill="none" stroke="#8EB09A" stroke-width="0.6" opacity="0.6"/>
               
@@ -82,7 +82,7 @@
             </g>
 
             <!-- Label for Mt. Pamitinan -->
-            <text x="62" y="30" class="pin-label" style="font-size:3px;">Mt. Pamitinan</text>
+            <text x="58" y="28" class="pin-label" style="font-size:3px;">Mt. Pamitinan</text>
           </svg>
         </div>
       </div>
@@ -92,18 +92,8 @@
   <!-- ===== MAP SIDE PANEL (guide panel) ===== -->
   <div class="map-panel-overlay" id="map-panel-overlay"></div>
   <div class="map-panel" id="map-panel">
-    <button class="map-panel-close tree-close-btn" id="map-panel-close" aria-label="Close guide">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <!-- Tree trunk -->
-        <rect x="12.5" y="19" width="3" height="5" rx="1" fill="#6B4226"/>
-        <!-- Tree canopy layers -->
-        <polygon points="14,4 8,14 20,14" fill="#4B6B55"/>
-        <polygon points="14,7 9.5,15 18.5,15" fill="#5a8a6a"/>
-        <polygon points="14,3 10,12 18,12" fill="#8EB09A"/>
-        <!-- Small X overlay hint -->
-        <line x1="11" y1="9" x2="17" y2="15" stroke="#101a14" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="17" y1="9" x2="11" y2="15" stroke="#101a14" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button class="map-panel-close" id="map-panel-close" aria-label="Close guide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
     <div class="map-panel-scroll">
       <!-- Trail image -->
