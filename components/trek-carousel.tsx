@@ -1,8 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { MapPin, Clock, Mountain } from "lucide-react"
-import { TreeCloseButton } from "./tree-close-button"
+import { ChevronRight, ChevronLeft, X, MapPin, Clock, Mountain } from "lucide-react"
 
 const treks = [
   {
@@ -41,35 +40,37 @@ const treks = [
       "Navigate through a low-lying basin where morning fog clings to a winding river. The humid air supports a rich diversity of ferns and mosses.",
     details: { location: "Southern Basin", duration: "4-5 hours", elevation: "800m" },
   },
+  {
+    id: 5,
+    label: "TOPIC 05",
+    name: "Canopy Walkway",
+    color: "#5C8A6E",
+    description:
+      "Ascend into the treetops on elevated walkways that thread between ancient hardwoods. Observe bird species and epiphytic plants from a unique perspective.",
+    details: { location: "Central Forest", duration: "2-3 hours", elevation: "600m" },
+  },
+  {
+    id: 6,
+    label: "TOPIC 06",
+    name: "Sunrise Summit",
+    color: "#3D5A47",
+    description:
+      "An early morning ascent to catch the golden sunrise over misty valleys. This challenging route passes through multiple vegetation zones.",
+    details: { location: "Peak Region", duration: "7-9 hours", elevation: "3,100m" },
+  },
 ]
 
 export function TrekCarousel() {
-  const [expandedId, setExpandedId] = useState<number | null>(null)
-  const [previousIds, setPreviousIds] = useState<number[]>([])
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedTrek, setSelectedTrek] = useState<(typeof treks)[0] | null>(null)
 
-  const handleExpand = useCallback(
-    (id: number) => {
-      if (expandedId === id) return
-      if (expandedId !== null) {
-        setPreviousIds((prev) => {
-          const filtered = prev.filter((pid) => pid !== id)
-          return [...filtered, expandedId]
-        })
-      }
-      setExpandedId(id)
-    },
-    [expandedId]
-  )
-
-  const handleClose = useCallback(() => {
-    setExpandedId(null)
-    setPreviousIds([])
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % treks.length)
   }, [])
 
-  const expandedTrek = treks.find((t) => t.id === expandedId)
-  const shrunkTreks = previousIds
-    .map((id) => treks.find((t) => t.id === id))
-    .filter(Boolean) as typeof treks
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + treks.length) % treks.length)
+  }, [])
 
   return (
     <section id="treks" className="py-20 px-6 md:px-16 bg-background">
@@ -79,218 +80,167 @@ export function TrekCarousel() {
           Explore Topics
         </h2>
         <span className="text-muted-foreground text-sm">
-          {treks.length} Topics
+          {currentIndex + 1} / {treks.length}
         </span>
       </div>
 
-      {/* Topic grid - collapsed state */}
-      {expandedId === null && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {treks.map((trek, index) => (
-            <button
-              key={trek.id}
-              type="button"
-              onClick={() => handleExpand(trek.id)}
-              className="group relative rounded-2xl border-2 border-border bg-card overflow-hidden cursor-pointer text-left transition-all duration-500 hover:border-primary/50 hover:scale-[1.02]"
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animation: "fadeInUp 0.5s ease forwards",
-              }}
-            >
-              <div className="aspect-[4/5] relative flex flex-col items-center justify-center p-6">
-                {/* Colored background tint */}
-                <div
-                  className="absolute inset-0 opacity-10 transition-opacity duration-300 group-hover:opacity-25"
-                  style={{ backgroundColor: trek.color }}
-                />
+      {/* Carousel with side buttons */}
+      <div className="flex items-center gap-4">
+        {/* Prev button - vertically centered beside the image */}
+        <button
+          type="button"
+          onClick={handlePrev}
+          className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full border border-border items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
 
-                {/* Icon */}
-                <div
-                  className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: trek.color }}
-                >
-                  <Mountain className="h-7 w-7 text-card" />
-                </div>
-
-                {/* Label and name */}
-                <span className="relative z-10 text-[10px] tracking-widest uppercase font-medium" style={{ color: trek.color }}>
-                  {trek.label}
-                </span>
-                <p className="relative z-10 text-foreground font-serif text-lg mt-2 text-center text-balance">
-                  {trek.name}
-                </p>
-                <span className="relative z-10 text-muted-foreground text-xs mt-3">
-                  Click to explore
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* Expanded state */}
-      {expandedId !== null && (
-        <div className="flex gap-4 items-start">
-          {/* Shrunk previous topics - left sidebar */}
-          {shrunkTreks.length > 0 && (
-            <div className="flex flex-col gap-3 flex-shrink-0 w-16 md:w-20">
-              {shrunkTreks.map((trek) => (
+        {/* Carousel viewport */}
+        <div className="flex-1 overflow-hidden rounded-2xl">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {treks.map((trek) => (
+              <div key={trek.id} className="w-full flex-shrink-0">
                 <button
-                  key={trek.id}
                   type="button"
-                  onClick={() => handleExpand(trek.id)}
-                  className="group relative rounded-xl border border-border bg-card overflow-hidden cursor-pointer transition-all duration-500 hover:border-primary/50 hover:scale-105"
-                  title={trek.name}
+                  onClick={() => setSelectedTrek(trek)}
+                  className="relative w-full aspect-[16/9] rounded-2xl border-2 border-border bg-card flex items-center justify-center overflow-hidden group cursor-pointer text-left transition-all hover:border-primary/50"
                 >
-                  <div className="aspect-square relative flex items-center justify-center">
-                    <div
-                      className="absolute inset-0 opacity-15"
-                      style={{ backgroundColor: trek.color }}
-                    />
-                    <div
-                      className="relative z-10 w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: trek.color }}
-                    >
-                      <Mountain className="h-4 w-4 md:h-5 md:w-5 text-card" />
-                    </div>
-                  </div>
-                  <div className="px-1 py-1.5 text-center">
-                    <span
-                      className="text-[8px] md:text-[9px] tracking-wider uppercase font-medium block"
-                      style={{ color: trek.color }}
-                    >
+                  {/* Empty placeholder box with subtle color tint */}
+                  <div
+                    className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20"
+                    style={{ backgroundColor: trek.color }}
+                  />
+
+                  {/* Label overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
+                    <span className="text-xs tracking-widest text-primary uppercase font-medium">
                       {trek.label}
+                    </span>
+                    <p className="text-foreground font-serif text-xl mt-1">
+                      {trek.name}
+                    </p>
+                  </div>
+
+                  {/* Centered placeholder indicator */}
+                  <div className="relative z-10 flex flex-col items-center gap-2">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                      style={{ backgroundColor: trek.color }}
+                    >
+                      <Mountain className="h-7 w-7 text-card" />
+                    </div>
+                    <span className="text-muted-foreground text-xs tracking-wide">
+                      Click for info
                     </span>
                   </div>
                 </button>
-              ))}
-            </div>
-          )}
+              </div>
+            ))}
+          </div>
+        </div>
 
-          {/* Expanded topic - takes remaining space */}
-          {expandedTrek && (
-            <div
-              className="flex-1 rounded-2xl border-2 border-border bg-card overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
-              style={{
-                animation: "expandIn 0.6s cubic-bezier(0.32, 0.72, 0, 1) forwards",
-                borderColor: `${expandedTrek.color}33`,
-              }}
+        {/* Next button - vertically centered beside the image */}
+        <button
+          type="button"
+          onClick={handleNext}
+          className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center hover:bg-primary/90 transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Mobile buttons below */}
+      <div className="flex md:hidden items-center justify-center gap-4 mt-6">
+        <button
+          type="button"
+          onClick={handlePrev}
+          className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
+          className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Dots indicator */}
+      <div className="flex items-center justify-center gap-2 mt-8">
+        {treks.map((trek, index) => (
+          <button
+            type="button"
+            key={trek.id}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex
+                ? "w-8 bg-primary"
+                : "w-2 bg-muted-foreground/40"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Info modal */}
+      {selectedTrek && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
+          <div className="relative w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setSelectedTrek(null)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Close"
             >
-              <div className="relative min-h-[60vh] md:min-h-[70vh] flex flex-col">
-                {/* Color background */}
-                <div
-                  className="absolute inset-0 opacity-[0.07]"
-                  style={{ backgroundColor: expandedTrek.color }}
-                />
+              <X className="h-4 w-4" />
+            </button>
 
-                {/* Close button - tree style */}
-                <div className="absolute top-4 right-4 z-20">
-                  <TreeCloseButton onClick={handleClose} />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex-1 flex flex-col md:flex-row">
-                  {/* Left: Visual area */}
-                  <div className="flex-1 flex items-center justify-center p-8 md:p-12">
-                    <div className="text-center">
-                      <div
-                        className="w-24 h-24 md:w-32 md:h-32 rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-500"
-                        style={{ backgroundColor: expandedTrek.color }}
-                      >
-                        <Mountain className="h-12 w-12 md:h-16 md:w-16 text-card" />
-                      </div>
-                      <span
-                        className="text-xs tracking-[0.3em] uppercase font-medium"
-                        style={{ color: expandedTrek.color }}
-                      >
-                        {expandedTrek.label}
-                      </span>
-                      <h3 className="text-foreground font-serif text-3xl md:text-5xl font-bold mt-3 text-balance">
-                        {expandedTrek.name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Right: Info area */}
-                  <div className="flex-1 flex flex-col justify-center p-8 md:p-12 md:border-l border-t md:border-t-0 border-border">
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8">
-                      {expandedTrek.description}
-                    </p>
-
-                    <div className="flex flex-col gap-3">
-                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/50">
-                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Location</span>
-                          <p className="text-sm text-foreground">{expandedTrek.details.location}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/50">
-                        <Clock className="h-4 w-4 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Duration</span>
-                          <p className="text-sm text-foreground">{expandedTrek.details.duration}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/50">
-                        <Mountain className="h-4 w-4 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Elevation</span>
-                          <p className="text-sm text-foreground">{expandedTrek.details.elevation}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Navigate to other topics */}
-                    <div className="mt-8 flex gap-2">
-                      {treks
-                        .filter((t) => t.id !== expandedTrek.id)
-                        .map((trek) => (
-                          <button
-                            key={trek.id}
-                            type="button"
-                            onClick={() => handleExpand(trek.id)}
-                            className="flex-1 py-2.5 rounded-lg text-xs font-medium tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
-                            style={{
-                              backgroundColor: `${trek.color}22`,
-                              color: trek.color,
-                              border: `1px solid ${trek.color}33`,
-                            }}
-                          >
-                            {trek.label}
-                          </button>
-                        ))}
-                    </div>
-                  </div>
-                </div>
+            {/* Color swatch */}
+            <div className="flex items-center gap-4 mb-6">
+              <div
+                className="w-14 h-14 rounded-xl"
+                style={{ backgroundColor: selectedTrek.color }}
+              />
+              <div>
+                <h3 className="text-foreground font-serif text-2xl font-bold">
+                  {selectedTrek.name}
+                </h3>
+                <span className="text-muted-foreground text-xs tracking-widest uppercase">
+                  {selectedTrek.label}
+                </span>
               </div>
             </div>
-          )}
+
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              {selectedTrek.description}
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.location}</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <Clock className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.duration}</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-muted">
+                <Mountain className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">{selectedTrek.details.elevation}</span>
+              </div>
+            </div>
+          </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes expandIn {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </section>
   )
 }

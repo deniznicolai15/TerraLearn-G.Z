@@ -9,7 +9,7 @@ export function HeroSection() {
     >
       {/* Background image */}
       <Image
-        src="/images/hero-bg.jpg"
+        src="/images/hero-bg.jpeg"
         alt="Misty river surrounded by tropical forest mountains at sunrise"
         fill
         className="object-cover"
