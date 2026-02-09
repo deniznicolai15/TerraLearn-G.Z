@@ -154,5 +154,77 @@ if (hamburger) {
   });
 }
 
+// ===== MAP PANEL INTERACTION =====
+var mapPin = document.getElementById("map-pin");
+var treeIcon = document.getElementById("tree-icon");
+var mapPanel = document.getElementById("map-panel");
+var mapPanelOverlay = document.getElementById("map-panel-overlay");
+var mapPanelClose = document.getElementById("map-panel-close");
+var panelOpen = false;
+
+function openPanel() {
+  if (panelOpen) return;
+  panelOpen = true;
+  mapPanel.classList.remove("closing");
+  mapPanel.classList.add("active");
+  mapPanelOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closePanel() {
+  if (!panelOpen) return;
+  panelOpen = false;
+
+  // Start panel closing animation
+  mapPanel.classList.add("closing");
+  mapPanel.classList.remove("active");
+  mapPanelOverlay.classList.remove("active");
+
+  // Shrink tree icon
+  treeIcon.classList.remove("growing");
+  treeIcon.classList.add("shrinking");
+
+  // After panel closes, grow tree back
+  setTimeout(function () {
+    mapPanel.classList.remove("closing");
+    document.body.style.overflow = "";
+    treeIcon.classList.remove("shrinking");
+    treeIcon.classList.add("growing");
+  }, 500);
+
+  // Remove growing class after animation completes
+  setTimeout(function () {
+    treeIcon.classList.remove("growing");
+  }, 1100);
+}
+
+// Click tree pin to open panel
+if (mapPin) {
+  mapPin.addEventListener("click", function () {
+    if (panelOpen) {
+      closePanel();
+    } else {
+      openPanel();
+    }
+  });
+}
+
+// Click overlay to close
+if (mapPanelOverlay) {
+  mapPanelOverlay.addEventListener("click", closePanel);
+}
+
+// Click close button to close
+if (mapPanelClose) {
+  mapPanelClose.addEventListener("click", closePanel);
+}
+
+// Escape key to close
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && panelOpen) {
+    closePanel();
+  }
+});
+
 // ===== INIT =====
 buildCards();
