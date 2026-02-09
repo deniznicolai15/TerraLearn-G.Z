@@ -193,22 +193,36 @@ ul { list-style: none; }
   width: 100%;
 }
 
-.ph-map-svg {
+/* PNG map image - invert to get white outlines, screen blend to remove black bg */
+.ph-map-img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.ph-island {
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 1.5;
-  opacity: 0.45;
+  filter: invert(1) brightness(1.2) sepia(0.3) saturate(0.5) hue-rotate(80deg);
+  mix-blend-mode: screen;
+  opacity: 0.5;
   transition: opacity 0.3s;
+  user-select: none;
+  pointer-events: none;
 }
 
-.ph-map-svg:hover .ph-island {
-  opacity: 0.6;
+.hero-map:hover .ph-map-img {
+  opacity: 0.65;
+}
+
+/* SVG overlay for the pin - positioned on top of the image */
+.ph-map-pin-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Allow pointer events on the pin itself */
+.ph-map-pin-overlay .map-pin,
+.ph-map-pin-overlay .pin-hitarea {
+  pointer-events: auto;
 }
 
 /* Tree pin */
@@ -218,7 +232,7 @@ ul { list-style: none; }
 
 .tree-icon {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
-  transform-origin: 0px 8px;
+  transform-origin: 0px 2px;
 }
 
 .map-pin:hover .tree-icon {
@@ -247,8 +261,8 @@ ul { list-style: none; }
 }
 
 @keyframes pinPulse {
-  0%, 100% { r: 6; opacity: 0.6; }
-  50% { r: 12; opacity: 0; }
+  0%, 100% { r: 2; opacity: 0.6; }
+  50% { r: 5; opacity: 0; }
 }
 
 .pin-hitarea { cursor: pointer; }
