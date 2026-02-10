@@ -183,9 +183,10 @@ ul { list-style: none; }
 /* ===== HERO MAP ===== */
 .hero-map-wrapper {
   flex-shrink: 0;
-  width: 400px;
+  width: 320px;
   display: flex;
   align-items: flex-end;
+  margin-right: 40px;
 }
 
 .hero-map {
@@ -834,9 +835,10 @@ ul { list-style: none; }
   }
 
   .hero-map-wrapper {
-    width: 260px;
+    width: 220px;
     align-self: center;
     margin-top: 20px;
+    margin-right: 0;
   }
 
   .map-panel {
