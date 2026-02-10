@@ -183,7 +183,7 @@ ul { list-style: none; }
 /* ===== HERO MAP ===== */
 .hero-map-wrapper {
   flex-shrink: 0;
-  width: 420px;
+  width: 480px;
   display: flex;
   align-items: flex-end;
 }
@@ -197,13 +197,13 @@ ul { list-style: none; }
   box-shadow: none;
 }
 
-/* PNG map image - already transparent, tint outlines to match theme */
+/* PNG map image - transparent bg, invert black outlines to light green */
 .ph-map-img {
   width: 100%;
   height: auto;
   display: block;
-  filter: invert(1) brightness(1.5) sepia(0.3) saturate(0.6) hue-rotate(80deg);
-  opacity: 0.55;
+  filter: invert(1) brightness(1.2) sepia(0.2) saturate(0.5) hue-rotate(80deg);
+  opacity: 0.5;
   transition: opacity 0.4s ease;
   user-select: none;
   pointer-events: none;
@@ -834,7 +834,7 @@ ul { list-style: none; }
   }
 
   .hero-map-wrapper {
-    width: 280px;
+    width: 320px;
     align-self: center;
     margin-top: 20px;
   }
