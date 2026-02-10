@@ -197,17 +197,16 @@ ul { list-style: none; }
   box-shadow: none;
 }
 
-/* PNG map image - invert to show outlines on dark bg, blend away white */
+/* PNG map image - already transparent, tint outlines to match theme */
 .ph-map-img {
   width: 100%;
   height: auto;
   display: block;
-  filter: invert(1) brightness(0.8) sepia(0.15) saturate(0.5) hue-rotate(80deg);
-  opacity: 0.6;
+  filter: invert(1) brightness(1.5) sepia(0.3) saturate(0.6) hue-rotate(80deg);
+  opacity: 0.55;
   transition: opacity 0.4s ease;
   user-select: none;
   pointer-events: none;
-  mix-blend-mode: lighten;
 }
 
 .hero-map:hover .ph-map-img {
