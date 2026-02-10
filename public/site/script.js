@@ -146,6 +146,31 @@ function buildCards() {
         '</div>' +
       '</div>';
 
+    // Enable mouse wheel scrolling inside the expanded body
+    var expandedBody = card.querySelector(".topic-expanded-body");
+    if (expandedBody) {
+      expandedBody.addEventListener("wheel", function (e) {
+        var el = this;
+        var scrollTop = el.scrollTop;
+        var scrollHeight = el.scrollHeight;
+        var clientHeight = el.clientHeight;
+        var delta = e.deltaY;
+
+        // Only handle if content is scrollable
+        if (scrollHeight > clientHeight) {
+          // Prevent page scroll, let the inner element scroll
+          var atTop = scrollTop === 0 && delta < 0;
+          var atBottom = scrollTop + clientHeight >= scrollHeight && delta > 0;
+          if (!atTop && !atBottom) {
+            e.stopPropagation();
+          }
+          // Manually scroll
+          el.scrollTop += delta;
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
+
     card.addEventListener("click", function (e) {
       // Don't toggle when clicking inside the scrollable expanded body
       if (e.target.closest(".topic-expanded-body")) return;
