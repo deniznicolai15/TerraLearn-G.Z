@@ -1,9 +1,7 @@
 from PIL import Image
-import os
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-input_path = os.path.join(script_dir, "../public/images/ph-outline-map.png")
-output_path = os.path.join(script_dir, "../public/images/ph-map-transparent.png")
+input_path = "/vercel/share/v0-project/public/images/ph-outline-map.png"
+output_path = "/vercel/share/v0-project/public/images/ph-map-transparent.png"
 
 # Open image (PIL auto-detects format regardless of extension)
 img = Image.open(input_path).convert("RGBA")
