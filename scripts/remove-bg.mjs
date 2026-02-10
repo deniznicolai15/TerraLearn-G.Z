@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const inputPath = path.join(__dirname, "../public/images/ph-outline-map.png");
-const outputPath = path.join(__dirname, "../public/images/ph-map-transparent.png");
+const outputPath = path.join(__dirname, "../public/images/ph-outline-map.png");
 
 async function removeBg() {
   const image = sharp(inputPath);
