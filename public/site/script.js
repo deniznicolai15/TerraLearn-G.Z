@@ -146,7 +146,9 @@ function buildCards() {
         '</div>' +
       '</div>';
 
-    card.addEventListener("click", function () {
+    card.addEventListener("click", function (e) {
+      // Don't toggle when clicking inside the scrollable expanded body
+      if (e.target.closest(".topic-expanded-body")) return;
       toggleTopicCard(index);
     });
 
