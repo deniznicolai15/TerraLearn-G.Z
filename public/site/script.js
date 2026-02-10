@@ -90,7 +90,7 @@ var topicPanel = document.getElementById("topic-panel");
 var topicPanelOverlay = document.getElementById("topic-panel-overlay");
 var topicPanelClose = document.getElementById("topic-panel-close");
 var topicPanelScroll = document.getElementById("topic-panel-scroll");
-var topicPanelOpen = false;
+// topicPanelOpen removed - accordion uses activeTopicIndex instead
 
 function buildCards() {
   topics.forEach(function (topic, index) {
@@ -98,102 +98,90 @@ function buildCards() {
     card.className = "topic-card";
     card.setAttribute("data-index", index);
 
+    // Build sections HTML for expanded view
+    var sectionsHTML = "";
+    if (topic.sections) {
+      topic.sections.forEach(function (section) {
+        sectionsHTML +=
+          '<h3 class="topic-expanded-section-title">' + section.title + '</h3>' +
+          '<p class="topic-expanded-text">' + section.text + '</p>';
+      });
+    }
+
     card.innerHTML =
-      '<div class="topic-card-tint" style="background-color: ' + topic.color + '"></div>' +
-      '<div class="topic-card-image">' +
-        '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
+      // Default card face
+      '<div class="topic-card-face">' +
+        '<div class="topic-card-tint" style="background-color: ' + topic.color + '"></div>' +
+        '<div class="topic-card-image">' +
+          '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
+        '</div>' +
+        '<div class="topic-card-body">' +
+          '<div class="topic-card-label">' + topic.label + '</div>' +
+          '<div class="topic-card-name">' + topic.name + '</div>' +
+          '<p class="topic-card-desc">' + topic.description + '</p>' +
+        '</div>' +
+        '<div class="topic-card-accent" style="background-color: ' + topic.color + '"></div>' +
       '</div>' +
-      '<div class="topic-card-body">' +
-        '<div class="topic-card-label">' + topic.label + '</div>' +
-        '<div class="topic-card-name">' + topic.name + '</div>' +
-        '<p class="topic-card-desc">' + topic.description + '</p>' +
+      // Collapsed label (shown when another card is expanded)
+      '<div class="topic-card-collapsed-label">' +
+        '<span>' + topic.name + '</span>' +
       '</div>' +
-      '<div class="topic-card-accent" style="background-color: ' + topic.color + '"></div>';
+      // Expanded content (shown inside card when expanded)
+      '<div class="topic-card-expanded-content">' +
+        '<div class="topic-expanded-image">' +
+          '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
+          '<div class="topic-expanded-image-overlay"></div>' +
+        '</div>' +
+        '<div class="topic-expanded-body">' +
+          '<div class="topic-expanded-label">' + topic.label + '</div>' +
+          '<div class="topic-expanded-title">' + topic.name + '</div>' +
+          '<div class="topic-expanded-swatch" style="background-color: ' + topic.color + '"></div>' +
+          '<p class="topic-expanded-desc">' + topic.description + '</p>' +
+          sectionsHTML +
+          '<div class="topic-expanded-details">' +
+            '<div class="topic-expanded-detail">' + icons.mapPin + '<span>' + topic.location + '</span></div>' +
+            '<div class="topic-expanded-detail">' + icons.leaf + '<span>' + topic.detail1 + '</span></div>' +
+            '<div class="topic-expanded-detail">' + icons.info + '<span>' + topic.detail2 + '</span></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
 
     card.addEventListener("click", function () {
-      openTopicPanel(index);
+      toggleTopicCard(index);
     });
 
     grid.appendChild(card);
   });
 }
 
-// ===== OPEN TOPIC PANEL =====
-function openTopicPanel(index) {
-  var topic = topics[index];
+// ===== TOGGLE TOPIC CARD (ACCORDION) =====
+function toggleTopicCard(index) {
   var cards = document.querySelectorAll(".topic-card");
 
-  // Mark selected card
-  cards.forEach(function (c, i) {
-    if (i === index) {
-      c.classList.add("selected");
-    } else {
-      c.classList.remove("selected");
-    }
-  });
-
-  // Build panel content
-  var sectionsHTML = "";
-  if (topic.sections) {
-    topic.sections.forEach(function (section) {
-      sectionsHTML +=
-        '<h3 class="topic-panel-section-title">' + section.title + '</h3>' +
-        '<p class="topic-panel-text">' + section.text + '</p>';
+  // If clicking the already expanded card, collapse everything
+  if (activeTopicIndex === index) {
+    cards.forEach(function (c) {
+      c.classList.remove("expanded", "collapsed");
     });
+    activeTopicIndex = -1;
+    return;
   }
 
-  topicPanelScroll.innerHTML =
-    '<div class="topic-panel-image">' +
-      '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
-      '<div class="topic-panel-image-overlay"></div>' +
-    '</div>' +
-    '<div class="topic-panel-content">' +
-      '<div class="topic-panel-label">' + topic.label + '</div>' +
-      '<div class="topic-panel-title">' + topic.name + '</div>' +
-      '<div class="topic-panel-swatch" style="background-color: ' + topic.color + '"></div>' +
-      '<p class="topic-panel-desc">' + topic.description + '</p>' +
-      sectionsHTML +
-      '<div class="topic-panel-details">' +
-        '<div class="topic-panel-detail">' + icons.mapPin + '<span>' + topic.location + '</span></div>' +
-        '<div class="topic-panel-detail">' + icons.leaf + '<span>' + topic.detail1 + '</span></div>' +
-        '<div class="topic-panel-detail">' + icons.info + '<span>' + topic.detail2 + '</span></div>' +
-      '</div>' +
-    '</div>';
-
-  // Open panel
+  // If clicking a collapsed card, expand it
   activeTopicIndex = index;
-  topicPanel.classList.remove("closing");
-  topicPanel.classList.add("active");
-  topicPanelOverlay.classList.add("active");
-  topicPanelOpen = true;
-  topicPanelScroll.scrollTop = 0;
-}
 
-// ===== CLOSE TOPIC PANEL =====
-function closeTopicPanel() {
-  if (!topicPanelOpen) return;
-  topicPanelOpen = false;
-  activeTopicIndex = -1;
-
-  topicPanel.classList.add("closing");
-  topicPanel.classList.remove("active");
-  topicPanelOverlay.classList.remove("active");
-
-  // Remove selected state from cards
-  var cards = document.querySelectorAll(".topic-card");
-  cards.forEach(function (c) { c.classList.remove("selected"); });
-
-  setTimeout(function () {
-    topicPanel.classList.remove("closing");
-  }, 400);
-}
-
-// Topic panel event listeners
-if (topicPanelOverlay) {
-  topicPanelOverlay.addEventListener("click", closeTopicPanel);
-}
-if (topicPanelClose) {
-  topicPanelClose.addEventListener("click", closeTopicPanel);
+  cards.forEach(function (c, i) {
+    if (i === index) {
+      c.classList.add("expanded");
+      c.classList.remove("collapsed");
+      // Scroll expanded content to top
+      var body = c.querySelector(".topic-expanded-body");
+      if (body) body.scrollTop = 0;
+    } else {
+      c.classList.remove("expanded");
+      c.classList.add("collapsed");
+    }
+  });
 }
 
 // ===== HAMBURGER TOGGLE =====
@@ -287,7 +275,11 @@ if (mapPanelClose) {
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     if (panelOpen) closePanel();
-    if (topicPanelOpen) closeTopicPanel();
+    if (activeTopicIndex !== -1) {
+      var cards = document.querySelectorAll(".topic-card");
+      cards.forEach(function (c) { c.classList.remove("expanded", "collapsed"); });
+      activeTopicIndex = -1;
+    }
   }
 });
 
