@@ -61,7 +61,7 @@
           <!-- SVG overlay for tree pin only -->
           <svg class="ph-map-pin-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <!-- Tree Pin at Mt. Pamitinan (Rizal, northeast of Manila on Luzon) -->
-            <g class="map-pin" id="map-pin" transform="translate(55, 30)">
+            <g class="map-pin" id="map-pin" transform="translate(43, 27)">
               <!-- Pulse ring animation -->
               <circle class="pin-pulse" cx="0" cy="2" r="2.5" fill="none" stroke="#8EB09A" stroke-width="0.5" opacity="0.6"/>
               
@@ -82,7 +82,7 @@
             </g>
 
             <!-- Label for Mt. Pamitinan -->
-            <text x="61" y="29" class="pin-label" style="font-size:2.8px;">Mt. Pamitinan</text>
+            <text x="49" y="26" class="pin-label" style="font-size:2.8px;">Mt. Pamitinan</text>
           </svg>
         </div>
       </div>
@@ -92,8 +92,20 @@
   <!-- ===== MAP SIDE PANEL (guide panel) ===== -->
   <div class="map-panel-overlay" id="map-panel-overlay"></div>
   <div class="map-panel" id="map-panel">
-    <button class="map-panel-close" id="map-panel-close" aria-label="Close guide">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <button class="map-panel-close tree-close-btn" id="map-panel-close" aria-label="Close guide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <!-- Trunk -->
+        <rect x="18" y="28" width="4" height="6" rx="1" fill="#8B5E3C"/>
+        <!-- Bottom canopy -->
+        <polygon points="20,14 10,26 30,26" fill="#4B6B55"/>
+        <!-- Middle canopy -->
+        <polygon points="20,9 12,20 28,20" fill="#5a8a6a"/>
+        <!-- Top canopy -->
+        <polygon points="20,4 14,14 26,14" fill="#8EB09A"/>
+        <!-- Small X mark -->
+        <line x1="16" y1="17" x2="24" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="24" y1="17" x2="16" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
     </button>
     <div class="map-panel-scroll">
       <!-- Trail image -->
@@ -162,8 +174,20 @@
   <!-- ===== TOPIC SIDE PANEL ===== -->
   <div class="topic-panel-overlay" id="topic-panel-overlay"></div>
   <div class="topic-panel" id="topic-panel">
-    <button class="topic-panel-close" id="topic-panel-close" aria-label="Close topic">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <button class="topic-panel-close tree-close-btn" id="topic-panel-close" aria-label="Close topic">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <!-- Trunk -->
+        <rect x="18" y="28" width="4" height="6" rx="1" fill="#8B5E3C"/>
+        <!-- Bottom canopy -->
+        <polygon points="20,14 10,26 30,26" fill="#4B6B55"/>
+        <!-- Middle canopy -->
+        <polygon points="20,9 12,20 28,20" fill="#5a8a6a"/>
+        <!-- Top canopy -->
+        <polygon points="20,4 14,14 26,14" fill="#8EB09A"/>
+        <!-- Small X mark -->
+        <line x1="16" y1="17" x2="24" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="24" y1="17" x2="16" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
     </button>
     <div class="topic-panel-scroll" id="topic-panel-scroll">
       <!-- Filled dynamically by JS -->
