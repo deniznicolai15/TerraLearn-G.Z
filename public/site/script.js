@@ -316,7 +316,7 @@ window.addEventListener("load", function() {
   var loadingScreen = document.getElementById("loading-screen");
   setTimeout(function() {
     loadingScreen.classList.add("loaded");
-  }, 3600); // Total animation time (stem 1.2s + leaves pop 1.4s + vein 0.4s + text 0.6s)
+  }, 4400); // Total animation time (sequential path drawing + text fade)
 });
 
 // ===== OPEN TOPIC PAGE =====
