@@ -311,14 +311,6 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-// ===== LOADING ANIMATION =====
-window.addEventListener("load", function() {
-  var loadingScreen = document.getElementById("loading-screen");
-  setTimeout(function() {
-    loadingScreen.classList.add("loaded");
-  }, 3500); // Video duration before fade out
-});
-
 // ===== OPEN TOPIC PAGE =====
 function openTopicPage(topicIndex) {
   var topic = topics[topicIndex];

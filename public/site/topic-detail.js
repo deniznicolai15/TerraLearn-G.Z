@@ -1,11 +1,3 @@
-// ===== LOADING ANIMATION =====
-window.addEventListener("load", function() {
-  var loadingScreen = document.getElementById("loading-screen");
-  setTimeout(function() {
-    loadingScreen.classList.add("loaded");
-  }, 3500); // Video duration before fade out
-});
-
 // ===== GET TOPIC DATA FROM URL =====
 function getTopicData() {
   var params = new URLSearchParams(window.location.search);
