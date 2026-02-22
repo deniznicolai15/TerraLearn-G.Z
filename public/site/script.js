@@ -316,14 +316,14 @@ window.addEventListener("load", function() {
   var loadingScreen = document.getElementById("loading-screen");
   setTimeout(function() {
     loadingScreen.classList.add("loaded");
-  }, 2500); // Total animation time (stem 1s + leaves 1.4s + 0.1s buffer)
+  }, 3600); // Total animation time (stem 1.2s + leaves pop 1.4s + vein 0.4s + text 0.6s)
 });
 
-// ===== OPEN TOPIC IN NEW TAB =====
+// ===== OPEN TOPIC PAGE =====
 function openTopicPage(topicIndex) {
   var topic = topics[topicIndex];
   var topicData = encodeURIComponent(JSON.stringify(topic));
-  window.open("topic-detail.html?data=" + topicData, "_blank");
+  window.location.href = "topic-detail.html?data=" + topicData;
 }
 
 // ===== INIT =====

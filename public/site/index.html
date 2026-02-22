@@ -18,19 +18,28 @@
 
   <!-- ===== LOADING SCREEN ===== -->
   <div class="loading-screen" id="loading-screen">
-    <svg class="loading-leaves" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <!-- Center stem -->
-      <line class="stem" x1="100" y1="50" x2="100" y2="150" stroke="#8EB09A" stroke-width="3" stroke-linecap="round" />
-      
-      <!-- Left leaf -->
-      <path class="leaf left-leaf" d="M 100 100 Q 60 85 50 60 Q 55 90 100 100" fill="none" stroke="#8EB09A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-      
-      <!-- Right leaf -->
-      <path class="leaf right-leaf" d="M 100 100 Q 140 85 150 60 Q 145 90 100 100" fill="none" stroke="#8EB09A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-      
-      <!-- Bottom leaf -->
-      <path class="leaf bottom-leaf" d="M 100 100 Q 100 140 100 160 Q 95 130 100 100" fill="none" stroke="#8EB09A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
+    <div class="loading-content">
+      <svg class="loading-leaves" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <!-- Center stem -->
+        <path class="stem" d="M 120 30 Q 120 100 120 180" fill="none" stroke="#5a8a6a" stroke-width="3.5" stroke-linecap="round" />
+        
+        <!-- Top Left Leaf -->
+        <ellipse class="leaf top-left-leaf" cx="75" cy="65" rx="32" ry="42" fill="#a8d5a8" transform="rotate(-40 75 65)" />
+        <path class="leaf-shine top-left-shine" d="M 60 40 Q 75 55 85 75" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" />
+        <path class="leaf-vein top-left-vein" d="M 75 25 Q 75 65 78 107" fill="none" stroke="#6b9a7a" stroke-width="1.2" opacity="0.7" />
+        
+        <!-- Top Right Leaf -->
+        <ellipse class="leaf top-right-leaf" cx="165" cy="65" rx="32" ry="42" fill="#a8d5a8" transform="rotate(40 165 65)" />
+        <path class="leaf-shine top-right-shine" d="M 180 40 Q 165 55 155 75" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" />
+        <path class="leaf-vein top-right-vein" d="M 165 25 Q 165 65 162 107" fill="none" stroke="#6b9a7a" stroke-width="1.2" opacity="0.7" />
+        
+        <!-- Center Bottom Leaf -->
+        <ellipse class="leaf bottom-leaf" cx="120" cy="155" rx="28" ry="38" fill="#a8d5a8" />
+        <path class="leaf-shine bottom-shine" d="M 105 130 Q 120 145 130 165" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" />
+        <path class="leaf-vein bottom-vein" d="M 120 122 Q 120 155 120 193" fill="none" stroke="#6b9a7a" stroke-width="1.2" opacity="0.7" />
+      </svg>
+      <p class="loading-text">Loading...</p>
+    </div>
   </div>
 
   <!-- ===== NAVBAR ===== -->

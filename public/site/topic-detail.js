@@ -184,6 +184,12 @@ function initializePage() {
   document.getElementById("back-btn").addEventListener("click", function () {
     window.history.back();
   });
+
+  // Start Quiz button
+  document.getElementById("start-quiz-btn").addEventListener("click", function () {
+    document.getElementById("quiz-content").style.display = "flex";
+    this.style.display = "none";
+  });
 }
 
 // ===== QUIZ FUNCTIONALITY =====
@@ -241,10 +247,11 @@ function renderQuizQuestions() {
 
   document.getElementById("submit-quiz-btn").addEventListener("click", submitQuiz);
   document.getElementById("cancel-quiz-btn").addEventListener("click", function () {
-    // Reset quiz
+    // Reset quiz and hide it
     currentQuizIndex = 0;
     quizAnswers = new Array(currentQuiz.length).fill(null);
-    renderQuizQuestions();
+    document.getElementById("quiz-content").style.display = "none";
+    document.getElementById("start-quiz-btn").style.display = "block";
   });
 }
 
@@ -300,6 +307,7 @@ function showResults(correct, total, percentage) {
     quizAnswers = new Array(currentQuiz.length).fill(null);
     quizContent.style.display = "flex";
     resultsDiv.style.display = "none";
+    document.getElementById("start-quiz-btn").style.display = "none";
     renderQuizQuestions();
   });
 
@@ -308,9 +316,10 @@ function showResults(correct, total, percentage) {
     window.scrollTo({ top: 0, behavior: "smooth" });
     currentQuizIndex = 0;
     quizAnswers = new Array(currentQuiz.length).fill(null);
-    quizContent.style.display = "flex";
+    quizContent.style.display = "none";
     resultsDiv.style.display = "none";
-    renderQuizQuestions();
+    document.getElementById("start-quiz-btn").style.display = "block";
+    document.getElementById("start-quiz-btn").textContent = "Start Quiz Again";
   });
 }
 
