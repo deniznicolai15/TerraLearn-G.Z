@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraLearn G.Z. - Topic Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="topic-detail.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
+        <path d="M7 16v6" />
+        <path d="M13 19v3" />
+        <path d="M15.7 14.4A5 5 0 0 0 19 8a5 5 0 0 0-10 0 5 5 0 0 0 3.3 6.4" />
+        <path d="M13 16v-4" />
+      </svg>
+      <span>TerraLearn G.Z.</span>
+    </div>
+    <button class="back-btn" id="back-btn" aria-label="Go back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      Back
+    </button>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="topic-detail-container">
+    <!-- Hero section with image -->
+    <div class="detail-hero" id="detail-hero">
+      <img id="detail-hero-img" src="" alt="" />
+      <div class="detail-hero-overlay"></div>
+      <div class="detail-hero-content">
+        <div class="detail-hero-label" id="detail-label"></div>
+        <h1 class="detail-hero-title" id="detail-title"></h1>
+        <div class="detail-hero-swatch" id="detail-swatch"></div>
+      </div>
+    </div>
+
+    <!-- Content grid: main content + thumbnail gallery -->
+    <div class="detail-grid">
+      <!-- Main content -->
+      <div class="detail-main">
+        <!-- Description -->
+        <div class="detail-section">
+          <p class="detail-description" id="detail-description"></p>
+        </div>
+
+        <!-- Sections -->
+        <div id="detail-sections-container"></div>
+
+        <!-- Details bar -->
+        <div class="detail-info-bar">
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span id="detail-location"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.5 6.5c2.5-.5 5-1 6.5-1.5-1 2.5-3.5 5-7 7.5" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+            <span id="detail-detail1"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span id="detail-detail2"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail gallery sidebar -->
+      <aside class="detail-gallery">
+        <h3 class="gallery-title">Gallery</h3>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Images added dynamically -->
+        </div>
+      </aside>
+    </div>
+
+    <!-- ===== QUIZ SECTION ===== -->
+    <div class="quiz-container" id="quiz-container">
+      <div class="quiz-header">
+        <h2>Test Your Knowledge</h2>
+        <p class="quiz-subtitle">Answer the questions to see how well you know this topic</p>
+      </div>
+
+      <div class="quiz-content" id="quiz-content">
+        <!-- Quiz questions populated dynamically -->
+      </div>
+
+      <div class="quiz-results" id="quiz-results" style="display: none;">
+        <div class="results-card">
+          <h3 id="results-title">Quiz Complete!</h3>
+          <div class="results-score">
+            <div class="score-circle">
+              <span class="score-text" id="score-text">0%</span>
+            </div>
+          </div>
+          <p class="results-message" id="results-message"></p>
+          <button class="btn btn-primary" id="retry-btn">Retake Quiz</button>
+          <button class="btn btn-secondary" id="close-btn">Back to Details</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== LIGHTBOX FOR GALLERY ===== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="topic-detail.js"></script>
+</body>
+
+</html>

@@ -174,7 +174,8 @@ function buildCards() {
     card.addEventListener("click", function (e) {
       // Don't toggle when clicking inside the scrollable expanded body
       if (e.target.closest(".topic-expanded-body")) return;
-      toggleTopicCard(index);
+      // Open topic in new tab instead of accordion
+      openTopicPage(index);
     });
 
     grid.appendChild(card);
@@ -309,6 +310,21 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+
+// ===== LOADING ANIMATION =====
+window.addEventListener("load", function() {
+  var loadingScreen = document.getElementById("loading-screen");
+  setTimeout(function() {
+    loadingScreen.classList.add("loaded");
+  }, 2500); // Total animation time (stem 1s + leaves 1.4s + 0.1s buffer)
+});
+
+// ===== OPEN TOPIC IN NEW TAB =====
+function openTopicPage(topicIndex) {
+  var topic = topics[topicIndex];
+  var topicData = encodeURIComponent(JSON.stringify(topic));
+  window.open("topic-detail.html?data=" + topicData, "_blank");
+}
 
 // ===== INIT =====
 buildCards();
