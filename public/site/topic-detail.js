@@ -3,7 +3,7 @@ window.addEventListener("load", function() {
   var loadingScreen = document.getElementById("loading-screen");
   setTimeout(function() {
     loadingScreen.classList.add("loaded");
-  }, 4400); // Total animation time (sequential path drawing + text fade)
+  }, 3500); // Video duration before fade out
 });
 
 // ===== GET TOPIC DATA FROM URL =====
