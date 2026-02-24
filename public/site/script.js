@@ -341,7 +341,7 @@ var avifaunaSpecies = [
   {
     commonName: "Black-naped Oriole",
     scientificName: "Oriolus chinensis",
-    family: "Oriolidae",
+    family: "Oriole",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black%20naped%20orioke-xkwp45Lnnne66HYdBUkPSZZ68prXal.jpg",
     description: "A strikingly colored bird with bright yellow plumage and distinctive black nape marking. Known for its melodious song.",
     habitat: "Tropical forests and woodlands. Prefers the canopy and mid-story levels of trees.",
@@ -376,8 +376,8 @@ var avifaunaSpecies = [
   },
   {
     commonName: "Coppersmith Barbet",
-    scientificName: "Megalaima haemacephala",
-    family: "Capitonidae",
+    scientificName: "Psilopogon haemacephalus",
+    family: "Megalaimidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coppersmith%20barbet-b23ta4lfrTljbibw50wAtQQFYIiz3w.jpg",
     description: "A small colorful barbet with distinctive red and yellow markings. Named for its rapid, metallic pecking sound.",
     habitat: "Tropical forests and gardens. Often found in pairs or small groups.",
@@ -385,7 +385,7 @@ var avifaunaSpecies = [
   },
   {
     commonName: "Elegant Tit",
-    scientificName: "Lophophanes elegant",
+    scientificName: "Periparus elegans",
     family: "Paridae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit-yszlg6kfXLw89TeA37OjxAiRKQlvhv.jpg",
     description: "A small songbird with distinctive yellow and black coloring. Energetic and acrobatic in its movements.",
@@ -411,8 +411,8 @@ var avifaunaSpecies = [
     voiceUrl: ""
   },
   {
-    commonName: "Grayback Tailorbird",
-    scientificName: "Orthotomus cinereicollis",
+    commonName: "Greyback Tailorbird",
+    scientificName: "Orthotomus derbianus",
     family: "Cisticolidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/graybacked%20tailorbird-vnEfMrzCFRoYs9KxURdTWJxfCq1HdB.jpg",
     description: "A small insectivorous bird with distinctive orange-rufous crown and gray back. Named for its habit of stitching leaves together to make nests.",
@@ -429,8 +429,8 @@ var avifaunaSpecies = [
     voiceUrl: ""
   },
   {
-    commonName: "Lowland White-eyed",
-    scientificName: "Zosterops simplex",
+    commonName: "Lowland White Eye",
+    scientificName: "Zosterops meyeni",
     family: "Zosteropidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lowland%20white%20eyed-AmvxFP7qeoS4cy9gwqB9KmoVIZ7Km3.jpg",
     description: "A small greenish bird with distinctive white eye-ring. Often found in small flocks moving through forest canopy.",
@@ -448,7 +448,7 @@ var avifaunaSpecies = [
   },
   {
     commonName: "Philippine Bulbul",
-    scientificName: "Hypsipetes philippinus",
+    scientificName: "Hysipetes philippinus",
     family: "Pycnonotidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20bulbul-moIde0z2Ar135pe6QNyg2Z9lSmiAhZ.jpg",
     description: "A medium-sized bird with soft brown and gray plumage. Known for its cheerful song and social behavior.",
@@ -480,6 +480,51 @@ var avifaunaSpecies = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scaly%20breasted%20munia-fXQU55X6cLKXPJ4Aieu7YYHl04Pz3O.jpg",
     description: "A small finch with distinctive scaly-patterned breast and white belly. Highly social bird often found in flocks.",
     habitat: "Grasslands, rice fields, and disturbed areas. Feeds on grass seeds.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Spotted Dove",
+    scientificName: "Spilopelia chinensis",
+    family: "Columbidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spotted%20dove-7Dl1Bga6wWqakla76xReRyI9wmLlNK.jpg",
+    description: "A slender dove with distinctive spotted wings and soft gray plumage. Known for its gentle cooing call.",
+    habitat: "Open woodlands, gardens, and cultivated areas. Often feeds on the ground.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "White-breasted Woodswallow",
+    scientificName: "Artaamus leucorynchus",
+    family: "Artamidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/whitebreasted%20wood%20swallow-WQOSaidi055ehkRs8nDN5SPL98R0zU.jpg",
+    description: "A compact bird with dark upperparts, white throat and underparts. Graceful flyer often seen hunting insects.",
+    habitat: "Open woodland and scrubland. Prefers areas with scattered trees.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "White-eared Brown Dove",
+    scientificName: "Phapitreron leucostis",
+    family: "Columbidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/white%20eared%20brown%20dove%20credits%20mau4you_%27s%20bird%20watch-MkJdT0OesRqna7Sp5e50zHukOrpmJw.jpg",
+    description: "A brown dove with distinctive white ear patches. A shy forest bird often perched on branches.",
+    habitat: "Tropical forests and woodland edges. Feeds on fruits and seeds.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Yellow Vented Bulbul",
+    scientificName: "Pycnonotus goiavier",
+    family: "Pycnonotidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yellow%20vented%20bulbul-9U1Jk6XQNE4UZpFaUydtUD7cjkTogN.jpg",
+    description: "A brown bird with distinctive yellow undertail coverts. Common and noisy bird often seen in groups.",
+    habitat: "Gardens, scrubland, and open forests. Adaptable to various environments.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Zebra Dove",
+    scientificName: "Geopelia striata",
+    family: "Columbidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zebra%20dove-dK5eUGp8qjwWrCtJCeKu3LXHWRWPID.jpg",
+    description: "A small delicate dove with distinctive scaled plumage pattern. Known for its soft monotonous calling.",
+    habitat: "Open grasslands and cultivated areas. Feeds on ground seeds and grain.",
     voiceUrl: ""
   }
 ];
