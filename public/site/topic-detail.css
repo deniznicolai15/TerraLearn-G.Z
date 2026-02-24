@@ -613,6 +613,9 @@ body.topic-4 #avifauna-container {
   aspect-ratio: 1;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .species-image img {
