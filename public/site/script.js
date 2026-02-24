@@ -3,11 +3,11 @@ var topics = [
   {
     id: 1,
     label: "TOPIC 01",
-    name: "Flora & Vegetation",
+    name: "Forest 101: Hey, Is this Biringan?",
     color: "#8EB09A",
-    image: "/images/topic-flora.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
     description:
-      "Discover the diverse plant species found along the trails of Mt. Pamitinan, from lowland tropical trees to rare endemic ferns and orchids that thrive in the mountain's unique microclimate.",
+      "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.",
     sections: [
       { title: "Lowland Tropical Forest", text: "The base of Mt. Pamitinan is covered in lowland tropical forest, featuring towering Narra and Molave trees. These trees form a dense canopy that provides shade and moisture for the understory plants below. The forest floor is carpeted with various species of ferns, mosses, and seedlings." },
       { title: "Endemic Plant Species", text: "Mt. Pamitinan is home to several endemic plant species found only in the Philippines. Among them are rare orchids like the Waling-Waling and various species of pitcher plants. These plants have adapted to the unique microclimate of the mountain over thousands of years." },
@@ -21,47 +21,11 @@ var topics = [
   {
     id: 2,
     label: "TOPIC 02",
-    name: "Wildlife & Fauna",
+    name: "Pamitinan Legends: Myth Meets Revolution",
     color: "#A8B7B5",
-    image: "/images/topic-wildlife.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
-      "Learn about the birds, reptiles, insects, and mammals that call Mt. Pamitinan home. Understand their roles in the ecosystem and the conservation efforts protecting them.",
-    sections: [
-      { title: "Bird Species", text: "Mt. Pamitinan serves as a habitat for over 30 bird species, including the Philippine Hawk-Eagle, Luzon Hornbill, and various species of kingfishers. Birdwatching is best during the early morning hours when most species are active and foraging." },
-      { title: "Reptiles & Amphibians", text: "The mountain's streams and forest floor are home to various lizard species, snakes, and frogs. The Philippine Sailfin Lizard, a species unique to the Philippines, can occasionally be spotted near the river systems at the base of the mountain." },
-      { title: "Insects & Invertebrates", text: "The rich insect diversity includes colorful butterflies, beetles, and various species of ants. These invertebrates play crucial roles as pollinators, decomposers, and food sources for larger animals in the ecosystem." },
-      { title: "Mammalian Wildlife", text: "While larger mammals are rare due to habitat fragmentation, the mountain still supports populations of fruit bats, Philippine deer mice, and civets. Nocturnal surveys have revealed a surprisingly rich mammalian community that emerges after dark." }
-    ],
-    location: "Montalban, Rizal",
-    detail1: "30+ species documented",
-    detail2: "Active conservation zone",
-  },
-  {
-    id: 3,
-    label: "TOPIC 03",
-    name: "River Ecosystems",
-    color: "#4B6B55",
-    image: "/images/topic-river.jpg",
-    description:
-      "Explore the Wawa River system and its vital role in sustaining biodiversity. Study how water quality, flow patterns, and surrounding vegetation create a rich aquatic habitat.",
-    sections: [
-      { title: "The Wawa River System", text: "The Wawa River originates from the Sierra Madre mountain range and flows through the limestone gorges of Montalban. It serves as the primary water source for the Wawa Dam, which historically supplied water to Metro Manila. The river's crystal-clear waters support a diverse aquatic ecosystem." },
-      { title: "Aquatic Biodiversity", text: "The river is home to various freshwater fish species, crustaceans, and aquatic invertebrates. Native species like the Ludong and freshwater gobies can be found in the cleaner upstream sections. The river also supports aquatic plants and algae that form the base of the food chain." },
-      { title: "Riparian Zones", text: "The vegetation along the riverbanks, known as riparian zones, plays a critical role in preventing erosion, filtering pollutants, and providing habitat for wildlife. These zones feature bamboo groves, riverside ferns, and various tree species that stabilize the soil." },
-      { title: "Environmental Threats", text: "The river ecosystem faces challenges from illegal quarrying, domestic waste, and upstream development. Community-led clean-up drives and monitoring programs are working to preserve water quality and protect the aquatic habitats that depend on the river." }
-    ],
-    location: "Wawa River, Montalban",
-    detail1: "Vital river ecology",
-    detail2: "Water conservation area",
-  },
-  {
-    id: 4,
-    label: "TOPIC 04",
-    name: "Cultural Heritage",
-    color: "#7A9E8C",
-    image: "/images/topic-heritage.jpg",
-    description:
-      "Uncover the rich cultural history of Mt. Pamitinan and Montalban, from the Katipunan's historic ties to the area to the indigenous communities that have shaped this landscape for generations.",
+      "Mountains hold stories both natural and human. Here, we explore how landscapes like Pamitinan connect myth, history, and ecology, showing how nature inspires culture while sustaining life.",
     sections: [
       { title: "The Katipunan Connection", text: "Mt. Pamitinan holds a special place in Philippine history. It was here at Pamitinan Cave where Andres Bonifacio and members of the Katipunan reportedly held secret meetings and inscribed 'Viva la Independencia Filipina' on the cave walls in 1895. This act of defiance symbolized the growing revolutionary movement against Spanish colonial rule." },
       { title: "Pamitinan Cave", text: "The cave itself is a significant archaeological and historical site. Beyond its Katipunan connections, the cave contains formations that are thousands of years old. It has been declared a National Historical Landmark and National Geological Monument, recognizing both its cultural and natural significance." },
@@ -71,6 +35,42 @@ var topics = [
     location: "Montalban, Rizal",
     detail1: "National landmark",
     detail2: "Heritage conservation",
+  },
+  {
+    id: 3,
+    label: "TOPIC 03",
+    name: "3G Lang: Grow, Glow and Green",
+    color: "#4B6B55",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
+    description:
+      "Plants are the quiet architects of survival, producing oxygen, food, and balance for all living things. This topic highlights their essential role in ecosystems and how \"green goals\" connect to everyday life and sustainability.",
+    sections: [
+      { title: "Plant Diversity", text: "Mt. Pamitinan supports a remarkable diversity of plant species across different elevation zones. From lowland tropical forest to montane vegetation, each zone showcases unique adaptations to local conditions. The diverse flora provides food and shelter for numerous animal species." },
+      { title: "Photosynthesis & Oxygen Production", text: "Plants are nature's oxygen factories. Through photosynthesis, they convert sunlight into energy and release oxygen, which all animals depend on for survival. The extensive forest cover of Mt. Pamitinan contributes significantly to air quality in the region." },
+      { title: "Carbon Sequestration", text: "Forests play a crucial role in combating climate change by absorbing carbon dioxide from the atmosphere. The dense vegetation of Mt. Pamitinan serves as a significant carbon sink, helping mitigate the effects of global warming." },
+      { title: "Sustainable Living & Green Goals", text: "Understanding plant ecosystems inspires sustainable practices in our daily lives. Supporting reforestation efforts, reducing our carbon footprint, and using eco-friendly products are ways we can contribute to green goals and protect environments like Mt. Pamitinan for future generations." }
+    ],
+    location: "Mt. Pamitinan Flora Zones",
+    detail1: "100+ plant species",
+    detail2: "Oxygen production hub",
+  },
+  {
+    id: 4,
+    label: "TOPIC 04",
+    name: "Wild Side: Tayo o Sila?",
+    color: "#7A9E8C",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic4-88GM4Y6ZCHWMBrNhlUF428cJE0GZzK.jpeg",
+    description:
+      "Fauna bring the Pamitinan landscape to life, from small creatures to larger wildlife that shape the ecosystem. This section dives into the diversity of animals, and the importance of protecting them for ecological balance.",
+    sections: [
+      { title: "Bird Species", text: "Mt. Pamitinan serves as a habitat for over 30 bird species, including the Philippine Hawk-Eagle, Luzon Hornbill, and various species of kingfishers. Birdwatching is best during the early morning hours when most species are active and foraging." },
+      { title: "Reptiles & Amphibians", text: "The mountain's streams and forest floor are home to various lizard species, snakes, and frogs. The Philippine Sailfin Lizard, a species unique to the Philippines, can occasionally be spotted near the river systems at the base of the mountain." },
+      { title: "Insects & Invertebrates", text: "The rich insect diversity includes colorful butterflies, beetles, and various species of ants. These invertebrates play crucial roles as pollinators, decomposers, and food sources for larger animals in the ecosystem." },
+      { title: "Mammalian Wildlife", text: "While larger mammals are rare due to habitat fragmentation, the mountain still supports populations of fruit bats, Philippine deer mice, and civets. Nocturnal surveys have revealed a surprisingly rich mammalian community that emerges after dark." }
+    ],
+    location: "Montalban, Rizal",
+    detail1: "30+ species documented",
+    detail2: "Active conservation zone",
   },
 ];
 
