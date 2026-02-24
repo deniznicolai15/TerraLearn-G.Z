@@ -318,5 +318,90 @@ function openTopicPage(topicIndex) {
   window.location.href = "topic-detail.html?data=" + topicData;
 }
 
+// ===== AVIFAUNA SPECIES DATABASE =====
+var avifaunaSpecies = [
+  {
+    commonName: "Barn Swallow",
+    scientificName: "Hirundo rustica",
+    family: "Hirundinidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barn%20Swallow-OVBgm0C3G0sVxu4SjNNoGnWaHmICPh.jpg",
+    description: "A migratory songbird known for its acrobatic flight and graceful appearance. Barn Swallows have distinctive blue-black upperparts and reddish-orange throats.",
+    habitat: "Open woodlands, grasslands, and areas near water. Often seen diving and swooping while catching insects in flight.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Black-crowned Night Heron",
+    scientificName: "Nycticorax nycticorax",
+    family: "Ardeidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black%20crowned%20night%20heron-I5nuRTXw3NGK5MyjeeW59m2KWPty1z.jpg",
+    description: "A wading bird with distinctive black cap and crown. Primarily nocturnal, hence the name.",
+    habitat: "Wetlands, marshes, and reed beds. Hunts during dawn, dusk, and night.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Black-naped Oriole",
+    scientificName: "Oriolus chinensis",
+    family: "Oriolidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black%20naped%20orioke-xkwp45Lnnne66HYdBUkPSZZ68prXal.jpg",
+    description: "A strikingly colored bird with bright yellow plumage and distinctive black nape marking. Known for its melodious song.",
+    habitat: "Tropical forests and woodlands. Prefers the canopy and mid-story levels of trees.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Brown Shrike",
+    scientificName: "Lanius cristatus",
+    family: "Laniidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brown%20shrike-EMREEtpISPHsGfe3afuDwkY7fzJll8.jpg",
+    description: "A medium-sized predatory bird with striking facial markings. Shrikes are known for impaling prey on thorns or twigs.",
+    habitat: "Open scrubland and lightly wooded areas. Often perches on exposed branches.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Brown-breasted Kingfisher",
+    scientificName: "Halcyon gularis",
+    family: "Alcedinidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brow%20breasted%20kingfisher-bJKaHRbCWJlw1FaiXofoVwRKYO06Uj.jpg",
+    description: "A colorful kingfisher with brown and bright blue plumage. Highly specialized for catching fish and aquatic prey.",
+    habitat: "Rivers, streams, and wetlands. Often found perched over water.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Coleto",
+    scientificName: "Sarcops calvus",
+    family: "Sturnidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coleto-rSSdUrzuTKgRa1pdBpXsUFTmnZEXIV.jpg",
+    description: "A medium-sized starling endemic to the Philippines with distinctive brownish plumage. Often seen in small flocks.",
+    habitat: "Forested areas and open woodlands. Feeds on fruits and insects.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Coppersmith Barbet",
+    scientificName: "Megalaima haemacephala",
+    family: "Capitonidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coppersmith%20barbet-b23ta4lfrTljbibw50wAtQQFYIiz3w.jpg",
+    description: "A small colorful barbet with distinctive red and yellow markings. Named for its rapid, metallic pecking sound.",
+    habitat: "Tropical forests and gardens. Often found in pairs or small groups.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Elegant Tit",
+    scientificName: "Lophophanes elegant",
+    family: "Paridae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit-yszlg6kfXLw89TeA37OjxAiRKQlvhv.jpg",
+    description: "A small songbird with distinctive yellow and black coloring. Energetic and acrobatic in its movements.",
+    habitat: "Forests and woodlands. Prefers deciduous and mixed forests.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Eurasian Tree Sparrow",
+    scientificName: "Passer montanus",
+    family: "Passeridae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurasian%20tree%20sparrow-WHAKKYL1X7K8hUVB2Has3BDyXPElnb.jpg",
+    description: "Small seed-eating birds with brown and white plumage. Highly social and often seen in flocks.",
+    habitat: "Villages, cultivated areas, and light forests. Adaptable to various environments.",
+    voiceUrl: ""
+  }
+];
+
 // ===== INIT =====
 buildCards();

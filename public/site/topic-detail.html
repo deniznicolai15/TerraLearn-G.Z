@@ -51,6 +51,13 @@
       </div>
     </div>
 
+    <!-- Introduction Section -->
+    <div style="background: rgba(23, 64, 42, 0.1); padding: 40px; border-bottom: 1px solid rgba(168, 213, 168, 0.2);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <p id="detail-intro" style="font-size: 16px; color: var(--secondary); line-height: 1.9; text-align: justify; margin: 0;"></p>
+      </div>
+    </div>
+
     <!-- Content grid: main content + thumbnail gallery -->
     <div class="detail-grid">
       <!-- Main content -->
@@ -128,7 +135,46 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== AVIFAUNA SECTION ===== -->
+    <div class="avifauna-container" id="avifauna-container" style="display: none;">
+      <div class="avifauna-header">
+        <h2 class="avifauna-title">AVIFAUNA</h2>
+        <p class="avifauna-intro" id="avifauna-intro"></p>
+      </div>
+      <div class="avifauna-grid" id="avifauna-grid">
+        <!-- Species boxes populated dynamically -->
+      </div>
+    </div>
   </main>
+
+  <!-- ===== SPECIES MODAL ===== -->
+  <div class="species-modal" id="species-modal">
+    <div class="species-modal-content">
+      <button class="species-modal-close" id="species-modal-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="species-modal-image" src="" alt="" class="species-modal-image" />
+      <div class="species-modal-details">
+        <h3 class="species-modal-title" id="species-modal-name"></h3>
+        <p class="species-modal-scientific" id="species-modal-scientific"></p>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Family</div>
+          <p class="species-detail-text" id="species-modal-family"></p>
+        </div>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Description</div>
+          <p class="species-detail-text" id="species-modal-description"></p>
+        </div>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Habitat</div>
+          <p class="species-detail-text" id="species-modal-habitat"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== LIGHTBOX FOR GALLERY ===== -->
   <div class="lightbox" id="lightbox">

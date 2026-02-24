@@ -147,6 +147,12 @@ function initializePage() {
   // Populate description
   document.getElementById("detail-description").textContent = topicData.description;
 
+  // Populate introduction section
+  var introElement = document.getElementById("detail-intro");
+  if (introElement) {
+    introElement.textContent = topicData.description;
+  }
+
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
   if (topicData.sections && topicData.sections.length > 0) {
@@ -179,6 +185,9 @@ function initializePage() {
 
   // Initialize quiz
   initializeQuiz();
+
+  // Render AVIFAUNA section if available
+  renderAvifaunaSection();
 
   // Back button
   document.getElementById("back-btn").addEventListener("click", function () {
@@ -348,3 +357,101 @@ document.addEventListener("keydown", function (e) {
     closeLightbox();
   }
 });
+
+// ===== AVIFAUNA SECTION (FOR TOPIC 4) =====
+function renderAvifaunaSection() {
+  // Only show AVIFAUNA section for Topic 4
+  if (topicData.id !== 4) return;
+
+  var avifaunaContainer = document.getElementById("avifauna-container");
+  var avifaunaGrid = document.getElementById("avifauna-grid");
+  var avifaunaIntro = document.getElementById("avifauna-intro");
+
+  avifaunaContainer.style.display = "block";
+  avifaunaIntro.textContent = "Explore the diverse bird species that inhabit Mt. Pamitinan. Click on any species to learn more about their characteristics, habitat, and role in the ecosystem.";
+
+  // Render species boxes (alphabetically arranged)
+  avifaunaSpecies.forEach(function (species) {
+    var box = document.createElement("div");
+    box.className = "species-box";
+
+    box.innerHTML =
+      '<div class="species-image">' +
+        '<img src="' + species.image + '" alt="' + species.commonName + '" />' +
+      '</div>' +
+      '<div class="species-info">' +
+        '<div class="species-name">' + species.commonName + '</div>' +
+        '<div class="species-scientific">' + species.scientificName + '</div>' +
+        '<div class="species-family">Family: ' + species.family + '</div>' +
+        '<div class="species-controls">' +
+          '<button class="voice-btn" title="Play species sound">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+            'Sound' +
+          '</button>' +
+        '</div>' +
+      '</div>';
+
+    box.addEventListener("click", function () {
+      openSpeciesModal(species);
+    });
+
+    // Voice button click handler
+    var voiceBtn = box.querySelector(".voice-btn");
+    voiceBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (species.voiceUrl) {
+        playSpeciesSound(species.voiceUrl);
+      } else {
+        alert("Sound recording not available for this species.");
+      }
+    });
+
+    avifaunaGrid.appendChild(box);
+  });
+}
+
+// ===== SPECIES MODAL FUNCTIONALITY =====
+var speciesModal = document.getElementById("species-modal");
+var speciesModalClose = document.getElementById("species-modal-close");
+
+function openSpeciesModal(species) {
+  document.getElementById("species-modal-image").src = species.image;
+  document.getElementById("species-modal-name").textContent = species.commonName;
+  document.getElementById("species-modal-scientific").textContent = species.scientificName;
+  document.getElementById("species-modal-family").textContent = species.family;
+  document.getElementById("species-modal-description").textContent = species.description;
+  document.getElementById("species-modal-habitat").textContent = species.habitat;
+
+  speciesModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeSpeciesModal() {
+  speciesModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+speciesModalClose.addEventListener("click", closeSpeciesModal);
+
+// Close modal when clicking outside
+speciesModal.addEventListener("click", function (e) {
+  if (e.target === speciesModal) {
+    closeSpeciesModal();
+  }
+});
+
+// Close modal on Escape
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && speciesModal.classList.contains("active")) {
+    closeSpeciesModal();
+  }
+});
+
+// ===== PLAY SPECIES SOUND =====
+function playSpeciesSound(url) {
+  if (!url) return;
+  var audio = new Audio(url);
+  audio.play().catch(function (err) {
+    console.error("Error playing sound:", err);
+  });
+}
