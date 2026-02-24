@@ -1004,7 +1004,27 @@ ul { list-style: none; }
 .about-grid a:hover { color: var(--primary); }
 .about-grid ul { display: flex; flex-direction: column; gap: 8px; }
 
-.about-footer {
+  .contact-list {
+    gap: 12px;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .contact-list svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: var(--primary);
+  }
+
+  .about-footer {
   margin-top: 48px;
   padding-top: 32px;
   border-top: 1px solid var(--border);
