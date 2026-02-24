@@ -147,6 +147,11 @@ function initializePage() {
   // Populate description
   document.getElementById("detail-description").textContent = topicData.description;
 
+  // Add topic class for styling
+  if (topicData.id === 4) {
+    document.body.classList.add("topic-4");
+  }
+
   // Populate introduction section
   var introElement = document.getElementById("detail-intro");
   if (introElement) {

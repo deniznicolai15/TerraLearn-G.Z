@@ -52,14 +52,14 @@
     </div>
 
     <!-- Introduction Section -->
-    <div style="background: rgba(23, 64, 42, 0.1); padding: 40px; border-bottom: 1px solid rgba(168, 213, 168, 0.2);">
+    <div id="intro-section" style="background: rgba(23, 64, 42, 0.1); padding: 40px; border-bottom: 1px solid rgba(168, 213, 168, 0.2);">
       <div style="max-width: 1200px; margin: 0 auto;">
         <p id="detail-intro" style="font-size: 16px; color: var(--secondary); line-height: 1.9; text-align: justify; margin: 0;"></p>
       </div>
     </div>
 
     <!-- Content grid: main content + thumbnail gallery -->
-    <div class="detail-grid">
+    <div class="detail-grid" id="detail-grid">
       <!-- Main content -->
       <div class="detail-main">
         <!-- Description -->
@@ -109,6 +109,17 @@
       </aside>
     </div>
 
+    <!-- ===== AVIFAUNA SECTION ===== -->
+    <div class="avifauna-container" id="avifauna-container" style="display: none;">
+      <div class="avifauna-header">
+        <h2 class="avifauna-title">AVIFAUNA</h2>
+        <p class="avifauna-intro" id="avifauna-intro"></p>
+      </div>
+      <div class="avifauna-grid" id="avifauna-grid">
+        <!-- Species boxes populated dynamically -->
+      </div>
+    </div>
+
     <!-- ===== QUIZ SECTION ===== -->
     <div class="quiz-container" id="quiz-container">
       <div class="quiz-header">
@@ -133,17 +144,6 @@
           <button class="btn btn-primary" id="retry-btn">Retake Quiz</button>
           <button class="btn btn-secondary" id="close-btn">Back to Details</button>
         </div>
-      </div>
-    </div>
-
-    <!-- ===== AVIFAUNA SECTION ===== -->
-    <div class="avifauna-container" id="avifauna-container" style="display: none;">
-      <div class="avifauna-header">
-        <h2 class="avifauna-title">AVIFAUNA</h2>
-        <p class="avifauna-intro" id="avifauna-intro"></p>
-      </div>
-      <div class="avifauna-grid" id="avifauna-grid">
-        <!-- Species boxes populated dynamically -->
       </div>
     </div>
   </main>

@@ -543,6 +543,17 @@
   margin-bottom: 12px;
 }
 
+/* ===== TOPIC 4 SPECIFIC STYLES ===== */
+body.topic-4 #intro-section,
+body.topic-4 #detail-grid {
+  display: none;
+}
+
+body.topic-4 #avifauna-container {
+  display: block !important;
+  margin-top: 0;
+}
+
 /* ===== AVIFAUNA SECTION ===== */
 .avifauna-container {
   background: #17402A;

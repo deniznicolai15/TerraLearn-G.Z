@@ -400,6 +400,87 @@ var avifaunaSpecies = [
     description: "Small seed-eating birds with brown and white plumage. Highly social and often seen in flocks.",
     habitat: "Villages, cultivated areas, and light forests. Adaptable to various environments.",
     voiceUrl: ""
+  },
+  {
+    commonName: "Garden Sunbird",
+    scientificName: "Cinnyris jugularis",
+    family: "Nectariniidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/garden%20sunbird-8MU598QTRq8mJfYqoYfK3XHQttO9BH.jpg",
+    description: "A small, iridescent nectar-feeding bird with brilliant yellow plumage on the belly and metallic blue throat. Known for visiting flowering plants.",
+    habitat: "Gardens, forests, and flowering areas. Attracted to nectar-bearing flowers.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Grayback Tailorbird",
+    scientificName: "Orthotomus cinereicollis",
+    family: "Cisticolidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/graybacked%20tailorbird-vnEfMrzCFRoYs9KxURdTWJxfCq1HdB.jpg",
+    description: "A small insectivorous bird with distinctive orange-rufous crown and gray back. Named for its habit of stitching leaves together to make nests.",
+    habitat: "Dense shrubland and forest margins. Prefers areas with thick vegetation.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Long-tailed Shrike",
+    scientificName: "Lanius schach",
+    family: "Laniidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/long%20tailed%20shrike-b0gXtAak4dxsDczKhbjAPMEP1jMwcs.jpg",
+    description: "A predatory bird with distinctive black and white coloring and chestnut-rufous sides. Known for impaling prey on thorns.",
+    habitat: "Open woodlands and grasslands. Often perches conspicuously on branches.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Lowland White-eyed",
+    scientificName: "Zosterops simplex",
+    family: "Zosteropidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lowland%20white%20eyed-AmvxFP7qeoS4cy9gwqB9KmoVIZ7Km3.jpg",
+    description: "A small greenish bird with distinctive white eye-ring. Often found in small flocks moving through forest canopy.",
+    habitat: "Lowland forests and forest edges. Feeds on insects and small fruits.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Peregrine Falcon",
+    scientificName: "Falco peregrinus",
+    family: "Falconidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/peregrine%20falcon-TTkAUUbmMpOg8LHlOsBopNQOXYTIJJ.jpg",
+    description: "A powerful aerial predator with distinctive dark cap and facial markings. Known as the fastest animal in the world when diving.",
+    habitat: "Open areas, cliffs, and high places. Hunts other birds in flight.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Philippine Bulbul",
+    scientificName: "Hypsipetes philippinus",
+    family: "Pycnonotidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20bulbul-moIde0z2Ar135pe6QNyg2Z9lSmiAhZ.jpg",
+    description: "A medium-sized bird with soft brown and gray plumage. Known for its cheerful song and social behavior.",
+    habitat: "Forests and woodland areas from lowlands to mountains. Often in small noisy groups.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Philippine Coucal",
+    scientificName: "Centropus viridis",
+    family: "Cuculidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20coucal-l0NHxDmMpRrLN36nacFuftFotBY5WJ.jpg",
+    description: "A large, distinctive cuckoo with chestnut and black plumage and bright red eyes. Known for its hollow booming call.",
+    habitat: "Dense vegetation and grasslands. Hunts on the ground for small animals.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Philippine Serpent Eagle",
+    scientificName: "Spilornis holospilus",
+    family: "Accipitridae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20serpent%20eagle-k8dweuhpzh6gafLVnsIpG5FE3EXzKW.jpg",
+    description: "A medium-sized raptor specialized in hunting snakes and lizards. Has striking yellow eyes and distinctive yellow facial skin.",
+    habitat: "Forested areas from lowlands to mountains. Hunts from perches or in flight.",
+    voiceUrl: ""
+  },
+  {
+    commonName: "Scaly-breasted Munia",
+    scientificName: "Lonchura punctulata",
+    family: "Estrildidae",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scaly%20breasted%20munia-fXQU55X6cLKXPJ4Aieu7YYHl04Pz3O.jpg",
+    description: "A small finch with distinctive scaly-patterned breast and white belly. Highly social bird often found in flocks.",
+    habitat: "Grasslands, rice fields, and disturbed areas. Feeds on grass seeds.",
+    voiceUrl: ""
   }
 ];
 
