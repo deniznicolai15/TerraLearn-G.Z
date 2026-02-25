@@ -325,7 +325,7 @@ var avifaunaSpecies = [
     scientificName: "Hirundo rustica",
     family: "Hirundinidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barn%20Swallow-OVBgm0C3G0sVxu4SjNNoGnWaHmICPh.jpg",
-    description: "Slender bird with metallic blue back, cinnamon throat, and a deeply forked tail. Agile in flight, darting low over fields and water. Their graceful aerial movements make them one of the most recognizable migratory birds. Role in Ecosystem: Consumes large numbers of flying insects, controlling pests naturally. This reduces insect-borne diseases and supports agricultural balance.",
+    description: "Slender bird with metallic blue back, cinnamon throat, and a deeply forked tail. Agile in flight, darting low over fields and water. Their graceful aerial movements make them one of the most recognizable migratory birds.\n\nRole in Ecosystem: Consumes large numbers of flying insects, controlling pests naturally. This reduces insect-borne diseases and supports agricultural balance.",
     habitat: "Open fields, river valleys, and near human dwellings.",
     voiceUrl: ""
   },
@@ -334,7 +334,7 @@ var avifaunaSpecies = [
     scientificName: "Nycticorax nycticorax",
     family: "Ardeidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black%20crowned%20night%20heron-I5nuRTXw3NGK5MyjeeW59m2KWPty1z.jpg",
-    description: "Stocky heron with black crown, gray wings, and short legs, often hunched. Mostly nocturnal, feeding at dusk and night. Juveniles are streaked brown, blending with wetland vegetation. Role in Ecosystem: Regulates fish, amphibian, and invertebrate populations. Prevents overpopulation of aquatic species, maintaining food web balance.",
+    description: "Stocky heron with black crown, gray wings, and short legs, often hunched. Mostly nocturnal, feeding at dusk and night. Juveniles are streaked brown, blending with wetland vegetation.\n\nRole in Ecosystem: Regulates fish, amphibian, and invertebrate populations. Prevents overpopulation of aquatic species, maintaining food web balance.",
     habitat: "Wetlands, riversides, and forest streams.",
     voiceUrl: ""
   },
@@ -343,7 +343,7 @@ var avifaunaSpecies = [
     scientificName: "Oriolus chinensis",
     family: "Oriole",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black%20naped%20orioke-xkwp45Lnnne66HYdBUkPSZZ68prXal.jpg",
-    description: "Bright yellow plumage with a bold black eye-stripe extending to the nape. Active and vocal, often moving through forest canopies. Known for melodious whistles that carry through wooded areas. Role in Ecosystem: Disperses seeds and controls insect populations. Supports plant diversity and regulates insect numbers.",
+    description: "Bright yellow plumage with a bold black eye-stripe extending to the nape. Active and vocal, often moving through forest canopies. Known for melodious whistles that carry through wooded areas.\n\nRole in Ecosystem: Disperses seeds and controls insect populations. Supports plant diversity and regulates insect numbers.",
     habitat: "Forest edges, plantations, and wooded areas.",
     voiceUrl: ""
   },
@@ -352,7 +352,7 @@ var avifaunaSpecies = [
     scientificName: "Lanius cristatus",
     family: "Laniidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brown%20shrike-EMREEtpISPHsGfe3afuDwkY7fzJll8.jpg",
-    description: "Small predatory songbird with brown plumage and a black facial mask. Has a hooked bill adapted for catching prey. Famous for impaling insects and small vertebrates on thorns. Role in Ecosystem: Controls insect and small vertebrate populations. Acts as a natural predator, balancing prey species.",
+    description: "Small predatory songbird with brown plumage and a black facial mask. Has a hooked bill adapted for catching prey. Famous for impaling insects and small vertebrates on thorns.\n\nRole in Ecosystem: Controls insect and small vertebrate populations. Acts as a natural predator, balancing prey species.",
     habitat: "Open woodlands, scrub, and agricultural areas.",
     voiceUrl: ""
   },
@@ -361,7 +361,7 @@ var avifaunaSpecies = [
     scientificName: "Halcyon gularis",
     family: "Alcedinidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brow%20breasted%20kingfisher-bJKaHRbCWJlw1FaiXofoVwRKYO06Uj.jpg",
-    description: "Large kingfisher with bright blue wings, brown breast, and red bill. Loud and conspicuous, often perched near water. Strong bill adapted for catching fish and amphibians. Role in Ecosystem: Regulates fish, amphibians, and insects. Helps maintain healthy aquatic and terrestrial populations.",
+    description: "Large kingfisher with bright blue wings, brown breast, and red bill. Loud and conspicuous, often perched near water. Strong bill adapted for catching fish and amphibians.\n\nRole in Ecosystem: Regulates fish, amphibians, and insects. Helps maintain healthy aquatic and terrestrial populations.",
     habitat: "Forest edges, rivers, and wetlands.",
     voiceUrl: ""
   },
@@ -370,7 +370,7 @@ var avifaunaSpecies = [
     scientificName: "Sarcops calvus",
     family: "Sturnidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coleto-rSSdUrzuTKgRa1pdBpXsUFTmnZEXIV.jpg",
-    description: "Glossy starling with iridescent plumage and bare pinkish facial skin. Highly social, often seen in noisy flocks. Unique appearance distinguishes it among Philippine starlings. Role in Ecosystem: Disperses seeds and consumes insects. Aids forest regeneration and influences seed distribution patterns.",
+    description: "Glossy starling with iridescent plumage and bare pinkish facial skin. Highly social, often seen in noisy flocks. Unique appearance distinguishes it among Philippine starlings.\n\nRole in Ecosystem: Disperses seeds and consumes insects. Aids forest regeneration and influences seed distribution patterns.",
     habitat: "Forests and secondary growth areas.",
     voiceUrl: ""
   },
@@ -379,7 +379,7 @@ var avifaunaSpecies = [
     scientificName: "Psilopogon haemacephalus",
     family: "Megalaimidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coppersmith%20barbet-b23ta4lfrTljbibw50wAtQQFYIiz3w.jpg",
-    description: "Small, stout bird with green plumage and a red forehead. Known for repetitive 'tuk-tuk' call resembling a coppersmith hammering. Thick bill suited for fruit eating. Role in Ecosystem: Disperses seeds by consuming fruits. Serves as an indicator of healthy ecosystems through its presence and calls.",
+    description: "Small, stout bird with green plumage and a red forehead. Known for repetitive \"tuk-tuk\" call resembling a coppersmith hammering. Thick bill suited for fruit eating.\n\nRole in Ecosystem: Disperses seeds by consuming fruits. Serves as an indicator of healthy ecosystems through its presence and calls.",
     habitat: "Urban parks, gardens, and forest edges.",
     voiceUrl: ""
   },
@@ -388,7 +388,7 @@ var avifaunaSpecies = [
     scientificName: "Periparus elegans",
     family: "Paridae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit-yszlg6kfXLw89TeA37OjxAiRKQlvhv.jpg",
-    description: "Small bird with black head, white cheeks, and yellow underparts. Active and agile, flitting through branches. Vocal species with varied calls. Role in Ecosystem: Controls insect populations by foraging among leaves and bark. Reduces pest outbreaks in forests.",
+    description: "Small bird with black head, white cheeks, and yellow underparts. Active and agile, flitting through branches. Vocal species with varied calls.\n\nRole in Ecosystem: Controls insect populations by foraging among leaves and bark. Reduces pest outbreaks in forests.",
     habitat: "Forests and wooded areas.",
     voiceUrl: ""
   },
@@ -397,7 +397,7 @@ var avifaunaSpecies = [
     scientificName: "Passer montanus",
     family: "Passeridae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurasian%20tree%20sparrow-WHAKKYL1X7K8hUVB2Has3BDyXPElnb.jpg",
-    description: "Small brown bird with black bib, chestnut crown, and white cheeks with a black spot. Common in urban and rural areas. Highly adaptable and social. Role in Ecosystem: Scavenger and seed disperser, aiding plant regeneration. Serves as prey for larger birds.",
+    description: "Small brown bird with black bib, chestnut crown, and white cheeks with a black spot. Common in urban and rural areas. Highly adaptable and social.\n\nRole in Ecosystem: Scavenger and seed disperser, aiding plant regeneration. Serves as prey for larger birds.",
     habitat: "Towns, villages, and farmlands.",
     voiceUrl: ""
   },
@@ -406,7 +406,7 @@ var avifaunaSpecies = [
     scientificName: "Cinnyris jugularis",
     family: "Nectariniidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/garden%20sunbird-8MU598QTRq8mJfYqoYfK3XHQttO9BH.jpg",
-    description: "Tiny bird with iridescent plumage, often metallic green or red. Slender curved bill adapted for nectar feeding. Active and fast-moving among flowers. Role in Ecosystem: Pollinates flowers while feeding on nectar. Supports plant reproduction and biodiversity.",
+    description: "Tiny bird with iridescent plumage, often metallic green or red. Slender curved bill adapted for nectar feeding. Active and fast-moving among flowers.\n\nRole in Ecosystem: Pollinates flowers while feeding on nectar. Supports plant reproduction and biodiversity.",
     habitat: "Gardens, forest edges, and flowering shrubs.",
     voiceUrl: ""
   },
@@ -415,7 +415,7 @@ var avifaunaSpecies = [
     scientificName: "Orthotomus derbianus",
     family: "Cisticolidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/graybacked%20tailorbird-vnEfMrzCFRoYs9KxURdTWJxfCq1HdB.jpg",
-    description: "Small warbler with olive-green upperparts and gray back. Known for sewing leaves together to build nests. Active and secretive in dense vegetation. Role in Ecosystem: Controls insect populations by feeding on small insects. Contributes to pest regulation in dense foliage.",
+    description: "Small warbler with olive-green upperparts and gray back. Known for sewing leaves together to build nests. Active and secretive in dense vegetation.\n\nRole in Ecosystem: Controls insect populations by feeding on small insects. Contributes to pest regulation in dense foliage.",
     habitat: "Shrubs, gardens, and forest undergrowth.",
     voiceUrl: ""
   },
@@ -424,16 +424,16 @@ var avifaunaSpecies = [
     scientificName: "Lanius schach",
     family: "Laniidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/long%20tailed%20shrike-b0gXtAak4dxsDczKhbjAPMEP1jMwcs.jpg",
-    description: "Medium-sized bird with long tail, gray back, and black mask. Aggressive hunter with hooked bill. Often perches conspicuously while scanning for prey. Role in Ecosystem: Predates on insects and small vertebrates. Helps regulate prey populations in open habitats.",
+    description: "Medium-sized bird with long tail, gray back, and black mask. Aggressive hunter with hooked bill. Often perches conspicuously while scanning for prey.\n\nRole in Ecosystem: Predates on insects and small vertebrates. Helps regulate prey populations in open habitats.",
     habitat: "Open fields, scrublands, and forest edges.",
     voiceUrl: ""
   },
   {
-    commonName: "Lowland White Eye",
+    commonName: "Lowland White-eye",
     scientificName: "Zosterops meyeni",
     family: "Zosteropidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lowland%20white%20eyed-AmvxFP7qeoS4cy9gwqB9KmoVIZ7Km3.jpg",
-    description: "Small bird with olive-green plumage and a distinct white eye-ring. Active and social, often in flocks. Has a high-pitched call. Role in Ecosystem: Pollinates flowers and disperses seeds. Supports plant reproduction and forest regeneration.",
+    description: "Small bird with olive-green plumage and a distinct white eye-ring. Active and social, often in flocks. Has a high-pitched call.\n\nRole in Ecosystem: Pollinates flowers and disperses seeds. Supports plant reproduction and forest regeneration.",
     habitat: "Lowland forests and gardens.",
     voiceUrl: ""
   },
@@ -442,7 +442,7 @@ var avifaunaSpecies = [
     scientificName: "Falco peregrinus",
     family: "Falconidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/peregrine%20falcon-TTkAUUbmMpOg8LHlOsBopNQOXYTIJJ.jpg",
-    description: "Powerful raptor with blue-gray back, barred underparts, and black head markings. Known for incredible speed in hunting dives. Fierce predator of birds. Role in Ecosystem: Controls bird populations, especially pigeons and doves. Maintains balance among avian species.",
+    description: "Powerful raptor with blue-gray back, barred underparts, and black head markings. Known for incredible speed in hunting dives. Fierce predator of birds.\n\nRole in Ecosystem: Controls bird populations, especially pigeons and doves. Maintains balance among avian species.",
     habitat: "Cliffs, tall buildings, and open landscapes.",
     voiceUrl: ""
   },
@@ -451,7 +451,7 @@ var avifaunaSpecies = [
     scientificName: "Hysipetes philippinus",
     family: "Pycnonotidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20bulbul-moIde0z2Ar135pe6QNyg2Z9lSmiAhZ.jpg",
-    description: "Medium-sized songbird with olive-brown plumage and melodious calls. Often seen in pairs or small groups. Active in forest canopies. Role in Ecosystem: Disperses seeds and consumes insects. Supports forest regeneration and insect control.",
+    description: "Medium-sized songbird with olive-brown plumage and melodious calls. Often seen in pairs or small groups. Active in forest canopies.\n\nRole in Ecosystem: Disperses seeds and consumes insects. Supports forest regeneration and insect control.",
     habitat: "Forests and secondary growth.",
     voiceUrl: ""
   },
@@ -460,7 +460,7 @@ var avifaunaSpecies = [
     scientificName: "Centropus viridis",
     family: "Cuculidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20coucal-l0NHxDmMpRrLN36nacFuftFotBY5WJ.jpg",
-    description: "Large, dark bird with long tail and reddish wings. Secretive, often heard more than seen. Known for deep booming calls. Role in Ecosystem: Predates on insects, reptiles, and small mammals. Helps regulate populations of small prey species.",
+    description: "Large, dark bird with long tail and reddish wings. Secretive, often heard more than seen. Known for deep booming calls.\n\nRole in Ecosystem: Predates on insects, reptiles, and small mammals. Helps regulate populations of small prey species.",
     habitat: "Grasslands, thickets, and forest edges.",
     voiceUrl: ""
   },
@@ -469,7 +469,7 @@ var avifaunaSpecies = [
     scientificName: "Spilornis holospilus",
     family: "Accipitridae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20serpent%20eagle-k8dweuhpzh6gafLVnsIpG5FE3EXzKW.jpg",
-    description: "Medium-sized eagle with brown plumage, broad wings, and piercing eyes. Recognizable by its loud, high-pitched calls. Skilled hunter of reptiles. Role in Ecosystem: Controls reptile populations, especially snakes. Maintains predator-prey balance in forest ecosystems.",
+    description: "Medium-sized eagle with brown plumage, broad wings, and piercing eyes. Recognizable by its loud, high-pitched calls. Skilled hunter of reptiles.\n\nRole in Ecosystem: Controls reptile populations, especially snakes. Maintains predator-prey balance in forest ecosystems.",
     habitat: "Forests and open woodlands.",
     voiceUrl: ""
   },
@@ -478,7 +478,7 @@ var avifaunaSpecies = [
     scientificName: "Lonchura punctulata",
     family: "Estrildidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scaly%20breasted%20munia-fXQU55X6cLKXPJ4Aieu7YYHl04Pz3O.jpg",
-    description: "Small finch with brown plumage and distinctive scaly pattern on breast. Social, often in flocks. Feeds mainly on grass seeds. Role in Ecosystem: Disperses seeds and influences plant growth patterns. Serves as prey for larger birds.",
+    description: "Small finch with brown plumage and distinctive scaly pattern on breast. Social, often in flocks. Feeds mainly on grass seeds.\n\nRole in Ecosystem: Disperses seeds and influences plant growth patterns. Serves as prey for larger birds.",
     habitat: "Grasslands, farmlands, and gardens.",
     voiceUrl: ""
   },
@@ -487,7 +487,7 @@ var avifaunaSpecies = [
     scientificName: "Spilopelia chinensis",
     family: "Columbidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spotted%20dove-7Dl1Bga6wWqakla76xReRyI9wmLlNK.jpg",
-    description: "Medium-sized dove with brown plumage and a black-and-white spotted collar. Gentle and soft cooing calls. Often seen foraging on the ground. Role in Ecosystem: Seed disperser, aiding plant regeneration. Provides prey for raptors.",
+    description: "Medium-sized dove with brown plumage and a black-and-white spotted collar. Gentle and soft cooing calls. Often seen foraging on the ground.\n\nRole in Ecosystem: Seed disperser, aiding plant regeneration. Provides prey for raptors.",
     habitat: "Urban areas, farmlands, and forest edges.",
     voiceUrl: ""
   },
@@ -496,7 +496,7 @@ var avifaunaSpecies = [
     scientificName: "Artaamus leucorynchus",
     family: "Artamidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/whitebreasted%20wood%20swallow-WQOSaidi055ehkRs8nDN5SPL98R0zU.jpg",
-    description: "Medium-sized bird with gray upperparts, white breast, and short tail. Strong flyer, often seen in groups. Has a sharp, chattering call. Role in Ecosystem: Controls insect populations by aerial hunting. Their flocking behavior enhances pest regulation.",
+    description: "Medium-sized bird with gray upperparts, white breast, and short tail. Strong flyer, often seen in groups. Has a sharp, chattering call.\n\nRole in Ecosystem: Controls insect populations by aerial hunting. Their flocking behavior enhances pest regulation.",
     habitat: "Open areas, farmlands, and forest edges.",
     voiceUrl: ""
   },
@@ -505,16 +505,16 @@ var avifaunaSpecies = [
     scientificName: "Phapitreron leucostis",
     family: "Columbidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/white%20eared%20brown%20dove%20credits%20mau4you_%27s%20bird%20watch-MkJdT0OesRqna7Sp5e50zHukOrpmJw.jpg",
-    description: "Medium-sized dove with brown plumage and a distinct white patch near the ear. Shy and secretive, often in dense vegetation. Soft cooing calls. Role in Ecosystem: Disperses seeds, supporting forest regeneration. Serves as prey for forest raptors.",
+    description: "Medium-sized dove with brown plumage and a distinct white patch near the ear. Shy and secretive, often in dense vegetation. Soft cooing calls.\n\nRole in Ecosystem: Disperses seeds, supporting forest regeneration. Serves as prey for forest raptors.",
     habitat: "Forests and thickets.",
     voiceUrl: ""
   },
   {
-    commonName: "Yellow Vented Bulbul",
+    commonName: "Yellow-vented Bulbul",
     scientificName: "Pycnonotus goiavier",
     family: "Pycnonotidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yellow%20vented%20bulbul-9U1Jk6XQNE4UZpFaUydtUD7cjkTogN.jpg",
-    description: "Medium-sized bird with brown upperparts, yellow vent, and white throat. Active and noisy, often in gardens. Adaptable to urban environments. Role in Ecosystem: Disperses seeds and controls insects. Supports plant diversity and pest regulation.",
+    description: "Medium-sized bird with brown upperparts, yellow vent, and white throat. Active and noisy, often in gardens. Adaptable to urban environments.\n\nRole in Ecosystem: Disperses seeds and controls insects. Supports plant diversity and pest regulation.",
     habitat: "Gardens, farmlands, and forest edges.",
     voiceUrl: ""
   },
@@ -523,7 +523,7 @@ var avifaunaSpecies = [
     scientificName: "Geopelia striata",
     family: "Columbidae",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zebra%20dove-dK5eUGp8qjwWrCtJCeKu3LXHWRWPID.jpg",
-    description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly, giving it a 'zebra-like' pattern. It has a long tail and soft, pleasant cooing calls. Gentle in behavior, it often forages quietly on the ground for seeds. Role in Ecosystem: Acts as a seed disperser, aiding in plant regeneration and maintaining vegetation diversity. It also serves as prey for raptors, contributing to the food chain balance.",
+    description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly, giving it a \"zebra-like\" pattern. It has a long tail and soft, pleasant cooing calls. Gentle in behavior, it often forages quietly on the ground for seeds.\n\nRole in Ecosystem: Acts as a seed disperser, aiding in plant regeneration and maintaining vegetation diversity. It also serves as prey for raptors, contributing to the food chain balance.",
     habitat: "Urban areas, gardens, farmlands, and forest edges.",
     voiceUrl: ""
   }
