@@ -426,6 +426,7 @@ function openSpeciesModal(species) {
   document.getElementById("species-modal-family").textContent = species.family;
   document.getElementById("species-modal-description").textContent = species.description;
   document.getElementById("species-modal-habitat").textContent = species.habitat;
+  document.getElementById("species-modal-role").textContent = species.roleInEcosystem;
 
   speciesModal.classList.add("active");
   document.body.style.overflow = "hidden";

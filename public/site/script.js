@@ -328,7 +328,7 @@ var avifaunaSpecies = [
     description: "Slender bird with metallic blue back, cinnamon throat, and a deeply forked tail. Agile in flight, darting low over fields and water. Their graceful aerial movements make them one of the most recognizable migratory birds.",
     habitat: "Open fields, river valleys, and near human dwellings.",
     roleInEcosystem: "Consumes large numbers of flying insects, controlling pests naturally. This reduces insect-borne diseases and supports agricultural balance.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/barnswallow-ETWW2owwMQ6MfcKqCa3yb0Q4fVEmIq.mp4"
   },
   {
     commonName: "Black-crowned Night Heron",
