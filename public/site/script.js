@@ -428,7 +428,7 @@ var avifaunaSpecies = [
     description: "Small warbler with olive-green upperparts and gray back. Known for sewing leaves together to build nests. Active and secretive in dense vegetation.",
     habitat: "Shrubs, gardens, and forest undergrowth.",
     roleInEcosystem: "Controls insect populations by feeding on small insects. Contributes to pest regulation in dense foliage.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-H2qnQysQWmXz1ZQ6hV0Me1oWruTigf.mp4"
   },
   {
     commonName: "Long-tailed Shrike",
@@ -438,7 +438,7 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with long tail, gray back, and black mask. Aggressive hunter with hooked bill. Often perches conspicuously while scanning for prey.",
     habitat: "Open fields, scrublands, and forest edges.",
     roleInEcosystem: "Predates on insects and small vertebrates. Helps regulate prey populations in open habitats.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-VscDVh1O8TlPwskQzjr1QpmjAl59YK.mp4"
   },
   {
     commonName: "Lowland White-eye",
@@ -448,7 +448,7 @@ var avifaunaSpecies = [
     description: "Small bird with olive-green plumage and a distinct white eye-ring. Active and social, often in flocks. Has a high-pitched call.",
     habitat: "Lowland forests and gardens.",
     roleInEcosystem: "Pollinates flowers and disperses seeds. Supports plant reproduction and forest regeneration.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-Dgi8msgPkkCcfPG6mw7F9ti3GH5YJK.mp4"
   },
   {
     commonName: "Peregrine Falcon",
@@ -458,7 +458,7 @@ var avifaunaSpecies = [
     description: "Powerful raptor with blue-gray back, barred underparts, and black head markings. Known for incredible speed in hunting dives. Fierce predator of birds.",
     habitat: "Cliffs, tall buildings, and open landscapes.",
     roleInEcosystem: "Controls bird populations, especially pigeons and doves. Maintains balance among avian species.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-1SeeqmIOBOZ5OgZEdQUAR8arqPwQAM.mp4"
   },
   {
     commonName: "Philippine Bulbul",
