@@ -518,7 +518,7 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with gray upperparts, white breast, and short tail. Strong flyer, often seen in groups. Has a sharp, chattering call.",
     habitat: "Open areas, farmlands, and forest edges.",
     roleInEcosystem: "Controls insect populations by aerial hunting. Their flocking behavior enhances pest regulation.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-a6Ov1dMGL0Owgt2MvEvCpxSRAsiZxs.mp4"
   },
   {
     commonName: "White-eared Brown Dove",
@@ -528,7 +528,7 @@ var avifaunaSpecies = [
     description: "Medium-sized dove with brown plumage and a distinct white patch near the ear. Shy and secretive, often in dense vegetation. Soft cooing calls.",
     habitat: "Forests and thickets.",
     roleInEcosystem: "Disperses seeds, supporting forest regeneration. Serves as prey for forest raptors.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-eared%20Brown-Dove%20fixed2-fJZn7CE3itTcPF6OMd6O6OB6yqxehP.mp4"
   },
   {
     commonName: "Yellow-vented Bulbul",
@@ -538,7 +538,7 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with brown upperparts, yellow vent, and white throat. Active and noisy, often in gardens. Adaptable to urban environments.",
     habitat: "Gardens, farmlands, and forest edges.",
     roleInEcosystem: "Disperses seeds and controls insects. Supports plant diversity and pest regulation.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-yNTK01k3cVBV2s6zrSxx0HJxfDu2hV.mp4"
   },
   {
     commonName: "Zebra Dove",
@@ -548,7 +548,7 @@ var avifaunaSpecies = [
     description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly, giving it a \"zebra-like\" pattern. It has a long tail and soft, pleasant cooing calls. Gentle in behavior, it often forages quietly on the ground for seeds.",
     habitat: "Urban areas, gardens, farmlands, and forest edges.",
     roleInEcosystem: "Acts as a seed disperser, aiding in plant regeneration and maintaining vegetation diversity. It also serves as prey for raptors, contributing to the food chain balance.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-4zVuirtXhfs5vNEB07BBiEt9iAmCKn.mp4"
   }
 ];
 
