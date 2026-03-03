@@ -422,33 +422,33 @@ var avifaunaSpecies = [
   },
   {
     commonName: "Greyback Tailorbird",
-    scientificName: "Orthotomus cineraceus",
+    scientificName: "Orthotomus derbianus",
     family: "Cisticolidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grey%20back%20tailorbird-h4F3YwX8xPwFQVJV1d1iGDHPxGLvdj.jpg",
-    description: "Small, grayish-brown bird with a distinctive habit of sewing leaves together to create a nest. Highly vocal with melodious songs. Quick and active in foliage.",
-    habitat: "Forests, gardens, and shrubby areas.",
-    roleInEcosystem: "Controls insect populations through foraging. Contributes to forest acoustics with vocalizations.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-v3tHQbjZPIaDHlvyYYpf6ZIQujrlVL.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/graybacked%20tailorbird-vnEfMrzCFRoYs9KxURdTWJxfCq1HdB.jpg",
+    description: "Small warbler with olive-green upperparts and gray back. Known for sewing leaves together to build nests. Active and secretive in dense vegetation.",
+    habitat: "Shrubs, gardens, and forest undergrowth.",
+    roleInEcosystem: "Controls insect populations by feeding on small insects. Contributes to pest regulation in dense foliage.",
+    voiceUrl: ""
   },
   {
     commonName: "Long-tailed Shrike",
     scientificName: "Lanius schach",
     family: "Laniidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/long%20tailed%20shrike-xWiXJZLSQb6u4UX6k7kKJmR1zRvFb2.jpg",
-    description: "Medium-sized shrike with striking black, white, and rufous plumage. Very long tail and powerful hooked bill. Known for impaling prey on thorns. Aggressive and territorial hunter.",
-    habitat: "Open woodlands, grasslands, and agricultural areas.",
-    roleInEcosystem: "Controls insect and small vertebrate populations as a powerful predator.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-scyFyUiEWlXDTmd0gutmjxCrrlp2Ke.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/long%20tailed%20shrike-b0gXtAak4dxsDczKhbjAPMEP1jMwcs.jpg",
+    description: "Medium-sized bird with long tail, gray back, and black mask. Aggressive hunter with hooked bill. Often perches conspicuously while scanning for prey.",
+    habitat: "Open fields, scrublands, and forest edges.",
+    roleInEcosystem: "Predates on insects and small vertebrates. Helps regulate prey populations in open habitats.",
+    voiceUrl: ""
   },
   {
     commonName: "Lowland White-eye",
-    scientificName: "Zosterops chloris",
+    scientificName: "Zosterops meyeni",
     family: "Zosteropidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lowland%20white%20eye-rD2v7rJ8ufmcHq0VNk0rPXYCONR3mH.jpg",
-    description: "Small, delicate bird with olive-green upperparts and yellow underparts. Distinctive white eye-ring gives it its name. Often seen in small flocks moving through foliage, gleaning insects and sipping nectar.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lowland%20white%20eyed-AmvxFP7qeoS4cy9gwqB9KmoVIZ7Km3.jpg",
+    description: "Small bird with olive-green plumage and a distinct white eye-ring. Active and social, often in flocks. Has a high-pitched call.",
     habitat: "Lowland forests and gardens.",
-    roleInEcosystem: "Controls insect populations and pollinates flowers while feeding.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-AguCmFWwGyq0yrPiBOsAzhT477FvWf.mp4"
+    roleInEcosystem: "Pollinates flowers and disperses seeds. Supports plant reproduction and forest regeneration.",
+    voiceUrl: ""
   },
   {
     commonName: "Peregrine Falcon",
@@ -458,7 +458,7 @@ var avifaunaSpecies = [
     description: "Powerful raptor with blue-gray back, barred underparts, and black head markings. Known for incredible speed in hunting dives. Fierce predator of birds.",
     habitat: "Cliffs, tall buildings, and open landscapes.",
     roleInEcosystem: "Controls bird populations, especially pigeons and doves. Maintains balance among avian species.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-8EyKY2UPG3yhcjfBfvFbm6snAC918L.mp4"
+    voiceUrl: ""
   },
   {
     commonName: "Philippine Bulbul",
@@ -474,71 +474,71 @@ var avifaunaSpecies = [
     commonName: "Philippine Coucal",
     scientificName: "Centropus viridis",
     family: "Cuculidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20coucal-2Z0WJ4KP4TDuKqzxe1oqt0pQCiBF59.jpg",
-    description: "Large, long-tailed cuckoo with dark green and rufous plumage. Its distinctive booming call is a characteristic sound of Philippine forests. Moves clumsily through vegetation, often hopping along the ground.",
-    habitat: "Forest edges, grasslands, and agricultural areas.",
-    roleInEcosystem: "Feeds on insects and small animals, helping control pest populations. Its loud vocalizations contribute to forest soundscapes.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-duo3ncbCx3GfVTiDc6hOH0DL5AxFHb.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20coucal-l0NHxDmMpRrLN36nacFuftFotBY5WJ.jpg",
+    description: "Large, dark bird with long tail and reddish wings. Secretive, often heard more than seen. Known for deep booming calls.",
+    habitat: "Grasslands, thickets, and forest edges.",
+    roleInEcosystem: "Predates on insects, reptiles, and small mammals. Helps regulate populations of small prey species.",
+    voiceUrl: ""
   },
   {
     commonName: "Philippine Serpent Eagle",
     scientificName: "Spilornis holospilus",
     family: "Accipitridae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20serpent%20eagle-4tEJSz1p0RnRLMJYfquG1KSvhPKfAG.jpg",
-    description: "Medium-sized eagle with dark plumage and distinctive yellow cere (base of bill). Specialized for hunting snakes and small reptiles. Often heard calling from high perches in forests.",
-    habitat: "Dense forests and forest edges.",
-    roleInEcosystem: "Regulates snake and reptile populations. Serves as an indicator of forest health.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-347GGNnde2ruZofsuRu177xZb2Ppky.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/philippine%20serpent%20eagle-k8dweuhpzh6gafLVnsIpG5FE3EXzKW.jpg",
+    description: "Medium-sized eagle with brown plumage, broad wings, and piercing eyes. Recognizable by its loud, high-pitched calls. Skilled hunter of reptiles.",
+    habitat: "Forests and open woodlands.",
+    roleInEcosystem: "Controls reptile populations, especially snakes. Maintains predator-prey balance in forest ecosystems.",
+    voiceUrl: ""
   },
   {
     commonName: "Scaly-breasted Munia",
     scientificName: "Lonchura punctulata",
     family: "Estrildidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scaly%20breasted%20munia-yCtBLvGgRMSHFVF7fU5xSIk4mz3Bvw.jpg",
-    description: "Small, plump finch with dark brown head and upper body. Has distinctive white scaly-breasted underparts. Often seen in flocks, feeding on grass seeds. Gentle and social birds.",
-    habitat: "Grasslands, rice paddies, and open areas with grasses.",
-    roleInEcosystem: "Feeds on seeds, helping control plant growth. Serves as prey for predatory birds.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-cehOT5jcSvkGyZ7x37sotM76iwekCR.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scaly%20breasted%20munia-fXQU55X6cLKXPJ4Aieu7YYHl04Pz3O.jpg",
+    description: "Small finch with brown plumage and distinctive scaly pattern on breast. Social, often in flocks. Feeds mainly on grass seeds.",
+    habitat: "Grasslands, farmlands, and gardens.",
+    roleInEcosystem: "Disperses seeds and influences plant growth patterns. Serves as prey for larger birds.",
+    voiceUrl: ""
   },
   {
     commonName: "Spotted Dove",
-    scientificName: "Streptopelia chinensis",
+    scientificName: "Spilopelia chinensis",
     family: "Columbidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spotted%20dove-yKKiLl7PJjB8OFWUDPFCeXD5xGF5R2.jpg",
-    description: "Medium-sized dove with warm brown plumage and distinctive white spots on the wings and black-and-white patterned neck collar. Known for its repetitive, soothing cooing calls.",
-    habitat: "Gardens, urban parks, and open woodlands.",
-    roleInEcosystem: "Seed disperser and source of food for birds of prey.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-AadVJmctZlnbau6tQX3sCOmsOtQHKG.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spotted%20dove-7Dl1Bga6wWqakla76xReRyI9wmLlNK.jpg",
+    description: "Medium-sized dove with brown plumage and a black-and-white spotted collar. Gentle and soft cooing calls. Often seen foraging on the ground.",
+    habitat: "Urban areas, farmlands, and forest edges.",
+    roleInEcosystem: "Seed disperser, aiding plant regeneration. Provides prey for raptors.",
+    voiceUrl: ""
   },
   {
     commonName: "White-breasted Woodswallow",
-    scientificName: "Artamus leucorynchus",
+    scientificName: "Artaamus leucorynchus",
     family: "Artamidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/white%20breasted%20woodswallow-V2VImAL3XWO8Af7DzDGAoJLz9G6EAr.jpg",
-    description: "Small, elegant bird with dark gray and white plumage. Highly aerial, catching insects in flight with great agility. Often perches on high branches with erect posture.",
-    habitat: "Open forests, woodland edges, and clearings.",
-    roleInEcosystem: "Controls flying insect populations through aerial hunting.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-wgB2bwtn2x28zDmtjX16ieUMxe0uZw.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/whitebreasted%20wood%20swallow-WQOSaidi055ehkRs8nDN5SPL98R0zU.jpg",
+    description: "Medium-sized bird with gray upperparts, white breast, and short tail. Strong flyer, often seen in groups. Has a sharp, chattering call.",
+    habitat: "Open areas, farmlands, and forest edges.",
+    roleInEcosystem: "Controls insect populations by aerial hunting. Their flocking behavior enhances pest regulation.",
+    voiceUrl: ""
   },
   {
-    commonName: "Zebra Dove",
-    scientificName: "Geopelia striata",
+    commonName: "White-eared Brown Dove",
+    scientificName: "Phapitreron leucostis",
     family: "Columbidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zebra%20dove-0r9oVaX9HkL3EuEJYLB8TZYSc6pxFq.jpg",
-    description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly. It has a long tail and soft, pleasant cooing calls. Gentle in behavior.",
-    habitat: "Open woodlands, parks, and gardens.",
-    roleInEcosystem: "Disperses seeds through feeding and serves as food for birds of prey.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-uH3UJibvGdzOfug8rwxhuqpvtDUDto.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/white%20eared%20brown%20dove%20credits%20mau4you_%27s%20bird%20watch-MkJdT0OesRqna7Sp5e50zHukOrpmJw.jpg",
+    description: "Medium-sized dove with brown plumage and a distinct white patch near the ear. Shy and secretive, often in dense vegetation. Soft cooing calls.",
+    habitat: "Forests and thickets.",
+    roleInEcosystem: "Disperses seeds, supporting forest regeneration. Serves as prey for forest raptors.",
+    voiceUrl: ""
   },
   {
     commonName: "Yellow-vented Bulbul",
     scientificName: "Pycnonotus goiavier",
     family: "Pycnonotidae",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yellow%20vented%20bulbul-f7z33o2fAYzwuKYEWVDH5chLlQW5ZB.jpg",
-    description: "Medium-sized, dark bird with distinctive yellow undertail coverts (under the tail). Loud and energetic with a characteristic series of chirps and whistles. Often seen in pairs or small groups.",
-    habitat: "Urban areas, gardens, and forest edges.",
-    roleInEcosystem: "Feeds on fruits and insects, dispersing seeds. Helps control insect populations.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-zbaIk5YS8PoyWdicpRumjRVDOBXw8B.mp4"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yellow%20vented%20bulbul-9U1Jk6XQNE4UZpFaUydtUD7cjkTogN.jpg",
+    description: "Medium-sized bird with brown upperparts, yellow vent, and white throat. Active and noisy, often in gardens. Adaptable to urban environments.",
+    habitat: "Gardens, farmlands, and forest edges.",
+    roleInEcosystem: "Disperses seeds and controls insects. Supports plant diversity and pest regulation.",
+    voiceUrl: ""
   },
   {
     commonName: "Zebra Dove",
