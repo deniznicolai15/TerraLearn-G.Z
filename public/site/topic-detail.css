@@ -861,3 +861,113 @@ body.topic-4 #avifauna-container {
     font-size: 20px;
   }
 }
+
+/* ===== AUDIO PLAYER ===== */
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(142, 176, 154, 0.08);
+  border: 1px solid rgba(142, 176, 154, 0.3);
+  border-radius: 10px;
+}
+
+.audio-play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.audio-play-btn:hover {
+  background: rgba(142, 176, 154, 1);
+  transform: scale(1.05);
+}
+
+.audio-play-btn:active {
+  transform: scale(0.95);
+}
+
+.audio-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.audio-progress-bar {
+  flex: 1;
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.audio-progress-fill {
+  position: absolute;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+.audio-progress-slider {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.audio-progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.audio-progress-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.4);
+}
+
+.audio-progress-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.audio-progress-slider::-moz-range-thumb:hover {
+  transform: scale(1.4);
+}
+
+.audio-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 30px;
+  text-align: center;
+}

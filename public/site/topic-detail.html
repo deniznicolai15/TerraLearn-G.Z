@@ -176,6 +176,25 @@
           <div class="species-detail-label">Role in Ecosystem</div>
           <p class="species-detail-text" id="species-modal-role"></p>
         </div>
+        <div class="species-detail-item" id="audio-player-container" style="display: none;">
+          <div class="species-detail-label">Bird Song</div>
+          <div class="audio-player">
+            <button class="audio-play-btn" id="audio-play-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            <div class="audio-progress-container">
+              <span class="audio-time" id="audio-current-time">0:00</span>
+              <div class="audio-progress-bar">
+                <div class="audio-progress-fill" id="audio-progress-fill"></div>
+                <input type="range" class="audio-progress-slider" id="audio-progress-slider" min="0" max="100" value="0">
+              </div>
+              <span class="audio-time" id="audio-duration">0:00</span>
+            </div>
+            <audio id="species-audio" style="display: none;"></audio>
+          </div>
+        </div>
       </div>
     </div>
   </div>

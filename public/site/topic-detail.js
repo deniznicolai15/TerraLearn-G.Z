@@ -428,6 +428,19 @@ function openSpeciesModal(species) {
   document.getElementById("species-modal-habitat").textContent = species.habitat;
   document.getElementById("species-modal-role").textContent = species.roleInEcosystem;
 
+  // Setup audio player
+  const audioPlayerContainer = document.getElementById("audio-player-container");
+  const audio = document.getElementById("species-audio");
+  
+  if (species.voiceUrl) {
+    audio.src = species.voiceUrl;
+    audioPlayerContainer.style.display = "block";
+    setupAudioPlayer(audio);
+  } else {
+    audioPlayerContainer.style.display = "none";
+    audio.src = "";
+  }
+
   speciesModal.classList.add("active");
   document.body.style.overflow = "hidden";
 }
@@ -452,6 +465,65 @@ document.addEventListener("keydown", function (e) {
     closeSpeciesModal();
   }
 });
+
+// ===== AUDIO PLAYER SETUP =====
+function setupAudioPlayer(audioElement) {
+  const playBtn = document.getElementById("audio-play-btn");
+  const progressSlider = document.getElementById("audio-progress-slider");
+  const progressFill = document.getElementById("audio-progress-fill");
+  const currentTimeDisplay = document.getElementById("audio-current-time");
+  const durationDisplay = document.getElementById("audio-duration");
+
+  let isPlaying = false;
+
+  // Format time to MM:SS
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return "0:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return mins + ":" + (secs < 10 ? "0" : "") + secs;
+  }
+
+  // Play/Pause button
+  playBtn.addEventListener("click", function () {
+    if (isPlaying) {
+      audioElement.pause();
+      playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+    } else {
+      audioElement.play();
+      playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Update duration when metadata loads
+  audioElement.addEventListener("loadedmetadata", function () {
+    durationDisplay.textContent = formatTime(audioElement.duration);
+    progressSlider.max = audioElement.duration;
+  });
+
+  // Update progress bar as audio plays
+  audioElement.addEventListener("timeupdate", function () {
+    const percentage = (audioElement.currentTime / audioElement.duration) * 100;
+    progressFill.style.width = percentage + "%";
+    progressSlider.value = audioElement.currentTime;
+    currentTimeDisplay.textContent = formatTime(audioElement.currentTime);
+  });
+
+  // Seek bar input
+  progressSlider.addEventListener("input", function () {
+    audioElement.currentTime = progressSlider.value;
+  });
+
+  // Reset when audio ends
+  audioElement.addEventListener("ended", function () {
+    isPlaying = false;
+    playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+    audioElement.currentTime = 0;
+    progressFill.style.width = "0%";
+    currentTimeDisplay.textContent = "0:00";
+  });
+}
 
 // ===== PLAY SPECIES SOUND =====
 function playSpeciesSound(url) {

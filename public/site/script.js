@@ -338,7 +338,7 @@ var avifaunaSpecies = [
     description: "Stocky heron with black crown, gray wings, and short legs, often hunched. Mostly nocturnal, feeding at dusk and night. Juveniles are streaked brown, blending with wetland vegetation.",
     habitat: "Wetlands, riversides, and forest streams.",
     roleInEcosystem: "Regulates fish, amphibian, and invertebrate populations. Prevents overpopulation of aquatic species, maintaining food web balance.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Black-Crowded%20Night%20Heron-3E6OyUFWB2I3D3XYmR1AJfwIvkFbGc.mp4"
   },
   {
     commonName: "Black-naped Oriole",
@@ -408,7 +408,7 @@ var avifaunaSpecies = [
     description: "Small brown bird with black bib, chestnut crown, and white cheeks with a black spot. Common in urban and rural areas. Highly adaptable and social.",
     habitat: "Towns, villages, and farmlands.",
     roleInEcosystem: "Scavenger and seed disperser, aiding plant regeneration. Serves as prey for larger birds.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eurasian%20Tree%20Sparrow-pKQqiLw00ErDRPAcixMLG1TlBgFIBA.mp4"
   },
   {
     commonName: "Garden Sunbird",
