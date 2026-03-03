@@ -428,7 +428,7 @@ var avifaunaSpecies = [
     description: "Small, grayish-brown bird with a distinctive habit of sewing leaves together to create a nest. Highly vocal with melodious songs. Quick and active in foliage.",
     habitat: "Forests, gardens, and shrubby areas.",
     roleInEcosystem: "Controls insect populations through foraging. Contributes to forest acoustics with vocalizations.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-KIfskm0PiNmSYzAo8hQ93hQZlYxgnV.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-3aP7wkcsiRFeYL7NuWrxbDG1jwLCye.mp4"
   },
   {
     commonName: "Long-tailed Shrike",
@@ -438,7 +438,7 @@ var avifaunaSpecies = [
     description: "Medium-sized shrike with striking black, white, and rufous plumage and a very long tail. Known for impaling prey on thorns. Aggressive and territorial hunter.",
     habitat: "Open woodlands, grasslands, and agricultural areas.",
     roleInEcosystem: "Controls insect and small vertebrate populations as a powerful predator.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-7alljkqxq3WyCwpl7N9YQX9a4D7w7Y.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-BYtjk0geqIkG2nLcgq0rVwlHKVUJJ6.mp4"
   },
   {
     commonName: "Lowland White-eye",
@@ -448,7 +448,7 @@ var avifaunaSpecies = [
     description: "Small, delicate bird with olive-green upperparts and yellow underparts. Distinctive white eye-ring gives it its name. Often seen in small flocks moving through foliage, gleaning insects and sipping nectar.",
     habitat: "Lowland forests and gardens.",
     roleInEcosystem: "Controls insect populations and pollinates flowers while feeding.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-mpGBI6XlaiIZ7ou4i7snjYGSF4RxPj.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-aHNqbqjBQ6T8jmHSKh0hSRaJ98UsFm.mp4"
   },
   {
     commonName: "Peregrine Falcon",
@@ -458,7 +458,7 @@ var avifaunaSpecies = [
     description: "One of the fastest animals on Earth, reaching speeds over 240 mph during hunting dives. Sleek, dark plumage with distinctive facial markings. Powerful hunter of medium-sized birds in mid-air.",
     habitat: "Cliffs, mountainous regions, and urban areas with tall structures.",
     roleInEcosystem: "Top predator that controls bird populations and maintains ecological balance in avian communities.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-0nPXeUXiYFAST9ZvbxcBoZinERklhj.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-znNvOU6wxMF08t5jsG2Of11uyeNuBz.mp4"
   },
   {
     commonName: "Philippine Bulbul",
@@ -478,7 +478,7 @@ var avifaunaSpecies = [
     description: "Large, long-tailed cuckoo with dark green and rufous plumage. Its distinctive booming call is a characteristic sound of Philippine forests. Moves clumsily through vegetation, often hopping along the ground.",
     habitat: "Forest edges, grasslands, and agricultural areas.",
     roleInEcosystem: "Feeds on insects and small animals, helping control pest populations. Its loud vocalizations contribute to forest soundscapes.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-nyQx4XDXOfyEPLP2Xd5uSktF2gQbaI.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-oxOc107r5wVxLi09VWxJs1LuOCLEgt.mp4"
   },
   {
     commonName: "Philippine Serpent Eagle",
@@ -488,7 +488,7 @@ var avifaunaSpecies = [
     description: "Medium-sized eagle with dark plumage and distinctive yellow cere (base of bill). Specialized for hunting snakes and small reptiles. Often heard calling from high perches in forests.",
     habitat: "Dense forests and forest edges.",
     roleInEcosystem: "Regulates snake and reptile populations. Serves as an indicator of forest health.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-j5sOmoSuHOOARI8qwvNoLRPmAoYQIm.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-GtBTEKNqcCWCdnyNKgYx2SQ53nHD8F.mp4"
   },
   {
     commonName: "Scaly-breasted Munia",
@@ -498,7 +498,7 @@ var avifaunaSpecies = [
     description: "Small, plump finch with dark brown head and upper body, and distinctive white scaly-breasted underparts. Often seen in flocks, feeding on grass seeds. Gentle and social birds.",
     habitat: "Grasslands, rice paddies, and open areas with grasses.",
     roleInEcosystem: "Feeds on seeds, helping control plant growth. Serves as prey for predatory birds.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-0AIgWfZ35NEstsl3nDB9sbK43imaA9.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-jqitORj9M6l88jA4w5NZbfPmHQujO5.mp4"
   },
   {
     commonName: "Zebra Dove",
@@ -508,7 +508,7 @@ var avifaunaSpecies = [
     description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly, giving it a \"zebra-like\" pattern. It has a long tail and soft, pleasant cooing calls. Gentle in behavior, it often forages quietly on the ground for seeds.",
     habitat: "Open woodlands, parks, and gardens.",
     roleInEcosystem: "Disperses seeds through feeding and serves as food for birds of prey.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-BhWr7zKzvFKGTkwxOwq7VvZFMlMry4.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-ShFYVnA2F8lwiaYUuyTqeNoNdirJ1P.mp4"
   },
   {
     commonName: "White-breasted Woodswallow",
@@ -518,7 +518,7 @@ var avifaunaSpecies = [
     description: "Small, elegant bird with dark gray and white plumage. Highly aerial, catching insects in flight with great agility. Often perches on high branches with erect posture.",
     habitat: "Open forests, woodland edges, and clearings.",
     roleInEcosystem: "Controls flying insect populations through aerial hunting.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-1oHE9VQDPHMDplmZYw91MOCzGsjgdv.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-C5cYrkXMexlQGQXN76X7jgvYqCK47q.mp4"
   },
   {
     commonName: "Spotted Dove",
@@ -528,7 +528,7 @@ var avifaunaSpecies = [
     description: "A medium-sized dove with warm brown plumage and distinctive white spots on the wings and a black-and-white patterned neck collar. Known for its repetitive, soothing cooing calls.",
     habitat: "Gardens, urban parks, and open woodlands.",
     roleInEcosystem: "Seed disperser and source of food for birds of prey.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-pdjXUgDxcQD62aFB8eGhNdaGwoqxs1.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-FUPUkZWHq6vZABDDc9bNqmeVYSEg8I.mp4"
   },
   {
     commonName: "Yellow-vented Bulbul",
@@ -538,7 +538,7 @@ var avifaunaSpecies = [
     description: "Medium-sized, dark bird with distinctive yellow undertail coverts (under the tail). Loud and energetic with a characteristic series of chirps and whistles. Often seen in pairs or small groups.",
     habitat: "Urban areas, gardens, and forest edges.",
     roleInEcosystem: "Feeds on fruits and insects, dispersing seeds. Helps control insect populations.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-u9KIdMKVGaeMKjtZyVy862FuShR1bE.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-e2lDkZR0D5aoqxciMGkkWtKZHnXWBO.mp4"
   },
   {
     commonName: "Zebra Dove",
