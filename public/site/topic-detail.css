@@ -971,3 +971,94 @@ body.topic-4 #avifauna-container {
   min-width: 30px;
   text-align: center;
 }
+
+/* ===== VOICE MESSAGE INDICATOR ON SPECIES CARDS ===== */
+.species-voice-indicator {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(168, 213, 168, 0.15) 0%, rgba(142, 176, 154, 0.1) 100%);
+  border: 1px solid rgba(168, 213, 168, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.species-voice-indicator:hover {
+  background: linear-gradient(135deg, rgba(168, 213, 168, 0.25) 0%, rgba(142, 176, 154, 0.2) 100%);
+  border-color: rgba(168, 213, 168, 0.6);
+}
+
+.species-voice-indicator.playing {
+  background: linear-gradient(135deg, rgba(168, 213, 168, 0.3) 0%, rgba(142, 176, 154, 0.25) 100%);
+}
+
+.voice-indicator-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: rgba(168, 213, 168, 0.4);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.voice-indicator-btn:hover {
+  background: rgba(168, 213, 168, 0.6);
+  transform: scale(1.1);
+}
+
+.voice-indicator-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.voice-waveform {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 16px;
+  flex: 1;
+  padding: 0 8px;
+  min-width: 40px;
+}
+
+.voice-bar {
+  width: 2px;
+  height: 8px;
+  background: rgba(168, 213, 168, 0.6);
+  border-radius: 1px;
+  animation: none;
+  transition: height 0.1s ease;
+}
+
+.voice-bar:nth-child(1) { animation-delay: 0s; }
+.voice-bar:nth-child(2) { animation-delay: 0.1s; }
+.voice-bar:nth-child(3) { animation-delay: 0.2s; }
+.voice-bar:nth-child(4) { animation-delay: 0.3s; }
+
+.species-voice-indicator.playing .voice-bar {
+  animation: soundWave 0.8s ease-in-out infinite;
+}
+
+@keyframes soundWave {
+  0%, 100% { height: 4px; opacity: 0.6; }
+  50% { height: 12px; opacity: 1; }
+}
+
+.voice-duration {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  min-width: 28px;
+}

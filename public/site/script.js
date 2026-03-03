@@ -348,7 +348,7 @@ var avifaunaSpecies = [
     description: "Bright yellow plumage with a bold black eye-stripe extending to the nape. Active and vocal, often moving through forest canopies. Known for melodious whistles that carry through wooded areas.",
     habitat: "Forest edges, plantations, and wooded areas.",
     roleInEcosystem: "Disperses seeds and controls insect populations. Supports plant diversity and regulates insect numbers.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/black-naped%20oriole%20fixed-HfRV8Up9QlFzwNsmD2jsmwmiGVmgBf.mp4"
   },
   {
     commonName: "Brown Shrike",
@@ -358,7 +358,7 @@ var avifaunaSpecies = [
     description: "Small predatory songbird with brown plumage and a black facial mask. Has a hooked bill adapted for catching prey. Famous for impaling insects and small vertebrates on thorns.",
     habitat: "Open woodlands, scrub, and agricultural areas.",
     roleInEcosystem: "Controls insect and small vertebrate populations. Acts as a natural predator, balancing prey species.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown%20Shrike%20fixed-DqA2E1q1D7YvM2rMerIGkNxqA4403m.mp4"
   },
   {
     commonName: "Brown-breasted Kingfisher",
@@ -368,7 +368,7 @@ var avifaunaSpecies = [
     description: "Large kingfisher with bright blue wings, brown breast, and red bill. Loud and conspicuous, often perched near water. Strong bill adapted for catching fish and amphibians.",
     habitat: "Forest edges, rivers, and wetlands.",
     roleInEcosystem: "Regulates fish, amphibians, and insects. Helps maintain healthy aquatic and terrestrial populations.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown-Breasted%20Kingfisher%20fixed-PS8erJ4F7JFxpdLvsrFGEqBC75RgeU.mp4"
   },
   {
     commonName: "Coleto",
@@ -388,7 +388,7 @@ var avifaunaSpecies = [
     description: "Small, stout bird with green plumage and a red forehead. Known for repetitive \"tuk-tuk\" call resembling a coppersmith hammering. Thick bill suited for fruit eating.",
     habitat: "Urban parks, gardens, and forest edges.",
     roleInEcosystem: "Disperses seeds by consuming fruits. Serves as an indicator of healthy ecosystems through its presence and calls.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Coppersmith%20Barbet%20fixed-QwTzwuNiGxKRnPWJYiKyNzzC0m5mDB.mp4"
   },
   {
     commonName: "Elegant Tit",
@@ -398,7 +398,7 @@ var avifaunaSpecies = [
     description: "Small bird with black head, white cheeks, and yellow underparts. Active and agile, flitting through branches. Vocal species with varied calls.",
     habitat: "Forests and wooded areas.",
     roleInEcosystem: "Controls insect populations by foraging among leaves and bark. Reduces pest outbreaks in forests.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit%20fixed-H8L5pVFSiXWJucr6PtxV30d6q6zfgT.mp4"
   },
   {
     commonName: "Eurasian Tree Sparrow",
@@ -418,7 +418,7 @@ var avifaunaSpecies = [
     description: "Tiny bird with iridescent plumage, often metallic green or red. Slender curved bill adapted for nectar feeding. Active and fast-moving among flowers.",
     habitat: "Gardens, forest edges, and flowering shrubs.",
     roleInEcosystem: "Pollinates flowers while feeding on nectar. Supports plant reproduction and biodiversity.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/garden%20sunbird%20fixed-BwRgZcnZxxO5FE3n4x7JjXyjiEPxQe.mp4"
   },
   {
     commonName: "Greyback Tailorbird",

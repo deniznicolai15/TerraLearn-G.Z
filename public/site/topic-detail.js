@@ -380,6 +380,31 @@ function renderAvifaunaSection() {
     var box = document.createElement("div");
     box.className = "species-box";
 
+    var controlsHTML = '';
+    if (species.voiceUrl) {
+      controlsHTML =
+        '<div class="species-voice-indicator" title="Click to play sound">' +
+          '<button class="voice-indicator-btn" title="Play sound">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+          '</button>' +
+          '<div class="voice-waveform">' +
+            '<div class="voice-bar"></div>' +
+            '<div class="voice-bar"></div>' +
+            '<div class="voice-bar"></div>' +
+            '<div class="voice-bar"></div>' +
+          '</div>' +
+          '<div class="voice-duration">0:00</div>' +
+        '</div>';
+    } else {
+      controlsHTML =
+        '<div class="species-controls">' +
+          '<button class="voice-btn" disabled style="opacity: 0.5; cursor: not-allowed;">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+            'No audio' +
+          '</button>' +
+        '</div>';
+    }
+
     box.innerHTML =
       '<div class="species-image">' +
         '<img src="' + species.image + '" alt="' + species.commonName + '" />' +
@@ -388,28 +413,29 @@ function renderAvifaunaSection() {
         '<div class="species-name">' + species.commonName + '</div>' +
         '<div class="species-scientific">' + species.scientificName + '</div>' +
         '<div class="species-family">Family: ' + species.family + '</div>' +
-        '<div class="species-controls">' +
-          '<button class="voice-btn" title="Play species sound">' +
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
-            'Sound' +
-          '</button>' +
-        '</div>' +
+        controlsHTML +
       '</div>';
 
     box.addEventListener("click", function () {
       openSpeciesModal(species);
     });
 
-    // Voice button click handler
-    var voiceBtn = box.querySelector(".voice-btn");
-    voiceBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      if (species.voiceUrl) {
-        playSpeciesSound(species.voiceUrl);
-      } else {
-        alert("Sound recording not available for this species.");
-      }
-    });
+    // Voice indicator click handler
+    if (species.voiceUrl) {
+      var voiceIndicator = box.querySelector(".species-voice-indicator");
+      var voiceBtn = voiceIndicator.querySelector(".voice-indicator-btn");
+      var voiceDuration = voiceIndicator.querySelector(".voice-duration");
+
+      voiceBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        playCardSound(species.voiceUrl, voiceIndicator, voiceDuration);
+      });
+
+      voiceIndicator.addEventListener("click", function (e) {
+        e.stopPropagation();
+        playCardSound(species.voiceUrl, voiceIndicator, voiceDuration);
+      });
+    }
 
     avifaunaGrid.appendChild(box);
   });
@@ -531,5 +557,51 @@ function playSpeciesSound(url) {
   var audio = new Audio(url);
   audio.play().catch(function (err) {
     console.error("Error playing sound:", err);
+  });
+}
+
+// ===== PLAY SOUND ON CARD WITH VOICE MESSAGE INDICATOR =====
+var currentCardAudio = null;
+var currentCardIndicator = null;
+
+function playCardSound(url, indicator, durationElement) {
+  if (!url) return;
+
+  // Stop any currently playing audio
+  if (currentCardAudio) {
+    currentCardAudio.pause();
+    currentCardAudio.currentTime = 0;
+    if (currentCardIndicator) {
+      currentCardIndicator.classList.remove("playing");
+    }
+  }
+
+  var audio = new Audio(url);
+  currentCardAudio = audio;
+  currentCardIndicator = indicator;
+
+  // Update duration when metadata loads
+  audio.addEventListener("loadedmetadata", function () {
+    var duration = Math.floor(audio.duration);
+    var minutes = Math.floor(duration / 60);
+    var seconds = duration % 60;
+    durationElement.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  });
+
+  // Add playing state
+  indicator.classList.add("playing");
+
+  // Remove playing state when audio ends
+  audio.addEventListener("ended", function () {
+    indicator.classList.remove("playing");
+    currentCardAudio = null;
+    currentCardIndicator = null;
+  });
+
+  audio.play().catch(function (err) {
+    console.error("Error playing sound:", err);
+    indicator.classList.remove("playing");
+    currentCardAudio = null;
+    currentCardIndicator = null;
   });
 }
