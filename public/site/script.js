@@ -478,7 +478,7 @@ var avifaunaSpecies = [
     description: "Large, dark bird with long tail and reddish wings. Secretive, often heard more than seen. Known for deep booming calls.",
     habitat: "Grasslands, thickets, and forest edges.",
     roleInEcosystem: "Predates on insects, reptiles, and small mammals. Helps regulate populations of small prey species.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-hNKiSS968PoqyeiwwOAA6Twz7jsmQ0.mp4"
   },
   {
     commonName: "Philippine Serpent Eagle",
@@ -488,7 +488,7 @@ var avifaunaSpecies = [
     description: "Medium-sized eagle with brown plumage, broad wings, and piercing eyes. Recognizable by its loud, high-pitched calls. Skilled hunter of reptiles.",
     habitat: "Forests and open woodlands.",
     roleInEcosystem: "Controls reptile populations, especially snakes. Maintains predator-prey balance in forest ecosystems.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-dC8TmbQ0WzUy2V57l5IWKsQa2bFR0d.mp4"
   },
   {
     commonName: "Scaly-breasted Munia",
@@ -498,7 +498,7 @@ var avifaunaSpecies = [
     description: "Small finch with brown plumage and distinctive scaly pattern on breast. Social, often in flocks. Feeds mainly on grass seeds.",
     habitat: "Grasslands, farmlands, and gardens.",
     roleInEcosystem: "Disperses seeds and influences plant growth patterns. Serves as prey for larger birds.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-EUxLqF6iCaFXI9QfGnVsFwQbvXfUZt.mp4"
   },
   {
     commonName: "Spotted Dove",
@@ -508,7 +508,7 @@ var avifaunaSpecies = [
     description: "Medium-sized dove with brown plumage and a black-and-white spotted collar. Gentle and soft cooing calls. Often seen foraging on the ground.",
     habitat: "Urban areas, farmlands, and forest edges.",
     roleInEcosystem: "Seed disperser, aiding plant regeneration. Provides prey for raptors.",
-    voiceUrl: ""
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-V9Fu1bLinK0ACud2HFdbwa4sv2Bq52.mp4"
   },
   {
     commonName: "White-breasted Woodswallow",
