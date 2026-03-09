@@ -1057,8 +1057,229 @@ body.topic-4 #avifauna-container {
 }
 
 .voice-duration {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
-  min-width: 28px;
+  min-width: 32px;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ===== AUDIO CREDITS MODAL ===== */
+.audio-credits-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.audio-credits-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.audio-credits-container {
+  position: relative;
+  z-index: 1001;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.audio-credits-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.audio-credits-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 1);
+}
+
+.audio-credits-waveform {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#waveform-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.audio-credits-player {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.audio-credits-play-btn {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.audio-credits-play-btn:hover {
+  background: rgba(142, 176, 154, 0.85);
+  transform: scale(1.05);
+}
+
+.audio-credits-play-btn:active {
+  transform: scale(0.95);
+}
+
+.audio-credits-play-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.audio-credits-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.audio-credits-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 0 6px 0;
+  word-break: break-word;
+}
+
+.audio-credits-habitat {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 4px 0;
+  word-break: break-word;
+}
+
+.audio-credits-date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.audio-progress-bar-credits {
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.audio-progress-fill-credits {
+  position: absolute;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.audio-progress-slider-credits {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.audio-progress-slider-credits::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.audio-progress-slider-credits::-webkit-slider-thumb:hover {
+  transform: scale(1.4);
+}
+
+.audio-progress-slider-credits::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.audio-progress-slider-credits::-moz-range-thumb:hover {
+  transform: scale(1.4);
+}
+
+.audio-credits-time {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
 }

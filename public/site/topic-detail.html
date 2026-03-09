@@ -213,6 +213,45 @@
     </div>
   </div>
 
+  <!-- ===== AUDIO CREDITS MODAL ===== -->
+  <div id="audio-credits-modal" class="audio-credits-modal" style="display: none;">
+    <div class="audio-credits-overlay" onclick="closeAudioCreditsModal()"></div>
+    <div class="audio-credits-container">
+      <button class="audio-credits-close" onclick="closeAudioCreditsModal()">✕</button>
+      
+      <div class="audio-credits-waveform">
+        <canvas id="waveform-canvas" width="350" height="80"></canvas>
+      </div>
+      
+      <div class="audio-credits-player">
+        <button class="audio-credits-play-btn" id="audio-credits-play-btn" onclick="toggleAudioCreditsPlayback()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+        
+        <div class="audio-credits-info">
+          <h3 id="bird-title-credits" class="audio-credits-title">Bird Name</h3>
+          <p id="bird-habitat-credits" class="audio-credits-habitat">Habitat</p>
+          <p id="bird-date-credits" class="audio-credits-date">Recorded</p>
+        </div>
+      </div>
+      
+      <div class="audio-progress-bar-credits">
+        <div class="audio-progress-fill-credits" id="audio-progress-fill-credits"></div>
+        <input type="range" class="audio-progress-slider-credits" id="audio-progress-slider-credits" min="0" max="100" value="0" onchange="seekAudioCredits(this.value)">
+      </div>
+      
+      <div class="audio-credits-time">
+        <span id="audio-current-time-credits">0:00</span>
+        <span>/</span>
+        <span id="audio-duration-credits">0:00</span>
+      </div>
+      
+      <audio id="credits-audio" style="display: none;"></audio>
+    </div>
+  </div>
+
   <script src="script.js"></script>
   <script src="topic-detail.js"></script>
 </body>

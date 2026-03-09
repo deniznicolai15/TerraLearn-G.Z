@@ -420,20 +420,19 @@ function renderAvifaunaSection() {
       openSpeciesModal(species);
     });
 
-    // Voice indicator click handler
+    // Voice indicator click handler - opens credits modal
     if (species.voiceUrl) {
       var voiceIndicator = box.querySelector(".species-voice-indicator");
       var voiceBtn = voiceIndicator.querySelector(".voice-indicator-btn");
-      var voiceDuration = voiceIndicator.querySelector(".voice-duration");
 
       voiceBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        playCardSound(species.voiceUrl, voiceIndicator, voiceDuration);
+        openAudioCreditsModal(species);
       });
 
       voiceIndicator.addEventListener("click", function (e) {
         e.stopPropagation();
-        playCardSound(species.voiceUrl, voiceIndicator, voiceDuration);
+        openAudioCreditsModal(species);
       });
     }
 
@@ -604,4 +603,123 @@ function playCardSound(url, indicator, durationElement) {
     currentCardAudio = null;
     currentCardIndicator = null;
   });
+}
+
+// ===== AUDIO CREDITS MODAL FUNCTIONS =====
+var currentCreditsAudio = null;
+
+function openAudioCreditsModal(species) {
+  var modal = document.getElementById("audio-credits-modal");
+  var title = document.getElementById("bird-title-credits");
+  var habitat = document.getElementById("bird-habitat-credits");
+  var date = document.getElementById("bird-date-credits");
+  
+  title.textContent = species.commonName;
+  habitat.textContent = species.habitat;
+  date.textContent = "Recorded: Mt. Pamitinan, Philippines";
+  
+  modal.style.display = "flex";
+  
+  // Load audio
+  var audio = document.getElementById("credits-audio");
+  audio.src = species.voiceUrl;
+  audio.load();
+  
+  // Update time display when metadata loads
+  audio.addEventListener("loadedmetadata", updateCreditsTimeDisplay);
+  
+  // Update progress as audio plays
+  audio.addEventListener("timeupdate", updateCreditsProgress);
+  
+  // Handle audio end
+  audio.addEventListener("ended", function() {
+    document.getElementById("audio-credits-play-btn").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  });
+  
+  // Draw waveform
+  drawWaveform(species.commonName);
+}
+
+function closeAudioCreditsModal() {
+  var modal = document.getElementById("audio-credits-modal");
+  var audio = document.getElementById("credits-audio");
+  
+  audio.pause();
+  audio.currentTime = 0;
+  modal.style.display = "none";
+  
+  var playBtn = document.getElementById("audio-credits-play-btn");
+  playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+}
+
+function toggleAudioCreditsPlayback() {
+  var audio = document.getElementById("credits-audio");
+  var playBtn = document.getElementById("audio-credits-play-btn");
+  
+  if (audio.paused) {
+    audio.play();
+    playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+  } else {
+    audio.pause();
+    playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  }
+}
+
+function updateCreditsProgress() {
+  var audio = document.getElementById("credits-audio");
+  var progressFill = document.getElementById("audio-progress-fill-credits");
+  var slider = document.getElementById("audio-progress-slider-credits");
+  var currentTime = document.getElementById("audio-current-time-credits");
+  
+  if (audio.duration) {
+    var percent = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = percent + "%";
+    slider.value = percent;
+    currentTime.textContent = formatTime(audio.currentTime);
+  }
+}
+
+function updateCreditsTimeDisplay() {
+  var audio = document.getElementById("credits-audio");
+  var duration = document.getElementById("audio-duration-credits");
+  duration.textContent = formatTime(audio.duration);
+}
+
+function seekAudioCredits(value) {
+  var audio = document.getElementById("credits-audio");
+  if (audio.duration) {
+    audio.currentTime = (value / 100) * audio.duration;
+  }
+}
+
+function formatTime(seconds) {
+  if (!seconds || isNaN(seconds)) return "0:00";
+  var mins = Math.floor(seconds / 60);
+  var secs = Math.floor(seconds % 60);
+  return mins + ":" + (secs < 10 ? "0" : "") + secs;
+}
+
+function drawWaveform(birdName) {
+  var canvas = document.getElementById("waveform-canvas");
+  var ctx = canvas.getContext("2d");
+  
+  // Clear canvas
+  ctx.fillStyle = "rgba(255, 255, 255, 0)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  // Draw waveform bars
+  var barWidth = 6;
+  var gap = 2;
+  var bars = 40;
+  var centerY = canvas.height / 2;
+  
+  ctx.fillStyle = "rgba(168, 213, 168, 0.8)";
+  
+  for (var i = 0; i < bars; i++) {
+    var height = Math.random() * (canvas.height * 0.7) + canvas.height * 0.15;
+    var x = i * (barWidth + gap);
+    var y = centerY - height / 2;
+    
+    ctx.fillRect(x, y, barWidth, height);
+  }
 }
