@@ -607,19 +607,16 @@ function playCardSound(url, indicator, durationElement) {
 
 // ===== AUDIO CREDITS MODAL FUNCTIONS =====
 var currentCreditsAudio = null;
-var waveformBars = [];
 
 function openAudioCreditsModal(species) {
   var modal = document.getElementById("audio-credits-modal");
   var title = document.getElementById("bird-title-credits");
-  var recorder = document.getElementById("bird-recorder-credits");
-  var location = document.getElementById("bird-location-credits");
+  var habitat = document.getElementById("bird-habitat-credits");
   var date = document.getElementById("bird-date-credits");
   
   title.textContent = species.commonName;
-  recorder.textContent = species.recorder || "Unknown Recorder";
-  location.textContent = species.location || "Unknown Location";
-  date.textContent = species.recordDate || "Unknown Date";
+  habitat.textContent = species.habitat;
+  date.textContent = "Recorded: Mt. Pamitinan, Philippines";
   
   modal.style.display = "flex";
   
@@ -628,19 +625,11 @@ function openAudioCreditsModal(species) {
   audio.src = species.voiceUrl;
   audio.load();
   
-  // Remove old event listeners by cloning
-  var newAudio = audio.cloneNode(true);
-  audio.parentNode.replaceChild(newAudio, audio);
-  var audio = document.getElementById("credits-audio");
-  
   // Update time display when metadata loads
   audio.addEventListener("loadedmetadata", updateCreditsTimeDisplay);
   
   // Update progress as audio plays
-  audio.addEventListener("timeupdate", function() {
-    updateCreditsProgress();
-    updateWaveformVisualization();
-  });
+  audio.addEventListener("timeupdate", updateCreditsProgress);
   
   // Handle audio end
   audio.addEventListener("ended", function() {
@@ -648,7 +637,7 @@ function openAudioCreditsModal(species) {
   });
   
   // Draw waveform
-  drawWaveform();
+  drawWaveform(species.commonName);
 }
 
 function closeAudioCreditsModal() {
@@ -710,75 +699,27 @@ function formatTime(seconds) {
   return mins + ":" + (secs < 10 ? "0" : "") + secs;
 }
 
-function generateWaveformBars(barCount) {
-  waveformBars = [];
-  for (var i = 0; i < barCount; i++) {
-    waveformBars.push(Math.random() * 0.8 + 0.2);
-  }
-}
-
-function drawWaveform() {
+function drawWaveform(birdName) {
   var canvas = document.getElementById("waveform-canvas");
-  if (!canvas) return;
-  
-  // Generate waveform pattern
-  var barWidth = 8;
-  var gap = 2;
-  var bars = Math.floor(canvas.width / (barWidth + gap));
-  generateWaveformBars(bars);
-  
-  // Draw initial waveform
-  updateWaveformVisualization();
-}
-
-function updateWaveformVisualization() {
-  var canvas = document.getElementById("waveform-canvas");
-  if (!canvas) return;
-  
   var ctx = canvas.getContext("2d");
-  var audio = document.getElementById("credits-audio");
   
-  // Clear canvas with dark background
-  ctx.fillStyle = "#1a1a2e";
+  // Clear canvas
+  ctx.fillStyle = "rgba(255, 255, 255, 0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   // Draw waveform bars
-  var barWidth = 8;
+  var barWidth = 6;
   var gap = 2;
+  var bars = 40;
   var centerY = canvas.height / 2;
   
-  if (waveformBars.length === 0) return;
+  ctx.fillStyle = "rgba(168, 213, 168, 0.8)";
   
-  var progress = audio && audio.duration ? (audio.currentTime / audio.duration) : 0;
-  
-  for (var i = 0; i < waveformBars.length; i++) {
+  for (var i = 0; i < bars; i++) {
+    var height = Math.random() * (canvas.height * 0.7) + canvas.height * 0.15;
     var x = i * (barWidth + gap);
-    if (x > canvas.width) break;
-    
-    var height = waveformBars[i] * (canvas.height * 0.75);
     var y = centerY - height / 2;
     
-    // Color based on progress - green for played, gray for unplayed
-    var barProgress = i / waveformBars.length;
-    
-    if (barProgress <= progress) {
-      ctx.fillStyle = "#a8d5a8";
-    } else {
-      ctx.fillStyle = "rgba(168, 213, 168, 0.25)";
-    }
-    
-    // Add rounded corners
-    ctx.beginPath();
-    ctx.moveTo(x, y + 2);
-    ctx.lineTo(x, y + height - 2);
-    ctx.arcTo(x, y + height, x + 2, y + height, 2);
-    ctx.lineTo(x + barWidth - 2, y + height);
-    ctx.arcTo(x + barWidth, y + height, x + barWidth, y + height - 2, 2);
-    ctx.lineTo(x + barWidth, y + 2);
-    ctx.arcTo(x + barWidth, y, x + barWidth - 2, y, 2);
-    ctx.lineTo(x + 2, y);
-    ctx.arcTo(x, y, x, y + 2, 2);
-    ctx.fill();
+    ctx.fillRect(x, y, barWidth, height);
   }
-}
 }
