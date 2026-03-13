@@ -1198,8 +1198,29 @@ body.topic-4 #avifauna-container {
   font-size: 18px;
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
   word-break: break-word;
+}
+
+.audio-credits-recorder {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 4px 0;
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.audio-credits-location {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 3px 0;
+  word-break: break-word;
+}
+
+.audio-credits-date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
 }
 
 .audio-credits-habitat {
@@ -1207,12 +1228,6 @@ body.topic-4 #avifauna-container {
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 4px 0;
   word-break: break-word;
-}
-
-.audio-credits-date {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0;
 }
 
 .audio-progress-bar-credits {

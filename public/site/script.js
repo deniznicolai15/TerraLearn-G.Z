@@ -358,7 +358,10 @@ var avifaunaSpecies = [
     description: "Small predatory songbird with brown plumage and a black facial mask. Has a hooked bill adapted for catching prey. Famous for impaling insects and small vertebrates on thorns.",
     habitat: "Open woodlands, scrub, and agricultural areas.",
     roleInEcosystem: "Controls insect and small vertebrate populations. Acts as a natural predator, balancing prey species.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown%20Shrike%20fixed-DqA2E1q1D7YvM2rMerIGkNxqA4403m.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown%20Shrike%20fixed-DqA2E1q1D7YvM2rMerIGkNxqA4403m.mp4",
+    recorder: "Unknown",
+    location: "Sakha, Russia",
+    recordDate: "July 2017"
   },
   {
     commonName: "Brown-breasted Kingfisher",
@@ -368,7 +371,10 @@ var avifaunaSpecies = [
     description: "Large kingfisher with bright blue wings, brown breast, and red bill. Loud and conspicuous, often perched near water. Strong bill adapted for catching fish and amphibians.",
     habitat: "Forest edges, rivers, and wetlands.",
     roleInEcosystem: "Regulates fish, amphibians, and insects. Helps maintain healthy aquatic and terrestrial populations.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown-Breasted%20Kingfisher%20fixed-PS8erJ4F7JFxpdLvsrFGEqBC75RgeU.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brown-Breasted%20Kingfisher%20fixed-PS8erJ4F7JFxpdLvsrFGEqBC75RgeU.mp4",
+    recorder: "Kim Cancino",
+    location: "Pangasinan, Philippines",
+    recordDate: "February 2020"
   },
   {
     commonName: "Coleto",
@@ -388,7 +394,10 @@ var avifaunaSpecies = [
     description: "Small, stout bird with green plumage and a red forehead. Known for repetitive \"tuk-tuk\" call resembling a coppersmith hammering. Thick bill suited for fruit eating.",
     habitat: "Urban parks, gardens, and forest edges.",
     roleInEcosystem: "Disperses seeds by consuming fruits. Serves as an indicator of healthy ecosystems through its presence and calls.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Coppersmith%20Barbet%20fixed-QwTzwuNiGxKRnPWJYiKyNzzC0m5mDB.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Coppersmith%20Barbet%20fixed-QwTzwuNiGxKRnPWJYiKyNzzC0m5mDB.mp4",
+    recorder: "Ramit Singal",
+    location: "Karnataka, India",
+    recordDate: "July 2018"
   },
   {
     commonName: "Elegant Tit",
@@ -398,7 +407,10 @@ var avifaunaSpecies = [
     description: "Small bird with black head, white cheeks, and yellow underparts. Active and agile, flitting through branches. Vocal species with varied calls.",
     habitat: "Forests and wooded areas.",
     roleInEcosystem: "Controls insect populations by foraging among leaves and bark. Reduces pest outbreaks in forests.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit%20fixed-H8L5pVFSiXWJucr6PtxV30d6q6zfgT.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elegant%20tit%20fixed-H8L5pVFSiXWJucr6PtxV30d6q6zfgT.mp4",
+    recorder: "Unknown",
+    location: "Ilocos Norte, Philippines",
+    recordDate: "July 2011"
   },
   {
     commonName: "Eurasian Tree Sparrow",
@@ -418,7 +430,10 @@ var avifaunaSpecies = [
     description: "Tiny bird with iridescent plumage, often metallic green or red. Slender curved bill adapted for nectar feeding. Active and fast-moving among flowers.",
     habitat: "Gardens, forest edges, and flowering shrubs.",
     roleInEcosystem: "Pollinates flowers while feeding on nectar. Supports plant reproduction and biodiversity.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/garden%20sunbird%20fixed-BwRgZcnZxxO5FE3n4x7JjXyjiEPxQe.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/garden%20sunbird%20fixed-BwRgZcnZxxO5FE3n4x7JjXyjiEPxQe.mp4",
+    recorder: "Martha Fischer",
+    location: "Davao del Sur, Philippines",
+    recordDate: "April 2014"
   },
   {
     commonName: "Greyback Tailorbird",
@@ -428,7 +443,10 @@ var avifaunaSpecies = [
     description: "Small warbler with olive-green upperparts and gray back. Known for sewing leaves together to build nests. Active and secretive in dense vegetation.",
     habitat: "Shrubs, gardens, and forest undergrowth.",
     roleInEcosystem: "Controls insect populations by feeding on small insects. Contributes to pest regulation in dense foliage.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-H2qnQysQWmXz1ZQ6hV0Me1oWruTigf.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gray-backed%20Tailorbird%20fixed-H2qnQysQWmXz1ZQ6hV0Me1oWruTigf.mp4",
+    recorder: "Mads Bajarias",
+    location: "National Capital Region (Manila), Philippines",
+    recordDate: "May 2021"
   },
   {
     commonName: "Long-tailed Shrike",
@@ -438,7 +456,10 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with long tail, gray back, and black mask. Aggressive hunter with hooked bill. Often perches conspicuously while scanning for prey.",
     habitat: "Open fields, scrublands, and forest edges.",
     roleInEcosystem: "Predates on insects and small vertebrates. Helps regulate prey populations in open habitats.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-VscDVh1O8TlPwskQzjr1QpmjAl59YK.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Long-tailed%20Shrike%20fixed-VscDVh1O8TlPwskQzjr1QpmjAl59YK.mp4",
+    recorder: "Sharad Apte",
+    location: "Maharashtra, India",
+    recordDate: "July 2018"
   },
   {
     commonName: "Lowland White-eye",
@@ -448,7 +469,10 @@ var avifaunaSpecies = [
     description: "Small bird with olive-green plumage and a distinct white eye-ring. Active and social, often in flocks. Has a high-pitched call.",
     habitat: "Lowland forests and gardens.",
     roleInEcosystem: "Pollinates flowers and disperses seeds. Supports plant reproduction and forest regeneration.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-Dgi8msgPkkCcfPG6mw7F9ti3GH5YJK.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lowland%20white-eye%20fixed-Dgi8msgPkkCcfPG6mw7F9ti3GH5YJK.mp4",
+    recorder: "Tsai-Yu WU",
+    location: "Taitung Country, Taiwan",
+    recordDate: "May 2014"
   },
   {
     commonName: "Peregrine Falcon",
@@ -458,7 +482,10 @@ var avifaunaSpecies = [
     description: "Powerful raptor with blue-gray back, barred underparts, and black head markings. Known for incredible speed in hunting dives. Fierce predator of birds.",
     habitat: "Cliffs, tall buildings, and open landscapes.",
     roleInEcosystem: "Controls bird populations, especially pigeons and doves. Maintains balance among avian species.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-1SeeqmIOBOZ5OgZEdQUAR8arqPwQAM.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Peregrine%20Falcon%20fixed-1SeeqmIOBOZ5OgZEdQUAR8arqPwQAM.mp4",
+    recorder: "Nathan Pieplow",
+    location: "Colorado, United States",
+    recordDate: "April 2013"
   },
   {
     commonName: "Philippine Bulbul",
@@ -478,7 +505,10 @@ var avifaunaSpecies = [
     description: "Large, dark bird with long tail and reddish wings. Secretive, often heard more than seen. Known for deep booming calls.",
     habitat: "Grasslands, thickets, and forest edges.",
     roleInEcosystem: "Predates on insects, reptiles, and small mammals. Helps regulate populations of small prey species.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-hNKiSS968PoqyeiwwOAA6Twz7jsmQ0.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Philippine%20Coucal%20fixed-hNKiSS968PoqyeiwwOAA6Twz7jsmQ0.mp4",
+    recorder: "Kim Cancino",
+    location: "Pangasinan, Philippines",
+    recordDate: "March 2020"
   },
   {
     commonName: "Philippine Serpent Eagle",
@@ -488,7 +518,10 @@ var avifaunaSpecies = [
     description: "Medium-sized eagle with brown plumage, broad wings, and piercing eyes. Recognizable by its loud, high-pitched calls. Skilled hunter of reptiles.",
     habitat: "Forests and open woodlands.",
     roleInEcosystem: "Controls reptile populations, especially snakes. Maintains predator-prey balance in forest ecosystems.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-dC8TmbQ0WzUy2V57l5IWKsQa2bFR0d.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Phillippine%20Serpent-Eagle%20fixed-dC8TmbQ0WzUy2V57l5IWKsQa2bFR0d.mp4",
+    recorder: "Robert Hutchinson / Birdtour asia",
+    location: "Zamboanga del Sur, Philippines",
+    recordDate: "September 2023"
   },
   {
     commonName: "Scaly-breasted Munia",
@@ -498,7 +531,10 @@ var avifaunaSpecies = [
     description: "Small finch with brown plumage and distinctive scaly pattern on breast. Social, often in flocks. Feeds mainly on grass seeds.",
     habitat: "Grasslands, farmlands, and gardens.",
     roleInEcosystem: "Disperses seeds and influences plant growth patterns. Serves as prey for larger birds.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-EUxLqF6iCaFXI9QfGnVsFwQbvXfUZt.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Scaly-breasted%20Munia%20fixed-EUxLqF6iCaFXI9QfGnVsFwQbvXfUZt.mp4",
+    recorder: "Ramit Singal",
+    location: "Karnataka, India",
+    recordDate: "December 2017"
   },
   {
     commonName: "Spotted Dove",
@@ -508,7 +544,10 @@ var avifaunaSpecies = [
     description: "Medium-sized dove with brown plumage and a black-and-white spotted collar. Gentle and soft cooing calls. Often seen foraging on the ground.",
     habitat: "Urban areas, farmlands, and forest edges.",
     roleInEcosystem: "Seed disperser, aiding plant regeneration. Provides prey for raptors.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-V9Fu1bLinK0ACud2HFdbwa4sv2Bq52.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Spotted%20Dove%20fixed-V9Fu1bLinK0ACud2HFdbwa4sv2Bq52.mp4",
+    recorder: "Panchapakesan Jeganathan",
+    location: "Tamil Nadu, India",
+    recordDate: "Unknown"
   },
   {
     commonName: "White-breasted Woodswallow",
@@ -518,7 +557,10 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with gray upperparts, white breast, and short tail. Strong flyer, often seen in groups. Has a sharp, chattering call.",
     habitat: "Open areas, farmlands, and forest edges.",
     roleInEcosystem: "Controls insect populations by aerial hunting. Their flocking behavior enhances pest regulation.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-a6Ov1dMGL0Owgt2MvEvCpxSRAsiZxs.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/White-breasted%20Woodswallow%20fixed-a6Ov1dMGL0Owgt2MvEvCpxSRAsiZxs.mp4",
+    recorder: "Andrew Spencer",
+    location: "New Caledonia",
+    recordDate: "December 2015"
   },
   {
     commonName: "White-eared Brown Dove",
@@ -538,7 +580,10 @@ var avifaunaSpecies = [
     description: "Medium-sized bird with brown upperparts, yellow vent, and white throat. Active and noisy, often in gardens. Adaptable to urban environments.",
     habitat: "Gardens, farmlands, and forest edges.",
     roleInEcosystem: "Disperses seeds and controls insects. Supports plant diversity and pest regulation.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-yNTK01k3cVBV2s6zrSxx0HJxfDu2hV.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yellow-vented%20Bulbul%20fixed-yNTK01k3cVBV2s6zrSxx0HJxfDu2hV.mp4",
+    recorder: "Lucas DeCicco",
+    location: "Kalimantan, Indonesia",
+    recordDate: "March 2012"
   },
   {
     commonName: "Zebra Dove",
@@ -548,7 +593,10 @@ var avifaunaSpecies = [
     description: "The Zebra Dove is a small, slender dove with brownish-gray plumage marked by fine black-and-white barring across its chest and belly, giving it a \"zebra-like\" pattern. It has a long tail and soft, pleasant cooing calls. Gentle in behavior, it often forages quietly on the ground for seeds.",
     habitat: "Urban areas, gardens, farmlands, and forest edges.",
     roleInEcosystem: "Acts as a seed disperser, aiding in plant regeneration and maintaining vegetation diversity. It also serves as prey for raptors, contributing to the food chain balance.",
-    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-4zVuirtXhfs5vNEB07BBiEt9iAmCKn.mp4"
+    voiceUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zebra%20Dove%20fixed-4zVuirtXhfs5vNEB07BBiEt9iAmCKn.mp4",
+    recorder: "Doug Pratt",
+    location: "Hawaii, United States",
+    recordDate: "July 1991"
   }
 ];
 
