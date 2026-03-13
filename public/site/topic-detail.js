@@ -420,19 +420,30 @@ function renderAvifaunaSection() {
       openSpeciesModal(species);
     });
 
-    // Voice indicator click handler - opens credits modal
+    // Voice indicator click handler - plays/pauses audio inline
     if (species.voiceUrl) {
       var voiceIndicator = box.querySelector(".species-voice-indicator");
       var voiceBtn = voiceIndicator.querySelector(".voice-indicator-btn");
+      var audio = new Audio(species.voiceUrl);
+      var isPlaying = false;
 
       voiceBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        openAudioCreditsModal(species);
+        if (isPlaying) {
+          audio.pause();
+          audio.currentTime = 0;
+          voiceBtn.classList.remove("playing");
+          isPlaying = false;
+        } else {
+          audio.play();
+          voiceBtn.classList.add("playing");
+          isPlaying = true;
+        }
       });
 
-      voiceIndicator.addEventListener("click", function (e) {
-        e.stopPropagation();
-        openAudioCreditsModal(species);
+      audio.addEventListener("ended", function() {
+        voiceBtn.classList.remove("playing");
+        isPlaying = false;
       });
     }
 
@@ -605,40 +616,7 @@ function playCardSound(url, indicator, durationElement) {
   });
 }
 
-// ===== AUDIO CREDITS MODAL FUNCTIONS =====
-var currentCreditsAudio = null;
 
-function openAudioCreditsModal(species) {
-  var modal = document.getElementById("audio-credits-modal");
-  var title = document.getElementById("bird-title-credits");
-  var habitat = document.getElementById("bird-habitat-credits");
-  var date = document.getElementById("bird-date-credits");
-  
-  title.textContent = species.commonName;
-  habitat.textContent = species.habitat;
-  date.textContent = "Recorded: Mt. Pamitinan, Philippines";
-  
-  modal.style.display = "flex";
-  
-  // Load audio
-  var audio = document.getElementById("credits-audio");
-  audio.src = species.voiceUrl;
-  audio.load();
-  
-  // Update time display when metadata loads
-  audio.addEventListener("loadedmetadata", updateCreditsTimeDisplay);
-  
-  // Update progress as audio plays
-  audio.addEventListener("timeupdate", updateCreditsProgress);
-  
-  // Handle audio end
-  audio.addEventListener("ended", function() {
-    document.getElementById("audio-credits-play-btn").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-  });
-  
-  // Draw waveform
-  drawWaveform(species.commonName);
-}
 
 function closeAudioCreditsModal() {
   var modal = document.getElementById("audio-credits-modal");
