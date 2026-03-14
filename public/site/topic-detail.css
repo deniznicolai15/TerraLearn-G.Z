@@ -168,6 +168,53 @@
   text-align: justify;
 }
 
+/* ===== INTRO SECTION ===== */
+.detail-intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0;
+  border-bottom: 2px solid rgba(107, 127, 115, 0.15);
+  margin-bottom: 40px;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+}
+
+.intro-caption {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: none;
+}
+
+.intro-text {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.95;
+  margin: 0;
+  text-align: left;
+  font-weight: 400;
+}
+
+.intro-text br {
+  line-height: 2;
+}
+
 /* ===== INFO BAR ===== */
 .detail-info-bar {
   display: flex;

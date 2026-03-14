@@ -158,7 +158,17 @@ function initializePage() {
   // Populate introduction section
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
-    introElement.textContent = topicData.description;
+    if (topicData.intro) {
+      // Special intro with image and styled content
+      var introHTML = '<div class="detail-intro-wrapper">';
+      introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image" />';
+      introHTML += '<p class="intro-caption">' + topicData.intro.caption + '</p>';
+      introHTML += '<p class="intro-text">' + topicData.intro.text + '</p>';
+      introHTML += '</div>';
+      introElement.innerHTML = introHTML;
+    } else {
+      introElement.textContent = topicData.description;
+    }
   }
 
   // Populate sections

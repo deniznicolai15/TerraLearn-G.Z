@@ -26,6 +26,11 @@ var topics = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
       "A limestone mountain where geology, history, and myth converge. Mt. Pamitinan in Rodriguez, Rizal, is more than a hiking destination—it's a living classroom where nature and nationhood intertwine.",
+    intro: {
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aigeneger-wFkp9CoRVCkypZD8xljCX0WeVtZJ0C.png",
+      caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
+      text: "Luzon is home to some of the Philippines' most important protected areas—mountain ranges, forests, and watersheds that safeguard biodiversity, regulate climate, and preserve cultural heritage. From the vast Sierra Madre that shields eastern Luzon from typhoons, to the historic mountains of Rizal and Bulacan, these landscapes are more than natural wonders: they are living classrooms and cultural treasures.<br><br>Among these sites, Mt. Pamitinan in Montalban (Rodriguez, Rizal) stands out. It is a limestone mountain within the Sierra Madre range, known not only for its rugged cliffs and caves but also for its deep historical and cultural significance. Pamitinan is a place where geology, history, and myth converge—making it an ideal focus for exploring how nature and nationhood intertwine."
+    },
     sections: [
       { 
         title: "Geological Features",
