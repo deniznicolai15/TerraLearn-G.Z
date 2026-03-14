@@ -111,102 +111,79 @@
 
     <!-- ===== FOREST 101 SPECIAL SECTION ===== -->
     <div class="forest-101-container" id="forest-101-container" style="display: none;">
-      
-      <!-- Forest Structure Section with Zigzag Layout -->
-      <div class="forest-structure-section-new">
-        <h2 class="forest-structure-heading">STRUCTURE OF PHILIPPINE FOREST ECOSYSTEMS</h2>
-        
-        <div class="forest-structure-diagram">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mjlyE4m2CaxQ1KArFWjnWQmmjjiqpf.png" alt="Forest ecosystem layers: Emergents, Canopy, Under canopy, and Shrub layer" />
-        </div>
-
-        <!-- Zigzag Forest Layers -->
-        <div class="forest-zigzag-container">
-          <!-- Emergent Layer - Image Left, Text Right -->
-          <div class="zigzag-row">
-            <div class="zigzag-media">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png" alt="Emergent layer with tallest trees rising above forest" />
-              <div class="zigzag-play-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="zigzag-text-content">
-              <h3>Emergent Layer</h3>
-              <p>Towering trees like <em>lauan</em> and <em>apitong</em> rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here, hunting from above the forest canopy.</p>
-            </div>
+      <!-- Introduction Section - Text First, Image Below -->
+      <div class="forest-intro-section">
+        <div class="forest-intro-content">
+          <h2>What is a Forest Ecosystem?</h2>
+          <p>Forests in the Philippines are diverse and vital. From the dipterocarp forests of Luzon and Mindanao, to the mangroves protecting coastal communities, and the montane forests of the Cordilleras, these ecosystems sustain life, regulate climate, and protect communities. They are often called the <strong>lungs of the Earth</strong> because they produce oxygen and store carbon, making them essential for both local and global balance.</p>
+          
+          <div class="forest-intro-image">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-J2xtsWMlYsAMLyaXiNg2pDaaqakn77.png" alt="Philippine forest landscape with mountains and lush vegetation" />
           </div>
 
-          <!-- Canopy - Text Left, Image Right -->
-          <div class="zigzag-row zigzag-reverse">
-            <div class="zigzag-text-content">
-              <h3>Canopy</h3>
-              <p>A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid microclimate essential for orchids and epiphytes.</p>
-            </div>
-            <div class="zigzag-media">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png" alt="Dense canopy roof of forest with lush green leaves" />
-              <div class="zigzag-play-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Understory - Image Left, Text Right -->
-          <div class="zigzag-row">
-            <div class="zigzag-media">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png" alt="Understory with shaded shrubs and small trees" />
-              <div class="zigzag-play-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="zigzag-text-content">
-              <h3>Understory</h3>
-              <p>Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional healing.</p>
-            </div>
-          </div>
-
-          <!-- Forest Floor - Text Left, Image Right -->
-          <div class="zigzag-row zigzag-reverse">
-            <div class="zigzag-text-content">
-              <h3>Forest Floor</h3>
-              <p>Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.</p>
-            </div>
-            <div class="zigzag-media">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png" alt="Forest floor with moss, decomposing leaves, and forest ecosystem" />
-              <div class="zigzag-play-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
+          <div class="forest-highlight-box">
+            <p>The Sierra Madre mountain range, the longest in the Philippines, is a critical forest ecosystem that protects Luzon from typhoons and provides water to millions.</p>
           </div>
         </div>
       </div>
 
-      <!-- Compact Reflection Section -->
-      <div class="forest-reflection-compact">
-        <div class="reflection-compact-header">
-          <span class="reflection-tag">Quick Drop</span>
-          <h3>Share your thoughts</h3>
-          <p>What did you learn? Drop it below.</p>
+      <!-- Reflection box -->
+      <div class="forest-reflection-box">
+        <h3>Quicky Lang!</h3>
+        <p>If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</p>
+        <textarea id="forest-reflection-input" class="reflection-input" placeholder="Write your thoughts here..." maxlength="500"></textarea>
+        <div class="reflection-buttons">
+          <button class="btn btn-primary" id="forest-reflection-save">Save My Thoughts</button>
+          <button class="btn btn-secondary" id="forest-reflection-clear">Clear</button>
         </div>
-        <div class="reflection-compact-input">
-          <input type="text" id="forest-reflection-input" placeholder="Type your thought here..." maxlength="200" />
-          <button class="reflection-send-btn" id="forest-reflection-save">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-            Post
-          </button>
+        <p class="reflection-saved-msg" id="reflection-saved-msg" style="display: none; color: #8EB09A; margin-top: 10px; font-size: 14px;">✓ Your thoughts have been saved!</p>
+      </div>
+
+      <!-- Forest Structure Section -->
+      <div class="forest-structure-section">
+        <h2>Structure of Philippine Forest Ecosystems</h2>
+        <div class="forest-structure-diagram">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mjlyE4m2CaxQ1KArFWjnWQmmjjiqpf.png" alt="Forest ecosystem layers: Emergents, Canopy, Under canopy, and Shrub layer" />
         </div>
-        <div class="reflection-chips" id="forest-reflection-chips">
-          <p class="reflection-empty">No thoughts yet... be the first!</p>
+        <p class="forest-structure-text">Forests here are layered systems, each with distinct ecological roles:</p>
+
+        <!-- Forest layers grid -->
+        <div class="forest-layers-grid">
+          <!-- Emergent Layer -->
+          <div class="forest-layer-card">
+            <div class="layer-image">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png" alt="Emergent layer with tallest trees rising above forest" />
+            </div>
+            <h3>Emergent Layer</h3>
+            <p>Towering trees like <em>lauan</em> and <em>apitong</em> rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here.</p>
+          </div>
+
+          <!-- Canopy Layer -->
+          <div class="forest-layer-card">
+            <div class="layer-image">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png" alt="Dense canopy roof of forest with lush green leaves" />
+            </div>
+            <h3>Canopy</h3>
+            <p>A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid microclimate essential for orchids and epiphytes.</p>
+          </div>
+
+          <!-- Understory Layer -->
+          <div class="forest-layer-card">
+            <div class="layer-image">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png" alt="Understory with shaded shrubs and small trees" />
+            </div>
+            <h3>Understory</h3>
+            <p>Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional healing.</p>
+          </div>
+
+          <!-- Forest Floor -->
+          <div class="forest-layer-card">
+            <div class="layer-image">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png" alt="Forest floor with moss, decomposing leaves, and forest ecosystem" />
+            </div>
+            <h3>Forest Floor</h3>
+            <p>Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.</p>
+          </div>
         </div>
       </div>
     </div>

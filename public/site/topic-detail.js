@@ -375,12 +375,6 @@ function initializeForest101() {
   var forest101Container = document.getElementById("forest-101-container");
   if (!forest101Container) return;
 
-  // Hide the old intro-section and detail-grid for Forest 101
-  var introSection = document.getElementById("intro-section");
-  var detailGrid = document.getElementById("detail-grid");
-  if (introSection) introSection.style.display = "none";
-  if (detailGrid) detailGrid.style.display = "none";
-
   forest101Container.style.display = "block";
 
   // Load saved reflection from localStorage
