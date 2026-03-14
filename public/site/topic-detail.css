@@ -1438,9 +1438,12 @@ body.topic-4 #avifauna-container {
 
 .forest-intro-image {
   margin-bottom: 40px;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .forest-intro-image img {
@@ -1549,13 +1552,13 @@ body.topic-4 #avifauna-container {
 }
 
 .forest-structure-diagram img {
-  max-width: 800px;
+  max-width: 650px;
   width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
-  border-radius: 20px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
 }
 
 .forest-structure-text {
@@ -1591,7 +1594,7 @@ body.topic-4 #avifauna-container {
 
 .layer-image {
   width: 100%;
-  height: 240px;
+  height: 200px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
 }
