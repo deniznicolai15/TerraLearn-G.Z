@@ -140,8 +140,8 @@
 
 /* ===== FOREST STRUCTURE SECTION ===== */
 .forest-structure-section {
-  background: #fff;
-  padding: 80px 40px;
+  background: #ffffff;
+  padding: 80px 40px 100px;
   border-top: none;
 }
 
@@ -177,16 +177,16 @@
 .forest-layers-zigzag {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  max-width: 960px;
+  gap: 80px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .zigzag-row {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: 40px;
 }
 
 .zigzag-row-reverse {
@@ -195,10 +195,11 @@
 
 .zigzag-media {
   position: relative;
-  background: #d9d9d9;
-  flex: 0 0 45%;
-  max-width: 45%;
-  aspect-ratio: 4/3;
+  background: #e0e0e0;
+  flex: 0 0 48%;
+  max-width: 48%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
 }
 
 .zigzag-media img {
@@ -206,6 +207,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0.9;
 }
 
 .play-overlay {
@@ -213,9 +215,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 52px;
-  height: 52px;
-  background: #000;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.85);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -226,32 +228,36 @@
 }
 
 .play-overlay svg {
-  width: 24px;
-  height: 24px;
-  margin-left: 3px;
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
 }
 
 .play-overlay:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(0, 0, 0, 0.95);
 }
 
 .zigzag-content {
   flex: 1;
-  padding-top: 8px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .zigzag-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #000;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-family: 'Inter', sans-serif;
 }
 
 .zigzag-text {
-  font-size: 13px;
-  line-height: 1.7;
-  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -339,7 +345,7 @@
 
   .zigzag-row {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
   }
 
   .zigzag-row-reverse {
@@ -349,11 +355,19 @@
   .zigzag-media {
     flex: 0 0 100%;
     max-width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/10;
   }
 
   .zigzag-title {
-    font-size: 15px;
+    font-size: 16px;
+  }
+  
+  .zigzag-text {
+    font-size: 13px;
+  }
+  
+  .forest-layers-zigzag {
+    gap: 50px;
   }
 
   .forest-features-list {
