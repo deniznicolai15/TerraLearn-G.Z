@@ -12,7 +12,12 @@
 /* ===== BASE CONTAINER ===== */
 .forest-101-container {
   margin-top: 80px;
-  background: #ffffff;
+  background: #ffffff !important;
+}
+
+/* Override dark theme for this page */
+body:has(.forest-101-container) {
+  background: #ffffff !important;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -128,21 +133,21 @@
 }
 
 .forest-section-title-center {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #000;
-  text-align: center;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
 }
 
 /* ===== FOREST STRUCTURE SECTION ===== */
 .forest-structure-section {
-  background: #ffffff;
-  padding: 80px 40px 100px;
-  border-top: none;
+  background: #ffffff !important;
+  padding: 80px 40px 100px !important;
+  border-top: none !important;
 }
 
 .forest-structure-container {
@@ -175,89 +180,87 @@
 
 /* ===== ZIGZAG FOREST LAYERS - Clean Minimal Style ===== */
 .forest-layers-zigzag {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 0;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 64px !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 40px 0 !important;
 }
 
 .zigzag-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 40px !important;
 }
 
 .zigzag-row-reverse {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 
 .zigzag-media {
-  position: relative;
-  background: #e0e0e0;
-  flex: 0 0 48%;
-  max-width: 48%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
+  position: relative !important;
+  background: #d9d9d9 !important;
+  flex: 0 0 45% !important;
+  max-width: 45% !important;
+  aspect-ratio: 16/10 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
 }
 
 .zigzag-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.9;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 .play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.85);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 56px !important;
+  height: 56px !important;
+  background: #000 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  cursor: pointer !important;
 }
 
 .play-overlay svg {
-  width: 28px;
-  height: 28px;
-  margin-left: 4px;
+  width: 26px !important;
+  height: 26px !important;
+  margin-left: 3px !important;
 }
 
 .play-overlay:hover {
-  transform: translate(-50%, -50%) scale(1.08);
-  background: rgba(0, 0, 0, 0.95);
+  transform: translate(-50%, -50%) scale(1.05) !important;
 }
 
 .zigzag-content {
-  flex: 1;
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex: 1 !important;
+  padding-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
 }
 
 .zigzag-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 16px;
-  font-family: 'Inter', sans-serif;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  margin-bottom: 12px !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
 .zigzag-text {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #555;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -344,30 +347,30 @@
   }
 
   .zigzag-row {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 
   .zigzag-row-reverse {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .zigzag-media {
-    flex: 0 0 100%;
-    max-width: 100%;
-    aspect-ratio: 16/10;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16/10 !important;
   }
 
   .zigzag-title {
-    font-size: 16px;
+    font-size: 15px !important;
   }
   
   .zigzag-text {
-    font-size: 13px;
+    font-size: 12px !important;
   }
   
   .forest-layers-zigzag {
-    gap: 50px;
+    gap: 40px !important;
   }
 
   .forest-features-list {
