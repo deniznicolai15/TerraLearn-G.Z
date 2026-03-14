@@ -194,6 +194,9 @@ function initializePage() {
   // Render AVIFAUNA section if available
   renderAvifaunaSection();
 
+  // Initialize Forest 101 section if topic is 1
+  initializeForest101();
+
   // Back button
   document.getElementById("back-btn").addEventListener("click", function () {
     window.history.back();
@@ -364,6 +367,51 @@ document.addEventListener("keydown", function (e) {
 });
 
 // ===== AVIFAUNA SECTION (FOR TOPIC 4) =====
+// ===== FOREST 101 INITIALIZATION =====
+function initializeForest101() {
+  // Only show Forest 101 section for Topic 1
+  if (topicData.id !== 1) return;
+
+  var forest101Container = document.getElementById("forest-101-container");
+  if (!forest101Container) return;
+
+  forest101Container.style.display = "block";
+
+  // Load saved reflection from localStorage
+  var savedReflection = localStorage.getItem("forest-reflection");
+  var reflectionInput = document.getElementById("forest-reflection-input");
+  if (savedReflection && reflectionInput) {
+    reflectionInput.value = savedReflection;
+  }
+
+  // Save reflection button
+  var saveBtn = document.getElementById("forest-reflection-save");
+  var clearBtn = document.getElementById("forest-reflection-clear");
+  var savedMsg = document.getElementById("reflection-saved-msg");
+
+  if (saveBtn) {
+    saveBtn.addEventListener("click", function () {
+      if (reflectionInput && reflectionInput.value.trim()) {
+        localStorage.setItem("forest-reflection", reflectionInput.value);
+        savedMsg.style.display = "block";
+        setTimeout(function () {
+          savedMsg.style.display = "none";
+        }, 3000);
+      }
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      if (reflectionInput) {
+        reflectionInput.value = "";
+        localStorage.removeItem("forest-reflection");
+        savedMsg.style.display = "none";
+      }
+    });
+  }
+}
+
 function renderAvifaunaSection() {
   // Only show AVIFAUNA section for Topic 4
   if (topicData.id !== 4) return;

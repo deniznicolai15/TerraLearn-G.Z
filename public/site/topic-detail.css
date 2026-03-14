@@ -1398,6 +1398,339 @@ body.topic-4 #avifauna-container {
   padding: 16px 0;
 }
 
+/* ===== FOREST 101 SPECIAL SECTION ===== */
+.forest-101-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.05) 0%, rgba(23, 64, 42, 0.05) 100%);
+}
+
+/* Forest Intro Section */
+.forest-intro-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 213, 168, 0.1);
+  border-radius: 12px;
+}
+
+.forest-intro-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.forest-intro-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--secondary);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.forest-highlight {
+  padding: 16px;
+  background: rgba(139, 176, 154, 0.1);
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.forest-intro-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Reflection Box */
+.forest-reflection-box {
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.1) 0%, rgba(75, 107, 85, 0.05) 100%);
+  border: 2px solid rgba(139, 176, 154, 0.3);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.forest-reflection-box h3 {
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.forest-reflection-box > p {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.reflection-input {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  border: 1px solid rgba(168, 213, 168, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--secondary);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.reflection-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.reflection-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.reflection-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* Forest Structure Section */
+.forest-structure-section {
+  margin-bottom: 60px;
+}
+
+.forest-structure-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.forest-structure-diagram {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.forest-structure-diagram img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.forest-structure-text {
+  font-size: 15px;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+/* Forest Layers Grid */
+.forest-layers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.forest-layer-card {
+  background: rgba(75, 107, 85, 0.08);
+  border: 1px solid rgba(168, 213, 168, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.forest-layer-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(168, 213, 168, 0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.layer-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.layer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forest-layer-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 16px 16px 8px;
+}
+
+.forest-layer-card p {
+  font-size: 13px;
+  color: var(--secondary);
+  padding: 0 16px 16px;
+  line-height: 1.6;
+}
+
+.forest-layer-card em {
+  font-style: italic;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Forest Floor Extended */
+.forest-floor-extended {
+  margin-top: 40px;
+  padding: 32px;
+  background: rgba(139, 176, 154, 0.08);
+  border-radius: 8px;
+}
+
+.floor-content-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.floor-content-image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.floor-content-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.floor-content-text h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.floor-content-text p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.7;
+}
+
+/* Forest Importance Section */
+.forest-importance-section {
+  margin-top: 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.1) 0%, rgba(75, 107, 85, 0.05) 100%);
+  border-radius: 12px;
+}
+
+.forest-importance-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 32px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.importance-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(168, 213, 168, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.importance-card:hover {
+  background: rgba(139, 176, 154, 0.1);
+  border-color: rgba(139, 176, 154, 0.4);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.importance-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.importance-card p {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .forest-101-container {
+    padding: 40px 20px;
+  }
+
+  .forest-intro-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .forest-intro-text h2 {
+    font-size: 24px;
+  }
+
+  .forest-reflection-box {
+    padding: 24px;
+  }
+
+  .reflection-buttons {
+    flex-direction: column;
+  }
+
+  .floor-content-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .forest-layers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest-structure-diagram img {
+    max-width: 100%;
+  }
+}
+
 .floating-player-waveform {
   display: flex;
   align-items: flex-end;
