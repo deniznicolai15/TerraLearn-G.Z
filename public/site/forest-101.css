@@ -145,7 +145,7 @@ body:has(.forest-101-container) {
 
 /* ===== FOREST STRUCTURE SECTION ===== */
 .forest-structure-section {
-  background: #ffffff !important;
+  background: #f5f5f5 !important;
   padding: 80px 40px 100px !important;
   border-top: none !important;
 }
@@ -179,7 +179,7 @@ body:has(.forest-101-container) {
 }
 
 /* ===== ZIGZAG FOREST LAYERS - Clean Minimal Style ===== */
-.forest-layers-zigzag {
+.forest-structure-section .forest-layers-zigzag {
   display: flex !important;
   flex-direction: column !important;
   gap: 64px !important;
@@ -188,17 +188,17 @@ body:has(.forest-101-container) {
   padding: 40px 0 !important;
 }
 
-.zigzag-row {
+.forest-structure-section .zigzag-row {
   display: flex !important;
   align-items: flex-start !important;
   gap: 40px !important;
 }
 
-.zigzag-row-reverse {
+.forest-structure-section .zigzag-row.zigzag-row-reverse {
   flex-direction: row-reverse !important;
 }
 
-.zigzag-media {
+.forest-structure-section .zigzag-media {
   position: relative !important;
   background: #d9d9d9 !important;
   flex: 0 0 45% !important;
@@ -208,14 +208,14 @@ body:has(.forest-101-container) {
   border-radius: 0 !important;
 }
 
-.zigzag-media img {
+.forest-structure-section .zigzag-media img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
 }
 
-.play-overlay {
+.forest-structure-section .play-overlay {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
@@ -231,17 +231,17 @@ body:has(.forest-101-container) {
   cursor: pointer !important;
 }
 
-.play-overlay svg {
+.forest-structure-section .play-overlay svg {
   width: 26px !important;
   height: 26px !important;
   margin-left: 3px !important;
 }
 
-.play-overlay:hover {
+.forest-structure-section .play-overlay:hover {
   transform: translate(-50%, -50%) scale(1.05) !important;
 }
 
-.zigzag-content {
+.forest-structure-section .zigzag-content {
   flex: 1 !important;
   padding-top: 0 !important;
   display: flex !important;
@@ -249,7 +249,7 @@ body:has(.forest-101-container) {
   justify-content: flex-start !important;
 }
 
-.zigzag-title {
+.forest-structure-section .zigzag-title {
   font-size: 16px !important;
   font-weight: 700 !important;
   color: #000 !important;
@@ -257,7 +257,7 @@ body:has(.forest-101-container) {
   font-family: 'Inter', sans-serif !important;
 }
 
-.zigzag-text {
+.forest-structure-section .zigzag-text {
   font-size: 13px !important;
   line-height: 1.7 !important;
   color: #444 !important;
