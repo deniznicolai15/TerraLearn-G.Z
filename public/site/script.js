@@ -22,7 +22,7 @@ var topics = [
     id: 2,
     label: "TOPIC 02",
     name: "Mt. Pamitinan: Where Myth Meets Revolution",
-    color: "#FF6B5B",
+    color: "#A8B7B5",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
       "A limestone mountain where geology, history, and myth converge. Mt. Pamitinan in Rodriguez, Rizal, is more than a hiking destination—it's a living classroom where nature and nationhood intertwine.",
@@ -48,14 +48,6 @@ var topics = [
       { 
         title: "Why It Matters",
         text: "Mt. Pamitinan is more than a hiking destination—it's a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon's protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience. It's a place where every rumble of stone might be Bernardo Carpio's restless strength, and every whisper of wind might carry a legend waiting to be told."
-      },
-      { 
-        title: "How to Get There",
-        text: "From Cubao FX, take an FX to Montalban (₱50, ~1 hour). From town, ride a tricycle to DENR Protected Landscape Office (10 min, ₱15/person). Register at DENR (₱20 permit) and at the Barangay (tourist guide fee). Hike usually starts at sunrise. Expect river trekking, rock scrambling, and jungle hiking. Steep rocky sections may need ropes or gloves. Summit at 426+m takes 2–3 hours at moderate pace. Enjoy panoramic views, visit Pamitinan Cave, then descend (1.5–2 hours). Cool off at Wawa Dam before heading back to Manila."
-      },
-      { 
-        title: "What to Bring",
-        text: "✓ 2 liters of water ✓ Trail food & packed lunch ✓ Hiking shoes with good grip ✓ Gloves (buy on-site ~₱100) ✓ Rain jacket/poncho (wet season) ✓ Sunscreen & insect repellent ✓ Extra clothes & towel ✓ Flashlight/headlamp ✓ First aid kit ✓ Trash bag (Leave No Trace) ✓ Valid ID for registration. Best months: November–May (dry season). Remember: Secure DENR permit, check weather, don't litter, respect locals & wildlife!"
       }
     ],
     location: "Montalban (Rodriguez), Rizal",

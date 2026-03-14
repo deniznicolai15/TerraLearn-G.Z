@@ -572,13 +572,8 @@
 }
 
 /* ===== TOPIC 2 SPECIFIC STYLES ===== */
-body.topic-2 .detail-hero-overlay {
-  background: linear-gradient(
-    to top,
-    #C94C3E 0%,
-    rgba(201, 76, 62, 0.6) 40%,
-    rgba(201, 76, 62, 0.1) 100%
-  );
+body.topic-2 .detail-gallery {
+  display: none;
 }
 
 /* ===== TOPIC 4 SPECIFIC STYLES ===== */
