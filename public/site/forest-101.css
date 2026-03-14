@@ -129,20 +129,20 @@
 
 .forest-section-title-center {
   font-family: 'Inter', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
-  color: #111;
+  color: #000;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 /* ===== FOREST STRUCTURE SECTION ===== */
 .forest-structure-section {
-  background: #ffffff;
-  padding: 60px 40px;
-  border-top: 1px solid var(--forest-border);
+  background: #fff;
+  padding: 80px 40px;
+  border-top: none;
 }
 
 .forest-structure-container {
@@ -163,46 +163,42 @@
 
 .forest-diagram-wrapper {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .forest-diagram {
-  max-width: 350px;
+  max-width: 320px;
   height: auto;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
-/* ===== ZIGZAG FOREST LAYERS - Reference Style ===== */
+/* ===== ZIGZAG FOREST LAYERS - Clean Minimal Style ===== */
 .forest-layers-zigzag {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  max-width: 900px;
+  gap: 60px;
+  max-width: 960px;
   margin: 0 auto;
+  padding: 20px 0;
 }
 
 .zigzag-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
 }
 
 .zigzag-row-reverse {
-  direction: rtl;
-}
-
-.zigzag-row-reverse > * {
-  direction: ltr;
+  flex-direction: row-reverse;
 }
 
 .zigzag-media {
   position: relative;
-  background: #e5e5e5;
-  border-radius: 4px;
-  overflow: hidden;
-  aspect-ratio: 16/10;
+  background: #d9d9d9;
+  flex: 0 0 45%;
+  max-width: 45%;
+  aspect-ratio: 4/3;
 }
 
 .zigzag-media img {
@@ -217,9 +213,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
-  background: rgba(0, 0, 0, 0.7);
+  width: 52px;
+  height: 52px;
+  background: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -229,27 +225,33 @@
   transition: all 0.2s ease;
 }
 
+.play-overlay svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+
 .play-overlay:hover {
-  background: rgba(0, 0, 0, 0.85);
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .zigzag-content {
-  padding: 8px 0;
+  flex: 1;
+  padding-top: 8px;
 }
 
 .zigzag-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
+  color: #000;
+  margin-bottom: 12px;
   font-family: 'Inter', sans-serif;
 }
 
 .zigzag-text {
   font-size: 13px;
-  line-height: 1.65;
-  color: #444;
+  line-height: 1.7;
+  color: #333;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -336,20 +338,22 @@
   }
 
   .zigzag-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 20px;
   }
 
   .zigzag-row-reverse {
-    direction: ltr;
+    flex-direction: column;
   }
 
   .zigzag-media {
+    flex: 0 0 100%;
+    max-width: 100%;
     aspect-ratio: 16/9;
   }
 
   .zigzag-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .forest-features-list {
@@ -408,7 +412,7 @@
   }
 
   .zigzag-title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .zigzag-text {
@@ -416,13 +420,13 @@
   }
 
   .play-overlay {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
 
   .play-overlay svg {
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
   }
 
   .feature-bar {
