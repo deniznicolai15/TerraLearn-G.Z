@@ -1400,45 +1400,47 @@ body.topic-4 #avifauna-container {
 
 /* ===== FOREST 101 SPECIAL SECTION ===== */
 .forest-101-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px;
+  width: 100%;
+  padding: 80px 60px;
+  background: linear-gradient(180deg, rgba(23, 64, 42, 0.03) 0%, rgba(139, 176, 154, 0.02) 100%);
 }
 
 /* Forest Intro Section - Gen Z Style */
 .forest-intro-section {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .forest-intro-content {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .forest-intro-content h2 {
-  font-size: 42px;
+  font-size: 56px;
   font-weight: 900;
   color: var(--primary);
-  margin-bottom: 24px;
-  line-height: 1.1;
-  letter-spacing: -1px;
+  margin-bottom: 32px;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
 }
 
 .forest-intro-content > p {
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 18px;
+  line-height: 2;
   color: var(--secondary);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   text-align: left;
   font-weight: 400;
 }
 
 .forest-intro-image {
-  margin-bottom: 28px;
-  border-radius: 20px;
+  margin-bottom: 40px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .forest-intro-image img {
@@ -1449,102 +1451,61 @@ body.topic-4 #avifauna-container {
 
 /* Highlighted Box - Modern Gen Z Glassmorphism Style */
 .forest-highlight-box {
-  padding: 28px;
-  background: linear-gradient(135deg, rgba(139, 176, 154, 0.12) 0%, rgba(75, 107, 85, 0.05) 100%);
-  border: 2px solid rgba(168, 213, 168, 0.35);
-  border-radius: 16px;
-  backdrop-filter: blur(8px);
+  padding: 36px;
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.15) 0%, rgba(75, 107, 85, 0.06) 100%);
+  border: 2px solid rgba(168, 213, 168, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
 }
 
 .forest-highlight-box p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.9;
   color: var(--primary);
   font-weight: 500;
   margin: 0;
 }
 
-/* Forest Intro Section */
-.forest-intro-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  margin-bottom: 60px;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(168, 213, 168, 0.1);
-  border-radius: 12px;
-}
-
-.forest-intro-text h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 16px;
-  font-family: 'Playfair Display', serif;
-}
-
-.forest-intro-text p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--secondary);
-  margin-bottom: 16px;
-  text-align: justify;
-}
-
-.forest-highlight {
-  padding: 16px;
-  background: rgba(139, 176, 154, 0.1);
-  border-left: 4px solid var(--primary);
-  border-radius: 4px;
-  font-weight: 500;
-  color: var(--primary);
-}
-
-.forest-intro-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 /* Reflection Box */
 .forest-reflection-box {
-  background: linear-gradient(135deg, rgba(139, 176, 154, 0.1) 0%, rgba(75, 107, 85, 0.05) 100%);
-  border: 2px solid rgba(139, 176, 154, 0.3);
-  border-radius: 12px;
-  padding: 32px;
-  margin-bottom: 60px;
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.12) 0%, rgba(75, 107, 85, 0.06) 100%);
+  border: 2px solid rgba(139, 176, 154, 0.35);
+  border-radius: 20px;
+  padding: 48px;
+  margin-bottom: 80px;
   text-align: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .forest-reflection-box h3 {
-  font-size: 24px;
+  font-size: 32px;
   color: var(--primary);
-  margin-bottom: 12px;
-  font-weight: 700;
+  margin-bottom: 16px;
+  font-weight: 800;
 }
 
 .forest-reflection-box > p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--secondary);
-  margin-bottom: 20px;
-  line-height: 1.6;
+  margin-bottom: 32px;
+  line-height: 1.7;
 }
 
 .reflection-input {
   width: 100%;
-  min-height: 120px;
-  padding: 16px;
+  min-height: 150px;
+  padding: 20px;
   border: 1px solid rgba(168, 213, 168, 0.3);
-  border-radius: 8px;
+  border-radius: 12px;
   background: rgba(0, 0, 0, 0.2);
   color: var(--secondary);
   font-family: inherit;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.8;
   resize: vertical;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .reflection-input::placeholder {
@@ -1555,77 +1516,82 @@ body.topic-4 #avifauna-container {
   outline: none;
   border-color: var(--primary);
   background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(139, 176, 154, 0.2);
 }
 
 .reflection-buttons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 /* Forest Structure Section */
 .forest-structure-section {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .forest-structure-section h2 {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 900;
   color: var(--primary);
-  margin-bottom: 24px;
+  margin-bottom: 40px;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
 }
 
 .forest-structure-diagram {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   text-align: center;
 }
 
 .forest-structure-diagram img {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
 }
 
 .forest-structure-text {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--secondary);
   text-align: center;
-  margin-bottom: 32px;
-  line-height: 1.8;
+  margin-bottom: 48px;
+  line-height: 1.9;
 }
 
 /* Forest Layers Grid */
 .forest-layers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
   margin-bottom: 40px;
 }
 
 .forest-layer-card {
   background: rgba(75, 107, 85, 0.08);
   border: 1px solid rgba(168, 213, 168, 0.2);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .forest-layer-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(168, 213, 168, 0.4);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px);
+  border-color: rgba(168, 213, 168, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .layer-image {
   width: 100%;
-  height: 200px;
+  height: 240px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -1634,26 +1600,31 @@ body.topic-4 #avifauna-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.forest-layer-card:hover .layer-image img {
+  transform: scale(1.05);
 }
 
 .forest-layer-card h3 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   color: var(--primary);
-  padding: 16px 16px 8px;
+  padding: 20px 20px 12px;
 }
 
 .forest-layer-card p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--secondary);
-  padding: 0 16px 16px;
-  line-height: 1.6;
+  padding: 0 20px 20px;
+  line-height: 1.8;
 }
 
 .forest-layer-card em {
   font-style: italic;
   color: var(--primary);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 
@@ -1661,38 +1632,73 @@ body.topic-4 #avifauna-container {
 /* Responsive Design */
 @media (max-width: 768px) {
   .forest-101-container {
-    padding: 40px 20px;
+    padding: 60px 24px;
   }
 
-  .forest-intro-section {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px;
+  .forest-intro-content h2 {
+    font-size: 42px;
+    margin-bottom: 24px;
   }
 
-  .forest-intro-text h2 {
-    font-size: 24px;
+  .forest-intro-content > p {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .forest-intro-image {
+    margin-bottom: 32px;
+  }
+
+  .forest-highlight-box {
+    padding: 28px;
+  }
+
+  .forest-highlight-box p {
+    font-size: 15px;
   }
 
   .forest-reflection-box {
-    padding: 24px;
+    padding: 36px 24px;
+    margin-bottom: 60px;
+  }
+
+  .forest-reflection-box h3 {
+    font-size: 26px;
+  }
+
+  .forest-reflection-box > p {
+    font-size: 16px;
   }
 
   .reflection-buttons {
     flex-direction: column;
+    gap: 12px;
   }
 
-  .floor-content-item {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .forest-layers-grid {
-    grid-template-columns: 1fr;
+  .forest-structure-section h2 {
+    font-size: 36px;
   }
 
   .forest-structure-diagram img {
     max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .forest-layers-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .layer-image {
+    height: 200px;
+  }
+
+  .forest-layer-card h3 {
+    font-size: 18px;
+  }
+
+  .forest-layer-card p {
+    font-size: 13px;
   }
 }
 
