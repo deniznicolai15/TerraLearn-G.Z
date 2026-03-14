@@ -39,47 +39,19 @@
 
   <!-- ===== MAIN CONTENT ===== -->
   <main class="forest-101-container">
-    <!-- ===== HERO SECTION ===== -->
-    <section class="forest-hero">
-      <img class="forest-hero-img" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-J2xtsWMlYsAMLyaXiNg2pDaaqakn77.png" alt="Philippine forest landscape" />
-      <div class="forest-hero-overlay"></div>
-      <div class="forest-hero-content">
-        <h1 class="forest-hero-title">Forest 101: Hey, Is this Biringan?</h1>
-        <p class="forest-hero-subtitle">Exploring the mysteries and ecosystems of Philippine forests</p>
-      </div>
-    </section>
-
     <!-- ===== FOREST ECOSYSTEM INTRO SECTION ===== -->
     <section class="forest-intro-section">
       <div class="forest-intro-container">
-        <div class="forest-intro-grid">
-          <!-- Left: Text content -->
-          <div class="forest-intro-text">
-            <h2 class="forest-section-title">What is a Forest Ecosystem?</h2>
-            <p class="forest-intro-description">
-              Forests in the Philippines are diverse and vital. From the <strong>dipterocarp forests of Luzon and Mindanao</strong>, to the <strong>mangroves protecting coastal communities</strong>, and the <strong>montane forests of the Cordilleras</strong>, these ecosystems sustain life, regulate climate, and protect communities. They are often called the <strong>lungs of the Earth</strong> because they produce oxygen and store carbon, making them essential for both local and global balance.
-            </p>
-            
-            <div class="forest-fact-box">
-              <p class="forest-fact-title">Did you know?</p>
-              <p class="forest-fact-text">
-                <strong>The Sierra Madre mountain range</strong>, the longest in the Philippines, is a critical forest ecosystem that protects Luzon from typhoons and provides water to millions.
-              </p>
-            </div>
-          </div>
-
-          <!-- Right: Image -->
-          <div class="forest-intro-image">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-J2xtsWMlYsAMLyaXiNg2pDaaqakn77.png" alt="Lush Philippine forest with mountains" />
-          </div>
-        </div>
-
-        <!-- Interactive Reflection Box -->
-        <div class="forest-reflection-box">
-          <h3 class="reflection-title">Quick Reflection</h3>
-          <p class="reflection-prompt">If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</p>
-          <textarea class="reflection-textarea" placeholder="Share your thoughts here..." id="reflection-input"></textarea>
-          <button class="btn btn-primary reflection-save-btn" id="reflection-save-btn">Save Reflection</button>
+        <h2 class="forest-section-title">What is a Forest Ecosystem?</h2>
+        <p class="forest-intro-description">
+          Forests in the Philippines are diverse and vital. From the <strong>dipterocarp forests of Luzon and Mindanao</strong>, to the <strong>mangroves protecting coastal communities</strong>, and the <strong>montane forests of the Cordilleras</strong>, these ecosystems sustain life, regulate climate, and protect communities. They are often called the <strong>lungs of the Earth</strong> because they produce oxygen and store carbon, making them essential for both local and global balance.
+        </p>
+        
+        <div class="forest-fact-box">
+          <p class="forest-fact-title">Did you know?</p>
+          <p class="forest-fact-text">
+            <strong>The Sierra Madre mountain range</strong>, the longest in the Philippines, is a critical forest ecosystem that protects Luzon from typhoons and provides water to millions.
+          </p>
         </div>
       </div>
     </section>
@@ -193,6 +165,27 @@
             <h3 class="feature-title">Biodiversity Haven</h3>
             <p class="feature-text">Home to countless species found nowhere else on Earth.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REFLECTION WALL SECTION ===== -->
+    <section class="reflection-wall-section">
+      <div class="reflection-wall-container">
+        <div class="reflection-wall-header">
+          <h2 class="forest-section-title">Your Thoughts Matter 💭</h2>
+          <p class="reflection-wall-subtitle">Share your reflections on forest conservation & join the community</p>
+        </div>
+
+        <!-- Input Section -->
+        <div class="reflection-input-section">
+          <textarea class="reflection-textarea" placeholder="What are your thoughts on forest protection? Share your ideas with the community..." id="reflection-input"></textarea>
+          <button class="btn btn-primary reflection-submit-btn" id="reflection-submit-btn">Share Your Thought</button>
+        </div>
+
+        <!-- Reflection Wall Display -->
+        <div class="reflection-wall-display" id="reflection-wall">
+          <p class="reflection-wall-empty">No thoughts yet... be the first to share! ✨</p>
         </div>
       </div>
     </section>

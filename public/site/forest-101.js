@@ -2,42 +2,107 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   const reflectionInput = document.getElementById('reflection-input');
-  const reflectionSaveBtn = document.getElementById('reflection-save-btn');
+  const reflectionSubmitBtn = document.getElementById('reflection-submit-btn');
+  const reflectionWall = document.getElementById('reflection-wall');
 
-  // Load saved reflection from localStorage
-  const savedReflection = localStorage.getItem('forest101-reflection');
-  if (savedReflection) {
-    reflectionInput.value = savedReflection;
+  // Load reflections from localStorage
+  function loadReflections() {
+    const saved = localStorage.getItem('forest101-reflections');
+    return saved ? JSON.parse(saved) : [];
   }
 
-  // Save reflection on button click
-  reflectionSaveBtn.addEventListener('click', function() {
-    const reflectionText = reflectionInput.value.trim();
+  // Save reflections to localStorage
+  function saveReflections(reflections) {
+    localStorage.setItem('forest101-reflections', JSON.stringify(reflections));
+  }
+
+  // Render reflection wall
+  function renderWall() {
+    const reflections = loadReflections();
     
-    if (reflectionText) {
-      localStorage.setItem('forest101-reflection', reflectionText);
-      
-      // Show success feedback
-      const originalText = reflectionSaveBtn.textContent;
-      reflectionSaveBtn.textContent = '✓ Reflection Saved!';
-      reflectionSaveBtn.style.background = 'linear-gradient(135deg, #4A7C2C 0%, #2D5016 100%)';
-      
-      setTimeout(function() {
-        reflectionSaveBtn.textContent = originalText;
-        reflectionSaveBtn.style.background = '';
-      }, 2000);
-    } else {
-      alert('Please write your reflection before saving.');
+    if (reflections.length === 0) {
+      reflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share! ✨</p>';
+      return;
+    }
+
+    reflectionWall.innerHTML = reflections.map((reflection, index) => `
+      <div class="reflection-stick" style="--rotate: ${Math.random() * 4 - 2}deg;">
+        <p class="reflection-text">${escapeHtml(reflection.text)}</p>
+        <p class="reflection-time">${formatTime(reflection.timestamp)}</p>
+      </div>
+    `).reverse().join('');
+  }
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Format timestamp
+  function formatTime(timestamp) {
+    const now = new Date();
+    const time = new Date(timestamp);
+    const diff = now - time;
+    
+    const minutes = Math.floor(diff / 60000);
+    const hours = Math.floor(diff / 3600000);
+    const days = Math.floor(diff / 86400000);
+    
+    if (minutes < 1) return 'just now';
+    if (minutes < 60) return `${minutes}m ago`;
+    if (hours < 24) return `${hours}h ago`;
+    if (days < 7) return `${days}d ago`;
+    
+    return time.toLocaleDateString();
+  }
+
+  // Submit reflection
+  reflectionSubmitBtn.addEventListener('click', function() {
+    const text = reflectionInput.value.trim();
+    
+    if (!text) {
+      alert('Please write your thought before sharing!');
+      return;
+    }
+
+    // Add new reflection
+    const reflections = loadReflections();
+    reflections.push({
+      text: text,
+      timestamp: new Date().toISOString()
+    });
+    saveReflections(reflections);
+
+    // Clear input
+    reflectionInput.value = '';
+
+    // Update button feedback
+    const originalText = reflectionSubmitBtn.textContent;
+    reflectionSubmitBtn.textContent = '✨ Posted!';
+    reflectionSubmitBtn.disabled = true;
+
+    setTimeout(function() {
+      reflectionSubmitBtn.textContent = originalText;
+      reflectionSubmitBtn.disabled = false;
+      renderWall();
+    }, 600);
+
+    // Focus back to input
+    reflectionInput.focus();
+  });
+
+  // Allow submitting with Ctrl+Enter
+  reflectionInput.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      reflectionSubmitBtn.click();
     }
   });
 
-  // Allow saving with Ctrl+S
-  reflectionInput.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-      e.preventDefault();
-      reflectionSaveBtn.click();
-    }
-  });
+  // Initial render
+  renderWall();
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
