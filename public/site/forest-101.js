@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const reflectionInput = document.getElementById('reflection-input');
   const reflectionSubmitBtn = document.getElementById('reflection-submit-btn');
   const reflectionWall = document.getElementById('reflection-wall');
+  const charCount = document.getElementById('char-count');
+
+  // Character counter
+  if (reflectionInput && charCount) {
+    reflectionInput.addEventListener('input', function() {
+      charCount.textContent = reflectionInput.value.length;
+    });
+  }
 
   // Load reflections from localStorage
   function loadReflections() {
@@ -16,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('forest101-reflections', JSON.stringify(reflections));
   }
 
-  // Render reflection wall
+  // Render reflection wall as chips
   function renderWall() {
     const reflections = loadReflections();
     
     if (reflections.length === 0) {
-      reflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share! ✨</p>';
+      reflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first!</p>';
       return;
     }
 
     reflectionWall.innerHTML = reflections.map((reflection, index) => `
-      <div class="reflection-stick" style="--rotate: ${Math.random() * 4 - 2}deg;">
-        <p class="reflection-text">${escapeHtml(reflection.text)}</p>
-        <p class="reflection-time">${formatTime(reflection.timestamp)}</p>
+      <div class="reflection-chip">
+        <span class="chip-text">${escapeHtml(reflection.text)}</span>
+        <span class="chip-time">${formatTime(reflection.timestamp)}</span>
       </div>
     `).reverse().join('');
   }
@@ -50,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const hours = Math.floor(diff / 3600000);
     const days = Math.floor(diff / 86400000);
     
-    if (minutes < 1) return 'just now';
-    if (minutes < 60) return `${minutes}m ago`;
-    if (hours < 24) return `${hours}h ago`;
-    if (days < 7) return `${days}d ago`;
+    if (minutes < 1) return 'now';
+    if (minutes < 60) return `${minutes}m`;
+    if (hours < 24) return `${hours}h`;
+    if (days < 7) return `${days}d`;
     
     return time.toLocaleDateString();
   }
@@ -63,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const text = reflectionInput.value.trim();
     
     if (!text) {
-      alert('Please write your thought before sharing!');
+      reflectionInput.focus();
       return;
     }
 
@@ -77,25 +85,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Clear input
     reflectionInput.value = '';
+    if (charCount) charCount.textContent = '0';
 
-    // Update button feedback
-    const originalText = reflectionSubmitBtn.textContent;
-    reflectionSubmitBtn.textContent = '✨ Posted!';
-    reflectionSubmitBtn.disabled = true;
-
-    setTimeout(function() {
-      reflectionSubmitBtn.textContent = originalText;
-      reflectionSubmitBtn.disabled = false;
-      renderWall();
-    }, 600);
+    // Render immediately
+    renderWall();
 
     // Focus back to input
     reflectionInput.focus();
   });
 
-  // Allow submitting with Ctrl+Enter
+  // Allow submitting with Enter key
   reflectionInput.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    if (e.key === 'Enter') {
       e.preventDefault();
       reflectionSubmitBtn.click();
     }
