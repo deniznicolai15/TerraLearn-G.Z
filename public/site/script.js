@@ -21,20 +21,46 @@ var topics = [
   {
     id: 2,
     label: "TOPIC 02",
-    name: "Pamitinan Legends: Myth Meets Revolution",
-    color: "#A8B7B5",
+    name: "Mt. Pamitinan: Where Myth Meets Revolution",
+    color: "#FF6B5B",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
-      "Mountains hold stories both natural and human. Here, we explore how landscapes like Pamitinan connect myth, history, and ecology, showing how nature inspires culture while sustaining life.",
+      "A limestone mountain where geology, history, and myth converge. Mt. Pamitinan in Rodriguez, Rizal, is more than a hiking destination—it's a living classroom where nature and nationhood intertwine.",
     sections: [
-      { title: "The Katipunan Connection", text: "Mt. Pamitinan holds a special place in Philippine history. It was here at Pamitinan Cave where Andres Bonifacio and members of the Katipunan reportedly held secret meetings and inscribed 'Viva la Independencia Filipina' on the cave walls in 1895. This act of defiance symbolized the growing revolutionary movement against Spanish colonial rule." },
-      { title: "Pamitinan Cave", text: "The cave itself is a significant archaeological and historical site. Beyond its Katipunan connections, the cave contains formations that are thousands of years old. It has been declared a National Historical Landmark and National Geological Monument, recognizing both its cultural and natural significance." },
-      { title: "Indigenous Communities", text: "The Dumagat-Remontado people are the indigenous inhabitants of the Montalban area. They have lived in harmony with the mountain environment for generations, possessing deep knowledge of the local flora, fauna, and natural resources. Their traditional practices offer valuable insights into sustainable living." },
-      { title: "Preserving Heritage", text: "Efforts to preserve the cultural heritage of Mt. Pamitinan include documentation of oral histories, protection of historical sites, and community-based tourism that benefits local populations. These initiatives aim to balance development with the preservation of the area's rich cultural identity." }
+      { 
+        title: "Geological Features",
+        text: "Mt. Pamitinan is a limestone mountain located in Montalban (Rodriguez), Rizal, rising to 426+ meters above sea level. It forms part of the Sierra Madre mountain range and features jagged limestone cliffs, sharp rocks, and karst cave systems with stalactites and stalagmites. The mountain's rugged terrain supports unique biodiversity and serves as a natural shield against typhoons, contributing to water regulation and environmental balance.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
+      },
+      { 
+        title: "Historical & Cultural Significance",
+        text: "On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave. The cave served as a secret meeting place where Bonifacio inscribed 'Viva la Independencia Filipina' on the cave wall—the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak. This symbolic yet solemn proclamation planted the revolutionary spirit firmly in the hearts of the Katipuneros.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
+      },
+      { 
+        title: "Myth & Folklore",
+        text: "Beyond limestone cliffs, Mt. Pamitinan is wrapped in sabi-sabi passed down for generations. The most famous legend tells of Bernardo Carpio, a mythical giant trapped between Mt. Pamitinan and Mt. Binacayan. Bound by enchantment, he holds the mountains apart to prevent them from colliding. Each time he strains against his chains, the ground trembles—explaining earthquakes in the area. For many, Carpio's imprisonment symbolizes the Filipino struggle against oppression. Hikers recount strange experiences: faint voices, sudden gusts of wind, footsteps when alone. Some claim unseen forces guide lost travelers, as if guardians watch over the mountain."
+      },
+      { 
+        title: "Did You Know?",
+        text: "Local folklore says that when the ground shakes near Mt. Pamitinan, it is Bernardo Carpio struggling against his chains. In this telling, earthquakes aren't just natural events—they're echoes of a giant's eternal battle beneath the mountain."
+      },
+      { 
+        title: "Why It Matters",
+        text: "Mt. Pamitinan is more than a hiking destination—it's a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon's protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience. It's a place where every rumble of stone might be Bernardo Carpio's restless strength, and every whisper of wind might carry a legend waiting to be told."
+      },
+      { 
+        title: "How to Get There",
+        text: "From Cubao FX, take an FX to Montalban (₱50, ~1 hour). From town, ride a tricycle to DENR Protected Landscape Office (10 min, ₱15/person). Register at DENR (₱20 permit) and at the Barangay (tourist guide fee). Hike usually starts at sunrise. Expect river trekking, rock scrambling, and jungle hiking. Steep rocky sections may need ropes or gloves. Summit at 426+m takes 2–3 hours at moderate pace. Enjoy panoramic views, visit Pamitinan Cave, then descend (1.5–2 hours). Cool off at Wawa Dam before heading back to Manila."
+      },
+      { 
+        title: "What to Bring",
+        text: "✓ 2 liters of water ✓ Trail food & packed lunch ✓ Hiking shoes with good grip ✓ Gloves (buy on-site ~₱100) ✓ Rain jacket/poncho (wet season) ✓ Sunscreen & insect repellent ✓ Extra clothes & towel ✓ Flashlight/headlamp ✓ First aid kit ✓ Trash bag (Leave No Trace) ✓ Valid ID for registration. Best months: November–May (dry season). Remember: Secure DENR permit, check weather, don't litter, respect locals & wildlife!"
+      }
     ],
-    location: "Montalban, Rizal",
-    detail1: "National landmark",
-    detail2: "Heritage conservation",
+    location: "Montalban (Rodriguez), Rizal",
+    detail1: "426+ meters MASL",
+    detail2: "DENR Protected Landscape",
   },
   {
     id: 3,

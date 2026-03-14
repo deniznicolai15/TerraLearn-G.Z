@@ -44,29 +44,29 @@ var quizzes = {
   ],
   2: [
     {
-      question: "How many bird species are found in Mt. Pamitinan?",
-      options: ["Over 20", "Over 30", "Over 50", "Over 100"],
+      question: "What is the elevation of Mt. Pamitinan's summit?",
+      options: ["326+ meters", "426+ meters", "526+ meters", "626+ meters"],
       correct: 1,
     },
     {
-      question: "Which bird species is mentioned as inhabiting Mt. Pamitinan?",
-      options: ["Philippine Hawk-Eagle", "Bald Eagle", "Toucan", "Peacock"],
-      correct: 0,
-    },
-    {
-      question: "What is the Philippine Sailfin Lizard unique for?",
-      options: ["It can fly", "It is endemic to the Philippines", "It is aquatic only", "It glows in the dark"],
+      question: "When did Andres Bonifacio and the Katipunan meet at Pamitinan Cave?",
+      options: ["April 12, 1893", "April 12, 1895", "April 12, 1897", "April 12, 1899"],
       correct: 1,
     },
     {
-      question: "What is the primary role of insects in the Mt. Pamitinan ecosystem?",
-      options: ["Predators only", "Pollinators, decomposers, and food sources", "Herbivores only", "Parasites"],
+      question: "What was inscribed on Pamitinan Cave walls by Bonifacio?",
+      options: ["Mga salawikain", "Viva la Independencia Filipina", "Names of soldiers", "Mathematical formulas"],
       correct: 1,
     },
     {
-      question: "When is birdwatching best in Mt. Pamitinan?",
-      options: ["Midday", "Evening", "Early morning", "Night"],
-      correct: 2,
+      question: "According to local folklore, who is trapped between Mt. Pamitinan and Mt. Binacayan?",
+      options: ["A princess", "Bernardo Carpio", "A mysterious spirit", "An ancient warrior"],
+      correct: 1,
+    },
+    {
+      question: "What geological feature makes Mt. Pamitinan geologically significant?",
+      options: ["Volcanic crater", "Limestone cliffs and karst cave systems", "Sand dunes", "Crystal formations"],
+      correct: 1,
     },
   ],
   3: [
@@ -148,6 +148,9 @@ function initializePage() {
   document.getElementById("detail-description").textContent = topicData.description;
 
   // Add topic class for styling
+  if (topicData.id === 2) {
+    document.body.classList.add("topic-2");
+  }
   if (topicData.id === 4) {
     document.body.classList.add("topic-4");
   }
@@ -164,8 +167,10 @@ function initializePage() {
     topicData.sections.forEach(function (section) {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
+      var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
       sectionDiv.innerHTML =
         '<h3>' + section.title + '</h3>' +
+        imageHTML +
         '<p>' + section.text + '</p>';
       sectionsContainer.appendChild(sectionDiv);
     });
