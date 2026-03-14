@@ -39,19 +39,15 @@
 
   <!-- ===== MAIN CONTENT ===== -->
   <main class="forest-101-container">
-    <!-- ===== FOREST ECOSYSTEM INTRO SECTION ===== -->
-    <section class="forest-intro-section">
-      <div class="forest-intro-container">
-        <h2 class="forest-section-title">What is a Forest Ecosystem?</h2>
-        <p class="forest-intro-description">
-          Forests in the Philippines are diverse and vital. From the <strong>dipterocarp forests of Luzon and Mindanao</strong>, to the <strong>mangroves protecting coastal communities</strong>, and the <strong>montane forests of the Cordilleras</strong>, these ecosystems sustain life, regulate climate, and protect communities. They are often called the <strong>lungs of the Earth</strong> because they produce oxygen and store carbon, making them essential for both local and global balance.
+    <!-- ===== MINIMAL INTRO SECTION ===== -->
+    <section class="forest-minimal-intro">
+      <div class="intro-content">
+        <h1 class="intro-title">What is a Forest Ecosystem?</h1>
+        <p class="intro-text">
+          Forests in the Philippines are diverse and vital. From <strong>dipterocarp forests</strong> to <strong>mangroves</strong> and <strong>montane forests</strong>, these ecosystems sustain life and regulate climate. They're the lungs of the Earth.
         </p>
-        
-        <div class="forest-fact-box">
-          <p class="forest-fact-title">Did you know?</p>
-          <p class="forest-fact-text">
-            <strong>The Sierra Madre mountain range</strong>, the longest in the Philippines, is a critical forest ecosystem that protects Luzon from typhoons and provides water to millions.
-          </p>
+        <div class="intro-fact">
+          <strong>Quick fact:</strong> The Sierra Madre protects Luzon from typhoons and provides water to millions.
         </div>
       </div>
     </section>
@@ -144,26 +140,34 @@
     <section class="forest-features-section">
       <div class="forest-features-container">
         <h2 class="forest-section-title">Why Forests Matter</h2>
-        <div class="forest-features-grid">
-          <div class="feature-card">
+        <div class="forest-features-list">
+          <div class="feature-bar">
             <div class="feature-icon">🫁</div>
-            <h3 class="feature-title">Oxygen Production</h3>
-            <p class="feature-text">Forests produce oxygen and absorb carbon dioxide, serving as the planet's lungs.</p>
+            <div class="feature-content">
+              <h3 class="feature-title">Oxygen Production</h3>
+              <p class="feature-text">Forests produce oxygen and absorb carbon dioxide, serving as the planet's lungs.</p>
+            </div>
           </div>
-          <div class="feature-card">
+          <div class="feature-bar">
             <div class="feature-icon">🌊</div>
-            <h3 class="feature-title">Water Regulation</h3>
-            <p class="feature-text">Forests protect and purify water sources, supporting millions of people.</p>
+            <div class="feature-content">
+              <h3 class="feature-title">Water Regulation</h3>
+              <p class="feature-text">Forests protect and purify water sources, supporting millions of people.</p>
+            </div>
           </div>
-          <div class="feature-card">
+          <div class="feature-bar">
             <div class="feature-icon">🛡️</div>
-            <h3 class="feature-title">Climate Protection</h3>
-            <p class="feature-text">Forests prevent typhoons, regulate temperature, and combat climate change.</p>
+            <div class="feature-content">
+              <h3 class="feature-title">Climate Protection</h3>
+              <p class="feature-text">Forests prevent typhoons, regulate temperature, and combat climate change.</p>
+            </div>
           </div>
-          <div class="feature-card">
+          <div class="feature-bar">
             <div class="feature-icon">🌱</div>
-            <h3 class="feature-title">Biodiversity Haven</h3>
-            <p class="feature-text">Home to countless species found nowhere else on Earth.</p>
+            <div class="feature-content">
+              <h3 class="feature-title">Biodiversity Haven</h3>
+              <p class="feature-text">Home to countless species found nowhere else on Earth.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -172,20 +176,17 @@
     <!-- ===== REFLECTION WALL SECTION ===== -->
     <section class="reflection-wall-section">
       <div class="reflection-wall-container">
-        <div class="reflection-wall-header">
-          <h2 class="forest-section-title">Your Thoughts Matter 💭</h2>
-          <p class="reflection-wall-subtitle">Share your reflections on forest conservation & join the community</p>
-        </div>
+        <h2 class="forest-section-title">Quicky Lang - Your Thoughts</h2>
 
         <!-- Input Section -->
         <div class="reflection-input-section">
-          <textarea class="reflection-textarea" placeholder="What are your thoughts on forest protection? Share your ideas with the community..." id="reflection-input"></textarea>
-          <button class="btn btn-primary reflection-submit-btn" id="reflection-submit-btn">Share Your Thought</button>
+          <textarea class="reflection-textarea" placeholder="Share your thoughts..." id="reflection-input"></textarea>
+          <button class="btn btn-primary reflection-submit-btn" id="reflection-submit-btn">Post</button>
         </div>
 
         <!-- Reflection Wall Display -->
         <div class="reflection-wall-display" id="reflection-wall">
-          <p class="reflection-wall-empty">No thoughts yet... be the first to share! ✨</p>
+          <p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>
         </div>
       </div>
     </section>

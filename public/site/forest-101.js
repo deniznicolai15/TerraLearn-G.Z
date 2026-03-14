@@ -141,12 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(card);
   });
 
-  // Observe feature cards
-  document.querySelectorAll('.feature-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
+  // Observe feature bars
+  document.querySelectorAll('.feature-bar').forEach(bar => {
+    bar.style.opacity = '0';
+    bar.style.transform = 'translateY(20px)';
+    bar.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(bar);
   });
 });
 
