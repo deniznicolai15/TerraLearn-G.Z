@@ -1400,10 +1400,68 @@ body.topic-4 #avifauna-container {
 
 /* ===== FOREST 101 SPECIAL SECTION ===== */
 .forest-101-container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 60px 40px;
-  background: linear-gradient(135deg, rgba(139, 176, 154, 0.05) 0%, rgba(23, 64, 42, 0.05) 100%);
+}
+
+/* Forest Intro Section - Gen Z Style */
+.forest-intro-section {
+  margin-bottom: 60px;
+}
+
+.forest-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.forest-intro-content h2 {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.forest-intro-content > p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--secondary);
+  margin-bottom: 32px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.forest-intro-image {
+  margin-bottom: 28px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.forest-intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Highlighted Box - Modern Gen Z Glassmorphism Style */
+.forest-highlight-box {
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(139, 176, 154, 0.12) 0%, rgba(75, 107, 85, 0.05) 100%);
+  border: 2px solid rgba(168, 213, 168, 0.35);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.forest-highlight-box p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--primary);
+  font-weight: 500;
+  margin: 0;
 }
 
 /* Forest Intro Section */
@@ -1598,100 +1656,7 @@ body.topic-4 #avifauna-container {
   font-weight: 500;
 }
 
-/* Forest Floor Extended */
-.forest-floor-extended {
-  margin-top: 40px;
-  padding: 32px;
-  background: rgba(139, 176, 154, 0.08);
-  border-radius: 8px;
-}
 
-.floor-content-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: center;
-}
-
-.floor-content-image {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.floor-content-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.floor-content-text h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 12px;
-}
-
-.floor-content-text p {
-  font-size: 14px;
-  color: var(--secondary);
-  line-height: 1.7;
-}
-
-/* Forest Importance Section */
-.forest-importance-section {
-  margin-top: 60px;
-  padding: 40px;
-  background: linear-gradient(135deg, rgba(139, 176, 154, 0.1) 0%, rgba(75, 107, 85, 0.05) 100%);
-  border-radius: 12px;
-}
-
-.forest-importance-section h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 32px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-}
-
-.importance-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.importance-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(168, 213, 168, 0.2);
-  border-radius: 10px;
-  padding: 24px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.importance-card:hover {
-  background: rgba(139, 176, 154, 0.1);
-  border-color: rgba(139, 176, 154, 0.4);
-  transform: translateY(-4px);
-}
-
-.card-icon {
-  font-size: 36px;
-  margin-bottom: 12px;
-}
-
-.importance-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-
-.importance-card p {
-  font-size: 13px;
-  color: var(--secondary);
-  line-height: 1.6;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
