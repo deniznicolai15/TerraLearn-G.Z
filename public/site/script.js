@@ -31,6 +31,10 @@ var topics = [
       caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
       text: "Luzon is home to some of the Philippines' most important protected areas—mountain ranges, forests, and watersheds that safeguard biodiversity, regulate climate, and preserve cultural heritage. From the vast Sierra Madre that shields eastern Luzon from typhoons, to the historic mountains of Rizal and Bulacan, these landscapes are more than natural wonders: they are living classrooms and cultural treasures.<br><br>Among these sites, Mt. Pamitinan in Montalban (Rodriguez, Rizal) stands out. It is a limestone mountain within the Sierra Madre range, known not only for its rugged cliffs and caves but also for its deep historical and cultural significance. Pamitinan is a place where geology, history, and myth converge—making it an ideal focus for exploring how nature and nationhood intertwine."
     },
+    video: {
+      title: "Mt. Pamitinan (Montalban, Rizal)",
+      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
+    },
     sections: [
       { 
         title: "Geological Features",

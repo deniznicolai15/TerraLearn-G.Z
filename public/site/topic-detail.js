@@ -171,6 +171,31 @@ function initializePage() {
     }
   }
 
+  // Render video player if available
+  if (topicData.video) {
+    var videoContainer = document.createElement("div");
+    videoContainer.className = "video-section";
+    
+    var videoTitle = document.createElement("h2");
+    videoTitle.className = "video-title";
+    videoTitle.textContent = topicData.video.title;
+    
+    var videoWrapper = document.createElement("div");
+    videoWrapper.className = "video-wrapper";
+    
+    // Convert Google Drive link to embeddable format
+    var fileId = topicData.video.url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+    var embedUrl = fileId ? 'https://drive.google.com/file/d/' + fileId[1] + '/preview' : topicData.video.url;
+    
+    videoWrapper.innerHTML = '<iframe src="' + embedUrl + '" allowfullscreen="" allow="autoplay" class="video-player"></iframe>';
+    
+    videoContainer.appendChild(videoTitle);
+    videoContainer.appendChild(videoWrapper);
+    
+    var sectionsContainer = document.getElementById("detail-sections-container");
+    sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
+  }
+
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
   if (topicData.sections && topicData.sections.length > 0) {
