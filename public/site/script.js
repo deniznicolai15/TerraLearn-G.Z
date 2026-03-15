@@ -55,9 +55,8 @@ var topics = [
       },
       { 
         title: "Historical & Cultural Significance",
-        text: "On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several <u>Katipuneros</u> gathered inside <u>Pamitinan</u> Cave in Rodriguez, Rizal.\n\nThe cave served as a secret meeting place and refuge, where new members were initiated into the Katipunan.\n\nDuring this gathering, Bonifacio inscribed the words \"<i>Viva la Independencia Filipina</i>\" on the cave wall, marking the <b>first recorded declaration of Philippine independence</b>, more than a year before the Cry of Balintawak.\n\nThis act was symbolic rather than public—it was a solemn proclamation of freedom carried out in secrecy, but it planted the revolutionary spirit firmly in the hearts of the <u>Katipuneros</u>.\n\nThe landmark shown in <b>Figure 2</b>, located midway up Mt. <u>Pamitinan</u>, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. Mt. <u>Pamitinan</u> is therefore remembered not only as a natural landscape but also as a <b>heritage site</b>, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg",
-        figureCaption: "Figure 2. Landmark halfway up Mt. Pamitinan"
+        text: "On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave. The cave served as a secret meeting place where Bonifacio inscribed 'Viva la Independencia Filipina' on the cave wall—the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak. This symbolic yet solemn proclamation planted the revolutionary spirit firmly in the hearts of the Katipuneros.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
       },
       { 
         title: "Myth & Folklore",

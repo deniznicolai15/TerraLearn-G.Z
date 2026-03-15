@@ -240,11 +240,9 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-      var figureCaptionHTML = section.figureCaption ? '<p class="section-figure-caption"><i>' + section.figureCaption + '</i></p>' : '';
       sectionDiv.innerHTML =
         '<h3>' + section.title + '</h3>' +
         imageHTML +
-        figureCaptionHTML +
         '<p>' + section.text + '</p>';
       sectionsContainer.appendChild(sectionDiv);
     });

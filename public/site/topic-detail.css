@@ -201,15 +201,6 @@ body.topic-2 .detail-section h3 {
   font-weight: 400;
 }
 
-.section-figure-caption {
-  font-size: 12px;
-  color: var(--muted);
-  font-style: italic;
-  text-align: left;
-  margin: 8px 0 16px 0 !important;
-  line-height: 1.4;
-}
-
 .detail-description {
   font-size: 15px;
   color: var(--secondary);
