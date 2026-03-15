@@ -358,6 +358,70 @@ body.topic-2 .detail-section h3 {
   }
 }
 
+/* ===== VIDEO CAPTION (Topic 2) ===== */
+.video-caption {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== PAMITINAN INFO SECTION (Topic 2) ===== */
+.pamitinan-info-section {
+  padding: 24px;
+  background: rgba(107, 127, 115, 0.08);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pamitinan-info-section p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+.pamitinan-info-section u {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.pamitinan-info-section b {
+  font-weight: 600;
+}
+
+.pamitinan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pamitinan-features li {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pamitinan-features li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: var(--primary);
+}
+
 /* ===== INFO BAR ===== */
 .detail-info-bar {
   display: flex;
