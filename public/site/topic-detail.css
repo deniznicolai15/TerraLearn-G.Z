@@ -92,12 +92,12 @@
   border-radius: 3px;
 }
 
-  /* ===== DETAIL GRID (IMAGE + CONTENT + GALLERY) ===== */
+  /* ===== DETAIL GRID (LEFT: CONTENT + FIGURE | RIGHT: GALLERY) ===== */
   .detail-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.2fr 0.9fr;
+  grid-template-columns: 1fr 300px;
   gap: 40px;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 60px 40px;
   align-items: start;
@@ -106,12 +106,12 @@
   .detail-figure {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  margin-bottom: 32px;
   }
 
   .figure-image-container {
-  position: sticky;
-  top: 100px;
+  width: 280px;
   aspect-ratio: 1;
   border-radius: 8px;
   overflow: hidden;
@@ -126,11 +126,12 @@
   }
 
   .figure-caption {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
   text-align: center;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
+  max-width: 280px;
   }
 
 .detail-main {
@@ -1048,7 +1049,7 @@ body.topic-4 #avifauna-container {
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1200px) {
   .detail-grid {
-  grid-template-columns: 0.8fr 1.2fr 0.9fr;
+  grid-template-columns: 1fr 280px;
   gap: 30px;
   padding: 50px 30px;
   }
@@ -1056,26 +1057,19 @@ body.topic-4 #avifauna-container {
 
   @media (max-width: 1024px) {
   .detail-grid {
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
   padding: 40px 30px;
   }
 
   .detail-gallery {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  position: static;
-  top: auto;
   gap: 12px;
   }
 
   .gallery-item {
   aspect-ratio: 1;
-  }
-
-  .figure-image-container {
-  position: static;
   }
   }
 
@@ -1086,22 +1080,10 @@ body.topic-4 #avifauna-container {
   padding: 30px 20px;
   }
 
-  .detail-figure {
-  order: 1;
-  }
-
-  .detail-main {
-  order: 2;
-  }
-
   .detail-gallery {
-  order: 3;
-  grid-column: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  position: static;
-  top: auto;
   }
   
   .gallery-item {
@@ -1109,9 +1091,8 @@ body.topic-4 #avifauna-container {
   }
 
   .figure-image-container {
-  aspect-ratio: auto;
-  height: 300px;
-  position: static;
+  width: 100%;
+  max-width: 280px;
   }
 
   .detail-hero {
