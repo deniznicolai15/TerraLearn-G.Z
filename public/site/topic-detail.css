@@ -382,7 +382,7 @@
   flex-direction: column;
   gap: 16px;
   position: sticky;
-  top: 100px;
+  top: 20px;
 }
 
 .gallery-title {

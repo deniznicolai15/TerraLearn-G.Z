@@ -238,12 +238,25 @@ function initializePage() {
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery (10 images using different versions of the same image as placeholders)
+  // Create gallery with Mt. Pamitinan images
+  var galleryImages = [
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-c0QDEECDdEsjCy9O2semTjkktTpm1g.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-aXtP45Lm4ZPTB5JC3EUwGNQ4YkrrtR.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-YcBH8VfJy6n5aBLePX7NX90w0mDWJP.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-pzkqItaHHGrlKRCY9doizjzqHTUeCj.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-eMyyqxV0Jx1qQedsLjGJqDHK2P0qQF.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-ckQVbMLlyNx015uCKWeIgxicURU0Bo.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-6RNSvKdisCWZEMneBrWXUgsooaHCeH.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-xoXA8i1MJvE7R7ulDqxdUVM7ZNIHmQ.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-LWFhIxnpC2YTJIARXkWhXFbJGchmP6.jpg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-01CF5i38LWRfv6ysPxPMJSMLYbCvaC.jpg"
+  ];
+  
   var galleryGrid = document.getElementById("gallery-grid");
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < galleryImages.length; i++) {
     var item = document.createElement("div");
     item.className = "gallery-item";
-    item.innerHTML = '<img src="' + topicData.image + '?v=' + i + '" alt="' + topicData.name + ' image ' + (i + 1) + '" />';
+    item.innerHTML = '<img src="' + galleryImages[i] + '" alt="' + topicData.name + ' gallery image ' + (i + 1) + '" />';
     item.addEventListener("click", function (e) {
       openLightbox(e.target.src);
     });
