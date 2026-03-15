@@ -155,11 +155,30 @@ function initializePage() {
     document.body.classList.add("topic-4");
   }
 
-  // Populate introduction section
+  // Populate introduction section with two-column layout for Topic 2
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
-    if (topicData.intro) {
-      // Special intro with image and styled content
+    if (topicData.intro && topicData.id === 2) {
+      // Topic 2: Two-column layout with gallery sidebar
+      var introHTML = '<div class="intro-wrapper-topic2">';
+      introHTML += '<div class="intro-left-content">';
+      introHTML += '<div class="intro-left"><img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" /><p class="intro-caption">' + topicData.intro.caption + '</p></div>';
+      introHTML += '<p class="intro-text">' + topicData.intro.text + '</p>';
+      introHTML += '</div>';
+      
+      // Add gallery sidebar
+      if (topicData.gallery) {
+        introHTML += '<div class="intro-divider"></div>';
+        introHTML += '<div class="intro-gallery-sidebar">';
+        topicData.gallery.forEach(function(item) {
+          introHTML += '<div class="gallery-sidebar-item"><img src="' + item.image + '" alt="' + item.caption + '" /><p>' + item.caption + '</p></div>';
+        });
+        introHTML += '</div>';
+      }
+      introHTML += '</div>';
+      introElement.innerHTML = introHTML;
+    } else if (topicData.intro) {
+      // Default intro for other topics
       var introHTML = '<div class="detail-intro-wrapper">';
       introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image" />';
       introHTML += '<p class="intro-caption">' + topicData.intro.caption + '</p>';

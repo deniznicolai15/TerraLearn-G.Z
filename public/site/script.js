@@ -35,6 +35,18 @@ var topics = [
       title: "Mt. Pamitinan (Montalban, Rizal)",
       url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
     },
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg", caption: "Ancient Tree Ecosystem" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg", caption: "Hikers on Trail" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg", caption: "Forest Trekking" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg", caption: "Mountain Landscape" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg", caption: "Limestone Cliffs" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg", caption: "Suspension Bridge" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg", caption: "Jungle Path" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg", caption: "Limestone Features" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg", caption: "Old Growth Tree" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg", caption: "Forest Canopy" }
+    ],
     sections: [
       { 
         title: "Geological Features",

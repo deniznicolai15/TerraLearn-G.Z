@@ -108,6 +108,124 @@
   gap: 32px;
 }
 
+/* ===== TOPIC 2 TWO-COLUMN INTRO LAYOUT ===== */
+.intro-wrapper-topic2 {
+  display: grid;
+  grid-template-columns: 1fr 1px 300px;
+  gap: 48px;
+  align-items: start;
+}
+
+.intro-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.intro-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro-image-small {
+  width: 100%;
+  max-width: 380px;
+  height: 280px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-image-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.intro-caption {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.intro-left-content > .intro-text {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--secondary);
+  text-align: left;
+  margin: 0;
+}
+
+/* Gallery Divider */
+.intro-divider {
+  background: linear-gradient(to bottom, transparent 0%, rgba(107, 127, 115, 0.2) 20%, rgba(107, 127, 115, 0.2) 80%, transparent 100%);
+  width: 1px;
+}
+
+/* Gallery Sidebar */
+.intro-gallery-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-sidebar-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-sidebar-item img {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-sidebar-item:hover img {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-sidebar-item p {
+  font-size: 12px;
+  color: var(--secondary);
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .intro-wrapper-topic2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .intro-divider {
+    display: none;
+  }
+  
+  .intro-gallery-sidebar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .gallery-sidebar-item img {
+    height: 120px;
+  }
+}
+
 /* ===== DETAIL SECTIONS ===== */
 .detail-section {
   display: flex;
