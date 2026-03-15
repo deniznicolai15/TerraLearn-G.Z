@@ -259,7 +259,7 @@ body.topic-2 .detail-section h3 {
 /* ===== TOPIC 2 TWO-COLUMN INTRO ===== */
 .detail-intro-wrapper.topic2-intro {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 28px;
   align-items: start;
   border-bottom: none;
@@ -275,7 +275,7 @@ body.topic-2 .detail-section h3 {
 }
 
 .intro-image-small {
-  width: 380px;
+  width: 320px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
