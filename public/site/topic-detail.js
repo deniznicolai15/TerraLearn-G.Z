@@ -236,30 +236,14 @@ function initializePage() {
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
   if (topicData.sections && topicData.sections.length > 0) {
-    topicData.sections.forEach(function (section, index) {
+    topicData.sections.forEach(function (section) {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
-      
-      // Create two-column layout: image with caption on left, text on right
-      var figureNumber = index + 2; // Start from Figure 2 (Figure 1 is the intro image)
-      var imageColumnHTML = '';
-      if (section.image) {
-        imageColumnHTML = '<div class="section-image-column">' +
-          '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' +
-          '<p class="section-figure-caption">Figure ' + figureNumber + '. ' + (section.figureCaption || section.title) + '</p>' +
-          '</div>';
-      }
-      
-      var textColumnHTML = '<div class="section-text-column">' +
-        '<p>' + section.text + '</p>' +
-        '</div>';
-      
+      var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
       sectionDiv.innerHTML =
         '<h3>' + section.title + '</h3>' +
-        '<div class="section-content-row">' +
-        imageColumnHTML +
-        textColumnHTML +
-        '</div>';
+        imageHTML +
+        '<p>' + section.text + '</p>';
       sectionsContainer.appendChild(sectionDiv);
     });
   }
