@@ -50,7 +50,7 @@ var topics = [
     sections: [
       { 
         title: "Geological Features",
-        text: "• Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave‑dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
+        text: "• Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• <u>Pamitinan</u> Cave with stalactites, stalagmites, and chambers that host bats and other cave-dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
       { 
