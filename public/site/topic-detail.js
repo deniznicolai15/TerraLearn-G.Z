@@ -148,6 +148,9 @@ function initializePage() {
   document.getElementById("detail-description").textContent = topicData.description;
 
   // Add topic class for styling
+  if (topicData.id === 1) {
+    document.body.classList.add("topic-1");
+  }
   if (topicData.id === 2) {
     document.body.classList.add("topic-2");
   }
@@ -159,8 +162,8 @@ function initializePage() {
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
     if (topicData.intro) {
-      if (topicData.id === 2) {
-        // Topic 2: Two-column layout with small image left, text right
+      if (topicData.id === 1 || topicData.id === 2) {
+        // Topic 1 & 2: Two-column layout with small image left, text right
         var introHTML = '<div class="detail-intro-wrapper topic2-intro">';
         introHTML += '<div class="intro-image-section">';
         introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" />';

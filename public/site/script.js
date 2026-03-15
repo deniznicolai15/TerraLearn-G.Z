@@ -8,6 +8,11 @@ var topics = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
     description:
       "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.",
+    intro: {
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
+      caption: "Figure 1: An AI generated image illustrating forests and biodiversity",
+      text: "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.<br><br>The base of Mt. Pamitinan showcases the beauty and importance of lowland tropical forests, home to towering Narra and Molave trees, rare endemic orchids, and medicinal plants that local communities have used for generations."
+    },
     sections: [
       { title: "Lowland Tropical Forest", text: "The base of Mt. Pamitinan is covered in lowland tropical forest, featuring towering Narra and Molave trees. These trees form a dense canopy that provides shade and moisture for the understory plants below. The forest floor is carpeted with various species of ferns, mosses, and seedlings." },
       { title: "Endemic Plant Species", text: "Mt. Pamitinan is home to several endemic plant species found only in the Philippines. Among them are rare orchids like the Waling-Waling and various species of pitcher plants. These plants have adapted to the unique microclimate of the mountain over thousands of years." },
