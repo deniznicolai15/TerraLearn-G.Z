@@ -222,14 +222,25 @@ function initializePage() {
     });
   }
 
+  // Populate Figure 1 image and caption
+  var figureImg = document.getElementById("detail-figure-img");
+  if (figureImg) {
+    figureImg.src = topicData.image;
+    figureImg.alt = "Figure 1: " + topicData.name;
+  }
+  var figureCaption = document.getElementById("figure-caption");
+  if (figureCaption) {
+    figureCaption.textContent = "Figure 1: An AI generated image illustrating " + topicData.name;
+  }
+
   // Populate info bar
   document.getElementById("detail-location").textContent = topicData.location;
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery (using different versions of the same image as placeholders)
+  // Create gallery (10 images using different versions of the same image as placeholders)
   var galleryGrid = document.getElementById("gallery-grid");
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 10; i++) {
     var item = document.createElement("div");
     item.className = "gallery-item";
     item.innerHTML = '<img src="' + topicData.image + '?v=' + i + '" alt="' + topicData.name + ' image ' + (i + 1) + '" />';

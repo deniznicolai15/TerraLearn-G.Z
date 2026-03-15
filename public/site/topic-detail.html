@@ -58,9 +58,17 @@
       </div>
     </div>
 
-    <!-- Content grid: main content + thumbnail gallery (Old Design - shown for non-Forest topics) -->
+    <!-- Content grid: 3-column layout (Image + Content + Gallery) -->
     <div class="detail-grid" id="detail-grid">
-      <!-- Main content -->
+      <!-- Left Column: Figure 1 Image -->
+      <div class="detail-figure">
+        <div class="figure-image-container">
+          <img id="detail-figure-img" src="" alt="Figure 1" class="figure-image" />
+        </div>
+        <p class="figure-caption" id="figure-caption"></p>
+      </div>
+
+      <!-- Middle Column: Main content -->
       <div class="detail-main">
         <!-- Description -->
         <div class="detail-section">
@@ -100,7 +108,7 @@
         </div>
       </div>
 
-      <!-- Thumbnail gallery sidebar -->
+      <!-- Right Column: Vertical Gallery -->
       <aside class="detail-gallery">
         <h3 class="gallery-title">Gallery</h3>
         <div class="gallery-grid" id="gallery-grid">
