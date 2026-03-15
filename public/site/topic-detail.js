@@ -266,37 +266,21 @@ function initializePage() {
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery from topicData.gallery if available
+  // Create gallery with images from topicData.gallery
   var galleryGrid = document.getElementById("gallery-grid");
   
   if (topicData.gallery && topicData.gallery.length > 0) {
-    // Filter out gallery items that have no valid image URL
-    var validGalleryItems = topicData.gallery.filter(function(item) {
-      return item && item.image && item.image.trim().length > 0;
-    });
-    
-    for (var i = 0; i < validGalleryItems.length; i++) {
-      var item = document.createElement("div");
-      item.className = "gallery-item";
-      item.innerHTML = '<img src="' + validGalleryItems[i].image + '" alt="' + topicData.name + ' gallery image ' + (i + 1) + '" />';
-      item.addEventListener("click", function (e) {
-        openLightbox(e.target.src);
-      });
-      galleryGrid.appendChild(item);
-    }
-    
-    // Hide gallery section if no valid images
-    if (validGalleryItems.length === 0) {
-      var gallerySection = galleryGrid.closest('.gallery-section');
-      if (gallerySection) {
-        gallerySection.style.display = 'none';
+    for (var i = 0; i < topicData.gallery.length; i++) {
+      var galleryItem = topicData.gallery[i];
+      if (galleryItem && galleryItem.image && galleryItem.image.trim().length > 0) {
+        var item = document.createElement("div");
+        item.className = "gallery-item";
+        item.innerHTML = '<img src="' + galleryItem.image + '" alt="' + topicData.name + ' gallery image ' + (i + 1) + '" />';
+        item.addEventListener("click", function (e) {
+          openLightbox(e.target.src);
+        });
+        galleryGrid.appendChild(item);
       }
-    }
-  } else {
-    // Hide gallery section if no gallery data
-    var gallerySection = galleryGrid.closest('.gallery-section');
-    if (gallerySection) {
-      gallerySection.style.display = 'none';
     }
   }
 
