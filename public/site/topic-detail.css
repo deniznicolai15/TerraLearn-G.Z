@@ -368,6 +368,20 @@ body.topic-2 .detail-section h3 {
   line-height: 1.6;
 }
 
+/* ===== SECTION FIGURE CAPTION ===== */
+.section-figure-caption {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: left;
+  margin: 8px 0 16px 0;
+  line-height: 1.6;
+}
+
+.section-figure-caption u {
+  text-decoration: underline;
+}
+
 /* ===== PAMITINAN INFO SECTION (Topic 2) ===== */
 .pamitinan-info-section {
   padding: 24px;
