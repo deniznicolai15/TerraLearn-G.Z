@@ -248,14 +248,13 @@
 }
 
 /* ===== TOPIC 2 TWO-COLUMN INTRO ===== */
-.detail-intro-wrapper.topic2-intro {
+body.topic-2 > .detail-intro-wrapper.topic2-intro {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 20px;
+  gap: 24px;
   align-items: start;
-  border-bottom: none;
-  padding: 0;
-  margin-bottom: 0;
+  padding: 28px 0;
+  border-bottom: 2px solid rgba(107, 127, 115, 0.15);
 }
 
 .intro-image-section {
@@ -771,28 +770,88 @@ body.topic-2 .detail-grid {
   padding: 60px 40px;
 }
 
+body.topic-2 .detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 30px;
+  align-items: start;
+}
+
 body.topic-2 .detail-main {
-  padding-top: 40px;
-  border-top: 2px solid rgba(107, 127, 115, 0.15);
+  padding-top: 0;
+  border-top: none;
 }
 
 body.topic-2 .detail-gallery {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  border-left: 1px solid rgba(107, 127, 115, 0.2);
+  gap: 12px;
+  border-left: 2px solid rgba(107, 127, 115, 0.3);
   padding-left: 20px;
   max-height: fit-content;
-  position: sticky;
-  top: 120px;
+  position: relative;
+  top: auto;
+  overflow: visible;
+  align-items: flex-start;
+  width: 160px;
 }
 
 body.topic-2 .gallery-title {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--fg);
   letter-spacing: 0.3px;
   text-align: center;
+  flex-shrink: 0;
+  margin-bottom: 6px;
+}
+
+body.topic-2 .gallery-item {
+  aspect-ratio: auto;
+  height: 90px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Topic 2 Intro Text - Smaller and justified */
+body.topic-2 .intro-text {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0;
+}
+
+body.topic-2 .intro-caption {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Topic 2 Description - Smaller and justified */
+body.topic-2 .detail-description {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 8px !important;
+}
+
+/* Topic 2 Section text - Smaller and justified */
+body.topic-2 .detail-section {
+  gap: 12px;
+  padding: 18px 0;
+}
+
+body.topic-2 .detail-section p {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+body.topic-2 .detail-section h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
 /* Hide Figure 1 for Topic 2 */
