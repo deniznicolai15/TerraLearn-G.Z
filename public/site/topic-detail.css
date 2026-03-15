@@ -795,6 +795,11 @@ body.topic-2 .gallery-title {
   text-align: center;
 }
 
+/* Hide Figure 1 for Topic 2 */
+body.topic-2 .detail-figure {
+  display: none;
+}
+
 /* ===== TOPIC 4 SPECIFIC STYLES ===== */
 body.topic-4 #intro-section,
 body.topic-4 #detail-grid {
