@@ -92,27 +92,20 @@
   border-radius: 3px;
 }
 
-/* ===== FIGURE 1 + GALLERY SECTION ===== */
-.figure-gallery-section {
+/* ===== THREE COLUMN LAYOUT: IMAGE (LEFT) + CONTENT (MIDDLE) + GALLERY (RIGHT) ===== */
+.three-column-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 60px 40px;
   align-items: start;
 }
 
-.figure-1-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.figure-1-image-container {
-  position: relative;
-  width: 100%;
+.layout-image {
+  position: sticky;
+  top: 100px;
   aspect-ratio: 1;
   border-radius: 12px;
   overflow: hidden;
@@ -126,20 +119,41 @@
   display: block;
 }
 
-.figure-1-info {
+.layout-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
-.figure-1-info h3 {
-  font-size: 24px;
+.figure-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(168, 213, 168, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.figure-info-box h3 {
+  font-size: 18px;
   font-weight: 600;
   color: var(--secondary);
   margin: 0;
 }
 
 .figure-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.figure-info-details .detail-info-item {
+  font-size: 13px;
+  gap: 8px;
+}
+
+.layout-gallery {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -413,7 +427,7 @@
 
   .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 12px;
   }
 
@@ -1066,51 +1080,72 @@ body.topic-4 #avifauna-container {
 }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 1024px) {
-  .figure-gallery-section {
-  grid-template-columns: 1fr;
-  padding: 40px 20px;
+  @media (max-width: 1200px) {
+  .three-column-layout {
+  grid-template-columns: 0.9fr 1.1fr 0.8fr;
+  gap: 30px;
+  padding: 50px 30px;
+  }
   }
 
-  .figure-1-section {
-  grid-template-columns: 1fr;
+  @media (max-width: 1024px) {
+  .three-column-layout {
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  padding: 40px 30px;
+  }
+
+  .layout-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
   }
 
   .gallery-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  }
+
+  .gallery-item {
+  aspect-ratio: 1;
   }
   }
 
   @media (max-width: 768px) {
-  .detail-grid {
-  grid-template-columns: 1fr;
-  gap: 32px;
-  padding: 40px 20px;
-  }
-  
-  .figure-gallery-section {
+  .three-column-layout {
   grid-template-columns: 1fr;
   gap: 24px;
-  padding: 40px 20px;
+  padding: 30px 20px;
   }
 
-  .figure-1-section {
-  grid-template-columns: 1fr;
-  gap: 20px;
+  .layout-image {
+  position: static;
+  aspect-ratio: auto;
+  height: 300px;
+  }
+
+  .layout-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   }
 
   .gallery-grid {
   grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .detail-gallery {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
   }
   
   .gallery-item {
   aspect-ratio: 1;
+  }
+
+  .detail-grid {
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding: 40px 20px;
   }
 
   .detail-hero {
