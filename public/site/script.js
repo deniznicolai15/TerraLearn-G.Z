@@ -50,12 +50,12 @@ var topics = [
     sections: [
       { 
         title: "Geological Features",
-        text: "• Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave‑dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
+        text: "Mt. Pamitinan is a limestone mountain located in Montalban (Rodriguez), Rizal, rising to 426+ meters above sea level. It forms part of the Sierra Madre mountain range and features jagged limestone cliffs, sharp rocks, and karst cave systems with stalactites and stalagmites. The mountain's rugged terrain supports unique biodiversity and serves as a natural shield against typhoons, contributing to water regulation and environmental balance.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
       { 
         title: "Historical & Cultural Significance",
-        text: "Figure 2. Landmark halfway up Mt. Pamitinan\n\n• On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave in Rodriguez, Rizal.\n\n• The cave served as a secret meeting place and refuge, where new members were initiated into the Katipunan.\n\n• During this gathering, Bonifacio inscribed the words \"Viva la Independencia Filipina\" on the cave wall, marking the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak.\n\n• This act was symbolic rather than public—it was a solemn proclamation of freedom carried out in secrecy, but it planted the revolutionary spirit firmly in the hearts of the Katipuneros.\n\nThe landmark shown in Figure 2, located midway up Mt. Pamitinan, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. Mt. Pamitinan is therefore remembered not only as a natural landscape but also as a heritage site, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.",
+        text: "On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave. The cave served as a secret meeting place where Bonifacio inscribed 'Viva la Independencia Filipina' on the cave wall—the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak. This symbolic yet solemn proclamation planted the revolutionary spirit firmly in the hearts of the Katipuneros.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
       },
       { 
