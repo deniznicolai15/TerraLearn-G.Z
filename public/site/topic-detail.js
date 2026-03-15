@@ -222,14 +222,23 @@ function initializePage() {
     });
   }
 
-  // Populate info bar
+  // Populate Figure 1 section
+  document.getElementById("figure-1-img").src = topicData.image;
+  document.getElementById("figure-1-title").textContent = topicData.name;
+
+  // Populate info in Figure 1 section
   document.getElementById("detail-location").textContent = topicData.location;
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery (using different versions of the same image as placeholders)
+  // Populate info bar in detail grid
+  document.getElementById("detail-location-bar").textContent = topicData.location;
+  document.getElementById("detail-detail1-bar").textContent = topicData.detail1;
+  document.getElementById("detail-detail2-bar").textContent = topicData.detail2;
+
+  // Create gallery with 10 images (using different versions of the same image as placeholders)
   var galleryGrid = document.getElementById("gallery-grid");
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 10; i++) {
     var item = document.createElement("div");
     item.className = "gallery-item";
     item.innerHTML = '<img src="' + topicData.image + '?v=' + i + '" alt="' + topicData.name + ' image ' + (i + 1) + '" />';
