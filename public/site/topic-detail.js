@@ -240,11 +240,9 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-      var figureCaptionHTML = section.figureCaption ? '<p class="section-figure-caption"><u>' + section.figureCaption + '</u></p>' : '';
       sectionDiv.innerHTML =
         '<h3>' + section.title + '</h3>' +
         imageHTML +
-        figureCaptionHTML +
         '<p>' + section.text + '</p>';
       sectionsContainer.appendChild(sectionDiv);
     });
@@ -266,22 +264,32 @@ function initializePage() {
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery with images from topicData.gallery
-  var galleryGrid = document.getElementById("gallery-grid");
+  // Create gallery with Mt. Pamitinan images
+  var galleryImages = [
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7087.PNG-6K0l4UhRzwHIMHq41OX0jemra2zjPg.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7089.PNG-PAwUvvNckrLYJ7Ko40gWSwnG502o7j.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7092.PNG-CLFpcNspQ7BV2icaw6GSbRRXRVpyGn.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7086.PNG-ZgAav5XjP72EYEFcID92LYEFe.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7088.PNG-NFq4fwNtOmFjLtrH77c6EV1ZPk66Da.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7093.PNG-rulFPZAvZFJ01s27AHHjsa4Ys5xcEB.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7090.PNG-Npy6PLe7NqLONJZu2odsCv1K126XGJ.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7091.PNG-leWjnQWbzjiVKkrHJFX9iyG1vHQe5c.jpeg"
+  ];
   
-  if (topicData.gallery && topicData.gallery.length > 0) {
-    for (var i = 0; i < topicData.gallery.length; i++) {
-      var galleryItem = topicData.gallery[i];
-      if (galleryItem && galleryItem.image && galleryItem.image.trim().length > 0) {
-        var item = document.createElement("div");
-        item.className = "gallery-item";
-        item.innerHTML = '<img src="' + galleryItem.image + '" alt="' + topicData.name + ' gallery image ' + (i + 1) + '" />';
-        item.addEventListener("click", function (e) {
-          openLightbox(e.target.src);
-        });
-        galleryGrid.appendChild(item);
-      }
-    }
+  // Only show gallery items that have valid image URLs
+  galleryImages = galleryImages.filter(function(url) {
+    return url && url.trim().length > 0;
+  });
+  
+  var galleryGrid = document.getElementById("gallery-grid");
+  for (var i = 0; i < galleryImages.length; i++) {
+    var item = document.createElement("div");
+    item.className = "gallery-item";
+    item.innerHTML = '<img src="' + galleryImages[i] + '" alt="' + topicData.name + ' gallery image ' + (i + 1) + '" />';
+    item.addEventListener("click", function (e) {
+      openLightbox(e.target.src);
+    });
+    galleryGrid.appendChild(item);
   }
 
   // Initialize quiz
