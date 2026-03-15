@@ -155,30 +155,11 @@ function initializePage() {
     document.body.classList.add("topic-4");
   }
 
-  // Populate introduction section with two-column layout for Topic 2
+  // Populate introduction section
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
-    if (topicData.intro && topicData.id === 2) {
-      // Topic 2: Two-column layout with sidebar gallery
-      var introHTML = '<div class="intro-wrapper-topic2">';
-      introHTML += '<div class="intro-left-column">';
-      introHTML += '<div class="intro-left"><img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" /><p class="intro-caption">' + topicData.intro.caption + '</p></div>';
-      introHTML += '<p class="intro-text">' + topicData.intro.text + '</p>';
-      introHTML += '</div>';
-      
-      // Add gallery sidebar
-      if (topicData.gallery) {
-        introHTML += '<div class="intro-gallery-divider"></div>';
-        introHTML += '<div class="intro-gallery-sidebar">';
-        topicData.gallery.forEach(function(item) {
-          introHTML += '<div class="gallery-sidebar-item"><img src="' + item.image + '" alt="' + item.caption + '" /><p>' + item.caption + '</p></div>';
-        });
-        introHTML += '</div>';
-      }
-      introHTML += '</div>';
-      introElement.innerHTML = introHTML;
-    } else if (topicData.intro) {
-      // Default intro for other topics
+    if (topicData.intro) {
+      // Special intro with image and styled content
       var introHTML = '<div class="detail-intro-wrapper">';
       introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image" />';
       introHTML += '<p class="intro-caption">' + topicData.intro.caption + '</p>';
@@ -198,7 +179,6 @@ function initializePage() {
     var videoTitle = document.createElement("h2");
     videoTitle.className = "video-title";
     videoTitle.textContent = topicData.video.title;
-    videoContainer.appendChild(videoTitle);
     
     var videoWrapper = document.createElement("div");
     videoWrapper.className = "video-wrapper";
@@ -208,23 +188,9 @@ function initializePage() {
     var embedUrl = fileId ? 'https://drive.google.com/file/d/' + fileId[1] + '/preview' : topicData.video.url;
     
     videoWrapper.innerHTML = '<iframe src="' + embedUrl + '" allowfullscreen="" allow="autoplay" class="video-player"></iframe>';
+    
+    videoContainer.appendChild(videoTitle);
     videoContainer.appendChild(videoWrapper);
-    
-    // Add video description if available
-    if (topicData.video.description) {
-      var videoDesc = document.createElement("p");
-      videoDesc.className = "video-description";
-      videoDesc.textContent = topicData.video.description;
-      videoContainer.appendChild(videoDesc);
-    }
-    
-    // Add video content if available
-    if (topicData.video.content) {
-      var videoContent = document.createElement("div");
-      videoContent.className = "video-content";
-      videoContent.innerHTML = topicData.video.content;
-      videoContainer.appendChild(videoContent);
-    }
     
     var sectionsContainer = document.getElementById("detail-sections-container");
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
