@@ -33,8 +33,48 @@ var topics = [
     },
     video: {
       title: "Mt. Pamitinan (Montalban, Rizal)",
-      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing",
+      description: "This 360° video was captured by one of the researchers above the 426+ MASL marker.",
+      content: "Mt. Pamitinan is a limestone mountain located in Montalban (Rodriguez), Rizal, rising to 426+ meters above sea level. It forms part of the Sierra Madre mountain range and is officially recognized as a DENR‑protected landscape, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.<br><br>But Mt. Pamitinan is more than just a natural site. It is a multi‑layered landmark:<br><br><strong>Geological</strong> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.<br><br><strong>Historical</strong> – in 1895, Andres Bonifacio and the Katipunan declared independence inside Pamitinan Cave, leaving the inscription "Viva la Independencia Filipina" as a lasting symbol of freedom.<br><br><strong>Mythical</strong> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (engkanto), and sometimes linked to hidden realms similar to Biringan.<br><br>Because of this blend of nature, nationhood, and myth, Mt. Pamitinan stands out among Luzon's protected areas. It is not only a hiking destination but also a living classroom where geology, history, and culture converge. Visiting Pamitinan means walking through layers of stone, memory, and imagination all in one place."
     },
+    gallery: [
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-OpdqGOTKYnKKIBgbfwP9tVz6tN6W5h.jpg",
+        caption: "Mountain Landscape View"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-zUSytTgztUE2xautUDNU3YBvdLh1w3.jpg",
+        caption: "Limestone Cliffs & River"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-7Y75LSOtoPLr7xD0eSEvLYROU1diHU.jpg",
+        caption: "Hikers on Trail"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-zvHuZk0ZoO7ZBa62OwLx2XZgxdfGB3.jpg",
+        caption: "Forest Trekking"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-CucDplZtxBMkKnAIR4F2Qb7o28kCkR.jpg",
+        caption: "Jungle Path"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-VdjQlmLabaTslkRPYTkmnZq2uOuAVq.jpg",
+        caption: "Ancient Tree Ecosystem"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-OOiiRMkgAOCZ3n3Lt4JGzDLeIH2Txh.jpg",
+        caption: "Forest Canopy"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-Um0OE0WXcXjGH2V46Aa5komsEumhTq.jpg",
+        caption: "Suspension Bridge"
+      },
+      {
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-tLSAJz67iEDk52xG9blOj7gKZuT2JP.jpg",
+        caption: "Old Growth Tree"
+      }
+    ],
     sections: [
       { 
         title: "Geological Features",

@@ -155,11 +155,33 @@ function initializePage() {
     document.body.classList.add("topic-4");
   }
 
-  // Populate introduction section
+  // Populate introduction section with gallery for Topic 2
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
-    if (topicData.intro) {
-      // Special intro with image and styled content
+    if (topicData.intro && topicData.id === 2) {
+      // Two-column layout with gallery for Topic 2
+      var introHTML = '<div class="detail-intro-wrapper-topic2">';
+      introHTML += '<div class="intro-left-column">';
+      introHTML += '<div class="intro-left">';
+      introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" />';
+      introHTML += '<p class="intro-caption">' + topicData.intro.caption + '</p>';
+      introHTML += '</div>';
+      introHTML += '<p class="intro-text">' + topicData.intro.text + '</p>';
+      introHTML += '</div>';
+      
+      // Add gallery sidebar
+      if (topicData.gallery) {
+        introHTML += '<div class="intro-gallery-sidebar">';
+        topicData.gallery.forEach(function(item) {
+          introHTML += '<div class="gallery-sidebar-item"><img src="' + item.image + '" alt="' + item.caption + '" /><p>' + item.caption + '</p></div>';
+        });
+        introHTML += '</div>';
+      }
+      
+      introHTML += '</div>';
+      introElement.innerHTML = introHTML;
+    } else if (topicData.intro) {
+      // Default intro for other topics
       var introHTML = '<div class="detail-intro-wrapper">';
       introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image" />';
       introHTML += '<p class="intro-caption">' + topicData.intro.caption + '</p>';
@@ -191,6 +213,22 @@ function initializePage() {
     
     videoContainer.appendChild(videoTitle);
     videoContainer.appendChild(videoWrapper);
+    
+    // Add video description if available
+    if (topicData.video.description) {
+      var videoDesc = document.createElement("p");
+      videoDesc.className = "video-description";
+      videoDesc.textContent = topicData.video.description;
+      videoContainer.appendChild(videoDesc);
+    }
+    
+    // Add video content if available
+    if (topicData.video.content) {
+      var videoContent = document.createElement("div");
+      videoContent.className = "video-content";
+      videoContent.innerHTML = topicData.video.content;
+      videoContainer.appendChild(videoContent);
+    }
     
     var sectionsContainer = document.getElementById("detail-sections-container");
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
