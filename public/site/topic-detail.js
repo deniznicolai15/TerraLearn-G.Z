@@ -182,11 +182,6 @@ function initializePage() {
     }
   }
 
-  // Initialize scroll sync for gallery (Topic 2 specific)
-  if (topicData.id === 2) {
-    initializeGalleryScrollSync();
-  }
-
   // Render video player if available
   if (topicData.video) {
     var videoContainer = document.createElement("div");
@@ -983,51 +978,3 @@ function drawWaveform(birdName) {
     ctx.fillRect(x, y, barWidth, height);
   }
 }
-
-// ===== GALLERY SCROLL SYNCHRONIZATION (TOPIC 2) =====
-function initializeGalleryScrollSync() {
-  var detailMain = document.querySelector(".detail-main");
-  var detailGallery = document.querySelector(".detail-gallery");
-  
-  if (!detailMain || !detailGallery) return;
-  
-  console.log("[v0] Initializing gallery scroll sync");
-  
-  // Sync scroll between detail-main and gallery
-  var isScrollingMain = false;
-  var isScrollingGallery = false;
-  
-  // Listen to scroll on detail-main
-  window.addEventListener("scroll", function() {
-    if (isScrollingGallery) return;
-    
-    isScrollingMain = true;
-    
-    // Calculate main content scroll position
-    var mainRect = detailMain.getBoundingClientRect();
-    var mainScrollProgress = Math.max(0, -mainRect.top) / (detailMain.scrollHeight - window.innerHeight);
-    
-    // Apply same scroll to gallery
-    var galleryGrid = detailGallery.querySelector(".gallery-grid");
-    if (galleryGrid) {
-      var galleryHeight = galleryGrid.scrollHeight - detailGallery.clientHeight;
-      galleryGrid.scrollTop = mainScrollProgress * galleryHeight;
-    }
-    
-    isScrollingMain = false;
-  });
-  
-  // Sync gallery scroll if user scrolls gallery directly
-  var galleryGrid = detailGallery.querySelector(".gallery-grid");
-  if (galleryGrid) {
-    galleryGrid.addEventListener("scroll", function() {
-      if (isScrollingMain) return;
-      
-      isScrollingGallery = true;
-      
-      // This would sync gallery scroll back to main, but for now we keep it simple
-      isScrollingGallery = false;
-    });
-  }
-}
-
