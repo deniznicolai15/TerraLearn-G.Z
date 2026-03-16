@@ -33,8 +33,8 @@ var topics = [
       },
       { 
         title: "Structure of Philippine Forest Ecosystem", 
-        text: "Philippine forests are organized into vertical layers, each with distinct characteristics, species, and ecological roles. Understanding this structure helps us appreciate the complexity of these ecosystems.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
+        text: "",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DmRgZrxYT0wLyKqSGGV36FN8ON6Kpk.png"
       },
       { 
         title: "Emergent Layer", 
