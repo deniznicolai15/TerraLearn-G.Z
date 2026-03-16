@@ -314,8 +314,8 @@ function initializePage() {
   // Render AVIFAUNA section if available
   renderAvifaunaSection();
 
-  // Initialize Forest 101 section if topic is 1
-  initializeForest101();
+  // Old Forest 101 section disabled - now using the new Topic 2 style layout for Topic 1
+  // initializeForest101();
 
   // Back button
   document.getElementById("back-btn").addEventListener("click", function () {
