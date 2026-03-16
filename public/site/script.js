@@ -13,11 +13,34 @@ var topics = [
       caption: "Figure 1: An AI generated image illustrating forests and biodiversity",
       text: "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.<br><br>The base of Mt. Pamitinan showcases the beauty and importance of lowland tropical forests, home to towering Narra and Molave trees, rare endemic orchids, and medicinal plants that local communities have used for generations."
     },
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png" }
+    ],
     sections: [
-      { title: "Lowland Tropical Forest", text: "The base of Mt. Pamitinan is covered in lowland tropical forest, featuring towering Narra and Molave trees. These trees form a dense canopy that provides shade and moisture for the understory plants below. The forest floor is carpeted with various species of ferns, mosses, and seedlings." },
-      { title: "Endemic Plant Species", text: "Mt. Pamitinan is home to several endemic plant species found only in the Philippines. Among them are rare orchids like the Waling-Waling and various species of pitcher plants. These plants have adapted to the unique microclimate of the mountain over thousands of years." },
-      { title: "Medicinal Plants", text: "Local communities have long used plants from Mt. Pamitinan for traditional medicine. Species like Lagundi, Sambong, and Tsaang Gubat grow wild along the trails and are still harvested by local healers for various remedies." },
-      { title: "Conservation Status", text: "Many of the plant species in this area face threats from illegal logging, land conversion, and climate change. Conservation efforts by local organizations and the DENR aim to protect the remaining forest cover and promote reforestation of degraded areas." }
+      { 
+        title: "Lowland Tropical Forest", 
+        text: "The base of Mt. Pamitinan is covered in lowland tropical forest, featuring towering Narra and Molave trees. These trees form a dense canopy that provides shade and moisture for the understory plants below. The forest floor is carpeted with various species of ferns, mosses, and seedlings.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg"
+      },
+      { 
+        title: "Endemic Plant Species", 
+        text: "Mt. Pamitinan is home to several endemic plant species found only in the Philippines. Among them are rare orchids like the Waling-Waling and various species of pitcher plants. These plants have adapted to the unique microclimate of the mountain over thousands of years.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
+      },
+      { 
+        title: "Medicinal Plants", 
+        text: "Local communities have long used plants from Mt. Pamitinan for traditional medicine. Species like Lagundi, Sambong, and Tsaang Gubat grow wild along the trails and are still harvested by local healers for various remedies.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
+      },
+      { 
+        title: "Conservation Status", 
+        text: "Many of the plant species in this area face threats from illegal logging, land conversion, and climate change. Conservation efforts by local organizations and the DENR aim to protect the remaining forest cover and promote reforestation of degraded areas.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
+      }
     ],
     location: "Mt. Pamitinan",
     detail1: "50+ species documented",
