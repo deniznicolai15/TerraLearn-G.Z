@@ -14,11 +14,16 @@ var topics = [
       text: "Forests in the Philippines are diverse and vital. From <strong>dipterocarp forests</strong> to <strong>mangroves</strong> and <strong>montane forests</strong>, these ecosystems sustain life and regulate climate. They're the lungs of the Earth.<br><br><strong>Quick fact:</strong> The Sierra Madre protects Luzon from typhoons and provides water to millions."
     },
     gallery: [
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png" }
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7094.PNG-5RorpTIlUzCBUkjabzDVzAphiwohQY.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7099.PNG-4K3gR1CaM812NAohgaKXacPLQGLBiW.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7102.PNG-puSbPzU26uFGNglDcZKwZuy2Rc3AaC.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7095.PNG-6VyYkE3RdTxKgewbdyvhldRGG2AAu4.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7101.PNG-EcUtacxBHxuxo0vxr9jHFwPXFpPf3x.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7097.PNG-yxFj7EkVdSUK1xRMefs4lhrvER45D9.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7100.PNG-l0KY0v8wAQAxtcZqfxrRD4ufxCNY8O.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7098.PNG-GDdAocuhNCBK8kVdhlRJ5PWkw5SEDR.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7103.PNG-vqTirAT96RSWdJWIrDbZsguxYfq9zm.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7096.PNG-4nguQgTQWkclpeM1gOINuRuhdgYGvn.jpeg" }
     ],
     sections: [
       { 
