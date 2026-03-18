@@ -93,22 +93,8 @@ var topics = [
     sections: [
       {
         title: "Geological Features",
-        text: "Mt. Pamitinan is a geological wonder shaped by millions of years of natural processes. Its limestone composition and unique karst features make it a fascinating study in how water, rock, and time interact to create dramatic landscapes.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg",
-        isDetailedSection: true,
-        content: `
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Limestone Cliffs and Karst Formations</h4>
-          <p style="margin-bottom: 12px;">The dramatic limestone cliffs that define Mt. Pamitinan were shaped by water and rock interaction over millions of years. Rainwater, slightly acidic from atmospheric carbon dioxide, slowly dissolves the limestone, creating carved channels, sinkholes, and the distinctive jagged appearance. This process, called karst formation, is one of Earth's most dynamic geological processes.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Pamitinan Cave System</h4>
-          <p style="margin-bottom: 12px;">Inside the mountain lies Pamitinan Cave, a cavernous system featuring stalactites and stalagmites that have taken thousands of years to form. The cave provides habitat for numerous species, including bats that rely on its protected chambers. The cave's ceiling and walls bear witness to both geological time and human history.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Part of the Sierra Madre Mountain Range</h4>
-          <p style="margin-bottom: 12px;">As part of the Sierra Madre, Mt. Pamitinan contributes to critical hydrological and ecological functions. The mountain range acts as a natural barrier that protects Luzon from typhoons, while also regulating water flow and serving as a vital watershed that supplies water to millions of residents in Metro Manila and surrounding provinces.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Geological Significance</h4>
-          <p style="margin-bottom: 12px;">Mt. Pamitinan is recognized as a <b>National Geological Monument</b>, acknowledging its importance in understanding Philippine geology, tectonic history, and mineral composition. Its limestone formations provide valuable insights into the region's geological evolution and the processes that continue to shape the landscape today.</p>
-        `
+        text: " Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave-dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
       {
         title: "Historical & Cultural Significance",
