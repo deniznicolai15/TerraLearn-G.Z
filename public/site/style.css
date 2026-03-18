@@ -948,6 +948,39 @@ p, li, span, div {
   flex-shrink: 0;
 }
 
+/* ===== MEDIA ATTRIBUTION ===== */
+.media-attribution {
+  padding: 80px 40px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.media-attribution-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.media-attribution-inner h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 32px;
+}
+
+.media-attribution-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.media-attribution-content p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 800px;
+}
+
 /* ===== ABOUT ===== */
 .about {
   padding: 80px 40px;
