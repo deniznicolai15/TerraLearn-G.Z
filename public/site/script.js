@@ -93,7 +93,9 @@ var topics = [
     sections: [
       {
         title: "Geological Features",
-        text: "Mt. Pamitinan is a geological wonder shaped by millions of years of natural processes. Its limestone composition and unique karst features—dramatic cliffs and caves—showcase how water and rock interaction creates remarkable landscapes. The mountain's Pamitinan Cave system features stalactites and stalagmites that have taken thousands of years to form, providing habitat for numerous species including bats. As part of the Sierra Madre, Mt. Pamitinan contributes to critical hydrological and ecological functions, acting as a natural barrier that protects Luzon from typhoons while regulating water flow for millions of residents.",
+        text: "•	Limestone cliffs and karst formations shaped by water and rock interaction.\n",
+        text: " •	Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave dwelling species.\n",
+        text: "• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.\n",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
       {
