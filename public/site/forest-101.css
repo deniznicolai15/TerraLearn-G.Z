@@ -1,5 +1,10 @@
 /* ===== FOREST 101 CUSTOM STYLES ===== */
 
+/* ===== TEXT JUSTIFICATION ===== */
+p, li, span, div {
+  text-align: justify;
+}
+
 :root {
   --forest-primary: #2D5016;
   --forest-secondary: #4A7C2C;

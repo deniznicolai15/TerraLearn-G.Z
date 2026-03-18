@@ -1,3 +1,8 @@
+/* ===== TEXT JUSTIFICATION ===== */
+p, li, span, div {
+  text-align: justify;
+}
+
 /* ===== BACK BUTTON ===== */
 .back-btn {
   display: flex;
