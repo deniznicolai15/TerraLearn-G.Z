@@ -26,33 +26,33 @@ var topics = [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7096.PNG-4nguQgTQWkclpeM1gOINuRuhdgYGvn.jpeg" }
     ],
     sections: [
-      { 
-        title: "What is a Forest Ecosystem?", 
+      {
+        title: "What is a Forest Ecosystem?",
         text: "Forests in the Philippines are diverse and vital. From dipterocarp forests to mangroves and montane forests, these ecosystems sustain life and regulate climate. They're the lungs of the Earth. The Sierra Madre protects Luzon from typhoons and provides water to millions.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg"
       },
-      { 
-        title: "Structure of Philippine Forest Ecosystem", 
+      {
+        title: "Structure of Philippine Forest Ecosystem",
         text: "",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DmRgZrxYT0wLyKqSGGV36FN8ON6Kpk.png"
       },
-      { 
-        title: "Emergent Layer", 
+      {
+        title: "Emergent Layer",
         text: "Towering trees like luan and apitong rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here, hunting from above the forest canopy.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
       },
-      { 
-        title: "Canopy", 
+      {
+        title: "Canopy",
         text: "A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid microclimate essential for orchids and epiphytes.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
       },
-      { 
-        title: "Understory", 
+      {
+        title: "Understory",
         text: "Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional healing.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
       },
-      { 
-        title: "Forest Floor", 
+      {
+        title: "Forest Floor",
         text: "Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
       }
@@ -91,27 +91,27 @@ var topics = [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
     ],
     sections: [
-      { 
-        title: "Geological Features",
-        text: "• Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• <u>Pamitinan</u> Cave with stalactites, stalagmites, and chambers that host bats and other cave-dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
+      {
+        title: " Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave-dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
-      { 
+      {
         title: "Historical & Cultural Significance",
-        text: "On April 12, 1895, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave. The cave served as a secret meeting place where Bonifacio inscribed 'Viva la Independencia Filipina' on the cave wall—the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak. This symbolic yet solemn proclamation planted the revolutionary spirit firmly in the hearts of the Katipuneros.",
+        text: "The landmark shown in Figure 2, located midway up Mt. Pamitinan, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. Mt. Pamitinan is therefore remembered not only as a natural landscape but also as a heritage site, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
       },
-      { 
+      {
         title: "Myth & Folklore",
-        text: "Beyond limestone cliffs, Mt. Pamitinan is wrapped in sabi-sabi passed down for generations. The most famous legend tells of Bernardo Carpio, a mythical giant trapped between Mt. Pamitinan and Mt. Binacayan. Bound by enchantment, he holds the mountains apart to prevent them from colliding. Each time he strains against his chains, the ground trembles—explaining earthquakes in the area. For many, Carpio's imprisonment symbolizes the Filipino struggle against oppression. Hikers recount strange experiences: faint voices, sudden gusts of wind, footsteps when alone. Some claim unseen forces guide lost travelers, as if guardians watch over the mountain."
+        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations."
+
       },
-      { 
+      {
         title: "Did You Know?",
-        text: "Local folklore says that when the ground shakes near Mt. Pamitinan, it is Bernardo Carpio struggling against his chains. In this telling, earthquakes aren't just natural events—they're echoes of a giant's eternal battle beneath the mountain."
+        text: "Local sabi sabi say that when the ground shakes near Mt. Pamitinan, it is Bernardo Carpio struggling against his chains. Earthquakes, in this telling, are not just natural events—they are echoes of a giant’s eternal battle beneath the mountain."
       },
-      { 
+      {
         title: "Why It Matters",
-        text: "Mt. Pamitinan is more than a hiking destination—it's a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon's protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience. It's a place where every rumble of stone might be Bernardo Carpio's restless strength, and every whisper of wind might carry a legend waiting to be told."
+        text: "Mt. Pamitinan is more than a hiking destination—it is a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon’s protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience."
       }
     ],
     location: "Montalban (Rodriguez), Rizal",
@@ -193,39 +193,39 @@ function buildCards() {
     card.innerHTML =
       // Default card face
       '<div class="topic-card-face">' +
-        '<div class="topic-card-tint" style="background-color: ' + topic.color + '"></div>' +
-        '<div class="topic-card-image">' +
-          '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
-        '</div>' +
-        '<div class="topic-card-body">' +
-          '<div class="topic-card-label">' + topic.label + '</div>' +
-          '<div class="topic-card-name">' + topic.name + '</div>' +
-          '<p class="topic-card-desc">' + topic.description + '</p>' +
-        '</div>' +
-        '<div class="topic-card-accent" style="background-color: ' + topic.color + '"></div>' +
+      '<div class="topic-card-tint" style="background-color: ' + topic.color + '"></div>' +
+      '<div class="topic-card-image">' +
+      '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
+      '</div>' +
+      '<div class="topic-card-body">' +
+      '<div class="topic-card-label">' + topic.label + '</div>' +
+      '<div class="topic-card-name">' + topic.name + '</div>' +
+      '<p class="topic-card-desc">' + topic.description + '</p>' +
+      '</div>' +
+      '<div class="topic-card-accent" style="background-color: ' + topic.color + '"></div>' +
       '</div>' +
       // Collapsed label (shown when another card is expanded)
       '<div class="topic-card-collapsed-label">' +
-        '<span>' + topic.name + '</span>' +
+      '<span>' + topic.name + '</span>' +
       '</div>' +
       // Expanded content (shown inside card when expanded)
       '<div class="topic-card-expanded-content">' +
-        '<div class="topic-expanded-image">' +
-          '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
-          '<div class="topic-expanded-image-overlay"></div>' +
-        '</div>' +
-        '<div class="topic-expanded-body">' +
-          '<div class="topic-expanded-label">' + topic.label + '</div>' +
-          '<div class="topic-expanded-title">' + topic.name + '</div>' +
-          '<div class="topic-expanded-swatch" style="background-color: ' + topic.color + '"></div>' +
-          '<p class="topic-expanded-desc">' + topic.description + '</p>' +
-          sectionsHTML +
-          '<div class="topic-expanded-details">' +
-            '<div class="topic-expanded-detail">' + icons.mapPin + '<span>' + topic.location + '</span></div>' +
-            '<div class="topic-expanded-detail">' + icons.leaf + '<span>' + topic.detail1 + '</span></div>' +
-            '<div class="topic-expanded-detail">' + icons.info + '<span>' + topic.detail2 + '</span></div>' +
-          '</div>' +
-        '</div>' +
+      '<div class="topic-expanded-image">' +
+      '<img src="' + topic.image + '" alt="' + topic.name + '" />' +
+      '<div class="topic-expanded-image-overlay"></div>' +
+      '</div>' +
+      '<div class="topic-expanded-body">' +
+      '<div class="topic-expanded-label">' + topic.label + '</div>' +
+      '<div class="topic-expanded-title">' + topic.name + '</div>' +
+      '<div class="topic-expanded-swatch" style="background-color: ' + topic.color + '"></div>' +
+      '<p class="topic-expanded-desc">' + topic.description + '</p>' +
+      sectionsHTML +
+      '<div class="topic-expanded-details">' +
+      '<div class="topic-expanded-detail">' + icons.mapPin + '<span>' + topic.location + '</span></div>' +
+      '<div class="topic-expanded-detail">' + icons.leaf + '<span>' + topic.detail1 + '</span></div>' +
+      '<div class="topic-expanded-detail">' + icons.info + '<span>' + topic.detail2 + '</span></div>' +
+      '</div>' +
+      '</div>' +
       '</div>';
 
     // Enable mouse wheel scrolling inside the expanded body
