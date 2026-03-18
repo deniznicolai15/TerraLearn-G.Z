@@ -163,73 +163,76 @@
         <h2>Structure of Philippine Forest Ecosystems</h2>
         <p class="forest-structure-text">Forests here are layered systems, each with distinct ecological roles:</p>
 
-        <!-- Forest layers timeline -->
-        <div class="forest-layers-timeline">
-          <!-- Emergent Layer -->
-          <div class="forest-layer-node">
-            <div class="layer-connector"></div>
-            <div class="forest-layer-card">
-              <div class="layer-image">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
-                  alt="Emergent layer with tallest trees rising above forest" />
-              </div>
-              <div class="layer-content">
-                <h3>Emergent Layer</h3>
-                <p>Towering trees like <em>lauan</em> and <em>apitong</em> rise above all others, capturing sunlight.
-                  Birds of prey such as the Philippine eagle soar here.</p>
-              </div>
+        <!-- Forest layers alternating layout -->
+        <div class="forest-layers-container">
+          <!-- Emergent Layer - Image Left -->
+          <div class="forest-layer-item layer-item-1">
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
+                alt="Emergent layer with tallest trees rising above forest" />
+            </div>
+            <div class="layer-text-wrapper">
+              <h3>Emergent Layer</h3>
+              <p>Towering trees like <em>lauan</em> and <em>apitong</em> rise above all others, capturing sunlight.
+                Birds of prey such as the Philippine eagle soar here.</p>
             </div>
           </div>
 
-          <!-- Canopy Layer -->
-          <div class="forest-layer-node">
-            <div class="layer-connector"></div>
-            <div class="forest-layer-card">
-              <div class="layer-image">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
-                  alt="Dense canopy roof of forest with lush green leaves" />
-              </div>
-              <div class="layer-content">
-                <h3>Canopy</h3>
-                <p>A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid
-                  microclimate essential for orchids and epiphytes.</p>
-              </div>
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-1" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 100 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Canopy Layer - Text Left, Image Right -->
+          <div class="forest-layer-item layer-item-2">
+            <div class="layer-text-wrapper">
+              <h3>Canopy</h3>
+              <p>A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid
+                microclimate essential for orchids and epiphytes.</p>
+            </div>
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
+                alt="Dense canopy roof of forest with lush green leaves" />
             </div>
           </div>
 
-          <!-- Understory Layer -->
-          <div class="forest-layer-node">
-            <div class="layer-connector"></div>
-            <div class="forest-layer-card">
-              <div class="layer-image">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
-                  alt="Understory with shaded shrubs and small trees" />
-              </div>
-              <div class="layer-content">
-                <h3>Understory</h3>
-                <p>Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional
-                  healing.</p>
-              </div>
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-2" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 400 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Understory Layer - Image Left -->
+          <div class="forest-layer-item layer-item-3">
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
+                alt="Understory with shaded shrubs and small trees" />
+            </div>
+            <div class="layer-text-wrapper">
+              <h3>Understory</h3>
+              <p>Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional
+                healing.</p>
             </div>
           </div>
 
-          <!-- Forest Floor -->
-          <div class="forest-layer-node">
-            <div class="layer-connector"></div>
-            <div class="forest-layer-card">
-              <div class="layer-image">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
-                  alt="Forest floor with moss, decomposing leaves, and forest ecosystem" />
-              </div>
-              <div class="layer-content">
-                <h3>Forest Floor</h3>
-                <p>Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage
-                  among fallen leaves.</p>
-              </div>
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-3" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 100 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Forest Floor - Text Left, Image Right -->
+          <div class="forest-layer-item layer-item-4">
+            <div class="layer-text-wrapper">
+              <h3>Forest Floor</h3>
+              <p>Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage
+                among fallen leaves.</p>
+            </div>
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
+                alt="Forest floor with moss, decomposing leaves, and forest ecosystem" />
             </div>
           </div>
         </div>

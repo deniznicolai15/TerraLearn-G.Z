@@ -924,143 +924,89 @@ body.topic-1 .detail-section.forest-structure .section-image {
   box-shadow: 0 4px 12px rgba(45, 90, 61, 0.2);
 }
 
-/* Forest Layers Timeline - Vertical Connected Design */
-body.topic-1 .forest-layers-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Forest Layers Container - Alternating Layout */
+body.topic-1 .forest-layers-container {
   margin: 40px 0;
   position: relative;
-  padding-left: 20px;
 }
 
-/* Background organic connecting element */
-body.topic-1 .forest-layers-timeline::before {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #6B7F73 0%, #8B9F93 50%, #6B7F73 100%);
-  border-radius: 2px;
-  opacity: 0.8;
+/* Forest Layer Item - Alternating left/right layout */
+body.topic-1 .forest-layer-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 20px 0;
 }
 
-/* Forest Layer Node - Container for each layer with connector */
-body.topic-1 .forest-layer-node {
-  display: flex;
-  gap: 20px;
-  align-items: stretch;
+/* Alternate layout for even items */
+body.topic-1 .forest-layer-item.layer-item-2,
+body.topic-1 .forest-layer-item.layer-item-4 {
+  grid-template-columns: 1fr 1fr;
+}
+
+body.topic-1 .forest-layer-item.layer-item-2 .layer-image-wrapper,
+body.topic-1 .forest-layer-item.layer-item-4 .layer-image-wrapper {
+  order: 2;
+}
+
+body.topic-1 .forest-layer-item.layer-item-2 .layer-text-wrapper,
+body.topic-1 .forest-layer-item.layer-item-4 .layer-text-wrapper {
+  order: 1;
+}
+
+/* Layer image wrapper */
+body.topic-1 .layer-image-wrapper {
   position: relative;
-  margin-bottom: 0;
-}
-
-/* Organic connecting line on the left - branching effect */
-body.topic-1 .forest-layer-node .layer-connector {
-  width: 24px;
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* Horizontal branch line extending from main timeline */
-body.topic-1 .forest-layer-node .layer-connector::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background: linear-gradient(90deg, #6B7F73 0%, rgba(107, 127, 115, 0.4) 100%);
-  left: 6px;
-  top: 12px;
-  border-radius: 1px;
-}
-
-/* Organic node circle - like leaves on branches */
-body.topic-1 .forest-layer-node .layer-connector::before {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background: linear-gradient(135deg, #6B7F73 0%, #5A6E65 100%);
-  border: 2px solid #fff;
-  border-radius: 50%;
-  left: 0;
-  top: 5px;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(107, 127, 115, 0.3);
-}
-
-/* Forest Layer Cards - Horizontal Layout */
-body.topic-1 .forest-layer-card {
-  background: #fff;
   border-radius: 12px;
-  padding: 20px;
-  border: 2px solid rgba(107, 127, 115, 0.12);
-  box-shadow: 0 4px 12px rgba(107, 127, 115, 0.08);
-  position: relative;
   overflow: hidden;
-  display: flex;
-  gap: 16px;
-  flex: 1;
-  transition: all 0.3s ease;
-  min-height: 140px;
+  box-shadow: 0 8px 24px rgba(107, 127, 115, 0.2);
+  transition: all 0.4s ease;
 }
 
-body.topic-1 .forest-layer-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, #6B7F73 0%, #8B9F93 50%, rgba(107, 127, 115, 0.3) 100%);
-  border-radius: 12px 0 0 12px;
+body.topic-1 .layer-image-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(107, 127, 115, 0.3);
 }
 
-body.topic-1 .forest-layer-card:hover {
-  box-shadow: 0 8px 24px rgba(107, 127, 115, 0.15);
-  border-color: rgba(107, 127, 115, 0.25);
-  transform: translateY(-2px);
-}
-
-/* Layer image - smaller and on the left */
-body.topic-1 .forest-layer-card .layer-image {
-  width: 120px;
-  min-width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(107, 127, 115, 0.08);
-}
-
-body.topic-1 .forest-layer-card .layer-image img {
+body.topic-1 .layer-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  aspect-ratio: 1;
 }
 
-/* Layer content - on the right */
-body.topic-1 .forest-layer-card .layer-content {
-  flex: 1;
+/* Layer text wrapper */
+body.topic-1 .layer-text-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+  gap: 16px;
 }
 
-body.topic-1 .forest-layer-card h3 {
-  font-size: 16px;
-  font-weight: 600;
+body.topic-1 .layer-text-wrapper h3 {
+  font-size: 28px;
+  font-weight: 700;
   margin: 0;
-  color: var(--fg);
+  color: #6B7F73;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-body.topic-1 .forest-layer-card p {
-  font-size: 13px;
+body.topic-1 .layer-text-wrapper p {
+  font-size: 14px;
   color: var(--secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
+}
+
+/* Forest Connector Lines - Curved Dashed */
+body.topic-1 .forest-connector {
+  width: 100%;
+  height: 120px;
+  margin: 20px 0;
+  opacity: 0.6;
 }
 
 body.topic-1 .detail-section.forest-layer {
@@ -1457,14 +1403,27 @@ body.topic-4 #avifauna-container {
   padding: 50px 30px;
   }
   
-  body.topic-1 .forest-layer-card {
-    flex-direction: column;
-    min-height: auto;
+  body.topic-1 .forest-layer-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
   
-  body.topic-1 .forest-layer-card .layer-image {
-    width: 100%;
-    height: 150px;
+  body.topic-1 .forest-layer-item.layer-item-2 .layer-image-wrapper,
+  body.topic-1 .forest-layer-item.layer-item-4 .layer-image-wrapper {
+    order: 1;
+  }
+
+  body.topic-1 .forest-layer-item.layer-item-2 .layer-text-wrapper,
+  body.topic-1 .forest-layer-item.layer-item-4 .layer-text-wrapper {
+    order: 2;
+  }
+  
+  body.topic-1 .layer-image-wrapper {
+    max-width: 100%;
+  }
+  
+  body.topic-1 .layer-text-wrapper h3 {
+    font-size: 22px;
   }
   }
 
@@ -1503,34 +1462,24 @@ body.topic-4 #avifauna-container {
   aspect-ratio: 1;
   }
   
-  body.topic-1 .forest-layers-timeline {
-    padding-left: 16px;
+  body.topic-1 .forest-layer-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
   }
   
-  body.topic-1 .forest-layers-timeline::before {
-    left: 4px;
+  body.topic-1 .forest-connector {
+    height: 80px;
+    margin: 10px 0;
   }
   
-  body.topic-1 .forest-layer-node {
-    gap: 12px;
+  body.topic-1 .layer-text-wrapper h3 {
+    font-size: 18px;
   }
   
-  body.topic-1 .forest-layer-card {
-    padding: 14px;
-    flex-direction: column;
-  }
-  
-  body.topic-1 .forest-layer-card .layer-image {
-    width: 100%;
-    height: 120px;
-  }
-  
-  body.topic-1 .forest-layer-card h3 {
-    font-size: 14px;
-  }
-  
-  body.topic-1 .forest-layer-card p {
-    font-size: 12px;
+  body.topic-1 .layer-text-wrapper p {
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .figure-image-container {
