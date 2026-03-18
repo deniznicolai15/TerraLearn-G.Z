@@ -8,7 +8,7 @@ const _inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const _playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'TerraLearn G.Z.',
+  title: 'TerraLearn G.Z',
   description: 'Explore nature and learn about the earth with TerraLearn G.Z.',
 }
 
