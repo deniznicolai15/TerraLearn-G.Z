@@ -225,6 +225,22 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
       
+      // Convert newlines to paragraph breaks
+      var textContent = '';
+      if (section.text.includes('\n\n')) {
+        // Split by double newlines and create separate paragraphs
+        var paragraphs = section.text.split('\n\n');
+        textContent = paragraphs.map(function(para) {
+          return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
+        }).join('');
+      } else if (section.text.includes('\n')) {
+        // Single newlines become line breaks
+        textContent = '<p>' + section.text.replace(/\n/g, '<br>') + '</p>';
+      } else {
+        // No newlines, just wrap in paragraph
+        textContent = '<p>' + section.text + '</p>';
+      }
+      
       // Special styling for sections that need the Pamitinan info box style
       if ((index === 0 && section.title === "Geological Features") || 
           (section.title === "Historical & Cultural Significance") || 
@@ -234,7 +250,7 @@ function initializePage() {
           '<h3>' + section.title + '</h3>' +
           imageHTML +
           '<div class="geological-info-box">' +
-          '<p>' + section.text + '</p>' +
+          textContent +
           (section.content ? '<div class="geological-content">' + section.content + '</div>' : '') +
           '</div>';
       } else {
@@ -242,7 +258,7 @@ function initializePage() {
         sectionDiv.innerHTML =
           '<h3>' + section.title + '</h3>' +
           imageHTML +
-          '<p>' + section.text + '</p>' +
+          textContent +
           (section.content ? '<div class="section-content-expanded">' + section.content + '</div>' : '');
       }
       sectionsContainer.appendChild(sectionDiv);
