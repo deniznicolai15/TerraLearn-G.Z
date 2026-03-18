@@ -212,24 +212,6 @@ function initializePage() {
       videoCaption.className = "video-caption";
       videoCaption.textContent = "This 360° video was captured by one of the researchers above the 426+ MASL marker.";
       videoContainer.appendChild(videoCaption);
-
-      // Add Mt. Pamitinan information section
-      var infoSection = document.createElement("div");
-      infoSection.className = "pamitinan-info-section";
-      infoSection.innerHTML = `
-        <p>Mt. <u>Pamitinan</u> is a limestone mountain located in <b>Montalban (Rodriguez), Rizal</b>, rising to <b>426+ meters</b> above sea level. It forms part of the <u>Sierra Madre mountain range</u> and is officially recognized as a <b>DENR‑protected landscape</b>, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>
-        
-        <p>But Mt. <u>Pamitinan</u> is more than just a natural site. It is a <b>multi‑layered landmark</b>:</p>
-        
-        <ul class="pamitinan-features">
-          <li><b><u>Geological</u></b> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.</li>
-          <li><b><u>Historical</u></b> – in <u>1895</u>, <u>Andres Bonifacio</u> and the <u>Katipunan</u> declared independence inside <u>Pamitinan Cave</u>, leaving the inscription "<i>Viva la Independencia Filipina</i>" as a lasting symbol of freedom.</li>
-          <li><b><u>Mythical</u></b> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (<i>engkanto</i>), and sometimes linked to hidden realms similar to <u>Biringan</u>.</li>
-        </ul>
-        
-        <p>Because of this blend of <b>nature, nationhood, and myth</b>, Mt. <u>Pamitinan</u> stands out among Luzon's protected areas. It is not only a hiking destination but also a <b>living classroom</b> where geology, history, and culture converge. Visiting <u>Pamitinan</u> means walking through layers of stone, memory, and imagination all in one place.</p>
-      `;
-      videoContainer.appendChild(infoSection);
     }
 
     var sectionsContainer = document.getElementById("detail-sections-container");
@@ -265,6 +247,33 @@ function initializePage() {
       }
       sectionsContainer.appendChild(sectionDiv);
     });
+  }
+
+  // Remove Mt. Pamitinan info section from video container and move it to sections
+  if (topicData.id === 2) {
+    var pamitinanInfoInVideo = document.querySelector('.video-section .pamitinan-info-section');
+    if (pamitinanInfoInVideo) {
+      pamitinanInfoInVideo.remove();
+      
+      // Create a section div for Mt. Pamitinan info in the sections container
+      var pamitinanSection = document.createElement("div");
+      pamitinanSection.className = "detail-section geological-features-section";
+      pamitinanSection.innerHTML =
+        '<h3>Mt. Pamitinan Overview</h3>' +
+        '<div class="geological-info-box">' +
+        '<p>Mt. <u>Pamitinan</u> is a limestone mountain located in <b>Montalban (Rodriguez), Rizal</b>, rising to <b>426+ meters</b> above sea level. It forms part of the <u>Sierra Madre mountain range</u> and is officially recognized as a <b>DENR‑protected landscape</b>, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
+        '<p>But Mt. <u>Pamitinan</u> is more than just a natural site. It is a <b>multi‑layered landmark</b>:</p>' +
+        '<ul class="pamitinan-features">' +
+          '<li><b><u>Geological</u></b> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.</li>' +
+          '<li><b><u>Historical</u></b> – in <u>1895</u>, <u>Andres Bonifacio</u> and the <u>Katipunan</u> declared independence inside <u>Pamitinan Cave</u>, leaving the inscription "<i>Viva la Independencia Filipina</i>" as a lasting symbol of freedom.</li>' +
+          '<li><b><u>Mythical</u></b> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (<i>engkanto</i>), and sometimes linked to hidden realms similar to <u>Biringan</u>.</li>' +
+        '</ul>' +
+        '<p>Because of this blend of <b>nature, nationhood, and myth</b>, Mt. <u>Pamitinan</u> stands out among Luzon\'s protected areas. It is not only a hiking destination but also a <b>living classroom</b> where geology, history, and culture converge. Visiting <u>Pamitinan</u> means walking through layers of stone, memory, and imagination all in one place.</p>' +
+        '</div>';
+      
+      // Insert it at the beginning of the sections container
+      sectionsContainer.insertBefore(pamitinanSection, sectionsContainer.firstChild);
+    }
   }
 
   // Populate Figure 1 image and caption
