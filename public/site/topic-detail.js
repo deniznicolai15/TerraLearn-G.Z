@@ -243,10 +243,21 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-      sectionDiv.innerHTML =
-        '<h3>' + section.title + '</h3>' +
-        imageHTML +
-        '<p>' + section.text + '</p>';
+      
+      // Check if this is a detailed section (with expanded content)
+      if (section.isDetailedSection && section.content) {
+        sectionDiv.className = "detail-section detailed-section";
+        sectionDiv.innerHTML =
+          '<h3>' + section.title + '</h3>' +
+          imageHTML +
+          '<p>' + section.text + '</p>' +
+          '<div class="section-content-expanded">' + section.content + '</div>';
+      } else {
+        sectionDiv.innerHTML =
+          '<h3>' + section.title + '</h3>' +
+          imageHTML +
+          '<p>' + section.text + '</p>';
+      }
       sectionsContainer.appendChild(sectionDiv);
     });
   }

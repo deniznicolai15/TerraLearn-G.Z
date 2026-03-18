@@ -206,6 +206,50 @@ body.topic-2 .detail-section h3 {
   font-weight: 400;
 }
 
+/* ===== DETAILED SECTION STYLING (Expanded Content) ===== */
+.detailed-section .section-content-expanded {
+  padding: 24px;
+  background: rgba(107, 127, 115, 0.08);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.section-content-expanded h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.3px;
+  margin: 0 !important;
+}
+
+.section-content-expanded p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
+}
+
+.section-content-expanded b {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.section-content-expanded i {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.section-content-expanded u {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: 2px;
+}
+
 .detail-description {
   font-size: 15px;
   color: var(--secondary);
