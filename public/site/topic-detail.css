@@ -931,6 +931,20 @@ body.topic-1 .forest-layers-timeline {
   gap: 0;
   margin: 40px 0;
   position: relative;
+  padding-left: 20px;
+}
+
+/* Background organic connecting element */
+body.topic-1 .forest-layers-timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6B7F73 0%, #8B9F93 50%, #6B7F73 100%);
+  border-radius: 2px;
+  opacity: 0.8;
 }
 
 /* Forest Layer Node - Container for each layer with connector */
@@ -942,33 +956,38 @@ body.topic-1 .forest-layer-node {
   margin-bottom: 0;
 }
 
-/* Vertical connecting line on the left */
+/* Organic connecting line on the left - branching effect */
 body.topic-1 .forest-layer-node .layer-connector {
-  width: 4px;
-  background: linear-gradient(180deg, #6B7F73 0%, rgba(107, 127, 115, 0.3) 100%);
+  width: 24px;
   position: relative;
   flex-shrink: 0;
-  border-radius: 2px;
 }
 
-/* Hide connector on last item */
-body.topic-1 .forest-layer-node:last-child .layer-connector {
-  background: linear-gradient(180deg, #6B7F73 0%, transparent 50%);
+/* Horizontal branch line extending from main timeline */
+body.topic-1 .forest-layer-node .layer-connector::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #6B7F73 0%, rgba(107, 127, 115, 0.4) 100%);
+  left: 6px;
+  top: 12px;
+  border-radius: 1px;
 }
 
-/* Circle at connector line */
+/* Organic node circle - like leaves on branches */
 body.topic-1 .forest-layer-node .layer-connector::before {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border: 3px solid #6B7F73;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #6B7F73 0%, #5A6E65 100%);
+  border: 2px solid #fff;
   border-radius: 50%;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
+  left: 0;
+  top: 5px;
   z-index: 10;
+  box-shadow: 0 2px 6px rgba(107, 127, 115, 0.3);
 }
 
 /* Forest Layer Cards - Horizontal Layout */
@@ -976,8 +995,8 @@ body.topic-1 .forest-layer-card {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid rgba(107, 127, 115, 0.15);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 2px solid rgba(107, 127, 115, 0.12);
+  box-shadow: 0 4px 12px rgba(107, 127, 115, 0.08);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -987,9 +1006,21 @@ body.topic-1 .forest-layer-card {
   min-height: 140px;
 }
 
+body.topic-1 .forest-layer-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #6B7F73 0%, #8B9F93 50%, rgba(107, 127, 115, 0.3) 100%);
+  border-radius: 12px 0 0 12px;
+}
+
 body.topic-1 .forest-layer-card:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  border-color: rgba(107, 127, 115, 0.3);
+  box-shadow: 0 8px 24px rgba(107, 127, 115, 0.15);
+  border-color: rgba(107, 127, 115, 0.25);
+  transform: translateY(-2px);
 }
 
 /* Layer image - smaller and on the left */
@@ -1470,6 +1501,14 @@ body.topic-4 #avifauna-container {
   
   .gallery-item {
   aspect-ratio: 1;
+  }
+  
+  body.topic-1 .forest-layers-timeline {
+    padding-left: 16px;
+  }
+  
+  body.topic-1 .forest-layers-timeline::before {
+    left: 4px;
   }
   
   body.topic-1 .forest-layer-node {
