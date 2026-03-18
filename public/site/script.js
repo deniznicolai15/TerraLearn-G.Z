@@ -93,62 +93,18 @@ var topics = [
     sections: [
       {
         title: "Geological Features",
-        text: "Mt. Pamitinan is a geological wonder shaped by millions of years of natural processes. Its limestone composition and unique karst features make it a fascinating study in how water, rock, and time interact to create dramatic landscapes.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg",
-        isDetailedSection: true,
-        content: `
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Limestone Cliffs and Karst Formations</h4>
-          <p style="margin-bottom: 12px;">The dramatic limestone cliffs that define Mt. Pamitinan were shaped by water and rock interaction over millions of years. Rainwater, slightly acidic from atmospheric carbon dioxide, slowly dissolves the limestone, creating carved channels, sinkholes, and the distinctive jagged appearance. This process, called karst formation, is one of Earth's most dynamic geological processes.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Pamitinan Cave System</h4>
-          <p style="margin-bottom: 12px;">Inside the mountain lies Pamitinan Cave, a cavernous system featuring stalactites and stalagmites that have taken thousands of years to form. The cave provides habitat for numerous species, including bats that rely on its protected chambers. The cave's ceiling and walls bear witness to both geological time and human history.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Part of the Sierra Madre Mountain Range</h4>
-          <p style="margin-bottom: 12px;">As part of the Sierra Madre, Mt. Pamitinan contributes to critical hydrological and ecological functions. The mountain range acts as a natural barrier that protects Luzon from typhoons, while also regulating water flow and serving as a vital watershed that supplies water to millions of residents in Metro Manila and surrounding provinces.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Geological Significance</h4>
-          <p style="margin-bottom: 12px;">Mt. Pamitinan is recognized as a <b>National Geological Monument</b>, acknowledging its importance in understanding Philippine geology, tectonic history, and mineral composition. Its limestone formations provide valuable insights into the region's geological evolution and the processes that continue to shape the landscape today.</p>
-        `
+        text: " Limestone cliffs and karst formations shaped by water and rock interaction.\n\n• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave-dwelling species.\n\n• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
       },
       {
         title: "Historical & Cultural Significance",
-        text: "Mt. Pamitinan is not just a geological site—it is a sacred place in Philippine history. The mountain's caves and cliffs have witnessed pivotal moments in the nation's struggle for independence, making it a living monument to Filipino courage and resilience.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg",
-        isDetailedSection: true,
-        content: `
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">The Katipunan Meeting of 1895</h4>
-          <p style="margin-bottom: 12px;">On <b>April 12, 1895</b>, <b>Andres Bonifacio</b> and fellow members of the <b>Katipunan</b> gathered in Pamitinan Cave to declare independence. This historic meeting was a turning point in Filipino resistance against Spanish colonial rule. Inside the cave, they inscribed the motto <i>"Viva la Independencia Filipina"</i>—"Long Live Philippine Independence"—a declaration that echoed the aspirations of the Filipino people.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">The Inscription as Symbol</h4>
-          <p style="margin-bottom: 12px;">The carved inscription on the cave walls serves as a permanent testament to that revolutionary moment. Though time has weathered the letters, the symbolic weight remains: limestone cliffs that have stood for millions of years now bear witness to humanity's struggle for freedom. The inscription transforms the cave from a geological formation into a historical document.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Indigenous Heritage</h4>
-          <p style="margin-bottom: 12px;">Long before the Katipunan, the indigenous people of Montalban—the <b>Dumagat-Remontado</b>—inhabited these mountains. They understood the landscape intimately, using caves for shelter and the forests for sustenance. Mt. Pamitinan thus holds layers of cultural significance: indigenous heritage, revolutionary history, and spiritual importance all converge on its slopes.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">National Historical Landmark</h4>
-          <p style="margin-bottom: 12px;">Today, Mt. Pamitinan is officially recognized as a <b>National Historical Landmark and National Geological Monument</b>. This dual designation reflects its importance both as a site of revolutionary history and as a geological wonder. Visiting the mountain means walking through history itself—feeling the same stone that Bonifacio touched and breathing the same air that carried the hopes of a nation seeking freedom.</p>
-        `
+        text: "The landmark shown in Figure 2, located midway up Mt. Pamitinan, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. Mt. Pamitinan is therefore remembered not only as a natural landscape but also as a heritage site, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
       },
       {
         title: "Myth & Folklore",
-        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in <i>sabi sabi</i> that locals have passed down for generations.",
-        image: "/images/mysterious-tree.jpg",
-        isDetailedSection: true,
-        content: `
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Bernardo Carpio's Struggle</h4>
-          <p style="margin-bottom: 12px;">The most famous legend tells of <b>Bernardo Carpio</b>, a mythical giant trapped between Mt. Pamitinan and Mt. Binacayan. Bound by enchantment, he is said to hold the two mountains apart to prevent them from colliding. Each time he strains against his chains, the ground trembles—explaining the earthquakes felt in the area. This legend transforms geological phenomena into a narrative of eternal struggle and sacrifice.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Symbol of Resistance</h4>
-          <p style="margin-bottom: 12px;">For many, Carpio's imprisonment is more than myth. It symbolizes the Filipino struggle against oppression, with the giant's eternal effort mirroring the people's fight for freedom and resilience. The legend became a metaphor for the nation's struggle, making Mt. Pamitinan not just a place but a symbol of enduring resistance.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Whispers and Signs</h4>
-          <p style="margin-bottom: 12px;">Hikers and villagers alike recount strange experiences: faint voices or music echoing inside the cave, sudden gusts of wind, or footsteps when no one is near. Some even claim that unseen forces guide lost travelers back to the trail, as if guardians watch over the mountain. These stories speak to the spiritual presence many feel when visiting Pamitinan.</p>
-          
-          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">The Threshold Between Worlds</h4>
-          <p style="margin-bottom: 12px;">Local believers speak of Mt. Pamitinan as a <i>threshold</i> between the natural and supernatural realms, similar to the legendary lost city of <b>Biringan</b>. The mountain's mystical presence—felt in its caves and cliffs—suggests that there are aspects of this place that science alone cannot fully explain. Locals call these mystical beings <i>engkanto</i> (spirits or nature's guardians).</p>
-          
-          <p style="margin-top: 24px;">Mt. Pamitinan's folklore adds layers of meaning to the landscape. It transforms the mountain from mere geological formations into a living story, where every stone has significance and every whisper carries the weight of generations of belief and wonder.</p>
-        `
+        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations.",
+        image: "/images/mysterious-tree.jpg"
       },
       {
         title: "Did You Know?",
