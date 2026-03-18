@@ -428,6 +428,48 @@ body.topic-2 .detail-section h3 {
   color: var(--primary);
 }
 
+/* ===== FOLKLORE SECTION (Similar to Pamitinan Info) ===== */
+.folklore-section {
+  padding: 24px 0 !important;
+}
+
+.folklore-content {
+  padding: 24px;
+  background: rgba(107, 127, 115, 0.08);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.folklore-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.3px;
+  margin: 0 !important;
+}
+
+.folklore-content p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+.folklore-content b {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.folklore-content i {
+  font-style: italic;
+  color: var(--primary);
+}
+
 /* ===== INFO BAR ===== */
 .detail-info-bar {
   display: flex;

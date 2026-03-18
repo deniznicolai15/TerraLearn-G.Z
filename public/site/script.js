@@ -103,8 +103,24 @@ var topics = [
       },
       {
         title: "Myth & Folklore",
-        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations.",
-        image: "/images/mysterious-tree.jpg"
+        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in <i>sabi sabi</i> that locals have passed down for generations.",
+        image: "/images/mysterious-tree.jpg",
+        isDetailedSection: true,
+        content: `
+          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Bernardo Carpio's Struggle</h4>
+          <p style="margin-bottom: 12px;">The most famous legend tells of <b>Bernardo Carpio</b>, a mythical giant trapped between Mt. Pamitinan and Mt. Binacayan. Bound by enchantment, he is said to hold the two mountains apart to prevent them from colliding. Each time he strains against his chains, the ground trembles—explaining the earthquakes felt in the area.</p>
+          
+          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Symbol of Resistance</h4>
+          <p style="margin-bottom: 12px;">For many, Carpio's imprisonment is more than myth. It symbolizes the Filipino struggle against oppression, with the giant's eternal effort mirroring the people's fight for freedom and resilience.</p>
+          
+          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Whispers and Signs</h4>
+          <p style="margin-bottom: 12px;">Hikers and villagers alike recount strange experiences: faint voices or music echoing inside the cave, sudden gusts of wind, or footsteps when no one is near. Some even claim that unseen forces guide lost travelers back to the trail, as if guardians watch over the mountain.</p>
+          
+          <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 700;">Mystical Presence</h4>
+          <p style="margin-bottom: 12px;">These stories blur the line between geology and myth. The same cliffs that hold evidence of ancient Earth processes are imagined as portals to another realm, where spirits and giants dwell unseen.</p>
+          
+          <p style="margin-top: 24px;">Mt. Pamitinan's folklore adds a layer of enchantment to its identity. It is not only a protected landscape but also a <b>threshold between the natural and the supernatural</b>. Hiking here means stepping into a place where every rumble of stone might be Bernardo Carpio's restless strength, and every whisper of wind might carry a legend waiting to be told.</p>
+        `
       },
       {
         title: "Did You Know?",
