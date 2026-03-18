@@ -103,8 +103,8 @@ var topics = [
       },
       {
         title: "Myth & Folklore",
-        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations."
-
+        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations.",
+        image: "/images/mysterious-tree.jpg"
       },
       {
         title: "Did You Know?",
