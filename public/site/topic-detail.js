@@ -243,8 +243,10 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
       
-      // Special styling for Geological Features (first section) - match Mt. Pamitinan info style
-      if (index === 0 && section.title === "Geological Features") {
+      // Special styling for sections that need the Pamitinan info box style
+      if ((index === 0 && section.title === "Geological Features") || 
+          (section.title === "Historical & Cultural Significance") || 
+          (section.title === "Myth & Folklore")) {
         sectionDiv.className = "detail-section geological-features-section";
         sectionDiv.innerHTML =
           '<h3>' + section.title + '</h3>' +
