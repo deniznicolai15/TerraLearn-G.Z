@@ -12,7 +12,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              TerraLearn G.Z. is dedicated to sharing knowledge about the natural world,
+              TerraLearn G.Z is dedicated to sharing knowledge about the natural world,
               from tropical forests and river ecosystems to mountain habitats and beyond.
             </p>
           </div>
@@ -37,7 +37,7 @@ export function AboutSection() {
 
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-muted-foreground text-xs">
-            &copy; 2026 TerraLearn G.Z. All rights reserved.
+            &copy; 2026 TerraLearn G.Z All rights reserved.
           </p>
         </div>
       </div>

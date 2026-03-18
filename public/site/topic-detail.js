@@ -136,7 +136,7 @@ if (!topicData) {
 
 function initializePage() {
   // Set page title
-  document.title = "TerraLearn G.Z. - " + topicData.name;
+  document.title = "TerraLearn G.Z - " + topicData.name;
 
   // Populate hero section
   document.getElementById("detail-hero-img").src = topicData.image;
@@ -189,30 +189,30 @@ function initializePage() {
   if (topicData.video) {
     var videoContainer = document.createElement("div");
     videoContainer.className = "video-section";
-    
+
     var videoTitle = document.createElement("h2");
     videoTitle.className = "video-title";
     videoTitle.textContent = topicData.video.title;
-    
+
     var videoWrapper = document.createElement("div");
     videoWrapper.className = "video-wrapper";
-    
+
     // Convert Google Drive link to embeddable format
     var fileId = topicData.video.url.match(/\/d\/([a-zA-Z0-9-_]+)/);
     var embedUrl = fileId ? 'https://drive.google.com/file/d/' + fileId[1] + '/preview' : topicData.video.url;
-    
+
     videoWrapper.innerHTML = '<iframe src="' + embedUrl + '" allowfullscreen="" allow="autoplay" class="video-player"></iframe>';
-    
+
     videoContainer.appendChild(videoTitle);
     videoContainer.appendChild(videoWrapper);
-    
+
     // Add video caption for Topic 2
     if (topicData.id === 2) {
       var videoCaption = document.createElement("p");
       videoCaption.className = "video-caption";
       videoCaption.textContent = "This 360° video was captured by one of the researchers above the 426+ MASL marker.";
       videoContainer.appendChild(videoCaption);
-      
+
       // Add Mt. Pamitinan information section
       var infoSection = document.createElement("div");
       infoSection.className = "pamitinan-info-section";
@@ -231,7 +231,7 @@ function initializePage() {
       `;
       videoContainer.appendChild(infoSection);
     }
-    
+
     var sectionsContainer = document.getElementById("detail-sections-container");
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
   }
@@ -269,10 +269,10 @@ function initializePage() {
 
   // Create gallery - use topic gallery if available, otherwise use default images
   var galleryImages = [];
-  
+
   if (topicData.gallery && topicData.gallery.length > 0) {
     // Use gallery from topic data
-    topicData.gallery.forEach(function(item) {
+    topicData.gallery.forEach(function (item) {
       galleryImages.push(item.image);
     });
   } else {
@@ -287,7 +287,7 @@ function initializePage() {
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7091.PNG-leWjnQWbzjiVKkrHJFX9iyG1vHQe5c.jpeg"
     ];
   }
-  
+
   var galleryGrid = document.getElementById("gallery-grid");
   for (var i = 0; i < galleryImages.length; i++) {
     var item = document.createElement("div");
@@ -296,7 +296,7 @@ function initializePage() {
     img.src = galleryImages[i];
     img.alt = topicData.name + ' gallery image ' + (i + 1);
     // Hide gallery item if image fails to load
-    img.onerror = function() {
+    img.onerror = function () {
       this.parentElement.style.display = 'none';
     };
     item.appendChild(img);
@@ -550,48 +550,48 @@ function renderAvifaunaSection() {
 
     var controlsHTML = '';
     var creditHTML = '';
-    
+
     if (species.voiceUrl) {
       var credit = species.soundCredit || { photographer: "Unknown", location: "Unknown", date: "Unknown" };
-      creditHTML = 
+      creditHTML =
         '<div class="sound-credit">' +
-          '<div class="credit-photographer">' + credit.photographer + '</div>' +
-          '<div class="credit-location">' + credit.location + '</div>' +
-          '<div class="credit-date">' + credit.date + '</div>' +
+        '<div class="credit-photographer">' + credit.photographer + '</div>' +
+        '<div class="credit-location">' + credit.location + '</div>' +
+        '<div class="credit-date">' + credit.date + '</div>' +
         '</div>';
-      
+
       controlsHTML =
         '<div class="species-voice-indicator" title="Click to play sound">' +
-          '<button class="voice-indicator-btn" title="Play sound">' +
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
-          '</button>' +
-          '<div class="voice-waveform">' +
-            '<div class="voice-bar"></div>' +
-            '<div class="voice-bar"></div>' +
-            '<div class="voice-bar"></div>' +
-            '<div class="voice-bar"></div>' +
-          '</div>' +
-          '<div class="voice-duration">0:00</div>' +
+        '<button class="voice-indicator-btn" title="Play sound">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+        '</button>' +
+        '<div class="voice-waveform">' +
+        '<div class="voice-bar"></div>' +
+        '<div class="voice-bar"></div>' +
+        '<div class="voice-bar"></div>' +
+        '<div class="voice-bar"></div>' +
+        '</div>' +
+        '<div class="voice-duration">0:00</div>' +
         '</div>' + creditHTML;
     } else {
       controlsHTML =
         '<div class="species-controls">' +
-          '<button class="voice-btn" disabled style="opacity: 0.5; cursor: not-allowed;">' +
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
-            'No audio' +
-          '</button>' +
+        '<button class="voice-btn" disabled style="opacity: 0.5; cursor: not-allowed;">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+        'No audio' +
+        '</button>' +
         '</div>';
     }
 
     box.innerHTML =
       '<div class="species-image">' +
-        '<img src="' + species.image + '" alt="' + species.commonName + '" />' +
+      '<img src="' + species.image + '" alt="' + species.commonName + '" />' +
       '</div>' +
       '<div class="species-info">' +
-        '<div class="species-name">' + species.commonName + '</div>' +
-        '<div class="species-scientific">' + species.scientificName + '</div>' +
-        '<div class="species-family">Family: ' + species.family + '</div>' +
-        controlsHTML +
+      '<div class="species-name">' + species.commonName + '</div>' +
+      '<div class="species-scientific">' + species.scientificName + '</div>' +
+      '<div class="species-family">Family: ' + species.family + '</div>' +
+      controlsHTML +
       '</div>';
 
     box.addEventListener("click", function () {
@@ -680,7 +680,7 @@ function openFloatingAudioPlayer(species) {
   const currentTimeEl = floatingPlayer.querySelector(".current-time");
   const durationTimeEl = floatingPlayer.querySelector(".duration-time");
   const waveformBars = floatingPlayer.querySelectorAll(".floating-voice-bar");
-  
+
   let isPlaying = false;
 
   // Format time
@@ -692,7 +692,7 @@ function openFloatingAudioPlayer(species) {
   }
 
   // Update progress bar and time
-  currentPlayingAudio.addEventListener("timeupdate", function() {
+  currentPlayingAudio.addEventListener("timeupdate", function () {
     const percent = (currentPlayingAudio.currentTime / currentPlayingAudio.duration) * 100;
     progressFill.style.width = percent + "%";
     progressSlider.value = percent;
@@ -700,21 +700,21 @@ function openFloatingAudioPlayer(species) {
   });
 
   // Set duration when loaded
-  currentPlayingAudio.addEventListener("loadedmetadata", function() {
+  currentPlayingAudio.addEventListener("loadedmetadata", function () {
     durationTimeEl.textContent = formatTime(currentPlayingAudio.duration);
   });
 
   // Update waveform bars
-  currentPlayingAudio.addEventListener("play", function() {
+  currentPlayingAudio.addEventListener("play", function () {
     waveformBars.forEach(bar => bar.classList.add("active"));
   });
 
-  currentPlayingAudio.addEventListener("pause", function() {
+  currentPlayingAudio.addEventListener("pause", function () {
     waveformBars.forEach(bar => bar.classList.remove("active"));
   });
 
   // Play/pause button
-  playBtn.addEventListener("click", function(e) {
+  playBtn.addEventListener("click", function (e) {
     e.preventDefault();
     if (isPlaying) {
       currentPlayingAudio.pause();
@@ -728,7 +728,7 @@ function openFloatingAudioPlayer(species) {
   });
 
   // Audio ended
-  currentPlayingAudio.addEventListener("ended", function() {
+  currentPlayingAudio.addEventListener("ended", function () {
     playBtn.classList.remove("playing");
     isPlaying = false;
     currentPlayingAudio.currentTime = 0;
@@ -737,7 +737,7 @@ function openFloatingAudioPlayer(species) {
   });
 
   // Progress slider
-  progressSlider.addEventListener("input", function(e) {
+  progressSlider.addEventListener("input", function (e) {
     e.stopPropagation();
     const percent = this.value;
     const time = (percent / 100) * currentPlayingAudio.duration;
@@ -749,7 +749,7 @@ function openFloatingAudioPlayer(species) {
   closeBtn.addEventListener("click", closeFloatingAudioPlayer);
 
   // Close on backdrop click
-  floatingPlayer.addEventListener("click", function(e) {
+  floatingPlayer.addEventListener("click", function (e) {
     if (e.target === floatingPlayer) {
       closeFloatingAudioPlayer();
     }
@@ -789,7 +789,7 @@ function openSpeciesModal(species) {
   // Setup audio player
   const audioPlayerContainer = document.getElementById("audio-player-container");
   const audio = document.getElementById("species-audio");
-  
+
   if (species.voiceUrl) {
     audio.src = species.voiceUrl;
     audioPlayerContainer.style.display = "block";
@@ -943,11 +943,11 @@ function playCardSound(url, indicator, durationElement) {
 function closeAudioCreditsModal() {
   var modal = document.getElementById("audio-credits-modal");
   var audio = document.getElementById("credits-audio");
-  
+
   audio.pause();
   audio.currentTime = 0;
   modal.style.display = "none";
-  
+
   var playBtn = document.getElementById("audio-credits-play-btn");
   playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 }
@@ -955,7 +955,7 @@ function closeAudioCreditsModal() {
 function toggleAudioCreditsPlayback() {
   var audio = document.getElementById("credits-audio");
   var playBtn = document.getElementById("audio-credits-play-btn");
-  
+
   if (audio.paused) {
     audio.play();
     playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
@@ -970,7 +970,7 @@ function updateCreditsProgress() {
   var progressFill = document.getElementById("audio-progress-fill-credits");
   var slider = document.getElementById("audio-progress-slider-credits");
   var currentTime = document.getElementById("audio-current-time-credits");
-  
+
   if (audio.duration) {
     var percent = (audio.currentTime / audio.duration) * 100;
     progressFill.style.width = percent + "%";
@@ -1002,24 +1002,24 @@ function formatTime(seconds) {
 function drawWaveform(birdName) {
   var canvas = document.getElementById("waveform-canvas");
   var ctx = canvas.getContext("2d");
-  
+
   // Clear canvas
   ctx.fillStyle = "rgba(255, 255, 255, 0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
+
   // Draw waveform bars
   var barWidth = 6;
   var gap = 2;
   var bars = 40;
   var centerY = canvas.height / 2;
-  
+
   ctx.fillStyle = "rgba(168, 213, 168, 0.8)";
-  
+
   for (var i = 0; i < bars; i++) {
     var height = Math.random() * (canvas.height * 0.7) + canvas.height * 0.15;
     var x = i * (barWidth + gap);
     var y = centerY - height / 2;
-    
+
     ctx.fillRect(x, y, barWidth, height);
   }
 }

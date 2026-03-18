@@ -9,7 +9,7 @@ const _playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playf
 
 export const metadata: Metadata = {
   title: 'TerraLearn G.Z',
-  description: 'Explore nature and learn about the earth with TerraLearn G.Z.',
+  description: 'Explore nature and learn about the earth with TerraLearn G.Z',
 }
 
 export default function RootLayout({
