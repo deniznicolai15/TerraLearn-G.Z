@@ -243,21 +243,10 @@ function initializePage() {
       var sectionDiv = document.createElement("div");
       sectionDiv.className = "detail-section";
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-      
-      // Check if this is a detailed section (like Myth & Folklore)
-      if (section.isDetailedSection) {
-        sectionDiv.className = "detail-section folklore-section";
-        sectionDiv.innerHTML =
-          '<h3>' + section.title + '</h3>' +
-          imageHTML +
-          '<p>' + section.text + '</p>' +
-          '<div class="folklore-content">' + section.content + '</div>';
-      } else {
-        sectionDiv.innerHTML =
-          '<h3>' + section.title + '</h3>' +
-          imageHTML +
-          '<p>' + section.text + '</p>';
-      }
+      sectionDiv.innerHTML =
+        '<h3>' + section.title + '</h3>' +
+        imageHTML +
+        '<p>' + section.text + '</p>';
       sectionsContainer.appendChild(sectionDiv);
     });
   }
