@@ -239,14 +239,28 @@ function initializePage() {
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
   if (topicData.sections && topicData.sections.length > 0) {
-    topicData.sections.forEach(function (section) {
+    topicData.sections.forEach(function (section, index) {
       var sectionDiv = document.createElement("div");
-      sectionDiv.className = "detail-section";
       var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-      sectionDiv.innerHTML =
-        '<h3>' + section.title + '</h3>' +
-        imageHTML +
-        '<p>' + section.text + '</p>';
+      
+      // Special styling for Geological Features (first section) - match Mt. Pamitinan info style
+      if (index === 0 && section.title === "Geological Features") {
+        sectionDiv.className = "detail-section geological-features-section";
+        sectionDiv.innerHTML =
+          '<h3>' + section.title + '</h3>' +
+          imageHTML +
+          '<div class="geological-info-box">' +
+          '<p>' + section.text + '</p>' +
+          (section.content ? '<div class="geological-content">' + section.content + '</div>' : '') +
+          '</div>';
+      } else {
+        sectionDiv.className = "detail-section";
+        sectionDiv.innerHTML =
+          '<h3>' + section.title + '</h3>' +
+          imageHTML +
+          '<p>' + section.text + '</p>' +
+          (section.content ? '<div class="section-content-expanded">' + section.content + '</div>' : '');
+      }
       sectionsContainer.appendChild(sectionDiv);
     });
   }
