@@ -299,13 +299,6 @@ function initializePage() {
         var gridDiv = document.createElement("div");
         gridDiv.className = "forest-layers-grid";
         
-        var layerIcons = {
-          'Emergent Layer': '☀️',
-          'Canopy': '🌳',
-          'Understory': '🌱',
-          'Forest Floor': '🍂'
-        };
-        
         forestLayerSections.forEach(function(item) {
           var card = document.createElement("div");
           card.className = "forest-layer-card";
@@ -313,14 +306,11 @@ function initializePage() {
           var imageHTML = item.section.image ? 
             '<div class="forest-layer-image-container"><img src="' + item.section.image + '" alt="' + item.section.title + '" /></div>' : '';
           
-          var icon = layerIcons[item.section.title] || '🌲';
-          
           card.innerHTML =
             imageHTML +
             '<div class="forest-layer-content">' +
             '<h3 class="forest-layer-name">' + item.section.title + '</h3>' +
             '<p class="forest-layer-description">' + item.section.text + '</p>' +
-            '<div class="forest-layer-icon">' + icon + '</div>' +
             '</div>';
           
           gridDiv.appendChild(card);
