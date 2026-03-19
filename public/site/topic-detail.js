@@ -317,6 +317,18 @@ function initializePage() {
         });
 
         forestLayersContainer.appendChild(gridDiv);
+
+        // Add Biringan clearer image section after forest layers
+        var biringanImageSection = document.createElement("div");
+        biringanImageSection.className = "biringan-clearer-image-section";
+        biringanImageSection.innerHTML = 
+          '<p class="biringan-image-note">For a clearer image of Biringan, see the attached image below:</p>' +
+          '<div class="biringan-image-container">' +
+          '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/biringan-w2AhOos1VeYbh5AT73PVUSLRl7pk0x.jpg" alt="Biringan - The legendary hidden city" class="biringan-clearer-image" />' +
+          '<p class="biringan-image-caption">Biringan: The legendary hidden city said to exist in the forests of Samar, Philippines</p>' +
+          '</div>';
+        forestLayersContainer.appendChild(biringanImageSection);
+
         sectionsContainer.appendChild(forestLayersContainer);
       }
     } else {
