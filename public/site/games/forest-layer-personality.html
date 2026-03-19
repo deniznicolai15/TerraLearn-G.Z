@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Forest Layer Do You Belong To? | TerraLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a8d5a8;
+      --secondary: #8EB09A;
+      --text-light: #c4d4c4;
+      --bg-dark: #0d1f15;
+      --bg-darker: #081510;
+      --bg-card: #0f2a1c;
+      --accent: #1a4a2e;
+      --accent-light: #2d5a3d;
+      --border: rgba(75, 107, 85, 0.4);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
+      min-height: 100vh;
+      color: var(--text-light);
+      padding: 40px 20px;
+    }
+    
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .quiz-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    
+    .quiz-header p {
+      font-size: 15px;
+      color: var(--secondary);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(75, 107, 85, 0.3);
+      border-radius: 3px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-light), var(--primary));
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+    
+    .question-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 42, 28, 0.9) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .question-number {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    
+    .question-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #e8f5e9;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    
+    .option-box {
+      background: rgba(15, 42, 28, 0.6);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 100px;
+    }
+    
+    .option-box:hover {
+      border-color: var(--primary);
+      background: rgba(26, 74, 46, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .option-box.selected {
+      border-color: var(--primary);
+      background: rgba(45, 90, 61, 0.5);
+    }
+    
+    .option-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(75, 107, 85, 0.3);
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary);
+    }
+    
+    .option-box:hover .option-letter,
+    .option-box.selected .option-letter {
+      background: var(--primary);
+      color: var(--bg-dark);
+    }
+    
+    .option-text {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    
+    /* Image Options for Question 5 */
+    .options-grid.image-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .option-box.image-option {
+      padding: 0;
+      overflow: hidden;
+      min-height: auto;
+    }
+    
+    .option-image {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    
+    .option-box.image-option .option-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    /* Results Screen */
+    .results-container {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .results-container.active {
+      display: block;
+    }
+    
+    .result-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 42, 28, 0.9) 100%);
+      border: 2px solid var(--primary);
+      border-radius: 24px;
+      padding: 48px 32px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .result-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--primary);
+    }
+    
+    .result-icon svg {
+      width: 50px;
+      height: 50px;
+      color: var(--primary);
+    }
+    
+    .result-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .result-layer {
+      font-size: 36px;
+      font-weight: 800;
+      color: #e8f5e9;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .result-description {
+      font-size: 16px;
+      color: var(--secondary);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      text-align: justify;
+    }
+    
+    .restart-btn {
+      padding: 14px 40px;
+      background: var(--primary);
+      color: var(--bg-dark);
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .restart-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(168, 213, 168, 0.3);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 24px;
+      transition: color 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--primary);
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+    
+    @media (max-width: 600px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-header h1 {
+        font-size: 24px;
+      }
+      
+      .question-text {
+        font-size: 18px;
+      }
+      
+      .option-image {
+        height: 120px;
+      }
+      
+      .result-layer {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Which Forest Layer Do You Belong To?</h1>
+      <p>Take note of your answers and find out where you belong. Don't overthink! Be you!</p>
+    </div>
+    
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width: 20%;"></div>
+    </div>
+    
+    <div id="questions-container">
+      <!-- Questions will be rendered here -->
+    </div>
+    
+    <div class="results-container" id="results-container">
+      <div class="result-card">
+        <div class="result-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="result-title">You belong to the</div>
+        <div class="result-layer" id="result-layer">Emergent Layer</div>
+        <p class="result-description" id="result-description">
+          Description will appear here.
+        </p>
+        <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+        <br>
+        <a href="/site/topic-detail.html?id=1" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Topic 1
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var questions = [
+      {
+        question: "When working in a group, you prefer to...",
+        options: [
+          { letter: "A", text: "Lead and take charge" },
+          { letter: "B", text: "Support and protect others" },
+          { letter: "C", text: "Work quietly behind the scenes" },
+          { letter: "D", text: "Stay grounded and keep things practical" }
+        ]
+      },
+      {
+        question: "Your ideal environment is...",
+        options: [
+          { letter: "A", text: "Wide open spaces with sunlight" },
+          { letter: "B", text: "A lively community full of activity" },
+          { letter: "C", text: "A calm, shaded place to think" },
+          { letter: "D", text: "A stable, earthy setting close to the ground" }
+        ]
+      },
+      {
+        question: "What role do you play in online games you usually play? Mobile Legend? CODM? Valorant?",
+        options: [
+          { letter: "A", text: "Core/Carrier" },
+          { letter: "B", text: "Protector/Provider" },
+          { letter: "C", text: "Initiator" },
+          { letter: "D", text: "Tank/Anchor" }
+        ]
+      },
+      {
+        question: "What sports do you like the most?",
+        options: [
+          { letter: "A", text: "Basketball", image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop" },
+          { letter: "B", text: "Volleyball", image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&h=300&fit=crop" },
+          { letter: "C", text: "Archery", image: "https://images.unsplash.com/photo-1510925758641-869d353cecc7?w=400&h=300&fit=crop" },
+          { letter: "D", text: "Weightlifting", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" }
+        ],
+        hasImages: true
+      },
+      {
+        question: "If your life were a Disney adventure, which setting feels most like you?",
+        options: [
+          { letter: "A", text: "The Pride Lands in The Lion King", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A.-yyqoMbC7kGPKAAYtkqlUAFzIKDMKh7.jpg" },
+          { letter: "B", text: "Jungle in Tarzan", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/B.-0GWNTmRJQq7Xm2XQ0vpLiUonpj5FjB.png" },
+          { letter: "C", text: "The Hidden Forest in Frozen 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C.-MHDYCPJhAm8VgKYEronOV1t3Rq73z7.png" },
+          { letter: "D", text: "Enchanted Ground in Moana", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/D.-75p1s1WTY8JXZYT7vPslQw7V9Jbds2.png" }
+        ],
+        hasImages: true
+      }
+    ];
+
+    var currentQuestion = 0;
+    var answers = [];
+
+    var layerResults = {
+      A: {
+        name: "Emergent Layer",
+        description: "You're a natural leader who rises above the rest! Like the tallest trees that break through the canopy to reach the sun, you're ambitious, visionary, and not afraid to stand out. You thrive in positions where you can see the big picture and guide others. Your strength lies in your ability to weather any storm while maintaining your position at the top."
+      },
+      B: {
+        name: "Canopy Layer",
+        description: "You're the heart of the community! Like the dense canopy that shelters the forest below, you're protective, nurturing, and create a safe space for others. You thrive in social environments and are often the glue that holds groups together. Your strength lies in building connections and creating harmony within your community."
+      },
+      C: {
+        name: "Understory Layer",
+        description: "You're thoughtful and adaptable! Like the understory plants that thrive in filtered light, you're comfortable working in the background and have a unique ability to find opportunities where others might not look. You're patient, observant, and often see things others miss. Your strength lies in your adaptability and quiet wisdom."
+      },
+      D: {
+        name: "Forest Floor",
+        description: "You're grounded and essential! Like the forest floor that supports all life above it, you're practical, reliable, and form the foundation that others depend on. You understand that true strength comes from stability and persistence. Your strength lies in your ability to nurture growth and transform challenges into opportunities."
+      }
+    };
+
+    function renderQuestion(index) {
+      var container = document.getElementById('questions-container');
+      var q = questions[index];
+      
+      var optionsHTML = '';
+      var gridClass = q.hasImages ? 'options-grid image-options' : 'options-grid';
+      
+      q.options.forEach(function(opt, i) {
+        if (q.hasImages) {
+          optionsHTML += 
+            '<div class="option-box image-option" onclick="selectOption(\'' + opt.letter + '\')">' +
+            '<img src="' + opt.image + '" alt="' + opt.text + '" class="option-image">' +
+            '<div class="option-content">' +
+            '<span class="option-letter">' + opt.letter + '</span>' +
+            '<span class="option-text">' + opt.text + '</span>' +
+            '</div>' +
+            '</div>';
+        } else {
+          optionsHTML += 
+            '<div class="option-box" onclick="selectOption(\'' + opt.letter + '\')">' +
+            '<span class="option-letter">' + opt.letter + '</span>' +
+            '<span class="option-text">' + opt.text + '</span>' +
+            '</div>';
+        }
+      });
+      
+      container.innerHTML = 
+        '<div class="question-card">' +
+        '<span class="question-number">Question ' + (index + 1) + ' of ' + questions.length + '</span>' +
+        '<h2 class="question-text">' + q.question + '</h2>' +
+        '<div class="' + gridClass + '">' + optionsHTML + '</div>' +
+        '</div>';
+      
+      updateProgress();
+    }
+
+    function selectOption(letter) {
+      answers.push(letter);
+      
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        renderQuestion(currentQuestion);
+      } else {
+        showResults();
+      }
+    }
+
+    function updateProgress() {
+      var progress = ((currentQuestion + 1) / questions.length) * 100;
+      document.getElementById('progress-fill').style.width = progress + '%';
+    }
+
+    function showResults() {
+      document.getElementById('questions-container').classList.add('hidden');
+      document.querySelector('.progress-bar').classList.add('hidden');
+      
+      // Count answers
+      var counts = { A: 0, B: 0, C: 0, D: 0 };
+      answers.forEach(function(a) {
+        counts[a]++;
+      });
+      
+      // Find most common answer
+      var maxLetter = 'A';
+      var maxCount = 0;
+      Object.keys(counts).forEach(function(letter) {
+        if (counts[letter] > maxCount) {
+          maxCount = counts[letter];
+          maxLetter = letter;
+        }
+      });
+      
+      var result = layerResults[maxLetter];
+      document.getElementById('result-layer').textContent = result.name;
+      document.getElementById('result-description').textContent = result.description;
+      document.getElementById('results-container').classList.add('active');
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      answers = [];
+      document.getElementById('questions-container').classList.remove('hidden');
+      document.querySelector('.progress-bar').classList.remove('hidden');
+      document.getElementById('results-container').classList.remove('active');
+      renderQuestion(0);
+    }
+
+    // Initialize
+    renderQuestion(0);
+  </script>
+</body>
+</html>

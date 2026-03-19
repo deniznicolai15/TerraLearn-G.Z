@@ -320,6 +320,33 @@ function initializePage() {
         forestLayersContainer.appendChild(gridDiv);
         sectionsContainer.appendChild(forestLayersContainer);
 
+        // Add Personality Quiz Game Box after Vertical Structure
+        var personalityGameBox = document.createElement("div");
+        personalityGameBox.className = "forest-game-box personality-quiz-box";
+        personalityGameBox.innerHTML = 
+          '<a href="/site/games/forest-layer-personality.html" target="_blank" class="game-box-link">' +
+          '<div class="game-box-content">' +
+          '<div class="game-box-icon">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="12" cy="12" r="10"></circle>' +
+          '<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>' +
+          '<line x1="12" y1="17" x2="12.01" y2="17"></line>' +
+          '</svg>' +
+          '</div>' +
+          '<div class="game-box-text">' +
+          '<h3>Which Forest Layer Do You Belong To?</h3>' +
+          '<p>Take note of your answers and find out where you belong. Don\'t overthink! Be you!</p>' +
+          '</div>' +
+          '<div class="game-box-arrow">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+          '<polyline points="12 5 19 12 12 19"></polyline>' +
+          '</svg>' +
+          '</div>' +
+          '</div>' +
+          '</a>';
+        sectionsContainer.appendChild(personalityGameBox);
+
         // Add Functions and Environmental Balance section
         var functionsSection = document.createElement("div");
         functionsSection.className = "functions-environmental-section";
