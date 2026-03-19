@@ -248,7 +248,7 @@ function initializePage() {
   if (topicData.sections && topicData.sections.length > 0) {
     // For Topic 1, create a special card layout for forest layers
     if (topicData.id === 1) {
-      var forestLayerIndices = [2, 3, 4, 5]; // Emergent, Canopy, Understory, Forest Floor
+      var forestLayerIndices = [1, 2, 3, 4]; // Emergent, Canopy, Understory, Forest Floor
       var forestLayerSections = [];
       var otherSections = [];
 

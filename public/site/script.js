@@ -32,11 +32,6 @@ var topics = [
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg"
       },
       {
-        title: "Structure of Philippine Forest Ecosystem",
-        text: "",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DmRgZrxYT0wLyKqSGGV36FN8ON6Kpk.png"
-      },
-      {
         title: "Emergent Layer",
         text: "Towering trees like luan and apitong rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here, hunting from above the forest canopy.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
