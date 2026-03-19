@@ -8,11 +8,6 @@ var topics = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
     description:
       "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.",
-    intro: {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg",
-      caption: "Figure 1: Lush Philippine forest with mountains and sky",
-      text: "Forests in the Philippines are diverse and vital. From <strong>dipterocarp forests</strong> to <strong>mangroves</strong> and <strong>montane forests</strong>, these ecosystems sustain life and regulate climate. They're the lungs of the Earth.<br><br><strong>Quick fact:</strong> The Sierra Madre protects Luzon from typhoons and provides water to millions."
-    },
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7094.PNG-5RorpTIlUzCBUkjabzDVzAphiwohQY.jpeg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7099.PNG-4K3gR1CaM812NAohgaKXacPLQGLBiW.jpeg" },
