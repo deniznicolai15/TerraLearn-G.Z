@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Ecosystem Quiz | TerraLearn G.Z</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a8d5a8;
+      --primary-dark: #7cb97c;
+      --secondary: #8EB09A;
+      --text-light: #c4d4c4;
+      --text-white: #e8f5e9;
+      --bg-dark: #0d1f15;
+      --bg-darker: #081510;
+      --bg-card: #0f2a1c;
+      --accent: #1a4a2e;
+      --accent-light: #2d5a3d;
+      --border: rgba(75, 107, 85, 0.4);
+      --correct: #4CAF50;
+      --correct-bg: rgba(76, 175, 80, 0.15);
+      --wrong: #ff6b6b;
+      --wrong-bg: rgba(255, 107, 107, 0.15);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
+      min-height: 100vh;
+      color: var(--text-light);
+      padding: 40px 20px;
+    }
+    
+    .quiz-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Header */
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .quiz-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    
+    .quiz-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .quiz-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    
+    .quiz-header p {
+      font-size: 15px;
+      color: var(--secondary);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    
+    /* Progress */
+    .progress-section {
+      margin-bottom: 32px;
+    }
+    
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .progress-text {
+      font-size: 13px;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    
+    .progress-count {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(75, 107, 85, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-light), var(--primary));
+      border-radius: 4px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Question Card */
+    .question-card {
+      background: linear-gradient(145deg, var(--bg-card) 0%, rgba(15, 42, 28, 0.95) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .question-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    
+    .question-label {
+      font-size: 13px;
+      color: var(--secondary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .question-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-white);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    
+    /* Options */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    
+    .option-item {
+      position: relative;
+      background: rgba(15, 42, 28, 0.5);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .option-item:hover:not(.disabled) {
+      border-color: var(--primary);
+      background: rgba(26, 74, 46, 0.35);
+      transform: translateX(8px);
+    }
+    
+    .option-item.selected {
+      border-color: var(--primary);
+      background: rgba(45, 90, 61, 0.4);
+    }
+    
+    .option-item.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+    
+    .option-letter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(75, 107, 85, 0.25);
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .option-item:hover:not(.disabled) .option-letter,
+    .option-item.selected .option-letter {
+      background: var(--primary);
+      color: var(--bg-dark);
+    }
+    
+    .option-text {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.5;
+      flex: 1;
+    }
+    
+    .option-item.selected .option-text {
+      color: var(--text-white);
+      font-weight: 500;
+    }
+    
+    /* Submit Button */
+    .submit-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    
+    .submit-btn {
+      padding: 16px 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--bg-dark);
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 20px rgba(168, 213, 168, 0.25);
+    }
+    
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(168, 213, 168, 0.35);
+    }
+    
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* Results Screen */
+    .results-screen {
+      display: none;
+      animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    
+    .results-screen.active {
+      display: block;
+    }
+    
+    .results-card {
+      background: linear-gradient(145deg, var(--bg-card) 0%, rgba(15, 42, 28, 0.95) 100%);
+      border: 2px solid var(--primary);
+      border-radius: 28px;
+      padding: 48px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .results-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-light), var(--primary));
+    }
+    
+    .results-emoji {
+      font-size: 64px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .results-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+    
+    .results-subtitle {
+      font-size: 16px;
+      color: var(--secondary);
+      margin-bottom: 32px;
+    }
+    
+    .score-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(45, 90, 61, 0.3) 0%, rgba(26, 74, 46, 0.3) 100%);
+      border: 4px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .score-circle::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px dashed rgba(168, 213, 168, 0.3);
+    }
+    
+    .score-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    
+    .score-label {
+      font-size: 13px;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    
+    .score-details {
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    
+    .score-message {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    /* Answer Breakdown */
+    .breakdown-section {
+      text-align: left;
+      margin: 32px 0;
+      padding: 24px;
+      background: rgba(15, 42, 28, 0.5);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .breakdown-section::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .breakdown-section::-webkit-scrollbar-track {
+      background: rgba(75, 107, 85, 0.1);
+      border-radius: 3px;
+    }
+    
+    .breakdown-section::-webkit-scrollbar-thumb {
+      background: rgba(142, 176, 154, 0.4);
+      border-radius: 3px;
+    }
+    
+    .breakdown-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      text-align: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .breakdown-item {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      border-left: 4px solid;
+    }
+    
+    .breakdown-item.correct {
+      background: var(--correct-bg);
+      border-left-color: var(--correct);
+    }
+    
+    .breakdown-item.wrong {
+      background: var(--wrong-bg);
+      border-left-color: var(--wrong);
+    }
+    
+    .breakdown-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .breakdown-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: rgba(75, 107, 85, 0.3);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+    
+    .breakdown-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .breakdown-item.correct .breakdown-status {
+      color: var(--correct);
+    }
+    
+    .breakdown-item.wrong .breakdown-status {
+      color: var(--wrong);
+    }
+    
+    .breakdown-question {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    
+    .breakdown-answers {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .answer-row {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    
+    .answer-row.user-correct {
+      background: rgba(76, 175, 80, 0.2);
+      color: #81c784;
+    }
+    
+    .answer-row.user-wrong {
+      background: rgba(255, 107, 107, 0.2);
+      color: #ff8a8a;
+    }
+    
+    .answer-row.correct-answer {
+      background: rgba(76, 175, 80, 0.25);
+      color: #a5d6a7;
+    }
+    
+    .answer-label {
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+    
+    .answer-value {
+      font-weight: 500;
+    }
+    
+    /* Action Buttons */
+    .results-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    
+    .action-btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .action-btn.primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--bg-dark);
+      border: none;
+      box-shadow: 0 4px 20px rgba(168, 213, 168, 0.25);
+    }
+    
+    .action-btn.primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(168, 213, 168, 0.35);
+    }
+    
+    .action-btn.secondary {
+      background: transparent;
+      color: var(--secondary);
+      border: 2px solid var(--border);
+    }
+    
+    .action-btn.secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(75, 107, 85, 0.1);
+    }
+    
+    .action-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Hidden */
+    .hidden {
+      display: none !important;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 16px;
+      }
+      
+      .quiz-header h1 {
+        font-size: 26px;
+      }
+      
+      .question-card {
+        padding: 24px 20px;
+        border-radius: 20px;
+      }
+      
+      .question-text {
+        font-size: 17px;
+      }
+      
+      .option-item {
+        padding: 14px 16px;
+      }
+      
+      .option-letter {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+      
+      .option-text {
+        font-size: 14px;
+      }
+      
+      .results-card {
+        padding: 32px 20px;
+      }
+      
+      .score-circle {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .score-number {
+        font-size: 40px;
+      }
+      
+      .breakdown-section {
+        padding: 16px;
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-wrapper">
+    <!-- Header -->
+    <div class="quiz-header">
+      <div class="quiz-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        Topic 1 Quiz
+      </div>
+      <h1>Test Your Knowledge</h1>
+      <p>How much do you know about the Philippine forest ecosystem? Let's find out!</p>
+    </div>
+    
+    <!-- Progress -->
+    <div class="progress-section" id="progress-section">
+      <div class="progress-info">
+        <span class="progress-text">Your Progress</span>
+        <span class="progress-count" id="progress-count">0 / 10</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+    
+    <!-- Questions Container -->
+    <div id="questions-container"></div>
+    
+    <!-- Submit Button -->
+    <div class="submit-section" id="submit-section">
+      <button class="submit-btn" id="submit-btn" disabled onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+    
+    <!-- Results Screen -->
+    <div class="results-screen" id="results-screen">
+      <div class="results-card">
+        <span class="results-emoji" id="results-emoji">🌲</span>
+        <h2 class="results-title">Quiz Complete!</h2>
+        <p class="results-subtitle">Here's how you did</p>
+        
+        <div class="score-display">
+          <div class="score-circle">
+            <span class="score-number" id="score-number">0</span>
+            <span class="score-label">out of 10</span>
+          </div>
+        </div>
+        
+        <p class="score-message" id="score-message">Great job!</p>
+        <p class="score-details" id="score-details">You got 0 questions correct.</p>
+        
+        <!-- Answer Breakdown -->
+        <div class="breakdown-section" id="breakdown-section">
+          <h3 class="breakdown-title">Answer Breakdown</h3>
+          <div id="breakdown-list"></div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="results-actions">
+          <button class="action-btn primary" onclick="retakeQuiz()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+              <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+              <path d="M16 21h5v-5"></path>
+            </svg>
+            Try Again
+          </button>
+          <a href="javascript:history.back()" class="action-btn secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Topic
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Quiz Questions with Answer Key
+    var quizData = [
+      {
+        question: "What is the primary function of forests in producing oxygen and storing carbon?",
+        options: [
+          "Provide shelter only",
+          "Produce oxygen and store carbon",
+          "Regulate temperature only",
+          "Supply water"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which mountain range is most important for Luzon's protection from typhoons?",
+        options: [
+          "Cordillera",
+          "Sierra Madre",
+          "Caraballo",
+          "Zambales"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "What is the tallest layer of the forest ecosystem?",
+        options: [
+          "Canopy",
+          "Emergent Layer",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which forest layer is dense and creates a humid microclimate?",
+        options: [
+          "Emergent Layer",
+          "Canopy",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "What type of vegetation is found in the shaded understory layer?",
+        options: [
+          "Tall trees",
+          "Only flowers",
+          "Shrubs and small trees",
+          "No vegetation"
+        ],
+        correct: 2 // C
+      },
+      {
+        question: "What is the dark, damp layer where decomposition occurs?",
+        options: [
+          "Canopy",
+          "Understory",
+          "Emergent Layer",
+          "Forest Floor"
+        ],
+        correct: 3 // D
+      },
+      {
+        question: "Which watershed supplies water to Metro Manila?",
+        options: [
+          "Angat",
+          "Pantabangan",
+          "La Mesa",
+          "Wawa"
+        ],
+        correct: 2 // C
+      },
+      {
+        question: "Which coastal forests act as natural seawalls against storm surges?",
+        options: [
+          "Dipterocarp forests",
+          "Mangroves",
+          "Montane forests",
+          "Bamboo groves"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which iconic species symbolizes the biodiversity of Philippine forests?",
+        options: [
+          "Water buffalo",
+          "Philippine eagle and rafflesia",
+          "Coconut crab",
+          "Saltwater crocodile"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "According to local folklore, what is Biringan?",
+        options: [
+          "Hidden city inhabited by mystical beings",
+          "A cave",
+          "A river",
+          "A mountain pass"
+        ],
+        correct: 0 // A
+      }
+    ];
+
+    var userAnswers = new Array(quizData.length).fill(null);
+    var optionLetters = ['A', 'B', 'C', 'D'];
+
+    function renderQuiz() {
+      var container = document.getElementById('questions-container');
+      var html = '';
+
+      quizData.forEach(function(q, qIndex) {
+        html += '<div class="question-card" style="animation-delay: ' + (qIndex * 0.1) + 's;">';
+        html += '<div class="question-top">';
+        html += '<div class="question-number">' + (qIndex + 1) + '</div>';
+        html += '<span class="question-label">Question ' + (qIndex + 1) + ' of ' + quizData.length + '</span>';
+        html += '</div>';
+        html += '<h2 class="question-text">' + q.question + '</h2>';
+        html += '<div class="options-list">';
+
+        q.options.forEach(function(opt, optIndex) {
+          html += '<div class="option-item" data-question="' + qIndex + '" data-option="' + optIndex + '" onclick="selectOption(' + qIndex + ', ' + optIndex + ')">';
+          html += '<span class="option-letter">' + optionLetters[optIndex] + '</span>';
+          html += '<span class="option-text">' + opt + '</span>';
+          html += '</div>';
+        });
+
+        html += '</div>';
+        html += '</div>';
+      });
+
+      container.innerHTML = html;
+    }
+
+    function selectOption(questionIndex, optionIndex) {
+      // Remove previous selection for this question
+      var options = document.querySelectorAll('.option-item[data-question="' + questionIndex + '"]');
+      options.forEach(function(opt) {
+        opt.classList.remove('selected');
+      });
+
+      // Add selection to clicked option
+      var selectedOption = document.querySelector('.option-item[data-question="' + questionIndex + '"][data-option="' + optionIndex + '"]');
+      selectedOption.classList.add('selected');
+
+      // Store answer
+      userAnswers[questionIndex] = optionIndex;
+
+      // Update progress
+      updateProgress();
+
+      // Check if all questions answered
+      checkSubmitButton();
+    }
+
+    function updateProgress() {
+      var answered = userAnswers.filter(function(a) { return a !== null; }).length;
+      var total = quizData.length;
+      var percentage = (answered / total) * 100;
+
+      document.getElementById('progress-count').textContent = answered + ' / ' + total;
+      document.getElementById('progress-fill').style.width = percentage + '%';
+    }
+
+    function checkSubmitButton() {
+      var allAnswered = userAnswers.every(function(a) { return a !== null; });
+      document.getElementById('submit-btn').disabled = !allAnswered;
+    }
+
+    function submitQuiz() {
+      // Calculate score
+      var correct = 0;
+      quizData.forEach(function(q, index) {
+        if (userAnswers[index] === q.correct) {
+          correct++;
+        }
+      });
+
+      var percentage = Math.round((correct / quizData.length) * 100);
+
+      // Determine emoji and message
+      var emoji, message;
+      if (percentage === 100) {
+        emoji = '🏆';
+        message = 'Perfect score! You are a Terra Master!';
+      } else if (percentage >= 80) {
+        emoji = '🌟';
+        message = 'Excellent work! You really know your stuff!';
+      } else if (percentage >= 60) {
+        emoji = '🌲';
+        message = 'Good job! Keep learning about our forests!';
+      } else if (percentage >= 40) {
+        emoji = '🌱';
+        message = 'Not bad! There\'s more to discover!';
+      } else {
+        emoji = '📚';
+        message = 'Keep learning! Review the topic and try again!';
+      }
+
+      // Update results display
+      document.getElementById('results-emoji').textContent = emoji;
+      document.getElementById('score-number').textContent = correct;
+      document.getElementById('score-message').textContent = message;
+      document.getElementById('score-details').textContent = 'You got ' + correct + ' out of ' + quizData.length + ' questions correct (' + percentage + '%)';
+
+      // Generate breakdown
+      generateBreakdown();
+
+      // Show results
+      document.getElementById('questions-container').classList.add('hidden');
+      document.getElementById('submit-section').classList.add('hidden');
+      document.getElementById('progress-section').classList.add('hidden');
+      document.getElementById('results-screen').classList.add('active');
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function generateBreakdown() {
+      var breakdownList = document.getElementById('breakdown-list');
+      var html = '';
+
+      quizData.forEach(function(q, index) {
+        var isCorrect = userAnswers[index] === q.correct;
+        var userAnswer = q.options[userAnswers[index]];
+        var correctAnswer = q.options[q.correct];
+
+        html += '<div class="breakdown-item ' + (isCorrect ? 'correct' : 'wrong') + '">';
+        html += '<div class="breakdown-header">';
+        html += '<span class="breakdown-num">Q' + (index + 1) + '</span>';
+        html += '<span class="breakdown-status">';
+        if (isCorrect) {
+          html += '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        } else {
+          html += '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+        }
+        html += '</span>';
+        html += '</div>';
+        html += '<p class="breakdown-question">' + q.question + '</p>';
+        html += '<div class="breakdown-answers">';
+        html += '<div class="answer-row ' + (isCorrect ? 'user-correct' : 'user-wrong') + '">';
+        html += '<span class="answer-label">Your answer:</span>';
+        html += '<span class="answer-value">' + optionLetters[userAnswers[index]] + ' - ' + userAnswer + '</span>';
+        html += '</div>';
+
+        if (!isCorrect) {
+          html += '<div class="answer-row correct-answer">';
+          html += '<span class="answer-label">Correct:</span>';
+          html += '<span class="answer-value">' + optionLetters[q.correct] + ' - ' + correctAnswer + '</span>';
+          html += '</div>';
+        }
+
+        html += '</div>';
+        html += '</div>';
+      });
+
+      breakdownList.innerHTML = html;
+    }
+
+    function retakeQuiz() {
+      // Reset answers
+      userAnswers = new Array(quizData.length).fill(null);
+
+      // Reset UI
+      document.querySelectorAll('.option-item').forEach(function(opt) {
+        opt.classList.remove('selected');
+      });
+
+      // Show quiz
+      document.getElementById('questions-container').classList.remove('hidden');
+      document.getElementById('submit-section').classList.remove('hidden');
+      document.getElementById('progress-section').classList.remove('hidden');
+      document.getElementById('results-screen').classList.remove('active');
+
+      // Reset progress
+      updateProgress();
+      checkSubmitButton();
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize
+    renderQuiz();
+    updateProgress();
+  </script>
+</body>
+</html>

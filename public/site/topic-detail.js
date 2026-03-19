@@ -435,11 +435,13 @@ function initializePage() {
         var gameBox = document.createElement("div");
         gameBox.className = "forest-game-box";
         gameBox.innerHTML = 
-          '<div class="game-box-link" id="start-quiz-trigger" style="cursor: pointer;">' +
+          '<a href="/site/games/topic1-quiz.html" class="game-box-link">' +
           '<div class="game-box-content">' +
           '<div class="game-box-icon">' +
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-          '<polygon points="5 3 19 12 5 21 5 3"></polygon>' +
+          '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+          '<path d="M2 17l10 5 10-5"></path>' +
+          '<path d="M2 12l10 5 10-5"></path>' +
           '</svg>' +
           '</div>' +
           '<div class="game-box-text">' +
@@ -453,7 +455,7 @@ function initializePage() {
           '</svg>' +
           '</div>' +
           '</div>' +
-          '</div>';
+          '</a>';
         sectionsContainer.appendChild(gameBox);
       }
     } else {
@@ -601,18 +603,6 @@ function initializePage() {
     window.history.back();
   });
 
-  // Start Quiz button (triggered by game box)
-  var quizTrigger = document.getElementById("start-quiz-trigger");
-  if (quizTrigger) {
-    quizTrigger.addEventListener("click", function () {
-      var quizContainer = document.getElementById("quiz-container");
-      quizContainer.style.display = "block";
-      document.getElementById("quiz-content").style.display = "flex";
-      document.getElementById("quiz-results").style.display = "none";
-      // Scroll to quiz
-      quizContainer.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
 }
 
 // ===== QUIZ FUNCTIONALITY =====
