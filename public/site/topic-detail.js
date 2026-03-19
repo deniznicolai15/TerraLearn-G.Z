@@ -324,7 +324,7 @@ function initializePage() {
         var personalityGameBox = document.createElement("div");
         personalityGameBox.className = "forest-game-box personality-quiz-box";
         personalityGameBox.innerHTML = 
-          '<a href="/site/games/forest-layer-personality.html" target="_blank" class="game-box-link">' +
+          '<a href="/site/games/forest-layer-personality.html" class="game-box-link">' +
           '<div class="game-box-content">' +
           '<div class="game-box-icon">' +
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
