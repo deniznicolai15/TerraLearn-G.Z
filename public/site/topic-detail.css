@@ -2810,3 +2810,213 @@ body.topic-4 #avifauna-container {
     max-width: 100%;
   }
 }
+
+/* ===== FUNCTIONS AND ENVIRONMENTAL BALANCE SECTION ===== */
+.functions-environmental-section {
+  padding: 50px 30px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.08) 100%);
+  margin: 50px 0;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.functions-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 36px;
+  text-align: center;
+  position: relative;
+}
+
+.functions-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+}
+
+.functions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.function-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.function-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+}
+
+.function-number {
+  min-width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.function-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 8px 0;
+}
+
+.function-content p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .functions-environmental-section {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+  
+  .functions-section-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+  
+  .functions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .function-card {
+    padding: 16px;
+  }
+  
+  .function-number {
+    min-width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  
+  .function-content h4 {
+    font-size: 15px;
+  }
+  
+  .function-content p {
+    font-size: 13px;
+  }
+}
+
+/* ===== BIRINGAN STANDALONE SECTION ===== */
+.biringan-section-standalone {
+  padding: 50px 30px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(109, 40, 217, 0.08) 100%);
+  margin: 50px 0;
+  border-radius: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.biringan-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5b21b6;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.biringan-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+  border-radius: 2px;
+}
+
+.biringan-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.biringan-section-standalone .biringan-description {
+  font-size: 16px;
+  color: #4c1d95;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+.biringan-section-standalone .biringan-description strong {
+  color: #5b21b6;
+  font-weight: 600;
+}
+
+.biringan-section-standalone .biringan-image-container {
+  margin: 28px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.biringan-section-standalone .biringan-clearer-image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.biringan-section-standalone .biringan-clearer-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.35);
+}
+
+.biringan-section-standalone .biringan-description-bottom {
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .biringan-section-standalone {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+  
+  .biringan-section-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .biringan-section-standalone .biringan-description {
+    font-size: 14px;
+  }
+  
+  .biringan-section-standalone .biringan-clearer-image {
+    max-width: 100%;
+  }
+}

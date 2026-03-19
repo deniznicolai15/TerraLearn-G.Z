@@ -317,21 +317,91 @@ function initializePage() {
         });
 
         forestLayersContainer.appendChild(gridDiv);
+        sectionsContainer.appendChild(forestLayersContainer);
 
-        // Add Biringan section after forest layers
-        var biringanImageSection = document.createElement("div");
-        biringanImageSection.className = "biringan-clearer-image-section";
-        biringanImageSection.innerHTML = 
-          '<h3 class="biringan-title">So what is Biringan?</h3>' +
+        // Add Functions and Environmental Balance section
+        var functionsSection = document.createElement("div");
+        functionsSection.className = "functions-environmental-section";
+        functionsSection.innerHTML = 
+          '<h2 class="functions-section-title">Functions and Environmental Balance of Philippine Forests</h2>' +
+          '<div class="functions-grid">' +
+          '<div class="function-card">' +
+          '<div class="function-number">1</div>' +
+          '<div class="function-content">' +
+          '<h4>Climate Regulation</h4>' +
+          '<p>Forests absorb carbon dioxide and release oxygen, acting as natural air conditioners. Through carbon storage and transpiration, they help cool the planet and mitigate global warming.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">2</div>' +
+          '<div class="function-content">' +
+          '<h4>Water Cycle Balance</h4>' +
+          '<p>By capturing rainfall and recharging aquifers, forests regulate river flow. Watersheds such as La Mesa (Metro Manila), Angat (Bulacan), and Pantabangan (Nueva Ecija) supply clean drinking water and irrigation for agriculture.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">3</div>' +
+          '<div class="function-content">' +
+          '<h4>Soil Protection</h4>' +
+          '<p>Tree roots stabilize slopes and prevent erosion. In mountainous areas like Benguet and the Cordilleras, forests reduce landslide risks and protect farming terraces.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">4</div>' +
+          '<div class="function-content">' +
+          '<h4>Coastal Defense</h4>' +
+          '<p>Mangrove forests in Palawan, Leyte, and other coastal provinces act as natural seawalls. They buffer communities against storm surges and typhoons, while also serving as nurseries for fish and crabs.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">5</div>' +
+          '<div class="function-content">' +
+          '<h4>Biodiversity Conservation</h4>' +
+          '<p>Philippine forests host thousands of species, many endemic. Iconic examples include the Philippine eagle, tarsier, and rafflesia (the world\'s largest flower). These ecosystems safeguard genetic diversity crucial for medicine, food, and ecological resilience.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">6</div>' +
+          '<div class="function-content">' +
+          '<h4>Disaster Risk Reduction</h4>' +
+          '<p>Forests lessen the impact of floods, droughts, and landslides by regulating water flow and maintaining soil integrity. Their role is especially critical during typhoon season.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">7</div>' +
+          '<div class="function-content">' +
+          '<h4>Agricultural Support</h4>' +
+          '<p>Watersheds sustain farming by providing irrigation. Forest litter enriches soil fertility, while shaded microclimates protect crops.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">8</div>' +
+          '<div class="function-content">' +
+          '<h4>Cultural and Economic Value</h4>' +
+          '<p>Forests provide timber, food, and medicinal plants. For indigenous groups like the Dumagat, Manobo, and Ifugao, forests are sacred spaces tied to identity, spirituality, and traditional knowledge.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">9</div>' +
+          '<div class="function-content">' +
+          '<h4>Livelihood and Tourism</h4>' +
+          '<p>Communities rely on forest products for income, while ecotourism sites such as Mt. Makiling and Mt. Apo showcase biodiversity and cultural heritage.</p>' +
+          '</div></div>' +
+          '<div class="function-card">' +
+          '<div class="function-number">10</div>' +
+          '<div class="function-content">' +
+          '<h4>Global Significance</h4>' +
+          '<p>As part of the Coral Triangle and biodiversity hotspots, Philippine forests contribute to international climate stability and conservation efforts.</p>' +
+          '</div></div>' +
+          '</div>';
+        sectionsContainer.appendChild(functionsSection);
+
+        // Add Biringan section (separate from forest layers)
+        var biringanSection = document.createElement("div");
+        biringanSection.className = "biringan-section-standalone";
+        biringanSection.innerHTML = 
+          '<h2 class="biringan-section-title">So what is Biringan?</h2>' +
+          '<div class="biringan-content-wrapper">' +
           '<p class="biringan-description">Biringan is a legendary, hidden city said to exist in the forests of Samar, Philippines. In local folklore, it is described as a mystical place inhabited by <strong>engkanto</strong>—supernatural beings who live parallel to humans. The city is believed to be dazzling, full of light and modern wonders, yet invisible to ordinary eyes.</p>' +
           '<div class="biringan-image-container">' +
           '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/biringan-w2AhOos1VeYbh5AT73PVUSLRl7pk0x.jpg" alt="Biringan - The legendary hidden city" class="biringan-clearer-image" />' +
           '</div>' +
           '<p class="biringan-description biringan-description-bottom">Stories of Biringan often serve as cautionary tales: travelers who wander too far into the forest may be "invited" by its residents, sometimes never returning. Others say chosen individuals are offered prosperity or beauty, but at the cost of leaving the human world behind.</p>' +
-          '<p class="biringan-description biringan-description-bottom">For educators and learners, Biringan is more than just a myth—it\'s a cultural lens into how Filipinos imagine forests as mysterious, powerful spaces. It reflects the deep respect and awe communities hold for nature, reminding us that forests are not only ecological systems but also cultural landscapes filled with meaning.</p>';
-        forestLayersContainer.appendChild(biringanImageSection);
-
-        sectionsContainer.appendChild(forestLayersContainer);
+          '<p class="biringan-description biringan-description-bottom">For educators and learners, Biringan is more than just a myth—it\'s a cultural lens into how Filipinos imagine forests as mysterious, powerful spaces. It reflects the deep respect and awe communities hold for nature, reminding us that forests are not only ecological systems but also cultural landscapes filled with meaning.</p>' +
+          '</div>';
+        sectionsContainer.appendChild(biringanSection);
       }
     } else {
       // For other topics, render sections normally
