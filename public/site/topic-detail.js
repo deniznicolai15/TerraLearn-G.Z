@@ -17,33 +17,6 @@ function getTopicData() {
 var quizzes = {
   1: [
     {
-      question: "Which type of forest covers the base of Mt. Pamitinan?",
-      options: ["Subtropical forest", "Lowland tropical forest", "Montane forest", "Deciduous forest"],
-      correct: 1,
-    },
-    {
-      question: "What is the Waling-Waling?",
-      options: ["A type of bird", "A rare endemic orchid", "A medicinal tree", "A river tributary"],
-      correct: 1,
-    },
-    {
-      question: "Which medicinal plant is NOT mentioned as found in Mt. Pamitinan?",
-      options: ["Lagundi", "Sambong", "Tsaang Gubat", "Oregano"],
-      correct: 3,
-    },
-    {
-      question: "What is the primary threat to the plant species in Mt. Pamitinan?",
-      options: ["Drought", "Flooding", "Illegal logging and land conversion", "Pests"],
-      correct: 2,
-    },
-    {
-      question: "What type of pitcher plants grow in Mt. Pamitinan?",
-      options: ["Only lowland species", "Only highland species", "Endemic to the Philippines", "Imported species"],
-      correct: 2,
-    },
-  ],
-  2: [
-    {
       question: "What is the primary function of forests in producing oxygen and storing carbon?",
       options: ["Provide shelter only", "Produce oxygen and store carbon", "Regulate temperature only", "Supply water"],
       correct: 1,
@@ -91,6 +64,33 @@ var quizzes = {
     {
       question: "According to local folklore, what is Biringan?",
       options: ["A cave", "A hidden city inhabited by mystical beings", "A river", "A mountain pass"],
+      correct: 1,
+    },
+  ],
+  2: [
+    {
+      question: "What is the elevation of Mt. Pamitinan's summit?",
+      options: ["326+ meters", "426+ meters", "526+ meters", "626+ meters"],
+      correct: 1,
+    },
+    {
+      question: "When did Andres Bonifacio and the Katipunan meet at Pamitinan Cave?",
+      options: ["April 12, 1893", "April 12, 1895", "April 12, 1897", "April 12, 1899"],
+      correct: 1,
+    },
+    {
+      question: "What was inscribed on Pamitinan Cave walls by Bonifacio?",
+      options: ["Mga salawikain", "Viva la Independencia Filipina", "Names of soldiers", "Mathematical formulas"],
+      correct: 1,
+    },
+    {
+      question: "According to local folklore, who is trapped between Mt. Pamitinan and Mt. Binacayan?",
+      options: ["A princess", "Bernardo Carpio", "A mysterious spirit", "An ancient warrior"],
+      correct: 1,
+    },
+    {
+      question: "What geological feature makes Mt. Pamitinan geologically significant?",
+      options: ["Volcanic crater", "Limestone cliffs and karst cave systems", "Sand dunes", "Crystal formations"],
       correct: 1,
     },
   ],
