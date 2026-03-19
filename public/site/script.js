@@ -6,8 +6,7 @@ var topics = [
     name: "Forest 101: Hey, Is this Biringan?",
     color: "#8EB09A",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
-    description:
-      "Forests are more than just clusters of trees; they are complex ecosystems that shape climate, biodiversity, and human life. This opens the door to understanding how forests sustain the planet and why they remain one of nature's greatest mysteries.",
+    description: "",
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7094.PNG-5RorpTIlUzCBUkjabzDVzAphiwohQY.jpeg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7099.PNG-4K3gR1CaM812NAohgaKXacPLQGLBiW.jpeg" },
@@ -23,7 +22,7 @@ var topics = [
       {
         title: "What is a Forest Ecosystem?",
         text: "Forests in the Philippines are diverse and vital. From dipterocarp forests to mangroves and montane forests, these ecosystems sustain life and regulate climate. They're the lungs of the Earth. The Sierra Madre protects Luzon from typhoons and provides water to millions.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest%20image-1IxkES8u0hfwiCUPYWen6poktoURSY.jpg"
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest-4xiQnvIiVSEZ9pIgIiE6zMJ7HahGHH.jpg"
       },
       {
         title: "Emergent Layer",
