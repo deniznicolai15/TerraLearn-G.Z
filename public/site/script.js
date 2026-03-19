@@ -22,8 +22,7 @@ var topics = [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7097.PNG-yxFj7EkVdSUK1xRMefs4lhrvER45D9.jpeg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7100.PNG-l0KY0v8wAQAxtcZqfxrRD4ufxCNY8O.jpeg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7098.PNG-GDdAocuhNCBK8kVdhlRJ5PWkw5SEDR.jpeg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7103.PNG-vqTirAT96RSWdJWIrDbZsguxYfq9zm.jpeg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7096.PNG-4nguQgTQWkclpeM1gOINuRuhdgYGvn.jpeg" }
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7103.PNG-vqTirAT96RSWdJWIrDbZsguxYfq9zm.jpeg" }
     ],
     sections: [
       {
@@ -34,22 +33,22 @@ var topics = [
       {
         title: "Emergent Layer",
         text: "Towering trees like luan and apitong rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here, hunting from above the forest canopy.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emergent-5ldpBk0k58RsXruEhvmZ5osnCe11ez.jpg"
       },
       {
         title: "Canopy",
         text: "A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid microclimate essential for orchids and epiphytes.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/canopy-o7bei8Y4auvhJPnFiXiaAvs5rLVz3M.jpg"
       },
       {
         title: "Understory",
         text: "Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional healing.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/understory-bk7hnWrXKy9u9GBaSEum13KwPuncFm.jpg"
       },
       {
         title: "Forest Floor",
         text: "Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forestfloor-F0uac2XYoSu3DvxsWptT6Mcam7nhNl.jpg"
       }
     ],
     location: "Mt. Pamitinan",
