@@ -251,24 +251,24 @@ function initializePage() {
       var forestLayerIndices = [2, 3, 4, 5]; // Emergent, Canopy, Understory, Forest Floor
       var forestLayerSections = [];
       var otherSections = [];
-      
-      topicData.sections.forEach(function(section, index) {
+
+      topicData.sections.forEach(function (section, index) {
         if (forestLayerIndices.includes(index)) {
           forestLayerSections.push({ section: section, index: index });
         } else {
           otherSections.push({ section: section, index: index });
         }
       });
-      
+
       // Render non-forest layer sections first
-      otherSections.forEach(function(item) {
+      otherSections.forEach(function (item) {
         var sectionDiv = document.createElement("div");
         var imageHTML = item.section.image ? '<img src="' + item.section.image + '" alt="' + item.section.title + '" class="section-image" />' : '';
-        
+
         var textContent = '';
         if (item.section.text.includes('\n\n')) {
           var paragraphs = item.section.text.split('\n\n');
-          textContent = paragraphs.map(function(para) {
+          textContent = paragraphs.map(function (para) {
             return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
           }).join('');
         } else if (item.section.text.includes('\n')) {
@@ -276,7 +276,7 @@ function initializePage() {
         } else {
           textContent = '<p>' + item.section.text + '</p>';
         }
-        
+
         sectionDiv.className = "detail-section";
         sectionDiv.innerHTML =
           '<h3>' + item.section.title + '</h3>' +
@@ -285,37 +285,37 @@ function initializePage() {
           (item.section.content ? '<div class="section-content-expanded">' + item.section.content + '</div>' : '');
         sectionsContainer.appendChild(sectionDiv);
       });
-      
+
       // Create forest layers card section
       if (forestLayerSections.length > 0) {
         var forestLayersContainer = document.createElement("div");
         forestLayersContainer.className = "forest-layers-section";
-        
+
         var titleDiv = document.createElement("div");
         titleDiv.className = "forest-layers-title";
-        titleDiv.innerHTML = '<h2>Forest Layers & Vertical Structure</h2><p>Discover the different zones of the Philippine forest ecosystem and the unique organisms that thrive in each layer.</p>';
+        titleDiv.innerHTML = '<h2>Vertical Structure of the Forest Ecosystems</h2><p>Forests here are layered systems, each with distinct ecological roles:';
         forestLayersContainer.appendChild(titleDiv);
-        
+
         var gridDiv = document.createElement("div");
         gridDiv.className = "forest-layers-grid";
-        
-        forestLayerSections.forEach(function(item) {
+
+        forestLayerSections.forEach(function (item) {
           var card = document.createElement("div");
           card.className = "forest-layer-card";
-          
-          var imageHTML = item.section.image ? 
+
+          var imageHTML = item.section.image ?
             '<div class="forest-layer-image-container"><img src="' + item.section.image + '" alt="' + item.section.title + '" /></div>' : '';
-          
+
           card.innerHTML =
             imageHTML +
             '<div class="forest-layer-content">' +
             '<h3 class="forest-layer-name">' + item.section.title + '</h3>' +
             '<p class="forest-layer-description">' + item.section.text + '</p>' +
             '</div>';
-          
+
           gridDiv.appendChild(card);
         });
-        
+
         forestLayersContainer.appendChild(gridDiv);
         sectionsContainer.appendChild(forestLayersContainer);
       }
@@ -324,13 +324,13 @@ function initializePage() {
       topicData.sections.forEach(function (section, index) {
         var sectionDiv = document.createElement("div");
         var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
-        
+
         // Convert newlines to paragraph breaks
         var textContent = '';
         if (section.text.includes('\n\n')) {
           // Split by double newlines and create separate paragraphs
           var paragraphs = section.text.split('\n\n');
-          textContent = paragraphs.map(function(para) {
+          textContent = paragraphs.map(function (para) {
             return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
           }).join('');
         } else if (section.text.includes('\n')) {
@@ -340,11 +340,11 @@ function initializePage() {
           // No newlines, just wrap in paragraph
           textContent = '<p>' + section.text + '</p>';
         }
-        
+
         // Special styling for sections that need the Pamitinan info box style
-        if ((index === 0 && section.title === "Geological Features") || 
-            (section.title === "Historical & Cultural Significance") || 
-            (section.title === "Myth & Folklore")) {
+        if ((index === 0 && section.title === "Geological Features") ||
+          (section.title === "Historical & Cultural Significance") ||
+          (section.title === "Myth & Folklore")) {
           sectionDiv.className = "detail-section geological-features-section";
           sectionDiv.innerHTML =
             '<h3>' + section.title + '</h3>' +
@@ -371,7 +371,7 @@ function initializePage() {
     var pamitinanInfoInVideo = document.querySelector('.video-section .pamitinan-info-section');
     if (pamitinanInfoInVideo) {
       pamitinanInfoInVideo.remove();
-      
+
       // Create a section div for Mt. Pamitinan info in the sections container
       var pamitinanSection = document.createElement("div");
       pamitinanSection.className = "detail-section geological-features-section";
@@ -381,13 +381,13 @@ function initializePage() {
         '<p>Mt. <u>Pamitinan</u> is a limestone mountain located in <b>Montalban (Rodriguez), Rizal</b>, rising to <b>426+ meters</b> above sea level. It forms part of the <u>Sierra Madre mountain range</u> and is officially recognized as a <b>DENR��protected landscape</b>, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
         '<p>But Mt. <u>Pamitinan</u> is more than just a natural site. It is a <b>multi‑layered landmark</b>:</p>' +
         '<ul class="pamitinan-features">' +
-          '<li><b><u>Geological</u></b> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.</li>' +
-          '<li><b><u>Historical</u></b> – in <u>1895</u>, <u>Andres Bonifacio</u> and the <u>Katipunan</u> declared independence inside <u>Pamitinan Cave</u>, leaving the inscription "<i>Viva la Independencia Filipina</i>" as a lasting symbol of freedom.</li>' +
-          '<li><b><u>Mythical</u></b> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (<i>engkanto</i>), and sometimes linked to hidden realms similar to <u>Biringan</u>.</li>' +
+        '<li><b><u>Geological</u></b> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.</li>' +
+        '<li><b><u>Historical</u></b> – in <u>1895</u>, <u>Andres Bonifacio</u> and the <u>Katipunan</u> declared independence inside <u>Pamitinan Cave</u>, leaving the inscription "<i>Viva la Independencia Filipina</i>" as a lasting symbol of freedom.</li>' +
+        '<li><b><u>Mythical</u></b> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (<i>engkanto</i>), and sometimes linked to hidden realms similar to <u>Biringan</u>.</li>' +
         '</ul>' +
         '<p>Because of this blend of <b>nature, nationhood, and myth</b>, Mt. <u>Pamitinan</u> stands out among Luzon\'s protected areas. It is not only a hiking destination but also a <b>living classroom</b> where geology, history, and culture converge. Visiting <u>Pamitinan</u> means walking through layers of stone, memory, and imagination all in one place.</p>' +
         '</div>';
-      
+
       // Insert it at the beginning of the sections container
       sectionsContainer.insertBefore(pamitinanSection, sectionsContainer.firstChild);
     }
