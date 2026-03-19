@@ -45,6 +45,35 @@
       margin: 0 auto;
     }
     
+    /* Back Button */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 20px;
+      background: rgba(15, 42, 28, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: rgba(26, 74, 46, 0.4);
+      transform: translateX(-4px);
+    }
+    
+    .back-button svg {
+      width: 18px;
+      height: 18px;
+    }
+    
     /* Header */
     .quiz-header {
       text-align: center;
@@ -645,6 +674,15 @@
 </head>
 <body>
   <div class="quiz-wrapper">
+    <!-- Back Button -->
+    <a href="/site/topic-detail.html?id=1" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Forest 101
+    </a>
+    
     <!-- Header -->
     <div class="quiz-header">
       <div class="quiz-badge">
@@ -712,12 +750,12 @@
             </svg>
             Try Again
           </button>
-          <a href="javascript:history.back()" class="action-btn secondary">
+<a href="/site/topic-detail.html?id=1" class="action-btn secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            Back to Topic
+            Back to Forest 101
           </a>
         </div>
       </div>
