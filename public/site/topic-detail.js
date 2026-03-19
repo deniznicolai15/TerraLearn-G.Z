@@ -326,7 +326,9 @@ function initializePage() {
           '<p class="biringan-description">Biringan is a legendary, hidden city said to exist in the forests of Samar, Philippines. In local folklore, it is described as a mystical place inhabited by <strong>engkanto</strong>—supernatural beings who live parallel to humans. The city is believed to be dazzling, full of light and modern wonders, yet invisible to ordinary eyes.</p>' +
           '<div class="biringan-image-container">' +
           '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/biringan-w2AhOos1VeYbh5AT73PVUSLRl7pk0x.jpg" alt="Biringan - The legendary hidden city" class="biringan-clearer-image" />' +
-          '</div>';
+          '</div>' +
+          '<p class="biringan-description biringan-description-bottom">Stories of Biringan often serve as cautionary tales: travelers who wander too far into the forest may be "invited" by its residents, sometimes never returning. Others say chosen individuals are offered prosperity or beauty, but at the cost of leaving the human world behind.</p>' +
+          '<p class="biringan-description biringan-description-bottom">For educators and learners, Biringan is more than just a myth—it\'s a cultural lens into how Filipinos imagine forests as mysterious, powerful spaces. It reflects the deep respect and awe communities hold for nature, reminding us that forests are not only ecological systems but also cultural landscapes filled with meaning.</p>';
         forestLayersContainer.appendChild(biringanImageSection);
 
         sectionsContainer.appendChild(forestLayersContainer);
