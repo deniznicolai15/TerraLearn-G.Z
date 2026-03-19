@@ -84,33 +84,7 @@ var topics = [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
     ],
-    sections: [
-      {
-        title: "Geological Features",
-        text: `• Limestone cliffs and karst formations shaped by water and rock interaction.
-• Pamitinan Cave with stalactites, stalagmites, and chambers that host bats and other cave dwelling species.
-• Part of the Sierra Madre, contributing to water regulation and serving as a natural shield against typhoons.`,
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-7WBQHT7fd31R4xeXbmDx07q1QYisXe.jpg"
-      },
-      {
-        title: "Historical & Cultural Significance",
-        text: "On <b>April 12, 1895</b>, <u>Andres Bonifacio</u>, <u>Emilio Jacinto</u>, and several <u>Katipuneros</u> gathered inside <u>Pamitinan Cave</u> in <u>Rodriguez, Rizal</u>.\n\nThe cave served as a secret meeting place and refuge, where new members were initiated into the <u>Katipunan</u>.\n\nDuring this gathering, <u>Bonifacio</u> inscribed the words <i>'Viva la Independencia Filipina'</i> on the cave wall, marking the <b>first recorded declaration of Philippine independence</b>, more than a year before the Cry of Balintawak.\n\nThis act was symbolic rather than public - it was a solemn proclamation of freedom carried out in secrecy, but it planted the revolutionary spirit firmly in the hearts of the <u>Katipuneros</u>.\n\nThe landmark shown in <b>Figure 2</b>, located midway up <u>Mt. Pamitinan</u>, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. <u>Mt. Pamitinan</u> is therefore remembered not only as a natural landscape but also as a <b>heritage site</b>, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-MPKuPHZ2yN4AjBd8R85L2i55w3wgzJ.jpg"
-      },
-      {
-        title: "Myth & Folklore",
-        text: "Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations.",
-        image: "/images/mysterious-tree.jpg"
-      },
-      {
-        title: "Did You Know?",
-        text: "Local sabi sabi say that when the ground shakes near Mt. Pamitinan, it is Bernardo Carpio struggling against his chains. Earthquakes, in this telling, are not just natural events—they are echoes of a giant’s eternal battle beneath the mountain."
-      },
-      {
-        title: "Why It Matters",
-        text: "Mt. Pamitinan is more than a hiking destination—it is a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon’s protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience."
-      }
-    ],
+    sections: [],
     location: "Montalban (Rodriguez), Rizal",
     detail1: "426+ meters MASL",
     detail2: "DENR Protected Landscape",
