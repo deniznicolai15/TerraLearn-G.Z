@@ -408,7 +408,7 @@ function initializePage() {
         var gameBox = document.createElement("div");
         gameBox.className = "forest-game-box";
         gameBox.innerHTML = 
-          '<a href="/site/games/forest-layers-game.html" target="_blank" class="game-box-link">' +
+          '<div class="game-box-link" id="start-quiz-trigger" style="cursor: pointer;">' +
           '<div class="game-box-content">' +
           '<div class="game-box-icon">' +
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
@@ -417,7 +417,7 @@ function initializePage() {
           '</div>' +
           '<div class="game-box-text">' +
           '<h3>Test Your Knowledge!</h3>' +
-          '<p>Play the Forest Layers Game and see how well you know the Philippine forest ecosystem.</p>' +
+          '<p>Take the quiz and see how well you know the Philippine forest ecosystem.</p>' +
           '</div>' +
           '<div class="game-box-arrow">' +
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
@@ -426,7 +426,7 @@ function initializePage() {
           '</svg>' +
           '</div>' +
           '</div>' +
-          '</a>';
+          '</div>';
         sectionsContainer.appendChild(gameBox);
       }
     } else {
@@ -574,11 +574,18 @@ function initializePage() {
     window.history.back();
   });
 
-  // Start Quiz button
-  document.getElementById("start-quiz-btn").addEventListener("click", function () {
-    document.getElementById("quiz-content").style.display = "flex";
-    this.style.display = "none";
-  });
+  // Start Quiz button (triggered by game box)
+  var quizTrigger = document.getElementById("start-quiz-trigger");
+  if (quizTrigger) {
+    quizTrigger.addEventListener("click", function () {
+      var quizContainer = document.getElementById("quiz-container");
+      quizContainer.style.display = "block";
+      document.getElementById("quiz-content").style.display = "flex";
+      document.getElementById("quiz-results").style.display = "none";
+      // Scroll to quiz
+      quizContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 // ===== QUIZ FUNCTIONALITY =====
@@ -737,14 +744,22 @@ function showResults(correct, total, percentage) {
   closeBtn.insertAdjacentHTML('beforebegin', answerBreakdownHTML);
 
   document.getElementById("close-btn").addEventListener("click", function () {
-    // Scroll back to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Reset quiz state
     currentQuizIndex = 0;
     quizAnswers = new Array(currentQuiz.length).fill(null);
     quizContent.style.display = "none";
     resultsDiv.style.display = "none";
-    document.getElementById("start-quiz-btn").style.display = "block";
-    document.getElementById("start-quiz-btn").textContent = "Start Quiz Again";
+    
+    // Hide quiz container
+    document.getElementById("quiz-container").style.display = "none";
+    
+    // Scroll back to the game box
+    var gameBox = document.getElementById("start-quiz-trigger");
+    if (gameBox) {
+      gameBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   });
 }
 
