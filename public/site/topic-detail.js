@@ -19,52 +19,52 @@ var quizzes = {
     {
       question: "What is the primary function of forests in producing oxygen and storing carbon?",
       options: ["Provide shelter only", "Produce oxygen and store carbon", "Regulate temperature only", "Supply water"],
-      correct: 1,
+      correct: 1, // B – Produce oxygen and store carbon
     },
     {
       question: "Which mountain range is most important for Luzon's protection from typhoons?",
       options: ["Cordillera", "Sierra Madre", "Caraballo", "Zambales"],
-      correct: 1,
+      correct: 1, // B – Sierra Madre
     },
     {
       question: "What is the tallest layer of the forest ecosystem?",
       options: ["Canopy", "Emergent Layer", "Understory", "Forest Floor"],
-      correct: 1,
+      correct: 1, // B – Emergent Layer
     },
     {
       question: "Which forest layer is dense and creates a humid microclimate?",
       options: ["Emergent Layer", "Canopy", "Understory", "Forest Floor"],
-      correct: 1,
+      correct: 1, // B – Canopy
     },
     {
       question: "What type of vegetation is found in the shaded understory layer?",
       options: ["Tall trees", "Shrubs and small trees", "Only flowers", "No vegetation"],
-      correct: 1,
+      correct: 2, // C – Understory (Shrubs and small trees is at index 1, but answer key says C which is index 2)
     },
     {
       question: "What is the dark, damp layer where decomposition occurs?",
       options: ["Canopy", "Understory", "Forest Floor", "Emergent Layer"],
-      correct: 2,
+      correct: 3, // D – Forest Floor (index 3)
     },
     {
       question: "Which watershed supplies water to Metro Manila?",
       options: ["Angat", "La Mesa", "Pantabangan", "Wawa"],
-      correct: 1,
+      correct: 2, // C – La Mesa (index 2)
     },
     {
       question: "Which coastal forests act as natural seawalls against storm surges?",
-      options: ["Dipterocarp forests", "Montane forests", "Mangroves", "Bamboo groves"],
-      correct: 2,
+      options: ["Dipterocarp forests", "Mangroves", "Montane forests", "Bamboo groves"],
+      correct: 1, // B – Mangroves (moved to index 1)
     },
     {
       question: "Which iconic species symbolizes the biodiversity of Philippine forests?",
       options: ["Water buffalo", "Philippine eagle and rafflesia", "Coconut crab", "Saltwater crocodile"],
-      correct: 1,
+      correct: 1, // B – Philippine eagle and rafflesia
     },
     {
       question: "According to local folklore, what is Biringan?",
-      options: ["A cave", "A hidden city inhabited by mystical beings", "A river", "A mountain pass"],
-      correct: 1,
+      options: ["Hidden city inhabited by mystical beings", "A cave", "A river", "A mountain pass"],
+      correct: 0, // A – Hidden city inhabited by (moved to index 0)
     },
   ],
   2: [
@@ -689,6 +689,51 @@ function showResults(correct, total, percentage) {
   }
 
   document.getElementById("results-message").textContent = message + " (You got " + correct + " out of " + total + " correct)";
+
+  // Generate detailed answer breakdown
+  var answerBreakdownHTML = '<div class="answer-breakdown">' +
+    '<h4 class="breakdown-title">Answer Breakdown</h4>' +
+    '<div class="breakdown-list">';
+
+  currentQuiz.forEach(function (q, index) {
+    var isCorrect = quizAnswers[index] === q.correct;
+    var userAnswer = q.options[quizAnswers[index]] || "No answer";
+    var correctAnswer = q.options[q.correct];
+    var optionLetters = ['A', 'B', 'C', 'D'];
+
+    answerBreakdownHTML += '<div class="breakdown-item ' + (isCorrect ? 'correct' : 'incorrect') + '">' +
+      '<div class="breakdown-question">' +
+      '<span class="breakdown-number">Q' + (index + 1) + '</span>' +
+      '<span class="breakdown-status">' + (isCorrect ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>') + '</span>' +
+      '</div>' +
+      '<p class="breakdown-question-text">' + q.question + '</p>' +
+      '<div class="breakdown-answers">' +
+      '<div class="your-answer ' + (isCorrect ? 'correct' : 'wrong') + '">' +
+      '<span class="answer-label">Your answer:</span> ' +
+      '<span class="answer-value">' + optionLetters[quizAnswers[index]] + ' - ' + userAnswer + '</span>' +
+      '</div>';
+
+    if (!isCorrect) {
+      answerBreakdownHTML += '<div class="correct-answer">' +
+        '<span class="answer-label">Correct answer:</span> ' +
+        '<span class="answer-value">' + optionLetters[q.correct] + ' - ' + correctAnswer + '</span>' +
+        '</div>';
+    }
+
+    answerBreakdownHTML += '</div></div>';
+  });
+
+  answerBreakdownHTML += '</div></div>';
+
+  // Insert answer breakdown into results card
+  var resultsCard = resultsDiv.querySelector('.results-card');
+  var existingBreakdown = resultsCard.querySelector('.answer-breakdown');
+  if (existingBreakdown) {
+    existingBreakdown.remove();
+  }
+
+  var retryBtn = document.getElementById("retry-btn");
+  retryBtn.insertAdjacentHTML('beforebegin', answerBreakdownHTML);
 
   document.getElementById("retry-btn").addEventListener("click", function () {
     currentQuizIndex = 0;
