@@ -246,48 +246,134 @@ function initializePage() {
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
   if (topicData.sections && topicData.sections.length > 0) {
-    topicData.sections.forEach(function (section, index) {
-      var sectionDiv = document.createElement("div");
-      var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
+    // For Topic 1, create a special card layout for forest layers
+    if (topicData.id === 1) {
+      var forestLayerIndices = [3, 4, 5, 6]; // Emergent, Canopy, Understory, Forest Floor
+      var forestLayerSections = [];
+      var otherSections = [];
       
-      // Convert newlines to paragraph breaks
-      var textContent = '';
-      if (section.text.includes('\n\n')) {
-        // Split by double newlines and create separate paragraphs
-        var paragraphs = section.text.split('\n\n');
-        textContent = paragraphs.map(function(para) {
-          return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
-        }).join('');
-      } else if (section.text.includes('\n')) {
-        // Single newlines become line breaks
-        textContent = '<p>' + section.text.replace(/\n/g, '<br>') + '</p>';
-      } else {
-        // No newlines, just wrap in paragraph
-        textContent = '<p>' + section.text + '</p>';
-      }
+      topicData.sections.forEach(function(section, index) {
+        if (forestLayerIndices.includes(index)) {
+          forestLayerSections.push({ section: section, index: index });
+        } else {
+          otherSections.push({ section: section, index: index });
+        }
+      });
       
-      // Special styling for sections that need the Pamitinan info box style
-      if ((index === 0 && section.title === "Geological Features") || 
-          (section.title === "Historical & Cultural Significance") || 
-          (section.title === "Myth & Folklore")) {
-        sectionDiv.className = "detail-section geological-features-section";
-        sectionDiv.innerHTML =
-          '<h3>' + section.title + '</h3>' +
-          imageHTML +
-          '<div class="geological-info-box">' +
-          textContent +
-          (section.content ? '<div class="geological-content">' + section.content + '</div>' : '') +
-          '</div>';
-      } else {
+      // Render non-forest layer sections first
+      otherSections.forEach(function(item) {
+        var sectionDiv = document.createElement("div");
+        var imageHTML = item.section.image ? '<img src="' + item.section.image + '" alt="' + item.section.title + '" class="section-image" />' : '';
+        
+        var textContent = '';
+        if (item.section.text.includes('\n\n')) {
+          var paragraphs = item.section.text.split('\n\n');
+          textContent = paragraphs.map(function(para) {
+            return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
+          }).join('');
+        } else if (item.section.text.includes('\n')) {
+          textContent = '<p>' + item.section.text.replace(/\n/g, '<br>') + '</p>';
+        } else {
+          textContent = '<p>' + item.section.text + '</p>';
+        }
+        
         sectionDiv.className = "detail-section";
         sectionDiv.innerHTML =
-          '<h3>' + section.title + '</h3>' +
+          '<h3>' + item.section.title + '</h3>' +
           imageHTML +
           textContent +
-          (section.content ? '<div class="section-content-expanded">' + section.content + '</div>' : '');
+          (item.section.content ? '<div class="section-content-expanded">' + item.section.content + '</div>' : '');
+        sectionsContainer.appendChild(sectionDiv);
+      });
+      
+      // Create forest layers card section
+      if (forestLayerSections.length > 0) {
+        var forestLayersContainer = document.createElement("div");
+        forestLayersContainer.className = "forest-layers-section";
+        
+        var titleDiv = document.createElement("div");
+        titleDiv.className = "forest-layers-title";
+        titleDiv.innerHTML = '<h2>Forest Layers & Vertical Structure</h2><p>Discover the different zones of the Philippine forest ecosystem and the unique organisms that thrive in each layer.</p>';
+        forestLayersContainer.appendChild(titleDiv);
+        
+        var gridDiv = document.createElement("div");
+        gridDiv.className = "forest-layers-grid";
+        
+        var layerIcons = {
+          'Emergent Layer': '☀️',
+          'Canopy': '🌳',
+          'Understory': '🌱',
+          'Forest Floor': '🍂'
+        };
+        
+        forestLayerSections.forEach(function(item) {
+          var card = document.createElement("div");
+          card.className = "forest-layer-card";
+          
+          var imageHTML = item.section.image ? 
+            '<div class="forest-layer-image-container"><img src="' + item.section.image + '" alt="' + item.section.title + '" /></div>' : '';
+          
+          var icon = layerIcons[item.section.title] || '🌲';
+          
+          card.innerHTML =
+            imageHTML +
+            '<div class="forest-layer-content">' +
+            '<h3 class="forest-layer-name">' + item.section.title + '</h3>' +
+            '<p class="forest-layer-description">' + item.section.text + '</p>' +
+            '<div class="forest-layer-icon">' + icon + '</div>' +
+            '</div>';
+          
+          gridDiv.appendChild(card);
+        });
+        
+        forestLayersContainer.appendChild(gridDiv);
+        sectionsContainer.appendChild(forestLayersContainer);
       }
-      sectionsContainer.appendChild(sectionDiv);
-    });
+    } else {
+      // For other topics, render sections normally
+      topicData.sections.forEach(function (section, index) {
+        var sectionDiv = document.createElement("div");
+        var imageHTML = section.image ? '<img src="' + section.image + '" alt="' + section.title + '" class="section-image" />' : '';
+        
+        // Convert newlines to paragraph breaks
+        var textContent = '';
+        if (section.text.includes('\n\n')) {
+          // Split by double newlines and create separate paragraphs
+          var paragraphs = section.text.split('\n\n');
+          textContent = paragraphs.map(function(para) {
+            return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
+          }).join('');
+        } else if (section.text.includes('\n')) {
+          // Single newlines become line breaks
+          textContent = '<p>' + section.text.replace(/\n/g, '<br>') + '</p>';
+        } else {
+          // No newlines, just wrap in paragraph
+          textContent = '<p>' + section.text + '</p>';
+        }
+        
+        // Special styling for sections that need the Pamitinan info box style
+        if ((index === 0 && section.title === "Geological Features") || 
+            (section.title === "Historical & Cultural Significance") || 
+            (section.title === "Myth & Folklore")) {
+          sectionDiv.className = "detail-section geological-features-section";
+          sectionDiv.innerHTML =
+            '<h3>' + section.title + '</h3>' +
+            imageHTML +
+            '<div class="geological-info-box">' +
+            textContent +
+            (section.content ? '<div class="geological-content">' + section.content + '</div>' : '') +
+            '</div>';
+        } else {
+          sectionDiv.className = "detail-section";
+          sectionDiv.innerHTML =
+            '<h3>' + section.title + '</h3>' +
+            imageHTML +
+            textContent +
+            (section.content ? '<div class="section-content-expanded">' + section.content + '</div>' : '');
+        }
+        sectionsContainer.appendChild(sectionDiv);
+      });
+    }
   }
 
   // Remove Mt. Pamitinan info section from video container and move it to sections
