@@ -44,28 +44,53 @@ var quizzes = {
   ],
   2: [
     {
-      question: "What is the elevation of Mt. Pamitinan's summit?",
-      options: ["326+ meters", "426+ meters", "526+ meters", "626+ meters"],
+      question: "What is the primary function of forests in producing oxygen and storing carbon?",
+      options: ["Provide shelter only", "Produce oxygen and store carbon", "Regulate temperature only", "Supply water"],
       correct: 1,
     },
     {
-      question: "When did Andres Bonifacio and the Katipunan meet at Pamitinan Cave?",
-      options: ["April 12, 1893", "April 12, 1895", "April 12, 1897", "April 12, 1899"],
+      question: "Which mountain range is most important for Luzon's protection from typhoons?",
+      options: ["Cordillera", "Sierra Madre", "Caraballo", "Zambales"],
       correct: 1,
     },
     {
-      question: "What was inscribed on Pamitinan Cave walls by Bonifacio?",
-      options: ["Mga salawikain", "Viva la Independencia Filipina", "Names of soldiers", "Mathematical formulas"],
+      question: "What is the tallest layer of the forest ecosystem?",
+      options: ["Canopy", "Emergent Layer", "Understory", "Forest Floor"],
       correct: 1,
     },
     {
-      question: "According to local folklore, who is trapped between Mt. Pamitinan and Mt. Binacayan?",
-      options: ["A princess", "Bernardo Carpio", "A mysterious spirit", "An ancient warrior"],
+      question: "Which forest layer is dense and creates a humid microclimate?",
+      options: ["Emergent Layer", "Canopy", "Understory", "Forest Floor"],
       correct: 1,
     },
     {
-      question: "What geological feature makes Mt. Pamitinan geologically significant?",
-      options: ["Volcanic crater", "Limestone cliffs and karst cave systems", "Sand dunes", "Crystal formations"],
+      question: "What type of vegetation is found in the shaded understory layer?",
+      options: ["Tall trees", "Shrubs and small trees", "Only flowers", "No vegetation"],
+      correct: 1,
+    },
+    {
+      question: "What is the dark, damp layer where decomposition occurs?",
+      options: ["Canopy", "Understory", "Forest Floor", "Emergent Layer"],
+      correct: 2,
+    },
+    {
+      question: "Which watershed supplies water to Metro Manila?",
+      options: ["Angat", "La Mesa", "Pantabangan", "Wawa"],
+      correct: 1,
+    },
+    {
+      question: "Which coastal forests act as natural seawalls against storm surges?",
+      options: ["Dipterocarp forests", "Montane forests", "Mangroves", "Bamboo groves"],
+      correct: 2,
+    },
+    {
+      question: "Which iconic species symbolizes the biodiversity of Philippine forests?",
+      options: ["Water buffalo", "Philippine eagle and rafflesia", "Coconut crab", "Saltwater crocodile"],
+      correct: 1,
+    },
+    {
+      question: "According to local folklore, what is Biringan?",
+      options: ["A cave", "A hidden city inhabited by mystical beings", "A river", "A mountain pass"],
       correct: 1,
     },
   ],
