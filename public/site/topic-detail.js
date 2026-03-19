@@ -210,12 +210,6 @@ function initializePage() {
     }
   }
 
-  // Populate description "Forests are more than..." at the top
-  var introDescElement = document.getElementById("detail-intro-description");
-  if (introDescElement) {
-    introDescElement.textContent = topicData.description;
-  }
-
   // Render video player if available
   if (topicData.video) {
     var videoContainer = document.createElement("div");
@@ -397,6 +391,17 @@ function initializePage() {
       // Insert it at the beginning of the sections container
       sectionsContainer.insertBefore(pamitinanSection, sectionsContainer.firstChild);
     }
+  }
+
+  // Populate Figure 1 image and caption
+  var figureImg = document.getElementById("detail-figure-img");
+  if (figureImg) {
+    figureImg.src = topicData.image;
+    figureImg.alt = "Figure 1: " + topicData.name;
+  }
+  var figureCaption = document.getElementById("figure-caption");
+  if (figureCaption) {
+    figureCaption.textContent = "Figure 1: An AI generated image illustrating " + topicData.name;
   }
 
   // Populate info bar
