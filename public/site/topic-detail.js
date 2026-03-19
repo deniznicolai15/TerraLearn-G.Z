@@ -821,36 +821,116 @@ function initializeForest101() {
 
   forest101Container.style.display = "block";
 
-  // Load saved reflection from localStorage
-  var savedReflection = localStorage.getItem("forest-reflection");
   var reflectionInput = document.getElementById("forest-reflection-input");
-  if (savedReflection && reflectionInput) {
-    reflectionInput.value = savedReflection;
-  }
-
-  // Save reflection button
-  var saveBtn = document.getElementById("forest-reflection-save");
+  var submitBtn = document.getElementById("forest-reflection-submit");
   var clearBtn = document.getElementById("forest-reflection-clear");
   var savedMsg = document.getElementById("reflection-saved-msg");
+  var charCount = document.getElementById("char-count");
+  var thoughtCount = document.getElementById("thought-count");
 
-  if (saveBtn) {
-    saveBtn.addEventListener("click", function () {
+  // Initialize community thoughts if not exists
+  var communityThoughts = JSON.parse(localStorage.getItem("community-thoughts")) || [];
+  
+  // Seed with sample thoughts if empty
+  if (communityThoughts.length === 0) {
+    var sampleThoughts = [
+      {
+        id: 1,
+        content: "We have the responsibility to educate ourselves and others about the importance of forests. Biringan or not, these ecosystems are real treasures that need protection.",
+        timestamp: Date.now() - 3600000 * 24 * 2,
+        reactions: { fire: 12, heart: 8, leaf: 15 }
+      },
+      {
+        id: 2,
+        content: "Forests are like our ancestors' way of keeping secrets safe. Just like Biringan hides from those who don't respect it, our forests will disappear if we don't show them respect!",
+        timestamp: Date.now() - 3600000 * 24,
+        reactions: { fire: 7, heart: 14, leaf: 9 }
+      },
+      {
+        id: 3,
+        content: "ngl this made me think deeper... we always talk about protecting nature but do we actually do something? maybe we should start small like not using single-use plastics fr fr",
+        timestamp: Date.now() - 3600000 * 5,
+        reactions: { fire: 21, heart: 6, leaf: 11 }
+      },
+      {
+        id: 4,
+        content: "The mystery of Biringan reminds me that there's still so much we don't know about our forests. That's why research and preservation are important!",
+        timestamp: Date.now() - 3600000 * 12,
+        reactions: { fire: 5, heart: 18, leaf: 22 }
+      },
+      {
+        id: 5,
+        content: "lowkey scared that our grandchildren might only see forests in pictures. we gotta step up and actually do something about deforestation. this hits different",
+        timestamp: Date.now() - 3600000 * 2,
+        reactions: { fire: 16, heart: 11, leaf: 8 }
+      }
+    ];
+    communityThoughts = sampleThoughts;
+    localStorage.setItem("community-thoughts", JSON.stringify(communityThoughts));
+  }
+
+  // Update thought count display
+  if (thoughtCount) {
+    thoughtCount.textContent = communityThoughts.length + " thoughts shared";
+  }
+
+  // Character counter
+  if (reflectionInput && charCount) {
+    reflectionInput.addEventListener("input", function() {
+      charCount.textContent = reflectionInput.value.length;
+    });
+  }
+
+  // Submit thought button
+  if (submitBtn) {
+    submitBtn.addEventListener("click", function () {
       if (reflectionInput && reflectionInput.value.trim()) {
-        localStorage.setItem("forest-reflection", reflectionInput.value);
-        savedMsg.style.display = "block";
+        var newThought = {
+          id: Date.now(),
+          content: reflectionInput.value.trim(),
+          timestamp: Date.now(),
+          reactions: { fire: 0, heart: 0, leaf: 0 }
+        };
+        
+        communityThoughts.push(newThought);
+        localStorage.setItem("community-thoughts", JSON.stringify(communityThoughts));
+        
+        // Show success message
+        savedMsg.textContent = "Your thought has been shared anonymously!";
+        savedMsg.className = "reflection-saved-msg success";
+        
+        // Clear input
+        reflectionInput.value = "";
+        charCount.textContent = "0";
+        
+        // Update count
+        if (thoughtCount) {
+          thoughtCount.textContent = communityThoughts.length + " thoughts shared";
+        }
+        
+        // Hide message after 4 seconds
         setTimeout(function () {
-          savedMsg.style.display = "none";
+          savedMsg.className = "reflection-saved-msg";
+        }, 4000);
+      } else {
+        // Show error message
+        savedMsg.textContent = "Please write something before submitting!";
+        savedMsg.className = "reflection-saved-msg error";
+        
+        setTimeout(function () {
+          savedMsg.className = "reflection-saved-msg";
         }, 3000);
       }
     });
   }
 
+  // Clear button
   if (clearBtn) {
     clearBtn.addEventListener("click", function () {
       if (reflectionInput) {
         reflectionInput.value = "";
-        localStorage.removeItem("forest-reflection");
-        savedMsg.style.display = "none";
+        if (charCount) charCount.textContent = "0";
+        savedMsg.className = "reflection-saved-msg";
       }
     });
   }
