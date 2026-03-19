@@ -318,14 +318,14 @@ function initializePage() {
 
         forestLayersContainer.appendChild(gridDiv);
 
-        // Add Biringan clearer image section after forest layers
+        // Add Biringan section after forest layers
         var biringanImageSection = document.createElement("div");
         biringanImageSection.className = "biringan-clearer-image-section";
         biringanImageSection.innerHTML = 
-          '<p class="biringan-image-note">For a clearer image of Biringan, see the attached image below:</p>' +
+          '<h3 class="biringan-title">So what is Biringan?</h3>' +
+          '<p class="biringan-description">Biringan is a legendary, hidden city said to exist in the forests of Samar, Philippines. In local folklore, it is described as a mystical place inhabited by <strong>engkanto</strong>—supernatural beings who live parallel to humans. The city is believed to be dazzling, full of light and modern wonders, yet invisible to ordinary eyes.</p>' +
           '<div class="biringan-image-container">' +
           '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/biringan-w2AhOos1VeYbh5AT73PVUSLRl7pk0x.jpg" alt="Biringan - The legendary hidden city" class="biringan-clearer-image" />' +
-          '<p class="biringan-image-caption">Biringan: The legendary hidden city said to exist in the forests of Samar, Philippines</p>' +
           '</div>';
         forestLayersContainer.appendChild(biringanImageSection);
 

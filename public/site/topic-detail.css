@@ -2743,19 +2743,32 @@ body.topic-4 #avifauna-container {
   }
 }
 
-/* ===== BIRINGAN CLEARER IMAGE SECTION ===== */
+/* ===== BIRINGAN SECTION ===== */
 .biringan-clearer-image-section {
   margin-top: 40px;
   padding-top: 32px;
   border-top: 1px dashed rgba(107, 127, 115, 0.3);
 }
 
-.biringan-image-note {
-  font-size: 14px;
-  color: var(--secondary);
-  font-style: italic;
-  margin-bottom: 16px;
+.biringan-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 16px 0;
   text-align: left;
+}
+
+.biringan-description {
+  font-size: 15px;
+  color: var(--secondary);
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  text-align: justify;
+}
+
+.biringan-description strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .biringan-image-container {
@@ -2779,20 +2792,18 @@ body.topic-4 #avifauna-container {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
 }
 
-.biringan-image-caption {
-  font-size: 12px;
-  color: var(--muted);
-  font-style: italic;
-  text-align: center;
-  margin: 0;
-  max-width: 600px;
-  line-height: 1.5;
-}
-
 @media (max-width: 768px) {
   .biringan-clearer-image-section {
     margin-top: 24px;
     padding-top: 20px;
+  }
+
+  .biringan-title {
+    font-size: 18px;
+  }
+
+  .biringan-description {
+    font-size: 14px;
   }
 
   .biringan-clearer-image {
