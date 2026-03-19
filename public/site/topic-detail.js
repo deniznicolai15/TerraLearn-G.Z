@@ -604,7 +604,11 @@ function renderQuizQuestions() {
   var quizContent = document.getElementById("quiz-content");
   quizContent.innerHTML = "";
 
-  var questionsHTML = "";
+  // Quiz header without description
+  var questionsHTML = '<div class="quiz-header-simple">' +
+    '<h2>Test Your Knowledge</h2>' +
+    '</div>';
+  
   currentQuiz.forEach(function (q, index) {
     questionsHTML += '<div class="quiz-question">' +
       '<div class="question-number">Question ' + (index + 1) + ' of ' + currentQuiz.length + '</div>' +
