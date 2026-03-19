@@ -49,6 +49,11 @@ var topics = [
         title: "Forest Floor",
         text: "Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forestfloor-F0uac2XYoSu3DvxsWptT6Mcam7nhNl.jpg"
+      },
+      {
+        title: "So what is Biringan?",
+        text: "Biringan is a legendary, hidden city said to exist in the forests of Samar, Philippines. In local folklore, it is described as a mystical place inhabited by engkanto—supernatural beings who live parallel to humans. The city is believed to be dazzling, full of light and modern wonders, yet invisible to ordinary eyes.",
+        image: "/images/biringan.jpg"
       }
     ],
     location: "Mt. Pamitinan",
