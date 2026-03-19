@@ -248,7 +248,7 @@ function initializePage() {
   if (topicData.sections && topicData.sections.length > 0) {
     // For Topic 1, create a special card layout for forest layers
     if (topicData.id === 1) {
-      var forestLayerIndices = [3, 4, 5, 6]; // Emergent, Canopy, Understory, Forest Floor
+      var forestLayerIndices = [2, 3, 4, 5]; // Emergent, Canopy, Understory, Forest Floor
       var forestLayerSections = [];
       var otherSections = [];
       
@@ -378,7 +378,7 @@ function initializePage() {
       pamitinanSection.innerHTML =
         '<h3>Mt. Pamitinan Overview</h3>' +
         '<div class="geological-info-box">' +
-        '<p>Mt. <u>Pamitinan</u> is a limestone mountain located in <b>Montalban (Rodriguez), Rizal</b>, rising to <b>426+ meters</b> above sea level. It forms part of the <u>Sierra Madre mountain range</u> and is officially recognized as a <b>DENR‑protected landscape</b>, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
+        '<p>Mt. <u>Pamitinan</u> is a limestone mountain located in <b>Montalban (Rodriguez), Rizal</b>, rising to <b>426+ meters</b> above sea level. It forms part of the <u>Sierra Madre mountain range</u> and is officially recognized as a <b>DENR��protected landscape</b>, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
         '<p>But Mt. <u>Pamitinan</u> is more than just a natural site. It is a <b>multi‑layered landmark</b>:</p>' +
         '<ul class="pamitinan-features">' +
           '<li><b><u>Geological</u></b> – jagged limestone cliffs, caves with stalactites and stalagmites, and a terrain that supports unique biodiversity.</li>' +
