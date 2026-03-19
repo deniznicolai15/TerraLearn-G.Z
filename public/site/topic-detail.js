@@ -261,7 +261,7 @@ function initializePage() {
       });
 
       // Render non-forest layer sections first
-      otherSections.forEach(function (item) {
+      otherSections.forEach(function (item, idx) {
         var sectionDiv = document.createElement("div");
         var imageHTML = item.section.image ? '<img src="' + item.section.image + '" alt="' + item.section.title + '" class="section-image" />' : '';
 
@@ -277,7 +277,8 @@ function initializePage() {
           textContent = '<p>' + item.section.text + '</p>';
         }
 
-        sectionDiv.className = "detail-section";
+        // Add bordered class for the first section (What is a Forest Ecosystem?)
+        sectionDiv.className = idx === 0 ? "detail-section section-bordered" : "detail-section";
         sectionDiv.innerHTML =
           '<h3>' + item.section.title + '</h3>' +
           imageHTML +
@@ -732,17 +733,8 @@ function showResults(correct, total, percentage) {
     existingBreakdown.remove();
   }
 
-  var retryBtn = document.getElementById("retry-btn");
-  retryBtn.insertAdjacentHTML('beforebegin', answerBreakdownHTML);
-
-  document.getElementById("retry-btn").addEventListener("click", function () {
-    currentQuizIndex = 0;
-    quizAnswers = new Array(currentQuiz.length).fill(null);
-    quizContent.style.display = "flex";
-    resultsDiv.style.display = "none";
-    document.getElementById("start-quiz-btn").style.display = "none";
-    renderQuizQuestions();
-  });
+  var closeBtn = document.getElementById("close-btn");
+  closeBtn.insertAdjacentHTML('beforebegin', answerBreakdownHTML);
 
   document.getElementById("close-btn").addEventListener("click", function () {
     // Scroll back to top
