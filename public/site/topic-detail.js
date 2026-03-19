@@ -319,6 +319,31 @@ function initializePage() {
         forestLayersContainer.appendChild(gridDiv);
         sectionsContainer.appendChild(forestLayersContainer);
 
+        // Add Educational Game Box
+        var gameBox = document.createElement("div");
+        gameBox.className = "forest-game-box";
+        gameBox.innerHTML = 
+          '<a href="/site/games/forest-layers-game.html" target="_blank" class="game-box-link">' +
+          '<div class="game-box-content">' +
+          '<div class="game-box-icon">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<polygon points="5 3 19 12 5 21 5 3"></polygon>' +
+          '</svg>' +
+          '</div>' +
+          '<div class="game-box-text">' +
+          '<h3>Test Your Knowledge!</h3>' +
+          '<p>Play the Forest Layers Game and see how well you know the Philippine forest ecosystem.</p>' +
+          '</div>' +
+          '<div class="game-box-arrow">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+          '<polyline points="12 5 19 12 12 19"></polyline>' +
+          '</svg>' +
+          '</div>' +
+          '</div>' +
+          '</a>';
+        sectionsContainer.appendChild(gameBox);
+
         // Add Functions and Environmental Balance section
         var functionsSection = document.createElement("div");
         functionsSection.className = "functions-environmental-section";

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Layers Game | TerraLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a8d5a8;
+      --secondary: #5f7f73;
+      --bg-dark: #17402a;
+      --bg-darker: #0f2a1c;
+      --accent: #2d7a4a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+      min-height: 100vh;
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    
+    .game-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .game-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+    
+    .game-header p {
+      font-size: 16px;
+      color: var(--secondary);
+      max-width: 500px;
+    }
+    
+    .game-container {
+      background: rgba(26, 58, 42, 0.6);
+      border: 2px solid rgba(142, 176, 154, 0.3);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .game-instruction {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+    
+    .score-display {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    
+    .score-item {
+      background: rgba(45, 122, 74, 0.3);
+      padding: 16px 28px;
+      border-radius: 12px;
+      border: 1px solid rgba(142, 176, 154, 0.3);
+    }
+    
+    .score-label {
+      font-size: 12px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    
+    .score-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .layers-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    
+    .layer-slot {
+      background: rgba(15, 42, 28, 0.8);
+      border: 2px dashed rgba(142, 176, 154, 0.4);
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--secondary);
+      transition: all 0.3s ease;
+    }
+    
+    .layer-slot.correct {
+      background: rgba(45, 122, 74, 0.4);
+      border-color: #2d7a4a;
+      border-style: solid;
+    }
+    
+    .layer-slot.incorrect {
+      background: rgba(180, 60, 60, 0.3);
+      border-color: #b43c3c;
+      border-style: solid;
+    }
+    
+    .draggable-layers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    
+    .draggable-item {
+      background: linear-gradient(135deg, #2d7a4a 0%, #1a5f2a 100%);
+      padding: 14px 24px;
+      border-radius: 10px;
+      cursor: grab;
+      font-weight: 600;
+      font-size: 14px;
+      color: white;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    
+    .draggable-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(45, 122, 74, 0.4);
+    }
+    
+    .draggable-item:active {
+      cursor: grabbing;
+    }
+    
+    .draggable-item.placed {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    
+    .btn-check {
+      background: linear-gradient(135deg, #2d7a4a 0%, #1a5f2a 100%);
+      color: white;
+      border: none;
+      padding: 16px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-right: 12px;
+    }
+    
+    .btn-check:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 122, 74, 0.4);
+    }
+    
+    .btn-reset {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid rgba(142, 176, 154, 0.4);
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-reset:hover {
+      background: rgba(142, 176, 154, 0.1);
+      border-color: rgba(142, 176, 154, 0.6);
+    }
+    
+    .feedback {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      display: none;
+    }
+    
+    .feedback.success {
+      background: rgba(45, 122, 74, 0.3);
+      border: 1px solid #2d7a4a;
+      color: #a8d5a8;
+      display: block;
+    }
+    
+    .feedback.error {
+      background: rgba(180, 60, 60, 0.2);
+      border: 1px solid #b43c3c;
+      color: #ffaaaa;
+      display: block;
+    }
+    
+    .back-link {
+      margin-top: 40px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--primary);
+    }
+    
+    @media (max-width: 600px) {
+      .game-header h1 {
+        font-size: 28px;
+      }
+      
+      .game-container {
+        padding: 24px;
+      }
+      
+      .score-display {
+        gap: 20px;
+      }
+      
+      .score-item {
+        padding: 12px 20px;
+      }
+      
+      .draggable-item {
+        padding: 12px 18px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="game-header">
+    <h1>Forest Layers Game</h1>
+    <p>Drag and drop the forest layers in the correct order from top (highest) to bottom (lowest).</p>
+  </div>
+  
+  <div class="game-container">
+    <div class="score-display">
+      <div class="score-item">
+        <div class="score-label">Score</div>
+        <div class="score-value" id="score">0</div>
+      </div>
+      <div class="score-item">
+        <div class="score-label">Attempts</div>
+        <div class="score-value" id="attempts">0</div>
+      </div>
+    </div>
+    
+    <p class="game-instruction">Arrange the layers from HIGHEST to LOWEST:</p>
+    
+    <div class="layers-container" id="layers-container">
+      <div class="layer-slot" data-position="0" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span class="slot-label">1. Highest layer</span>
+      </div>
+      <div class="layer-slot" data-position="1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span class="slot-label">2. Second layer</span>
+      </div>
+      <div class="layer-slot" data-position="2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span class="slot-label">3. Third layer</span>
+      </div>
+      <div class="layer-slot" data-position="3" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span class="slot-label">4. Lowest layer</span>
+      </div>
+    </div>
+    
+    <div class="draggable-layers" id="draggable-layers">
+      <div class="draggable-item" draggable="true" data-layer="canopy" ondragstart="drag(event)">Canopy</div>
+      <div class="draggable-item" draggable="true" data-layer="forest-floor" ondragstart="drag(event)">Forest Floor</div>
+      <div class="draggable-item" draggable="true" data-layer="emergent" ondragstart="drag(event)">Emergent Layer</div>
+      <div class="draggable-item" draggable="true" data-layer="understory" ondragstart="drag(event)">Understory</div>
+    </div>
+    
+    <div>
+      <button class="btn-check" onclick="checkAnswer()">Check Answer</button>
+      <button class="btn-reset" onclick="resetGame()">Reset</button>
+    </div>
+    
+    <div class="feedback" id="feedback"></div>
+  </div>
+  
+  <a href="../topic-detail.html?topic=1" class="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Back to Forest 101
+  </a>
+  
+  <script>
+    // Correct order: Emergent, Canopy, Understory, Forest Floor
+    const correctOrder = ['emergent', 'canopy', 'understory', 'forest-floor'];
+    let score = 0;
+    let attempts = 0;
+    let placedLayers = {};
+    
+    function allowDrop(ev) {
+      ev.preventDefault();
+      ev.target.closest('.layer-slot').style.borderColor = '#2d7a4a';
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.dataset.layer);
+      ev.dataTransfer.setData("element", ev.target.outerHTML);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      const slot = ev.target.closest('.layer-slot');
+      const layer = ev.dataTransfer.getData("text");
+      const position = slot.dataset.position;
+      
+      // Find the draggable item
+      const draggableItems = document.querySelectorAll('.draggable-item');
+      draggableItems.forEach(item => {
+        if (item.dataset.layer === layer) {
+          item.classList.add('placed');
+        }
+      });
+      
+      // Place the layer name in the slot
+      const layerNames = {
+        'emergent': 'Emergent Layer',
+        'canopy': 'Canopy',
+        'understory': 'Understory',
+        'forest-floor': 'Forest Floor'
+      };
+      
+      slot.innerHTML = '<span style="font-weight: 600; color: #a8d5a8;">' + layerNames[layer] + '</span>';
+      slot.style.borderColor = 'rgba(142, 176, 154, 0.4)';
+      slot.style.borderStyle = 'solid';
+      
+      placedLayers[position] = layer;
+    }
+    
+    function checkAnswer() {
+      attempts++;
+      document.getElementById('attempts').textContent = attempts;
+      
+      const slots = document.querySelectorAll('.layer-slot');
+      let allCorrect = true;
+      let allFilled = true;
+      
+      slots.forEach((slot, index) => {
+        if (!placedLayers[index]) {
+          allFilled = false;
+        } else if (placedLayers[index] === correctOrder[index]) {
+          slot.classList.add('correct');
+          slot.classList.remove('incorrect');
+        } else {
+          slot.classList.add('incorrect');
+          slot.classList.remove('correct');
+          allCorrect = false;
+        }
+      });
+      
+      const feedback = document.getElementById('feedback');
+      
+      if (!allFilled) {
+        feedback.className = 'feedback error';
+        feedback.textContent = 'Please place all layers before checking!';
+        return;
+      }
+      
+      if (allCorrect) {
+        score++;
+        document.getElementById('score').textContent = score;
+        feedback.className = 'feedback success';
+        feedback.textContent = 'Excellent! You got the correct order! The Emergent Layer is highest, followed by the Canopy, Understory, and Forest Floor.';
+      } else {
+        feedback.className = 'feedback error';
+        feedback.textContent = 'Not quite right. Remember: The tallest trees form the Emergent Layer, then comes the Canopy, the Understory below it, and the Forest Floor at the bottom.';
+      }
+    }
+    
+    function resetGame() {
+      const slots = document.querySelectorAll('.layer-slot');
+      const labels = ['1. Highest layer', '2. Second layer', '3. Third layer', '4. Lowest layer'];
+      
+      slots.forEach((slot, index) => {
+        slot.innerHTML = '<span class="slot-label">' + labels[index] + '</span>';
+        slot.classList.remove('correct', 'incorrect');
+        slot.style.borderStyle = 'dashed';
+      });
+      
+      const draggableItems = document.querySelectorAll('.draggable-item');
+      draggableItems.forEach(item => {
+        item.classList.remove('placed');
+      });
+      
+      placedLayers = {};
+      document.getElementById('feedback').className = 'feedback';
+      document.getElementById('feedback').textContent = '';
+    }
+  </script>
+</body>
+</html>
