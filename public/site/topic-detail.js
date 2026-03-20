@@ -1337,9 +1337,9 @@ function initializePage() {
   // Old Forest 101 section disabled - now using the new Topic 2 style layout for Topic 1
   // initializeForest101();
 
-  // Back button
+  // Back button - navigate to homepage
   document.getElementById("back-btn").addEventListener("click", function () {
-    window.history.back();
+    window.location.href = "index.html";
   });
 
 }
