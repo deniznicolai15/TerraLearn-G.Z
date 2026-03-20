@@ -604,6 +604,16 @@ body.topic-2 .detail-section h3 {
   display: block;
 }
 
+.pamitinan-video-caption {
+  font-size: 14px;
+  color: var(--secondary);
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
 .pamitinan-intro {
   font-size: 16px;
   color: var(--secondary);
