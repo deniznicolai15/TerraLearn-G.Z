@@ -263,23 +263,6 @@ function initializePage() {
     if (introSection) {
       introSection.parentNode.insertBefore(humanImpactSection, introSection);
     }
-    
-    // Add Tree Planting Section after Human Impact Section
-    var treePlantingSection = document.createElement("div");
-    treePlantingSection.className = "tree-planting-section";
-    treePlantingSection.innerHTML = 
-      '<h2 class="tree-planting-section-title">Tree Planting: Seeds of Equality</h2>' +
-      '<div class="tree-planting-content-wrapper">' +
-      '<div class="tree-planting-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree%20planting-ZJVAq2tYWQx7JvPaaCxECZYYBjQO9d.png" alt="National Women\'s Month tree planting celebration with Local Council of Women at Mt. Parawagan" class="tree-planting-image" />' +
-      '</div>' +
-      '<p class="tree-planting-description">In celebration of National Women\'s Month, more than 500 seedlings of Narra and fruit-bearing trees (langka, guyabano, duhat) were planted in Mt. Parawagan. Each participant placed a name tag and personal wish on their tree, symbolizing hope, equality, and care for nature. This initiative strengthens biodiversity while empowering communities to take part in reforestation.</p>' +
-      '</div>';
-    
-    // Insert after human impact section
-    if (humanImpactSection && humanImpactSection.parentNode) {
-      humanImpactSection.parentNode.insertBefore(treePlantingSection, humanImpactSection.nextSibling);
-    }
   }
 
   // Populate sections
