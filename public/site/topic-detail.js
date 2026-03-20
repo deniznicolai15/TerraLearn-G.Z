@@ -380,8 +380,8 @@ function initializePage() {
     }
   }
 
-  // Render video player if available
-  if (topicData.video) {
+  // Render video player if available (skip for Topic 2 as it has its own video in the pamitinan-section-standalone)
+  if (topicData.video && topicData.id !== 2) {
     var videoContainer = document.createElement("div");
     videoContainer.className = "video-section";
 
