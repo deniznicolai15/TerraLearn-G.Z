@@ -54,7 +54,7 @@ var topics = [
     label: "TOPIC 02",
     name: "Mt. Pamitinan: Where Myth Meets Revolution",
     color: "#A8B7B5",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mt%20pamitinan-pLkGrVrhpsZOSOA62LJ8ovjsSbpXsI.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
       "Uncover the geological features of Mt. Pamitinan while tracing its historical and cultural significance. Myths and revolutionary stories intertwine here, giving the mountain its enduring identity.",
     intro: {
