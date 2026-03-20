@@ -605,13 +605,51 @@ body.topic-2 .detail-section h3 {
 }
 
 .pamitinan-video-caption {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--secondary);
   text-align: center;
   margin-top: 16px;
   margin-bottom: 0;
   font-style: italic;
   line-height: 1.6;
+}
+
+/* New dark-themed Mt. Pamitinan section without border */
+.pamitinan-section-video {
+  padding: 50px 30px;
+  background: #2a2a2a;
+  margin: 50px 0;
+  border-radius: 16px;
+}
+
+.pamitinan-section-video .pamitinan-section-title {
+  color: #ffffff;
+  text-align: left;
+  font-size: 28px;
+}
+
+.pamitinan-section-video .pamitinan-section-title::after {
+  display: none;
+}
+
+.pamitinan-section-video .pamitinan-video-caption {
+  color: #999999;
+}
+
+.pamitinan-section-video .pamitinan-intro,
+.pamitinan-section-video .pamitinan-subtitle,
+.pamitinan-section-video .pamitinan-conclusion {
+  color: #e0e0e0;
+}
+
+.pamitinan-section-video .pamitinan-subtitle strong,
+.pamitinan-section-video .pamitinan-layers strong,
+.pamitinan-section-video .pamitinan-conclusion strong {
+  color: #4a9660;
+}
+
+.pamitinan-section-video .pamitinan-layers li:before {
+  color: #4a9660;
 }
 
 .pamitinan-intro {

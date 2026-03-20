@@ -514,7 +514,7 @@ function initializePage() {
 
     // Create a section div for Mt. Pamitinan info with video
     var pamitinanSection = document.createElement("div");
-    pamitinanSection.className = "pamitinan-section-standalone";
+    pamitinanSection.className = "pamitinan-section-video";
     
     // Get the video URL from topicData
     var videoIframe = '';
