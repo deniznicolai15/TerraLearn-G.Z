@@ -568,7 +568,7 @@ body.topic-5 .detail-section h3 {
 .pamitinan-section-standalone {
   padding: 50px 30px;
   background: linear-gradient(135deg, rgba(45, 90, 61, 0.06) 0%, rgba(75, 107, 85, 0.08) 100%);
-  margin: 50px 0 50px 0;
+  margin: 50px 0;
   border-radius: 16px;
   border: 1px solid rgba(45, 90, 61, 0.2);
 }
@@ -747,7 +747,7 @@ body.topic-5 .detail-section h3 {
 .geological-section-standalone {
   padding: 50px 30px;
   background: linear-gradient(135deg, rgba(45, 90, 61, 0.06) 0%, rgba(75, 107, 85, 0.08) 100%);
-  margin: 0 0 50px 0;
+  margin: 50px 0;
   border-radius: 16px;
   border: 1px solid rgba(45, 90, 61, 0.2);
 }
