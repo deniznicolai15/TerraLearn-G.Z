@@ -891,6 +891,45 @@ function initializePage() {
         }
       });
     }
+
+    // Add Quiz Section after reflection wall
+    var quizGameBox = document.createElement("div");
+    quizGameBox.className = "forest-game-box";
+    quizGameBox.id = "start-quiz-trigger-topic2";
+    quizGameBox.innerHTML =
+      '<div class="game-box-content" style="cursor: pointer;">' +
+      '<div class="game-box-icon">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+      '<path d="M2 17l10 5 10-5"></path>' +
+      '<path d="M2 12l10 5 10-5"></path>' +
+      '</svg>' +
+      '</div>' +
+      '<div class="game-box-text">' +
+      '<h3>Test Your Knowledge!</h3>' +
+      '<p>Challenge yourself with this interactive quiz about Mt. Pamitinan and the Sierra Madre. Answer all 10 questions and see your score!</p>' +
+      '</div>' +
+      '<div class="game-box-arrow">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+      '<polyline points="12 5 19 12 12 19"></polyline>' +
+      '</svg>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after reflection wall
+    if (reflectionWallDiv.parentNode) {
+      reflectionWallDiv.parentNode.insertBefore(quizGameBox, reflectionWallDiv.nextSibling);
+    } else {
+      sectionsContainer.appendChild(quizGameBox);
+    }
+
+    // Add click handler to show quiz
+    quizGameBox.addEventListener("click", function () {
+      document.getElementById("quiz-container").style.display = "block";
+      initializeQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 
   // ===== TOPIC 3/5: Tree Planting - Seeds of Equality =====
