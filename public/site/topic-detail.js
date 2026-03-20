@@ -685,6 +685,82 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(whyItMattersSection);
     }
+
+    // Add reflection box after Why It Matters section
+    var reflectionBox = document.createElement("div");
+    reflectionBox.className = "forest-reflection-box";
+    reflectionBox.innerHTML =
+      '<div class="reflection-badge">Share Your Voice</div>' +
+      '<h3>Quicky Lang!</h3>' +
+      '<p>Why do you think communities create sabi‑sabi (like Bernardo Carpio causing earthquakes)? How do these stories help people understand natural events?</p>' +
+      '<div class="reflection-input-wrapper">' +
+      '<textarea id="topic2-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="500"></textarea>' +
+      '<div class="char-counter"><span id="topic2-char-count">0</span>/500</div>' +
+      '</div>' +
+      '<div class="reflection-buttons">' +
+      '<button class="btn btn-primary btn-submit" id="topic2-reflection-submit">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="22" y1="2" x2="11" y2="13"></line>' +
+      '<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>' +
+      '</svg>' +
+      'Submit Anonymously' +
+      '</button>' +
+      '<button class="btn btn-secondary" id="topic2-reflection-clear">Clear</button>' +
+      '</div>' +
+      '<p class="reflection-saved-msg" id="topic2-reflection-saved-msg"></p>';
+
+    // Insert after Why It Matters section
+    if (whyItMattersSection.parentNode) {
+      whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(reflectionBox);
+    }
+
+    // Add event listeners for Topic 2 reflection box
+    var topic2ReflectionInput = document.getElementById("topic2-reflection-input");
+    var topic2SubmitBtn = document.getElementById("topic2-reflection-submit");
+    var topic2ClearBtn = document.getElementById("topic2-reflection-clear");
+    var topic2SavedMsg = document.getElementById("topic2-reflection-saved-msg");
+    var topic2CharCount = document.getElementById("topic2-char-count");
+
+    // Character counter
+    if (topic2ReflectionInput && topic2CharCount) {
+      topic2ReflectionInput.addEventListener("input", function () {
+        topic2CharCount.textContent = topic2ReflectionInput.value.length;
+      });
+    }
+
+    // Submit button
+    if (topic2SubmitBtn) {
+      topic2SubmitBtn.addEventListener("click", function () {
+        if (topic2ReflectionInput && topic2ReflectionInput.value.trim()) {
+          topic2SavedMsg.textContent = "Your thought has been shared anonymously!";
+          topic2SavedMsg.className = "reflection-saved-msg success";
+          topic2ReflectionInput.value = "";
+          topic2CharCount.textContent = "0";
+          setTimeout(function () {
+            topic2SavedMsg.className = "reflection-saved-msg";
+          }, 4000);
+        } else {
+          topic2SavedMsg.textContent = "Please write something before submitting!";
+          topic2SavedMsg.className = "reflection-saved-msg error";
+          setTimeout(function () {
+            topic2SavedMsg.className = "reflection-saved-msg";
+          }, 3000);
+        }
+      });
+    }
+
+    // Clear button
+    if (topic2ClearBtn) {
+      topic2ClearBtn.addEventListener("click", function () {
+        if (topic2ReflectionInput) {
+          topic2ReflectionInput.value = "";
+          if (topic2CharCount) topic2CharCount.textContent = "0";
+          topic2SavedMsg.className = "reflection-saved-msg";
+        }
+      });
+    }
   }
 
   // Populate Figure 1 image and caption
