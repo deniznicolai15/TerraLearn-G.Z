@@ -685,6 +685,34 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(whyItMattersSection);
     }
+
+    // Add Share Your Thoughts reflection box after Why It Matters
+    var reflectionBoxTopic2 = document.createElement("div");
+    reflectionBoxTopic2.className = "reflection-box-container";
+    reflectionBoxTopic2.innerHTML =
+      '<div class="reflection-box-inner">' +
+      '<div class="reflection-box-header">' +
+      '<h3 class="reflection-box-title">Quicky lang!</h3>' +
+      '</div>' +
+      '<span class="reflection-box-badge">Why do you think communities create sabi‑sabi (like Bernardo Carpio causing earthquakes)? How do these stories help people understand natural events?</span>' +
+      '<div class="reflection-box-input-section">' +
+      '<textarea class="reflection-box-textarea" id="reflection-textarea-topic2-' + Math.random() + '" placeholder="Share your reflection or thoughts..." maxlength="250"></textarea>' +
+      '<div class="reflection-box-footer">' +
+      '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
+      '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
+      '</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="reflection-box-wall" id="reflection-wall-topic2">' +
+      '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+      '</div>';
+
+    // Insert after Why It Matters section
+    if (whyItMattersSection.parentNode) {
+      whyItMattersSection.parentNode.insertBefore(reflectionBoxTopic2, whyItMattersSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(reflectionBoxTopic2);
+    }
   }
 
   // Populate Figure 1 image and caption
