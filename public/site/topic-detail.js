@@ -852,6 +852,7 @@ function initializePage() {
       '<p class="pamitinan-image-caption">National Women\'s Month Celebration 2026 - Local Council of Women tree planting activity at Mt. Parawagan</p>' +
       '</div>' +
       '<p class="pamitinan-intro">In celebration of National Women\'s Month, more than 500 seedlings of Narra and fruit-bearing trees (langka, guyabano, duhat) were planted in Mt. Parawagan. Each participant placed a name tag and personal wish on their tree, symbolizing hope, equality, and care for nature. This initiative strengthens biodiversity while empowering communities to take part in reforestation.</p>' +
+      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>';
 
     // Insert it right after the video section
@@ -873,9 +874,10 @@ function initializePage() {
       '<p class="geological-image-caption">February 9, 2026 - Over 50 volunteers joined forces for the Clean-Up Drive at Pamitinan Protected Landscape</p>' +
       '</div>' +
       '<p class="geological-intro-text">On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam. The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment. This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</p>' +
+      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>';
 
-    // Insert after 3G Overview section
+    // Insert after Tree Planting section
     if (greenGoalsSection.parentNode) {
       greenGoalsSection.parentNode.insertBefore(plantDiversitySection, greenGoalsSection.nextSibling);
     } else {
@@ -893,33 +895,28 @@ function initializePage() {
       '<p class="historical-image-caption">Fee structure at Pamitinan Protected Landscape - funds supporting conservation programs</p>' +
       '</div>' +
       '<p class="historical-intro-text">Visitors contribute through entrance and trekking fees, which fund conservation programs. Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage. Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</p>' +
+      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>';
 
-    // Insert after Plant Diversity section
+    // Insert after Clean-Up Drive section
     if (plantDiversitySection.parentNode) {
       plantDiversitySection.parentNode.insertBefore(photosynthesisSection, plantDiversitySection.nextSibling);
     } else {
       sectionsContainer.appendChild(photosynthesisSection);
     }
 
-    // Add Carbon Sequestration section
+    // Add School-Based Tree Planting section
     var carbonSection = document.createElement("div");
     carbonSection.className = "myth-section-standalone";
     carbonSection.innerHTML =
-      '<h2 class="myth-section-title">Carbon Sequestration</h2>' +
+      '<h2 class="myth-section-title">School-Based Tree Planting and Clean-Up</h2>' +
       '<div class="myth-content-wrapper">' +
-      '<div class="myth-narrative-intro">' +
-      '<p>Forests are Earth\'s most powerful natural tool for fighting climate change. Through the process of carbon sequestration, trees absorb carbon dioxide from the atmosphere and store it in their trunks, branches, leaves, and roots.</p>' +
+      '<div class="myth-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/schoolbased-solljIRBIALKi7rsKgZkgHNAawmOpD.png" alt="School-Based Tree Planting at Wawa Elementary School" class="myth-featured-image" />' +
+      '<p class="myth-image-caption">Teachers, students, and parents of Wawa Elementary School with PAMO-PPL staff during the tree planting activity</p>' +
       '</div>' +
-      '<ul class="myth-features-list">' +
-      '<li><strong>Carbon Storage</strong> – A single hectare of tropical forest can store up to 250 tons of carbon. The dense vegetation of Mt. Pamitinan serves as a significant carbon sink for the region.</li>' +
-      '<li><strong>Climate Change Mitigation</strong> – By removing CO2 from the atmosphere, forests help regulate global temperatures and reduce the greenhouse effect.</li>' +
-      '<li><strong>Soil Carbon</strong> – Forest soils also store massive amounts of carbon through decomposed organic matter, making forest floor protection equally important.</li>' +
-      '<li><strong>Long-term Storage</strong> – Unlike other carbon capture methods, forests can store carbon for hundreds of years if properly protected from deforestation and fire.</li>' +
-      '</ul>' +
-      '<div class="myth-narrative-outro">' +
-      '<p>Protecting forests like Pamitinan is one of the most effective actions we can take against climate change. Every tree preserved is a step toward a more stable climate.</p>' +
-      '</div>' +
+      '<p class="myth-intro-text">Teachers, students, and parents of Wawa Elementary School, together with PAMO–PPL staff, planted 50 native seedlings including Mulawin, Narra, Langka, and Santol. A demonstration on proper seedling handling was conducted, followed by a clean-up drive from Sitio Wawa to Sitio Kayrupa. This activity highlights the role of education and youth involvement in long-term forest conservation.</p>' +
+      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>';
 
     // Insert after Photosynthesis section
@@ -929,19 +926,12 @@ function initializePage() {
       sectionsContainer.appendChild(carbonSection);
     }
 
-    // Add Sustainable Living & Green Goals section
+    // Add Conclusion section
     var sustainableSection = document.createElement("div");
-    sustainableSection.className = "did-you-know-section-standalone";
+    sustainableSection.className = "did-you-know-section-standalone conclusion-section";
     sustainableSection.innerHTML =
-      '<h2 class="did-you-know-section-title">Sustainable Living & Green Goals</h2>' +
-      '<div class="did-you-know-content-wrapper">' +
-      '<p class="did-you-know-text">Understanding plant ecosystems inspires sustainable practices in our daily lives. Here are ways you can contribute to green goals and protect environments like Mt. Pamitinan:</p>' +
-      '<ul class="geological-features-list" style="margin-top: 16px;">' +
-      '<li><strong>Support Reforestation</strong> – Participate in tree planting activities or donate to organizations that restore degraded forests.</li>' +
-      '<li><strong>Reduce Your Carbon Footprint</strong> – Use public transportation, conserve energy, and minimize waste to reduce your environmental impact.</li>' +
-      '<li><strong>Choose Eco-Friendly Products</strong> – Support businesses that use sustainable materials and practice responsible sourcing.</li>' +
-      '<li><strong>Spread Awareness</strong> – Educate others about the importance of forests and environmental conservation.</li>' +
-      '</ul>' +
+      '<div class="did-you-know-content-wrapper conclusion-wrapper">' +
+      '<p class="conclusion-text">The conservation efforts in the Pamitinan Protected Landscape prove that human actions can be a force for renewal. Through tree planting, clean-up drives, education, and sustainable tourism, communities are not only protecting forests and rivers today — they are reshaping nature to ensure it thrives for the generations that follow.</p>' +
       '</div>';
 
     // Insert after Carbon section
