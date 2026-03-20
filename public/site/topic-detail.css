@@ -2078,6 +2078,93 @@ body.topic-2 .detail-figure {
   display: none;
 }
 
+/* Hide Figure 1 for Topic 3 */
+body.topic-3 .detail-figure {
+  display: none;
+}
+
+/* ===== TOPIC 3 TREE PLANTING SECTION ===== */
+.tree-planting-section {
+  padding: 50px 30px;
+  background: linear-gradient(135deg, rgba(45, 90, 61, 0.06) 0%, rgba(75, 107, 85, 0.08) 100%);
+  margin: 0;
+  border-bottom: 1px solid rgba(45, 90, 61, 0.25);
+}
+
+.tree-planting-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.tree-planting-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--muted));
+  border-radius: 2px;
+}
+
+.tree-planting-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tree-planting-image-container {
+  margin: 28px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.tree-planting-image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(45, 90, 61, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tree-planting-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(45, 90, 61, 0.35);
+}
+
+.tree-planting-description {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.9;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .tree-planting-section {
+    padding: 30px 20px;
+  }
+  
+  .tree-planting-section-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .tree-planting-description {
+    font-size: 14px;
+  }
+  
+  .tree-planting-image {
+    max-width: 100%;
+  }
+}
+
   /* ===== TOPIC 4 SPECIFIC STYLES ===== */
   body.topic-4 #intro-section,
   body.topic-4 #detail-grid {
