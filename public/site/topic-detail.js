@@ -530,6 +530,30 @@ function initializePage() {
       // Insert it at the beginning of the sections container
       sectionsContainer.insertBefore(pamitinanSection, sectionsContainer.firstChild);
     }
+
+    // Add Geological Features section after Mt. Pamitinan Overview
+    var geologicalFeaturesSection = document.createElement("div");
+    geologicalFeaturesSection.className = "detail-section geological-features-section";
+    geologicalFeaturesSection.innerHTML =
+      '<h3>Geological Features</h3>' +
+      '<div class="geological-info-box">' +
+      '<div class="geological-features-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-hKnyDECHJRQ8uPTPe1HCH4WAJLy710.jpg" alt="Geological Features - Limestone cliffs and Pamitinan Cave" class="geological-features-image" />' +
+      '</div>' +
+      '<ul class="geological-features-list">' +
+      '<li><strong>Limestone cliffs and karst formations</strong> shaped by water and rock interaction.</li>' +
+      '<li><strong>Pamitinan Cave</strong> with stalactites, stalagmites, and chambers that host bats and other cave‑dwelling species.</li>' +
+      '<li><strong>Part of the Sierra Madre</strong>, contributing to water regulation and serving as a natural shield against typhoons.</li>' +
+      '</ul>' +
+      '</div>';
+
+    // Insert after Mt. Pamitinan Overview section
+    var pamitinanOverviewSection = sectionsContainer.querySelector('.geological-features-section');
+    if (pamitinanOverviewSection) {
+      pamitinanOverviewSection.parentNode.insertBefore(geologicalFeaturesSection, pamitinanOverviewSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(geologicalFeaturesSection);
+    }
   }
 
   // Populate Figure 1 image and caption
