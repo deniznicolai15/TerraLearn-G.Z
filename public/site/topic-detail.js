@@ -611,6 +611,38 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(mythSection);
     }
+
+    // Add Did You Know section
+    var didYouKnowSection = document.createElement("div");
+    didYouKnowSection.className = "did-you-know-section-standalone";
+    didYouKnowSection.innerHTML =
+      '<h2 class="did-you-know-section-title">Did You Know?</h2>' +
+      '<div class="did-you-know-content-wrapper">' +
+      '<p class="did-you-know-text">Local sabi‑sabi say that when the ground shakes near Mt. Pamitinan, it is Bernardo Carpio struggling against his chains. Earthquakes, in this telling, are not just natural events—they are echoes of a giant\'s eternal battle beneath the mountain.</p>' +
+      '</div>';
+
+    // Insert after Myth Section
+    if (mythSection.parentNode) {
+      mythSection.parentNode.insertBefore(didYouKnowSection, mythSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(didYouKnowSection);
+    }
+
+    // Add Why It Matters section
+    var whyItMattersSection = document.createElement("div");
+    whyItMattersSection.className = "why-it-matters-section-standalone";
+    whyItMattersSection.innerHTML =
+      '<h2 class="why-it-matters-section-title">Why It Matters</h2>' +
+      '<div class="why-it-matters-content-wrapper">' +
+      '<p class="why-it-matters-text">Mt. Pamitinan is more than a hiking destination—it is a fusion of protected landscape, revolutionary history, and living folklore. By studying Pamitinan, we see how Luzon\'s protected areas are not only ecological systems but also cultural spaces that shape identity, memory, and resilience.</p>' +
+      '</div>';
+
+    // Insert after Did You Know Section
+    if (didYouKnowSection.parentNode) {
+      didYouKnowSection.parentNode.insertBefore(whyItMattersSection, didYouKnowSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(whyItMattersSection);
+    }
   }
 
   // Populate Figure 1 image and caption
