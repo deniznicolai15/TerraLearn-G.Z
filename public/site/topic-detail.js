@@ -581,6 +581,36 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(historicalSection);
     }
+
+    // Add Myth and Folklore section
+    var mythSection = document.createElement("div");
+    mythSection.className = "myth-section-standalone";
+    mythSection.innerHTML =
+      '<h2 class="myth-section-title">Myth and Folklore</h2>' +
+      '<div class="myth-content-wrapper">' +
+      '<div class="myth-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mysterious-mvlcYXrkCBmQtL9OKmWF7NLRfO2KWA.jpg" alt="Myth and Folklore - Ancient mystical tree" class="myth-clearer-image" />' +
+      '</div>' +
+      '<div class="myth-narrative-intro">' +
+      '<p>Everything in nature carries a story—and Mt. Pamitinan is no exception. Beyond its limestone cliffs and revolutionary past, the mountain is wrapped in sabi sabi that locals have passed down for generations.</p>' +
+      '</div>' +
+      '<ul class="myth-features-list">' +
+      '<li><strong>Bernardo Carpio\'s Struggle</strong> – The most famous legend tells of Bernardo Carpio, a mythical giant trapped between Mt. Pamitinan and Mt. Binacayan. Bound by enchantment, he is said to hold the two mountains apart to prevent them from colliding. Each time he strains against his chains, the ground trembles—explaining the earthquakes felt in the area.</li>' +
+      '<li><strong>Symbol of Resistance</strong> – For many, Carpio\'s imprisonment is more than myth. It symbolizes the Filipino struggle against oppression, with the giant\'s eternal effort mirroring the people\'s fight for freedom and resilience.</li>' +
+      '<li><strong>Whispers and Signs</strong> – Hikers and villagers alike recount strange experiences: faint voices or music echoing inside the cave, sudden gusts of wind, or footsteps when no one is near. Some even claim that unseen forces guide lost travelers back to the trail, as if guardians watch over the mountain.</li>' +
+      '<li><strong>Mystical Presence</strong> – These stories blur the line between geology and myth. The same cliffs that hold evidence of ancient Earth processes are imagined as portals to another realm, where spirits and giants dwell unseen.</li>' +
+      '</ul>' +
+      '<div class="myth-narrative-outro">' +
+      '<p>Mt. Pamitinan\'s folklore adds a layer of enchantment to its identity. It is not only a protected landscape but also a threshold between the natural and the supernatural. Hiking here means stepping into a place where every rumble of stone might be Bernardo Carpio\'s restless strength, and every whisper of wind might carry a legend waiting to be told.</p>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Historical Section
+    if (historicalSection.parentNode) {
+      historicalSection.parentNode.insertBefore(mythSection, historicalSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(mythSection);
+    }
   }
 
   // Populate Figure 1 image and caption
