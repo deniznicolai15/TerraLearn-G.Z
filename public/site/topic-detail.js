@@ -924,11 +924,9 @@ function initializePage() {
       sectionsContainer.appendChild(quizGameBox);
     }
 
-    // Add click handler to show quiz
+    // Add click handler to navigate to quiz page
     quizGameBox.addEventListener("click", function () {
-      document.getElementById("quiz-container").style.display = "block";
-      initializeQuiz();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.location.href = "games/topic2-quiz.html";
     });
   }
 
