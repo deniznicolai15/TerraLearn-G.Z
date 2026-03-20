@@ -1,3 +1,9 @@
+// ===== SCROLL TO TOP FROM QUIZ =====
+if (sessionStorage.getItem('scrollToTop') === 'true') {
+  window.scrollTo(0, 0);
+  sessionStorage.removeItem('scrollToTop');
+}
+
 // ===== GET TOPIC DATA FROM URL =====
 function getTopicData() {
   var params = new URLSearchParams(window.location.search);
