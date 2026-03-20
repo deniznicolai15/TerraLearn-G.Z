@@ -91,12 +91,28 @@ var topics = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
     description:
       "Plants are the quiet architects of survival, producing oxygen, food, and balance for all living things. This topic highlights their essential role in ecosystems and how \"green goals\" connect to everyday life and sustainability.",
-    sections: [
-      { title: "Plant Diversity", text: "Mt. Pamitinan supports a remarkable diversity of plant species across different elevation zones. From lowland tropical forest to montane vegetation, each zone showcases unique adaptations to local conditions. The diverse flora provides food and shelter for numerous animal species." },
-      { title: "Photosynthesis & Oxygen Production", text: "Plants are nature's oxygen factories. Through photosynthesis, they convert sunlight into energy and release oxygen, which all animals depend on for survival. The extensive forest cover of Mt. Pamitinan contributes significantly to air quality in the region." },
-      { title: "Carbon Sequestration", text: "Forests play a crucial role in combating climate change by absorbing carbon dioxide from the atmosphere. The dense vegetation of Mt. Pamitinan serves as a significant carbon sink, helping mitigate the effects of global warming." },
-      { title: "Sustainable Living & Green Goals", text: "Understanding plant ecosystems inspires sustainable practices in our daily lives. Supporting reforestation efforts, reducing our carbon footprint, and using eco-friendly products are ways we can contribute to green goals and protect environments like Mt. Pamitinan for future generations." }
+    intro: {
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aigeneger-wFkp9CoRVCkypZD8xljCX0WeVtZJ0C.png",
+      caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
+      text: "Plants form the foundation of life on Earth—they are the quiet architects of survival, producing oxygen, food, and balance for all living things. In the Pamitinan Protected Landscape, the flora represents a rich tapestry of biodiversity, from towering dipterocarp trees to medicinal herbs on the forest floor.<br><br>This topic highlights the essential role of plants in ecosystems and how \"green goals\" connect to everyday life and sustainability. Understanding plant diversity and conservation helps us appreciate why protecting these green spaces matters—not just for wildlife, but for our own future."
+    },
+    video: {
+      title: "Pamitinan Plant Life (Rodriguez, Rizal)",
+      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
+    },
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
     ],
+    sections: [],
     location: "Mt. Pamitinan Flora Zones",
     detail1: "100+ plant species",
     detail2: "Oxygen production hub",

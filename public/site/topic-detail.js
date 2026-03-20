@@ -190,8 +190,8 @@ function initializePage() {
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
     if (topicData.intro) {
-      if (topicData.id === 1 || topicData.id === 2) {
-        // Topic 1 & 2: Two-column layout with small image left, text right
+      if (topicData.id === 1 || topicData.id === 2 || topicData.id === 3) {
+        // Topic 1, 2 & 3: Two-column layout with small image left, text right
         var introHTML = '<div class="detail-intro-wrapper topic2-intro">';
         introHTML += '<div class="intro-image-section">';
         introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" />';
@@ -234,11 +234,17 @@ function initializePage() {
     videoContainer.appendChild(videoTitle);
     videoContainer.appendChild(videoWrapper);
 
-    // Add video caption for Topic 2
+    // Add video caption for Topic 2 and Topic 3
     if (topicData.id === 2) {
       var videoCaption = document.createElement("p");
       videoCaption.className = "video-caption";
       videoCaption.textContent = "This 360° video was captured by one of the researchers above the 426+ MASL marker.";
+      videoContainer.appendChild(videoCaption);
+    }
+    if (topicData.id === 3) {
+      var videoCaption = document.createElement("p");
+      videoCaption.className = "video-caption";
+      videoCaption.textContent = "Explore the plant life and green ecosystems of the Pamitinan Protected Landscape.";
       videoContainer.appendChild(videoCaption);
     }
 
@@ -827,6 +833,280 @@ function initializePage() {
           topic2ReflectionInput.value = "";
           if (topic2CharCount) topic2CharCount.textContent = "0";
           topic2SavedMsg.className = "reflection-saved-msg";
+        }
+      });
+    }
+  }
+
+  // ===== TOPIC 3: 3G Lang - Grow, Glow and Green =====
+  if (topicData.id === 3) {
+    // Create a section div for 3G Lang Overview with video
+    var greenGoalsSection = document.createElement("div");
+    greenGoalsSection.className = "pamitinan-section-standalone";
+    
+    // Get the video URL from topicData
+    var videoIframe3 = '';
+    if (topicData.video && topicData.video.url) {
+      var videoUrl3 = topicData.video.url;
+      // Convert Google Drive URL to embed format
+      var videoId3 = videoUrl3.match(/\/d\/([a-zA-Z0-9-_]+)/);
+      if (videoId3 && videoId3[1]) {
+        videoIframe3 = '<iframe src="https://drive.google.com/file/d/' + videoId3[1] + '/preview" width="100%" height="480" frameborder="0" allow="autoplay"></iframe>';
+      }
+    }
+    
+    greenGoalsSection.innerHTML =
+      '<h2 class="pamitinan-section-title">3G Lang: Grow, Glow and Green</h2>' +
+      '<div class="pamitinan-content-wrapper">' +
+      (videoIframe3 ? '<div class="pamitinan-video-container">' + videoIframe3 + '<p class="pamitinan-video-caption">Explore the plant life and green ecosystems of the Pamitinan Protected Landscape.</p></div>' : '') +
+      '<p class="pamitinan-intro">Plants are the silent architects of life on Earth. Through photosynthesis, they produce the oxygen we breathe, absorb carbon dioxide, and form the foundation of nearly every food chain. In the Pamitinan Protected Landscape, the flora represents centuries of ecological evolution—from towering dipterocarp trees to delicate orchids and medicinal herbs.</p>' +
+      '<p class="pamitinan-subtitle">The <strong>3G Framework</strong> represents three interconnected goals:</p>' +
+      '<ul class="pamitinan-layers">' +
+      '<li><strong>Grow</strong> – Supporting plant diversity and reforestation efforts to restore degraded ecosystems and expand green cover.</li>' +
+      '<li><strong>Glow</strong> – Highlighting the beauty and importance of plants through education, awareness, and appreciation of nature\'s wonders.</li>' +
+      '<li><strong>Green</strong> – Promoting sustainable practices and green goals that connect environmental conservation to everyday life.</li>' +
+      '</ul>' +
+      '<p class="pamitinan-conclusion">Understanding the role of plants helps us realize that protecting forests like Pamitinan is not just about preserving trees—it is about <strong>securing clean air, water, and a livable future</strong> for generations to come.</p>' +
+      '</div>';
+
+    // Insert it right after the video section
+    var videoSection3 = document.querySelector('.video-section');
+    if (videoSection3) {
+      videoSection3.parentNode.insertBefore(greenGoalsSection, videoSection3.nextSibling);
+    } else {
+      sectionsContainer.insertBefore(greenGoalsSection, sectionsContainer.firstChild);
+    }
+
+    // Add Plant Diversity section
+    var plantDiversitySection = document.createElement("div");
+    plantDiversitySection.className = "geological-section-standalone";
+    plantDiversitySection.innerHTML =
+      '<h2 class="geological-section-title">Plant Diversity</h2>' +
+      '<div class="geological-content-wrapper">' +
+      '<div class="geological-features-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg" alt="Plant Diversity in Pamitinan" class="geological-clearer-image" />' +
+      '</div>' +
+      '<ul class="geological-features-list">' +
+      '<li><strong>Dipterocarp Forests</strong> – The dominant forest type in the lowlands, featuring trees like lauan, apitong, and yakal that can grow up to 70 meters tall.</li>' +
+      '<li><strong>Epiphytes and Orchids</strong> – Plants that grow on other plants without harming them, including beautiful orchids, ferns, and mosses found in the canopy layer.</li>' +
+      '<li><strong>Medicinal Plants</strong> – Traditional healing plants used by indigenous communities, such as lagundi, sambong, and various forest herbs.</li>' +
+      '</ul>' +
+      '</div>';
+
+    // Insert after 3G Overview section
+    if (greenGoalsSection.parentNode) {
+      greenGoalsSection.parentNode.insertBefore(plantDiversitySection, greenGoalsSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(plantDiversitySection);
+    }
+
+    // Add Photosynthesis & Oxygen Production section
+    var photosynthesisSection = document.createElement("div");
+    photosynthesisSection.className = "historical-section-standalone";
+    photosynthesisSection.innerHTML =
+      '<h2 class="historical-section-title">Photosynthesis & Oxygen Production</h2>' +
+      '<div class="historical-content-wrapper">' +
+      '<ul class="historical-features-list">' +
+      '<li><strong>Nature\'s Oxygen Factories</strong> – Through photosynthesis, plants convert sunlight into energy while releasing oxygen as a byproduct. A single mature tree can produce enough oxygen for 2-10 people per year.</li>' +
+      '<li><strong>Air Quality Improvement</strong> – Forest vegetation acts as natural air filters, absorbing pollutants and releasing clean oxygen. The extensive forest cover of Mt. Pamitinan contributes significantly to air quality in Metro Manila and surrounding areas.</li>' +
+      '<li><strong>Temperature Regulation</strong> – Through transpiration, forests release water vapor that cools the surrounding air, creating microclimates that benefit both wildlife and nearby human communities.</li>' +
+      '</ul>' +
+      '<div class="historical-narrative">' +
+      '<p class="historical-description">The forests of Pamitinan are not just beautiful landscapes—they are <strong>working ecosystems</strong> that produce the very air we breathe. Every hike through these trails is a journey through a living, breathing oxygen factory.</p>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Plant Diversity section
+    if (plantDiversitySection.parentNode) {
+      plantDiversitySection.parentNode.insertBefore(photosynthesisSection, plantDiversitySection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(photosynthesisSection);
+    }
+
+    // Add Carbon Sequestration section
+    var carbonSection = document.createElement("div");
+    carbonSection.className = "myth-section-standalone";
+    carbonSection.innerHTML =
+      '<h2 class="myth-section-title">Carbon Sequestration</h2>' +
+      '<div class="myth-content-wrapper">' +
+      '<div class="myth-narrative-intro">' +
+      '<p>Forests are Earth\'s most powerful natural tool for fighting climate change. Through the process of carbon sequestration, trees absorb carbon dioxide from the atmosphere and store it in their trunks, branches, leaves, and roots.</p>' +
+      '</div>' +
+      '<ul class="myth-features-list">' +
+      '<li><strong>Carbon Storage</strong> – A single hectare of tropical forest can store up to 250 tons of carbon. The dense vegetation of Mt. Pamitinan serves as a significant carbon sink for the region.</li>' +
+      '<li><strong>Climate Change Mitigation</strong> – By removing CO2 from the atmosphere, forests help regulate global temperatures and reduce the greenhouse effect.</li>' +
+      '<li><strong>Soil Carbon</strong> – Forest soils also store massive amounts of carbon through decomposed organic matter, making forest floor protection equally important.</li>' +
+      '<li><strong>Long-term Storage</strong> – Unlike other carbon capture methods, forests can store carbon for hundreds of years if properly protected from deforestation and fire.</li>' +
+      '</ul>' +
+      '<div class="myth-narrative-outro">' +
+      '<p>Protecting forests like Pamitinan is one of the most effective actions we can take against climate change. Every tree preserved is a step toward a more stable climate.</p>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Photosynthesis section
+    if (photosynthesisSection.parentNode) {
+      photosynthesisSection.parentNode.insertBefore(carbonSection, photosynthesisSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(carbonSection);
+    }
+
+    // Add Sustainable Living & Green Goals section
+    var sustainableSection = document.createElement("div");
+    sustainableSection.className = "did-you-know-section-standalone";
+    sustainableSection.innerHTML =
+      '<h2 class="did-you-know-section-title">Sustainable Living & Green Goals</h2>' +
+      '<div class="did-you-know-content-wrapper">' +
+      '<p class="did-you-know-text">Understanding plant ecosystems inspires sustainable practices in our daily lives. Here are ways you can contribute to green goals and protect environments like Mt. Pamitinan:</p>' +
+      '<ul class="geological-features-list" style="margin-top: 16px;">' +
+      '<li><strong>Support Reforestation</strong> – Participate in tree planting activities or donate to organizations that restore degraded forests.</li>' +
+      '<li><strong>Reduce Your Carbon Footprint</strong> – Use public transportation, conserve energy, and minimize waste to reduce your environmental impact.</li>' +
+      '<li><strong>Choose Eco-Friendly Products</strong> – Support businesses that use sustainable materials and practice responsible sourcing.</li>' +
+      '<li><strong>Spread Awareness</strong> – Educate others about the importance of forests and environmental conservation.</li>' +
+      '</ul>' +
+      '</div>';
+
+    // Insert after Carbon section
+    if (carbonSection.parentNode) {
+      carbonSection.parentNode.insertBefore(sustainableSection, carbonSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(sustainableSection);
+    }
+
+    // Add Why Plants Matter section
+    var whyPlantsMatterSection = document.createElement("div");
+    whyPlantsMatterSection.className = "why-it-matters-section-standalone";
+    whyPlantsMatterSection.innerHTML =
+      '<h2 class="why-it-matters-section-title">Why Plants Matter</h2>' +
+      '<div class="why-it-matters-content-wrapper">' +
+      '<p class="why-it-matters-text">Plants are more than just greenery—they are the foundation of life on Earth. From the oxygen we breathe to the food we eat, from the medicines that heal us to the materials that shelter us, plants make human civilization possible. By protecting forests like Pamitinan, we are not just preserving biodiversity—we are securing our own future.</p>' +
+      '</div>';
+
+    // Insert after Sustainable section
+    if (sustainableSection.parentNode) {
+      sustainableSection.parentNode.insertBefore(whyPlantsMatterSection, sustainableSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(whyPlantsMatterSection);
+    }
+
+    // Add reflection box after Why Plants Matter section
+    var reflectionBox3 = document.createElement("div");
+    reflectionBox3.className = "forest-reflection-box";
+    reflectionBox3.innerHTML =
+      '<div class="reflection-badge">Share Your Voice</div>' +
+      '<h3>Quicky Lang!</h3>' +
+      '<p>What is one green goal you can commit to in your daily life? How can small actions make a big difference for the environment?</p>' +
+      '<div class="reflection-input-wrapper">' +
+      '<textarea id="topic3-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
+      '<div class="char-counter"><span id="topic3-char-count">0</span>/250</div>' +
+      '</div>' +
+      '<div class="reflection-buttons">' +
+      '<button class="btn btn-primary btn-submit" id="topic3-reflection-submit">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="22" y1="2" x2="11" y2="13"></line>' +
+      '<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>' +
+      '</svg>' +
+      'Submit Anonymously' +
+      '</button>' +
+      '<button class="btn btn-secondary" id="topic3-reflection-clear">Clear</button>' +
+      '</div>' +
+      '<p class="reflection-saved-msg" id="topic3-reflection-saved-msg"></p>';
+
+    // Insert after Why Plants Matter section
+    if (whyPlantsMatterSection.parentNode) {
+      whyPlantsMatterSection.parentNode.insertBefore(reflectionBox3, whyPlantsMatterSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(reflectionBox3);
+    }
+
+    // Create reflection wall display
+    var reflectionWallDiv3 = document.createElement("div");
+    reflectionWallDiv3.className = "reflection-box-wall";
+    reflectionWallDiv3.id = "reflection-wall-topic3";
+    reflectionWallDiv3.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    
+    if (reflectionBox3.parentNode) {
+      reflectionBox3.parentNode.insertBefore(reflectionWallDiv3, reflectionBox3.nextSibling);
+    }
+
+    // Add event listeners for Topic 3 reflection box
+    var topic3ReflectionInput = document.getElementById("topic3-reflection-input");
+    var topic3SubmitBtn = document.getElementById("topic3-reflection-submit");
+    var topic3ClearBtn = document.getElementById("topic3-reflection-clear");
+    var topic3SavedMsg = document.getElementById("topic3-reflection-saved-msg");
+    var topic3CharCount = document.getElementById("topic3-char-count");
+    var topic3ReflectionWall = document.getElementById("reflection-wall-topic3");
+
+    // Initialize community thoughts for Topic 3
+    var topic3Thoughts = JSON.parse(localStorage.getItem("topic3-thoughts")) || [];
+
+    // Function to display reflections in the wall
+    function displayTopic3Reflections() {
+      if (!topic3ReflectionWall) return;
+      
+      if (topic3Thoughts.length === 0) {
+        topic3ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+      } else {
+        var thoughtsHTML = '';
+        topic3Thoughts.forEach(function(thought) {
+          thoughtsHTML +=
+            '<div class="reflection-thought-chip">' +
+            '<p class="reflection-thought-text">' + thought.content + '</p>' +
+            '</div>';
+        });
+        topic3ReflectionWall.innerHTML = thoughtsHTML;
+      }
+    }
+
+    // Display initial reflections
+    displayTopic3Reflections();
+
+    // Character counter
+    if (topic3ReflectionInput && topic3CharCount) {
+      topic3ReflectionInput.addEventListener("input", function () {
+        topic3CharCount.textContent = topic3ReflectionInput.value.length;
+      });
+    }
+
+    // Submit button
+    if (topic3SubmitBtn) {
+      topic3SubmitBtn.addEventListener("click", function () {
+        if (topic3ReflectionInput && topic3ReflectionInput.value.trim()) {
+          var newThought = {
+            id: Date.now(),
+            content: topic3ReflectionInput.value.trim(),
+            timestamp: Date.now()
+          };
+
+          topic3Thoughts.push(newThought);
+          localStorage.setItem("topic3-thoughts", JSON.stringify(topic3Thoughts));
+
+          // Update wall display
+          displayTopic3Reflections();
+
+          topic3SavedMsg.textContent = "Your thought has been shared anonymously!";
+          topic3SavedMsg.className = "reflection-saved-msg success";
+          topic3ReflectionInput.value = "";
+          topic3CharCount.textContent = "0";
+          setTimeout(function () {
+            topic3SavedMsg.className = "reflection-saved-msg";
+          }, 4000);
+        } else {
+          topic3SavedMsg.textContent = "Please write something before submitting!";
+          topic3SavedMsg.className = "reflection-saved-msg error";
+          setTimeout(function () {
+            topic3SavedMsg.className = "reflection-saved-msg";
+          }, 3000);
+        }
+      });
+    }
+
+    // Clear button
+    if (topic3ClearBtn) {
+      topic3ClearBtn.addEventListener("click", function () {
+        if (topic3ReflectionInput) {
+          topic3ReflectionInput.value = "";
+          if (topic3CharCount) topic3CharCount.textContent = "0";
+          topic3SavedMsg.className = "reflection-saved-msg";
         }
       });
     }
