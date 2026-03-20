@@ -602,6 +602,72 @@ body.topic-2 .detail-section h3 {
   color: var(--fg);
 }
 
+/* ===== HISTORICAL AND CULTURAL SIGNIFICANCE ===== */
+.historical-image-container {
+  margin: 0 -24px -16px -24px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.historical-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.historical-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.historical-features-list li {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  padding-left: 20px;
+  position: relative;
+}
+
+.historical-features-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.historical-features-list strong {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.historical-narrative {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.historical-narrative p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0 0 12px 0;
+}
+
+.historical-narrative p:last-child {
+  margin-bottom: 0;
+}
+
 /* ===== INFO BAR ===== */
 .detail-info-bar {
   display: flex;

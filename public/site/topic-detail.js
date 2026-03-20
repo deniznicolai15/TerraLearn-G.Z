@@ -554,6 +554,33 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(geologicalFeaturesSection);
     }
+
+    // Add Historical and Cultural Significance section
+    var historicalSection = document.createElement("div");
+    historicalSection.className = "detail-section historical-cultural-section";
+    historicalSection.innerHTML =
+      '<h3>Historical and Cultural Significance</h3>' +
+      '<div class="historical-info-box">' +
+      '<div class="historical-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Historical%20and%20Cultural%20Significance%20-Xrk7s36y5UXDvEhyvGHZ1HRFebaDhP.jpg" alt="Historical and Cultural Significance - Mt. Pamitinan landmark" class="historical-image" />' +
+      '</div>' +
+      '<ul class="historical-features-list">' +
+      '<li>On <strong>April 12, 1895</strong>, Andres Bonifacio, Emilio Jacinto, and several Katipuneros gathered inside Pamitinan Cave in Rodriguez, Rizal.</li>' +
+      '<li>The cave served as a <strong>secret meeting place and refuge</strong>, where new members were initiated into the Katipunan.</li>' +
+      '<li>During this gathering, Bonifacio inscribed the words <strong>"Viva la Independencia Filipina"</strong> on the cave wall, marking the first recorded declaration of Philippine independence, more than a year before the Cry of Balintawak.</li>' +
+      '</ul>' +
+      '<div class="historical-narrative">' +
+      '<p>This act was symbolic rather than public—it was a solemn proclamation of freedom carried out in secrecy, but it planted the revolutionary spirit firmly in the hearts of the Katipuneros.</p>' +
+      '<p>The landmark shown in Figure 2, located midway up Mt. Pamitinan, connects to this revolutionary legacy. While the actual inscription was not visible during the hike, the climb itself reflects the historical weight of the mountain. Mt. Pamitinan is therefore remembered not only as a natural landscape but also as a heritage site, where limestone cliffs and caves became witnesses to the Filipino struggle for independence.</p>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Geological Features section
+    if (geologicalFeaturesSection.parentNode) {
+      geologicalFeaturesSection.parentNode.insertBefore(historicalSection, geologicalFeaturesSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(historicalSection);
+    }
   }
 
   // Populate Figure 1 image and caption
