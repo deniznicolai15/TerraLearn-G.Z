@@ -69,29 +69,54 @@ var quizzes = {
   ],
   2: [
     {
-      question: "What is the elevation of Mt. Pamitinan's summit?",
-      options: ["326+ meters", "426+ meters", "526+ meters", "626+ meters"],
-      correct: 1,
+      question: "Mt. Pamitinan is part of which major mountain range in Luzon?",
+      options: ["Cordillera Central", "Sierra Madre", "Zambales Range", "Caraballo Mountains"],
+      correct: 1, // B - Sierra Madre
     },
     {
-      question: "When did Andres Bonifacio and the Katipunan meet at Pamitinan Cave?",
-      options: ["April 12, 1893", "April 12, 1895", "April 12, 1897", "April 12, 1899"],
-      correct: 1,
+      question: "What is the official designation of Mt. Pamitinan under the DENR?",
+      options: ["National Park", "Protected Landscape", "Wildlife Sanctuary", "Forest Reserve"],
+      correct: 1, // B - Protected Landscape
     },
     {
-      question: "What was inscribed on Pamitinan Cave walls by Bonifacio?",
-      options: ["Mga salawikain", "Viva la Independencia Filipina", "Names of soldiers", "Mathematical formulas"],
-      correct: 1,
+      question: "Which historical figure inscribed 'Viva la Independencia Filipina' inside Pamitinan Cave in 1895?",
+      options: ["Emilio Aguinaldo", "Andres Bonifacio", "Apolinario Mabini", "Jose Rizal"],
+      correct: 1, // B - Andres Bonifacio
     },
     {
-      question: "According to local folklore, who is trapped between Mt. Pamitinan and Mt. Binacayan?",
-      options: ["A princess", "Bernardo Carpio", "A mysterious spirit", "An ancient warrior"],
-      correct: 1,
+      question: "The inscription inside Pamitinan Cave is considered the first recorded declaration of independence. How many years before the Cry of Balintawak did it occur?",
+      options: ["More than one year", "Less than six months", "Exactly one year", "Two years"],
+      correct: 0, // A - More than one year
     },
     {
-      question: "What geological feature makes Mt. Pamitinan geologically significant?",
-      options: ["Volcanic crater", "Limestone cliffs and karst cave systems", "Sand dunes", "Crystal formations"],
-      correct: 1,
+      question: "Which geological feature is most associated with Mt. Pamitinan?",
+      options: ["Volcanic cones", "Limestone cliffs and karst caves", "Granite outcrops", "Sandstone plateaus"],
+      correct: 1, // B - Limestone cliffs and karst caves
+    },
+    {
+      question: "In local folklore, Bernardo Carpio is said to be trapped between which two mountains?",
+      options: ["Mt. Pamitinan and Mt. Binacayan", "Mt. Arayat and Mt. Makiling", "Mt. Banahaw and Mt. Cristobal", "Mt. Pulag and Mt. Tabayoc"],
+      correct: 0, // A - Mt. Pamitinan and Mt. Binacayan
+    },
+    {
+      question: "According to myth, Bernardo Carpio's struggle explains which natural phenomenon?",
+      options: ["Typhoons", "Earthquakes", "Volcanic eruptions", "Landslides"],
+      correct: 1, // B - Earthquakes
+    },
+    {
+      question: "Why is the Sierra Madre range considered vital to Luzon's ecology?",
+      options: ["It is the largest source of geothermal energy", "It shields eastern Luzon from typhoons and regulates water systems", "It is the only volcanic chain in Luzon", "It is the site of the country's largest mining operations"],
+      correct: 1, // B - It shields eastern Luzon from typhoons and regulates water systems
+    },
+    {
+      question: "Mt. Pamitinan is described as a 'living classroom.' What does this phrase emphasize?",
+      options: ["Its role as a training ground for mountaineers", "Its integration of geology, history, and folklore for education", "Its use as a site for agricultural experiments", "Its function as a military training site during the revolution"],
+      correct: 1, // B - Its integration of geology, history, and folklore for education
+    },
+    {
+      question: "Why do communities create sabi-sabi (folk stories) about places like Mt. Pamitinan?",
+      options: ["To replace scientific explanations with superstition", "To provide entertainment during festivals", "To interpret natural events and embed cultural meaning in landscapes", "To discourage people from visiting dangerous sites"],
+      correct: 2, // C - To interpret natural events and embed cultural meaning in landscapes
     },
   ],
   3: [
