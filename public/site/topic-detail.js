@@ -872,11 +872,7 @@ function initializePage() {
       '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cleanup-Rl86wjQd4hWfxWa4xO3oSppFQHu4fb.png" alt="Clean-Up Drive volunteers at Pamitinan Protected Landscape" class="geological-clearer-image" />' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>' +
-      '<ul class="geological-features-list">' +
-      '<li>On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam.</li>' +
-      '<li>The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment.</li>' +
-      '<li>This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</li>' +
-      '</ul>' +
+      '<p class="section-paragraph">On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam. The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment. This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</p>' +
       '</div>';
 
     // Insert after Tree Planting section
@@ -896,11 +892,7 @@ function initializePage() {
       '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sustainable-qhl2V8AUgYIJ0cv8mUVXEJbA6AeqIJ.png" alt="Fees paid in Pamitinan Protected Landscape" class="historical-clearer-image" />' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>' +
-      '<ul class="historical-features-list">' +
-      '<li>Visitors contribute through entrance and trekking fees, which fund conservation programs.</li>' +
-      '<li>Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage.</li>' +
-      '<li>Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</li>' +
-      '</ul>' +
+      '<p class="section-paragraph">Visitors contribute through entrance and trekking fees, which fund conservation programs. Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage. Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</p>' +
       '</div>';
 
     // Insert after Clean-Up Drive section
@@ -920,11 +912,7 @@ function initializePage() {
       '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/schoolbased-solljIRBIALKi7rsKgZkgHNAawmOpD.png" alt="School-Based Tree Planting at Wawa Elementary School" class="myth-clearer-image" />' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>' +
-      '<ul class="myth-features-list">' +
-      '<li>Teachers, students, and parents of Wawa Elementary School, together with PAMO–PPL staff, planted 50 native seedlings including Mulawin, Narra, Langka, and Santol.</li>' +
-      '<li>A demonstration on proper seedling handling was conducted, followed by a clean-up drive from Sitio Wawa to Sitio Kayrupa.</li>' +
-      '<li>This activity highlights the role of education and youth involvement in long-term forest conservation.</li>' +
-      '</ul>' +
+      '<p class="section-paragraph">Teachers, students, and parents of Wawa Elementary School, together with PAMO–PPL staff, planted 50 native seedlings including Mulawin, Narra, Langka, and Santol. A demonstration on proper seedling handling was conducted, followed by a clean-up drive from Sitio Wawa to Sitio Kayrupa. This activity highlights the role of education and youth involvement in long-term forest conservation.</p>' +
       '</div>';
 
     // Insert after Photosynthesis section
@@ -955,7 +943,7 @@ function initializePage() {
     reflectionBox3.innerHTML =
       '<div class="reflection-badge">Share Your Voice</div>' +
       '<h3>Quicky Lang!</h3>' +
-      '<p>What is one green goal you can commit to in your daily life? How can small actions make a big difference for the environment?</p>' +
+      '<p>Reflection: How do your everyday actions — whether in your community, school, or personal life — contribute to shaping and reshaping the environment, and what changes can you make to ensure that future generations inherit a healthier, more sustainable world?</p>' +
       '<div class="reflection-input-wrapper">' +
       '<textarea id="topic3-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
       '<div class="char-counter"><span id="topic3-char-count">0</span>/250</div>' +

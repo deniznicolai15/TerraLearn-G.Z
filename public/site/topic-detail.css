@@ -649,7 +649,8 @@ body.topic-3 .detail-section h3 {
   background: rgba(0, 0, 0, 0.02);
 }
 
-.pamitinan-intro {
+.pamitinan-intro,
+.section-paragraph {
   font-size: 16px;
   color: var(--secondary);
   line-height: 1.8;
@@ -729,10 +730,11 @@ body.topic-3 .detail-section h3 {
     height: 350px;
   }
   
-  .pamitinan-intro,
+.pamitinan-intro,
   .pamitinan-subtitle,
-  .pamitinan-conclusion {
-    font-size: 14px;
+  .pamitinan-conclusion,
+  .section-paragraph {
+  font-size: 14px;
   }
   
   .pamitinan-layers li {
