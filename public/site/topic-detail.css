@@ -554,6 +554,128 @@ body.topic-2 .detail-section h3 {
   color: var(--primary);
 }
 
+/* ===== MT. PAMITINAN OVERVIEW ===== */
+.pamitinan-section-standalone {
+  padding: 50px 30px;
+  background: linear-gradient(135deg, rgba(45, 90, 61, 0.06) 0%, rgba(75, 107, 85, 0.08) 100%);
+  margin: 50px 0;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 90, 61, 0.2);
+}
+
+.pamitinan-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d5a3d;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.pamitinan-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2d5a3d, #4a9660);
+  border-radius: 2px;
+}
+
+.pamitinan-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pamitinan-intro {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0 0 16px 0;
+}
+
+.pamitinan-subtitle {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 16px 0;
+}
+
+.pamitinan-subtitle strong {
+  font-weight: 600;
+  color: #2d5a3d;
+}
+
+.pamitinan-layers {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pamitinan-layers li {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pamitinan-layers li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #2d5a3d;
+}
+
+.pamitinan-layers strong {
+  font-weight: 600;
+  color: #2d5a3d;
+}
+
+.pamitinan-conclusion {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 24px 0 0 0;
+}
+
+.pamitinan-conclusion strong {
+  font-weight: 600;
+  color: #2d5a3d;
+}
+
+@media (max-width: 768px) {
+  .pamitinan-section-standalone {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+  
+  .pamitinan-section-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .pamitinan-intro,
+  .pamitinan-subtitle,
+  .pamitinan-conclusion {
+    font-size: 14px;
+  }
+  
+  .pamitinan-layers li {
+    font-size: 14px;
+  }
+}
+
 /* ===== GEOLOGICAL FEATURES IMAGE AND LIST ===== */
 .geological-section-standalone {
   padding: 50px 30px;
