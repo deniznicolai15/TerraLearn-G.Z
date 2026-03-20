@@ -4,9 +4,110 @@ if (sessionStorage.getItem('scrollToTop') === 'true') {
   sessionStorage.removeItem('scrollToTop');
 }
 
+// ===== TOPIC DATA (for direct topic access via ?topic=X) =====
+var topicsData = [
+  {
+    id: 1,
+    label: "TOPIC 01",
+    name: "Forest 101: Hey, Is this Biringan?",
+    color: "#8EB09A",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%201-LDSJVje5v40iXByvlTx9b2nPwfAcpG.jpeg",
+    description: "Start with the essentials of forest ecosystems, exploring how their structure and functions sustain life. It's a primer on the natural systems that set the stage for deeper learning.",
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7094.PNG-5RorpTIlUzCBUkjabzDVzAphiwohQY.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7099.PNG-4K3gR1CaM812NAohgaKXacPLQGLBiW.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7102.PNG-puSbPzU26uFGNglDcZKwZuy2Rc3AaC.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7095.PNG-6VyYkE3RdTxKgewbdyvhldRGG2AAu4.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7101.PNG-EcUtacxBHxuxo0vxr9jHFwPXFpPf3x.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7097.PNG-yxFj7EkVdSUK1xRMefs4lhrvER45D9.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7100.PNG-l0KY0v8wAQAxtcZqfxrRD4ufxCNY8O.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7098.PNG-GDdAocuhNCBK8kVdhlRJ5PWkw5SEDR.jpeg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7103.PNG-vqTirAT96RSWdJWIrDbZsguxYfq9zm.jpeg" }
+    ],
+    sections: [
+      {
+        title: "What is a Forest Ecosystem?",
+        text: "Forests in the Philippines are diverse and vital. From dipterocarp forests to mangroves and montane forests, these ecosystems sustain life and regulate climate. They're the lungs of the Earth. The Sierra Madre protects Luzon from typhoons and provides water to millions.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest-4xiQnvIiVSEZ9pIgIiE6zMJ7HahGHH.jpg"
+      },
+      {
+        title: "Emergent Layer",
+        text: "Towering trees like luan and apitong rise above all others, capturing sunlight. Birds of prey such as the Philippine eagle soar here, hunting from above the forest canopy.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emergent-5ldpBk0k58RsXruEhvmZ5osnCe11ez.jpg"
+      },
+      {
+        title: "Canopy",
+        text: "A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid microclimate essential for orchids and epiphytes.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/canopy-o7bei8Y4auvhJPnFiXiaAvs5rLVz3M.jpg"
+      },
+      {
+        title: "Understory",
+        text: "Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional healing.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/understory-bk7hnWrXKy9u9GBaSEum13KwPuncFm.jpg"
+      },
+      {
+        title: "Forest Floor",
+        text: "Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage among fallen leaves.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forestfloor-F0uac2XYoSu3DvxsWptT6Mcam7nhNl.jpg"
+      }
+    ],
+    location: "Mt. Pamitinan",
+    detail1: "50+ species documented",
+    detail2: "Endemic flora sanctuary",
+  },
+  {
+    id: 2,
+    label: "TOPIC 02",
+    name: "Mt. Pamitinan: Where Myth Meets Revolution",
+    color: "#A8B7B5",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
+    description: "Uncover the geological features of Mt. Pamitinan while tracing its historical and cultural significance. Myths and revolutionary stories intertwine here, giving the mountain its enduring identity.",
+    intro: {
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aigeneger-wFkp9CoRVCkypZD8xljCX0WeVtZJ0C.png",
+      caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
+      text: "Luzon is home to some of the Philippines' most important protected areas—mountain ranges, forests, and watersheds that safeguard biodiversity, regulate climate, and preserve cultural heritage. From the vast Sierra Madre that shields eastern Luzon from typhoons, to the historic mountains of Rizal and Bulacan, these landscapes are more than natural wonders: they are living classrooms and cultural treasures.<br><br>Among these sites, Mt. Pamitinan in Montalban (Rodriguez, Rizal) stands out. It is a limestone mountain within the Sierra Madre range, known not only for its rugged cliffs and caves but also for its deep historical and cultural significance. Pamitinan is a place where geology, history, and myth converge—making it an ideal focus for exploring how nature and nationhood intertwine."
+    },
+    video: {
+      title: "Mt. Pamitinan (Montalban, Rizal)",
+      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
+    },
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
+    ],
+    sections: [],
+    location: "Montalban (Rodriguez), Rizal",
+    detail1: "426+ meters MASL",
+    detail2: "DENR Protected Landscape",
+  }
+];
+
 // ===== GET TOPIC DATA FROM URL =====
 function getTopicData() {
   var params = new URLSearchParams(window.location.search);
+  
+  // First check for direct topic ID parameter (e.g., ?topic=1)
+  var topicId = params.get("topic");
+  if (topicId) {
+    var id = parseInt(topicId, 10);
+    for (var i = 0; i < topicsData.length; i++) {
+      if (topicsData[i].id === id) {
+        return topicsData[i];
+      }
+    }
+    console.error("Topic not found for id:", id);
+    return null;
+  }
+  
+  // Fallback to data parameter (JSON encoded)
   var data = params.get("data");
   if (data) {
     try {
