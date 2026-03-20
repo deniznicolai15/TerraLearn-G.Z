@@ -285,6 +285,30 @@ function initializePage() {
           textContent +
           (item.section.content ? '<div class="section-content-expanded">' + item.section.content + '</div>' : '');
         sectionsContainer.appendChild(sectionDiv);
+
+        // Add Reflection Box after the first section (What is a Forest Ecosystem?)
+        if (idx === 0) {
+          var reflectionBox = document.createElement("div");
+          reflectionBox.className = "reflection-box-container";
+          reflectionBox.innerHTML = 
+            '<div class="reflection-box-inner">' +
+            '<div class="reflection-box-header">' +
+            '<span class="reflection-box-badge">Share Your Thoughts</span>' +
+            '<h3 class="reflection-box-title">What did you learn?</h3>' +
+            '</div>' +
+            '<div class="reflection-box-input-section">' +
+            '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
+            '<div class="reflection-box-footer">' +
+            '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
+            '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="reflection-box-wall" id="reflection-wall">' +
+            '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+            '</div>';
+          sectionsContainer.appendChild(reflectionBox);
+        }
       });
 
       // Create forest layers card section
@@ -319,28 +343,6 @@ function initializePage() {
 
         forestLayersContainer.appendChild(gridDiv);
         sectionsContainer.appendChild(forestLayersContainer);
-
-        // Add Reflection Box after Vertical Structure
-        var reflectionBox = document.createElement("div");
-        reflectionBox.className = "reflection-box-container";
-        reflectionBox.innerHTML = 
-          '<div class="reflection-box-inner">' +
-          '<div class="reflection-box-header">' +
-          '<span class="reflection-box-badge">Share Your Thoughts</span>' +
-          '<h3 class="reflection-box-title">What did you learn?</h3>' +
-          '</div>' +
-          '<div class="reflection-box-input-section">' +
-          '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
-          '<div class="reflection-box-footer">' +
-          '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
-          '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '<div class="reflection-box-wall" id="reflection-wall">' +
-          '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
-          '</div>';
-        sectionsContainer.appendChild(reflectionBox);
 
         // Add Personality Quiz Game Box after Vertical Structure
         var personalityGameBox = document.createElement("div");
