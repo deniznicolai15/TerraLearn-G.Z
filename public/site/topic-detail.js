@@ -1057,7 +1057,7 @@ function initializeForest101() {
   var clearBtn = document.getElementById("forest-reflection-clear");
   var savedMsg = document.getElementById("reflection-saved-msg");
   var charCount = document.getElementById("char-count");
-  var thoughtCount = document.getElementById("thought-count");
+  var reflectionWall = document.getElementById("reflection-wall-topic1");
 
   // Initialize community thoughts if not exists
   var communityThoughts = JSON.parse(localStorage.getItem("community-thoughts")) || [];
@@ -1068,42 +1068,53 @@ function initializeForest101() {
       {
         id: 1,
         content: "We have the responsibility to educate ourselves and others about the importance of forests. Biringan or not, these ecosystems are real treasures that need protection.",
-        timestamp: Date.now() - 3600000 * 24 * 2,
-        reactions: { fire: 12, heart: 8, leaf: 15 }
+        timestamp: Date.now() - 3600000 * 24 * 2
       },
       {
         id: 2,
         content: "Forests are like our ancestors' way of keeping secrets safe. Just like Biringan hides from those who don't respect it, our forests will disappear if we don't show them respect!",
-        timestamp: Date.now() - 3600000 * 24,
-        reactions: { fire: 7, heart: 14, leaf: 9 }
+        timestamp: Date.now() - 3600000 * 24
       },
       {
         id: 3,
         content: "ngl this made me think deeper... we always talk about protecting nature but do we actually do something? maybe we should start small like not using single-use plastics fr fr",
-        timestamp: Date.now() - 3600000 * 5,
-        reactions: { fire: 21, heart: 6, leaf: 11 }
+        timestamp: Date.now() - 3600000 * 5
       },
       {
         id: 4,
         content: "The mystery of Biringan reminds me that there's still so much we don't know about our forests. That's why research and preservation are important!",
-        timestamp: Date.now() - 3600000 * 12,
-        reactions: { fire: 5, heart: 18, leaf: 22 }
+        timestamp: Date.now() - 3600000 * 12
       },
       {
         id: 5,
         content: "lowkey scared that our grandchildren might only see forests in pictures. we gotta step up and actually do something about deforestation. this hits different",
-        timestamp: Date.now() - 3600000 * 2,
-        reactions: { fire: 16, heart: 11, leaf: 8 }
+        timestamp: Date.now() - 3600000 * 2
       }
     ];
     communityThoughts = sampleThoughts;
     localStorage.setItem("community-thoughts", JSON.stringify(communityThoughts));
   }
 
-  // Update thought count display
-  if (thoughtCount) {
-    thoughtCount.textContent = communityThoughts.length + " thoughts shared";
+  // Function to display reflections in the wall
+  function displayReflections() {
+    if (!reflectionWall) return;
+    
+    if (communityThoughts.length === 0) {
+      reflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    } else {
+      var thoughtsHTML = '';
+      communityThoughts.forEach(function(thought) {
+        thoughtsHTML +=
+          '<div class="reflection-thought-chip">' +
+          '<p class="reflection-thought-text">' + thought.content + '</p>' +
+          '</div>';
+      });
+      reflectionWall.innerHTML = thoughtsHTML;
+    }
   }
+
+  // Display initial reflections
+  displayReflections();
 
   // Character counter
   if (reflectionInput && charCount) {
@@ -1119,12 +1130,14 @@ function initializeForest101() {
         var newThought = {
           id: Date.now(),
           content: reflectionInput.value.trim(),
-          timestamp: Date.now(),
-          reactions: { fire: 0, heart: 0, leaf: 0 }
+          timestamp: Date.now()
         };
         
         communityThoughts.push(newThought);
         localStorage.setItem("community-thoughts", JSON.stringify(communityThoughts));
+        
+        // Update wall display
+        displayReflections();
         
         // Show success message
         savedMsg.textContent = "Your thought has been shared anonymously!";
@@ -1133,11 +1146,6 @@ function initializeForest101() {
         // Clear input
         reflectionInput.value = "";
         charCount.textContent = "0";
-        
-        // Update count
-        if (thoughtCount) {
-          thoughtCount.textContent = communityThoughts.length + " thoughts shared";
-        }
         
         // Hide message after 4 seconds
         setTimeout(function () {

@@ -149,8 +149,8 @@
         <p>If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</p>
         <div class="reflection-input-wrapper">
           <textarea id="forest-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap"
-            maxlength="500"></textarea>
-          <div class="char-counter"><span id="char-count">0</span>/500</div>
+            maxlength="250"></textarea>
+          <div class="char-counter"><span id="char-count">0</span>/250</div>
         </div>
         <div class="reflection-buttons">
           <button class="btn btn-primary btn-submit" id="forest-reflection-submit">
@@ -163,18 +163,10 @@
           <button class="btn btn-secondary" id="forest-reflection-clear">Clear</button>
         </div>
         <p class="reflection-saved-msg" id="reflection-saved-msg"></p>
-        <div class="community-link-wrapper">
-          <a href="/site/community-thoughts.html" class="community-link" id="view-community-thoughts">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            See what others are saying
-            <span class="thought-count" id="thought-count">0 thoughts shared</span>
-          </a>
-        </div>
+      </div>
+      <!-- Reflection wall - displays community thoughts -->
+      <div class="reflection-box-wall" id="reflection-wall-topic1">
+        <p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>
       </div>
 
       <!-- Forest Structure Section -->
