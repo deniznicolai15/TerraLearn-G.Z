@@ -133,7 +133,7 @@ var topics = [
     color: "#4B6B55",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
     description:
-      "Human actions shape the environment in powerful ways, reflecting the principle that every action brings a reaction. Deforestation, pollution, and habitat loss weaken ecosystems, while tree planting, river restoration, and sustainable practices foster resilience and renewal. In the Pamitinan Protected Landscape, community-led efforts show how responsible stewardship can restore biodiversity and secure forests and rivers for future generations.",
+      "? Examine strategies for forest conservation and sustainable development, alongside the human role in shaping and reshaping nature. The focus is on responsibility today to secure forests and rivers for future generations.",
     intro: {
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg",
       caption: "Figure 1: Conservation efforts in the Pamitinan Protected Landscape",
