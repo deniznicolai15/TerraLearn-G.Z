@@ -320,6 +320,28 @@ function initializePage() {
         forestLayersContainer.appendChild(gridDiv);
         sectionsContainer.appendChild(forestLayersContainer);
 
+        // Add Reflection Box after Vertical Structure
+        var reflectionBox = document.createElement("div");
+        reflectionBox.className = "reflection-box-container";
+        reflectionBox.innerHTML = 
+          '<div class="reflection-box-inner">' +
+          '<div class="reflection-box-header">' +
+          '<span class="reflection-box-badge">Share Your Thoughts</span>' +
+          '<h3 class="reflection-box-title">What did you learn?</h3>' +
+          '</div>' +
+          '<div class="reflection-box-input-section">' +
+          '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
+          '<div class="reflection-box-footer">' +
+          '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
+          '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="reflection-box-wall" id="reflection-wall">' +
+          '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+          '</div>';
+        sectionsContainer.appendChild(reflectionBox);
+
         // Add Personality Quiz Game Box after Vertical Structure
         var personalityGameBox = document.createElement("div");
         personalityGameBox.className = "forest-game-box personality-quiz-box";
@@ -1206,12 +1228,101 @@ speciesModal.addEventListener("click", function (e) {
   }
 });
 
-// Close modal on Escape
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && speciesModal.classList.contains("active")) {
-    closeSpeciesModal();
+  // Close modal on Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && speciesModal.classList.contains("active")) {
+      closeSpeciesModal();
+    }
+  });
+
+  // ===== REFLECTION BOX FUNCTIONALITY =====
+  function submitReflection(button) {
+    var container = button.closest(".reflection-box-inner");
+    var textarea = container.querySelector(".reflection-box-textarea");
+    var thought = textarea.value.trim();
+
+    if (!thought) {
+      alert("Please write a thought before submitting.");
+      return;
+    }
+
+    // Generate anonymous user name
+    var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
+    var userNumber = storedThoughts.length + 1;
+    var userName = "Anonymous User " + userNumber;
+
+    // Create thought object
+    var thoughtObject = {
+      text: thought,
+      userName: userName,
+      timestamp: new Date().toISOString()
+    };
+
+    // Save to localStorage
+    storedThoughts.push(thoughtObject);
+    localStorage.setItem("reflectionThoughts", JSON.stringify(storedThoughts));
+
+    // Clear textarea
+    textarea.value = "";
+    textarea.parentElement.parentElement.querySelector(".char-count-number").textContent = "0";
+
+    // Update reflection wall display
+    displayReflections();
+
+    // Show success message
+    button.textContent = "✓ Posted!";
+    button.disabled = true;
+    setTimeout(function() {
+      button.textContent = "Submit Thought";
+      button.disabled = false;
+    }, 2000);
   }
-});
+
+  function displayReflections() {
+    var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
+    var reflectionWalls = document.querySelectorAll(".reflection-box-wall");
+
+    reflectionWalls.forEach(function(wall) {
+      if (storedThoughts.length === 0) {
+        wall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+      } else {
+        var thoughtsHTML = '';
+        storedThoughts.forEach(function(thought) {
+          thoughtsHTML += 
+            '<div class="reflection-thought-chip">' +
+            '<div class="thought-user">' + thought.userName + '</div>' +
+            '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
+            '</div>';
+        });
+        wall.innerHTML = thoughtsHTML;
+      }
+    });
+  }
+
+  function escapeHtml(text) {
+    var map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  }
+
+  // Initialize reflection wall on page load
+  displayReflections();
+
+  // Add character counter for textarea
+  document.addEventListener("input", function(e) {
+    if (e.target.classList.contains("reflection-box-textarea")) {
+      var count = e.target.value.length;
+      var counter = e.target.parentElement.parentElement.querySelector(".char-count-number");
+      if (counter) {
+        counter.textContent = count;
+      }
+    }
+  });
 
 // ===== AUDIO PLAYER SETUP =====
 function setupAudioPlayer(audioElement) {

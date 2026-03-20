@@ -2089,12 +2089,159 @@ body.topic-2 .detail-figure {
     margin-top: 0;
   }
 
-  /* ===== AVIFAUNA SECTION ===== */
-  .avifauna-container {
-    background: #17402A;
-    padding: 60px 40px;
-    margin-top: 60px;
-  }
+/* ===== REFLECTION BOX SECTION ===== */
+.reflection-box-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(168, 213, 168, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.reflection-box-inner {
+  margin-bottom: 32px;
+}
+
+.reflection-box-header {
+  margin-bottom: 24px;
+}
+
+.reflection-box-badge {
+  display: inline-block;
+  background: rgba(142, 176, 154, 0.15);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.reflection-box-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.reflection-box-input-section {
+  margin-bottom: 16px;
+}
+
+.reflection-box-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  background: rgba(15, 42, 28, 0.6);
+  border: 1px solid rgba(168, 213, 168, 0.2);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.reflection-box-textarea:focus {
+  outline: none;
+  border-color: rgba(168, 213, 168, 0.5);
+  background: rgba(15, 42, 28, 0.8);
+  box-shadow: 0 0 12px rgba(142, 176, 154, 0.1);
+}
+
+.reflection-box-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.reflection-box-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reflection-box-char-count {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.reflection-box-submit-btn {
+  padding: 10px 24px;
+  background: rgba(168, 213, 168, 0.3);
+  border: 1px solid rgba(168, 213, 168, 0.4);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reflection-box-submit-btn:hover:not(:disabled) {
+  background: rgba(168, 213, 168, 0.5);
+  border-color: rgba(168, 213, 168, 0.6);
+}
+
+.reflection-box-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reflection-box-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.reflection-thought-chip {
+  background: rgba(142, 176, 154, 0.1);
+  border: 1px solid rgba(168, 213, 168, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.reflection-thought-chip:hover {
+  background: rgba(142, 176, 154, 0.15);
+  border-color: rgba(168, 213, 168, 0.4);
+}
+
+.thought-user {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.thought-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  word-break: break-word;
+  text-align: left;
+}
+
+.reflection-wall-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 32px 16px;
+  font-size: 14px;
+}
+
+/* ===== AVIFAUNA SECTION ===== */
+.avifauna-container {
+  background: #17402A;
+  padding: 60px 40px;
+  margin-top: 60px;
+}
 
 .avifauna-header {
   max-width: 1200px;
