@@ -293,7 +293,7 @@ function initializePage() {
           reflectionBox.innerHTML = 
             '<div class="reflection-box-inner">' +
             '<div class="reflection-box-header">' +
-            '<span class="reflection-box-badge">Share Your Thoughts</span>' +
+            '<span class="reflection-box-badge">Quicky lang! If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</span>' +
             '<h3 class="reflection-box-title">What did you learn?</h3>' +
             '</div>' +
             '<div class="reflection-box-input-section">' +
