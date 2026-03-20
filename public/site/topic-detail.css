@@ -2078,22 +2078,40 @@ body.topic-2 .detail-figure {
   display: none;
 }
 
-/* ===== TOPIC 4 SPECIFIC STYLES ===== */
-body.topic-4 #intro-section,
-body.topic-4 #detail-grid {
-  display: none;
-}
-
-body.topic-4 #avifauna-container {
-  display: block !important;
-  margin-top: 0;
-}
+  /* ===== TOPIC 4 SPECIFIC STYLES ===== */
+  body.topic-4 #intro-section,
+  body.topic-4 #detail-grid {
+    display: block;
+  }
+  
+  body.topic-4 #avifauna-container {
+    display: block !important;
+    background: transparent;
+    padding: 40px;
+    margin-top: 20px;
+  }
+  
+  body.topic-4 #avifauna-intro {
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
 
 /* ===== AVIFAUNA SECTION ===== */
 .avifauna-container {
-  background: #17402A;
-  padding: 60px 40px;
-  margin-top: 60px;
+  background: transparent;
+  padding: 40px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.topic-4 .avifauna-container {
+  background: transparent;
+  padding: 40px;
+  margin-top: 20px;
 }
 
 .avifauna-header {
@@ -2105,16 +2123,22 @@ body.topic-4 #avifauna-container {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--fg);
   margin-bottom: 16px;
+  display: none;
+}
+
+body.topic-4 .avifauna-title {
+  display: none;
 }
 
 .avifauna-intro {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
+  font-size: 15px;
+  color: var(--secondary);
+  line-height: 1.9;
   text-align: justify;
-  max-width: 800px;
+  max-width: 100%;
+  margin-bottom: 32px;
 }
 
 .avifauna-grid {
@@ -2126,8 +2150,8 @@ body.topic-4 #avifauna-container {
 }
 
 .species-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(168, 213, 168, 0.2);
+  background: rgba(142, 176, 154, 0.08);
+  border: 1px solid rgba(107, 127, 115, 0.2);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -2137,9 +2161,10 @@ body.topic-4 #avifauna-container {
 }
 
 .species-box:hover {
-  border-color: rgba(168, 213, 168, 0.6);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(107, 127, 115, 0.4);
+  background: rgba(142, 176, 154, 0.12);
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(142, 176, 154, 0.1);
 }
 
 .species-image {
@@ -2178,20 +2203,20 @@ body.topic-4 #avifauna-container {
 .species-name {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--fg);
   line-height: 1.4;
 }
 
 .species-scientific {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
   font-style: italic;
   line-height: 1.3;
 }
 
 .species-family {
   font-size: 11px;
-  color: rgba(168, 213, 168, 0.8);
+  color: var(--primary);
   line-height: 1.3;
 }
 
@@ -2200,16 +2225,16 @@ body.topic-4 #avifauna-container {
   gap: 8px;
   margin-top: auto;
   padding-top: 12px;
-  border-top: 1px solid rgba(168, 213, 168, 0.2);
+  border-top: 1px solid rgba(107, 127, 115, 0.2);
 }
 
 .voice-btn {
   flex: 1;
   padding: 8px 12px;
-  background: rgba(168, 213, 168, 0.2);
-  border: 1px solid rgba(168, 213, 168, 0.4);
+  background: rgba(142, 176, 154, 0.15);
+  border: 1px solid rgba(142, 176, 154, 0.3);
   border-radius: 6px;
-  color: #ffffff;
+  color: var(--primary);
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -2221,8 +2246,8 @@ body.topic-4 #avifauna-container {
 }
 
 .voice-btn:hover {
-  background: rgba(168, 213, 168, 0.4);
-  border-color: rgba(168, 213, 168, 0.6);
+  background: rgba(142, 176, 154, 0.25);
+  border-color: rgba(142, 176, 154, 0.5);
 }
 
 .voice-btn svg {
@@ -2623,6 +2648,11 @@ body.topic-4 #avifauna-container {
 .voice-indicator-btn:hover {
   background: rgba(168, 213, 168, 0.6);
   transform: scale(1.1);
+}
+
+.voice-indicator-btn.playing {
+  background: rgba(142, 176, 154, 0.8);
+  box-shadow: 0 0 12px rgba(142, 176, 154, 0.4);
 }
 
 .voice-indicator-btn svg {

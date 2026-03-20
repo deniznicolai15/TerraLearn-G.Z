@@ -1133,14 +1133,26 @@ function renderAvifaunaSection() {
       openSpeciesModal(species);
     });
 
-    // Voice indicator click handler - opens floating player
+    // Voice indicator click handler - play/pause audio inline
     if (species.voiceUrl) {
       var voiceIndicator = box.querySelector(".species-voice-indicator");
       var voiceBtn = voiceIndicator.querySelector(".voice-indicator-btn");
+      var audio = new Audio(species.voiceUrl);
 
       voiceBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        openFloatingAudioPlayer(species);
+        if (audio.paused) {
+          audio.play();
+          voiceBtn.classList.add("playing");
+        } else {
+          audio.pause();
+          voiceBtn.classList.remove("playing");
+        }
+      });
+
+      // Handle audio ended event
+      audio.addEventListener("ended", function () {
+        voiceBtn.classList.remove("playing");
       });
     }
 
@@ -1148,165 +1160,7 @@ function renderAvifaunaSection() {
   });
 }
 
-// ===== FLOATING AUDIO PLAYER FUNCTIONALITY =====
-var floatingPlayer = null;
-var currentPlayingAudio = null;
 
-function openFloatingAudioPlayer(species) {
-  // Close existing player if open
-  if (floatingPlayer) {
-    closeFloatingAudioPlayer();
-  }
-
-  // Create floating player modal
-  floatingPlayer = document.createElement("div");
-  floatingPlayer.className = "floating-audio-player";
-  floatingPlayer.innerHTML = `
-    <div class="floating-player-content">
-      <div class="floating-player-header">
-        <button class="floating-player-close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 6l-12 12M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="floating-player-body">
-        <div class="floating-player-waveform">
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-          <div class="floating-voice-bar"></div>
-        </div>
-        <button class="floating-play-btn">
-          <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: block;"><path d="M8 5v14l11-7z"/></svg>
-          <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-        </button>
-        <div class="floating-player-time">
-          <span class="current-time">0:00</span> / <span class="duration-time">0:00</span>
-        </div>
-        <div class="floating-progress-bar">
-          <div class="floating-progress-fill"></div>
-          <input type="range" class="floating-progress-slider" min="0" max="100" value="0">
-        </div>
-      </div>
-      <div class="floating-player-info">
-        <h3>${species.commonName}</h3>
-        <p class="floating-credits">
-          <strong>${species.soundCredit?.photographer || 'Unknown'}</strong><br>
-          ${species.soundCredit?.location || 'Unknown'} • ${species.soundCredit?.date || 'Unknown'}
-        </p>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(floatingPlayer);
-  setTimeout(() => floatingPlayer.classList.add("active"), 10);
-
-  // Setup audio
-  currentPlayingAudio = new Audio(species.voiceUrl);
-  const playBtn = floatingPlayer.querySelector(".floating-play-btn");
-  const closeBtn = floatingPlayer.querySelector(".floating-player-close");
-  const progressSlider = floatingPlayer.querySelector(".floating-progress-slider");
-  const progressFill = floatingPlayer.querySelector(".floating-progress-fill");
-  const currentTimeEl = floatingPlayer.querySelector(".current-time");
-  const durationTimeEl = floatingPlayer.querySelector(".duration-time");
-  const waveformBars = floatingPlayer.querySelectorAll(".floating-voice-bar");
-
-  let isPlaying = false;
-
-  // Format time
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return "0:00";
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
-  }
-
-  // Update progress bar and time
-  currentPlayingAudio.addEventListener("timeupdate", function () {
-    const percent = (currentPlayingAudio.currentTime / currentPlayingAudio.duration) * 100;
-    progressFill.style.width = percent + "%";
-    progressSlider.value = percent;
-    currentTimeEl.textContent = formatTime(currentPlayingAudio.currentTime);
-  });
-
-  // Set duration when loaded
-  currentPlayingAudio.addEventListener("loadedmetadata", function () {
-    durationTimeEl.textContent = formatTime(currentPlayingAudio.duration);
-  });
-
-  // Update waveform bars
-  currentPlayingAudio.addEventListener("play", function () {
-    waveformBars.forEach(bar => bar.classList.add("active"));
-  });
-
-  currentPlayingAudio.addEventListener("pause", function () {
-    waveformBars.forEach(bar => bar.classList.remove("active"));
-  });
-
-  // Play/pause button
-  playBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (isPlaying) {
-      currentPlayingAudio.pause();
-      playBtn.classList.remove("playing");
-      isPlaying = false;
-    } else {
-      currentPlayingAudio.play();
-      playBtn.classList.add("playing");
-      isPlaying = true;
-    }
-  });
-
-  // Audio ended
-  currentPlayingAudio.addEventListener("ended", function () {
-    playBtn.classList.remove("playing");
-    isPlaying = false;
-    currentPlayingAudio.currentTime = 0;
-    progressSlider.value = 0;
-    progressFill.style.width = "0%";
-  });
-
-  // Progress slider
-  progressSlider.addEventListener("input", function (e) {
-    e.stopPropagation();
-    const percent = this.value;
-    const time = (percent / 100) * currentPlayingAudio.duration;
-    currentPlayingAudio.currentTime = time;
-    progressFill.style.width = percent + "%";
-  });
-
-  // Close button
-  closeBtn.addEventListener("click", closeFloatingAudioPlayer);
-
-  // Close on backdrop click
-  floatingPlayer.addEventListener("click", function (e) {
-    if (e.target === floatingPlayer) {
-      closeFloatingAudioPlayer();
-    }
-  });
-}
-
-function closeFloatingAudioPlayer() {
-  if (floatingPlayer) {
-    floatingPlayer.classList.remove("active");
-    setTimeout(() => {
-      if (floatingPlayer && floatingPlayer.parentNode) {
-        floatingPlayer.parentNode.removeChild(floatingPlayer);
-      }
-      floatingPlayer = null;
-    }, 300);
-
-    if (currentPlayingAudio) {
-      currentPlayingAudio.pause();
-      currentPlayingAudio = null;
-    }
-  }
-}
 
 // ===== SPECIES MODAL FUNCTIONALITY =====
 var speciesModal = document.getElementById("species-modal");
