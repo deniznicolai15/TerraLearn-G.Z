@@ -180,9 +180,12 @@ function initializePage() {
     document.body.classList.add("topic-2");
   }
   if (topicData.id === 4) {
-    document.body.classList.add("topic-4");
+  document.body.classList.add("topic-4");
   }
-
+  if (topicData.id === 3) {
+  document.body.classList.add("topic-3");
+  }
+  
   // Populate introduction section
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
@@ -241,6 +244,25 @@ function initializePage() {
 
     var sectionsContainer = document.getElementById("detail-sections-container");
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
+  }
+
+  // Add Topic 3 Human Impact Section at the top
+  if (topicData.id === 3) {
+    var introSection = document.getElementById("intro-section");
+    var humanImpactSection = document.createElement("div");
+    humanImpactSection.className = "topic3-human-impact-section";
+    humanImpactSection.innerHTML = 
+      '<div class="topic3-human-impact-container">' +
+      '<p class="topic3-human-impact-quote">For every action, there is an equal and opposite reaction</p>' +
+      '<div class="topic3-human-impact-divider"></div>' +
+      '<p class="topic3-human-impact-body">Human activity has a profound impact on the environment, capable of causing deforestation, pollution, and biodiversity loss, yet also holding the power to drive renewal. Just as the law of interaction teaches that every action has an equal and opposite reaction, our movements in nature bring consequences that return to us. When forests are destroyed, ecosystems collapse; but when communities plant trees, clean rivers, and practice sustainable tourism, the environment responds with restored biodiversity, cleaner air, and resilience. In the Pamitinan Protected Landscape, these collective efforts show how human actions, when guided by responsibility, can reshape nature positively — ensuring that the reactions we set in motion today secure forests and rivers for generations to come.</p>' +
+      '<p class="topic3-human-impact-body">These are some of the activities done in the Pamitinan communities to conserve the Pamitinan Protected Landscape. They show how human impact can be reshaped into positive conservation efforts, securing forests and rivers for generations to come.</p>' +
+      '</div>';
+    
+    // Insert before the intro section
+    if (introSection) {
+      introSection.parentNode.insertBefore(humanImpactSection, introSection);
+    }
   }
 
   // Populate sections

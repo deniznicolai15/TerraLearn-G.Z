@@ -4339,3 +4339,87 @@ body.topic-2 .detail-figure {
     max-width: 100%;
   }
 }
+
+/* ===== TOPIC 3 HUMAN IMPACT SECTION ===== */
+.topic3-human-impact-section {
+  padding: 50px 30px;
+  background: linear-gradient(135deg, rgba(75, 107, 85, 0.06) 0%, rgba(107, 127, 115, 0.08) 100%);
+  margin: 0;
+  border-bottom: 1px solid rgba(75, 107, 85, 0.25);
+}
+
+.topic3-human-impact-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.topic3-human-impact-quote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.topic3-human-impact-quote::before,
+.topic3-human-impact-quote::after {
+  content: '"';
+  font-size: 48px;
+  color: rgba(142, 176, 154, 0.3);
+  position: absolute;
+  font-family: Georgia, serif;
+}
+
+.topic3-human-impact-quote::before {
+  top: -10px;
+  left: 0;
+}
+
+.topic3-human-impact-quote::after {
+  bottom: -30px;
+  right: 0;
+}
+
+.topic3-human-impact-body {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.9;
+  text-align: justify;
+  margin-bottom: 28px;
+}
+
+.topic3-human-impact-body:last-of-type {
+  margin-bottom: 0;
+}
+
+.topic3-human-impact-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--muted));
+  border-radius: 2px;
+  margin: 0 auto 28px;
+}
+
+@media (max-width: 768px) {
+  .topic3-human-impact-section {
+    padding: 30px 20px;
+  }
+  
+  .topic3-human-impact-quote {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .topic3-human-impact-quote::before,
+  .topic3-human-impact-quote::after {
+    font-size: 36px;
+  }
+  
+  .topic3-human-impact-body {
+    font-size: 14px;
+  }
+}
