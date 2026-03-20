@@ -1,6 +1,12 @@
 // ===== FOREST 101 INTERACTIVITY =====
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Check if we should scroll to top (from quiz/game back button)
+  if (sessionStorage.getItem('scrollToTop')) {
+    window.scrollTo(0, 0);
+    sessionStorage.removeItem('scrollToTop');
+  }
+
   const reflectionInput = document.getElementById('reflection-input');
   const reflectionSubmitBtn = document.getElementById('reflection-submit-btn');
   const reflectionWall = document.getElementById('reflection-wall');
