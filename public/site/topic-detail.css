@@ -2126,31 +2126,36 @@ body.topic-1 .forest-layers-container::before {
 }
 
 /* ===== TOPIC 2 SPECIFIC STYLES ===== */
-body.topic-2 #intro-section {
+body.topic-2 #intro-section,
+body.topic-5 #intro-section {
   background: transparent;
   padding: 0;
   border-bottom: none;
-}
-
-body.topic-2 #intro-section > div {
+  }
+  
+body.topic-2 #intro-section > div,
+body.topic-5 #intro-section > div {
   max-width: 100%;
   padding: 0;
-}
-
-body.topic-2 .detail-grid {
+  }
+  
+body.topic-2 .detail-grid,
+body.topic-5 .detail-grid {
   grid-template-columns: 1fr 280px;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 40px;
-}
-
-body.topic-2 .detail-main {
+  }
+  
+body.topic-2 .detail-main,
+body.topic-5 .detail-main {
   padding-top: 40px;
   border-top: 2px solid rgba(107, 127, 115, 0.15);
-}
-
-body.topic-2 .detail-gallery {
+  }
+  
+body.topic-2 .detail-gallery,
+body.topic-5 .detail-gallery {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -2159,20 +2164,21 @@ body.topic-2 .detail-gallery {
   max-height: fit-content;
   position: sticky;
   top: 120px;
-}
-
-body.topic-2 .gallery-title {
+  }
+  
+body.topic-2 .gallery-title,
+body.topic-5 .gallery-title {
   font-size: 13px;
   font-weight: 600;
   color: var(--fg);
   letter-spacing: 0.3px;
   text-align: center;
-}
-
-/* Hide Figure 1 for Topic 2 */
+  }
+  
+  /* Hide Figure 1 for Topic 2 */
 body.topic-2 .detail-figure {
   display: none;
-}
+  }
 
 /* Hide Figure 1 for Topic 3 and Topic 5 */
 body.topic-3 .detail-figure,
