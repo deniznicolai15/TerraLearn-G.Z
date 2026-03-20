@@ -233,6 +233,11 @@ function initializePage() {
   // Add topic class for styling
   if (topicData.id === 1) {
     document.body.classList.add("topic-1");
+    // Hide the intro section for Topic 1 (the description is shown elsewhere)
+    var introSection = document.getElementById("intro-section");
+    if (introSection) {
+      introSection.style.display = "none";
+    }
   }
   if (topicData.id === 2) {
     document.body.classList.add("topic-2");
@@ -386,15 +391,21 @@ function initializePage() {
             '<h3 class="reflection-box-title">What did you learn?</h3>' +
             '</div>' +
             '<div class="reflection-box-input-section">' +
-            '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
+            '<textarea class="reflection-box-textarea" id="reflection-textarea-topic1" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
             '<div class="reflection-box-footer">' +
             '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
-            '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
+            '<div class="reflection-box-buttons">' +
+            '<button class="reflection-box-submit-btn" onclick="submitReflectionTopic1()">Submit Thought</button>' +
+            '<button class="reflection-box-view-btn" onclick="toggleCommunityThoughts()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts</button>' +
             '</div>' +
             '</div>' +
             '</div>' +
-            '<div class="reflection-box-wall" id="reflection-wall">' +
+            '</div>' +
+            '<div class="reflection-box-wall" id="reflection-wall" style="display: none;">' +
+            '<div class="reflection-wall-header"><h4>Community Thoughts</h4><span class="thought-count">0 thoughts shared</span></div>' +
+            '<div class="reflection-wall-grid" id="reflection-wall-grid">' +
             '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+            '</div>' +
             '</div>';
           sectionsContainer.appendChild(reflectionBox);
         }
@@ -1718,6 +1729,93 @@ document.addEventListener("keydown", function (e) {
 });
 
 // ===== REFLECTION BOX FUNCTIONALITY =====
+
+// Topic 1 specific reflection functionality
+function submitReflectionTopic1() {
+  var textarea = document.getElementById("reflection-textarea-topic1");
+  var thought = textarea.value.trim();
+
+  if (!thought) {
+    alert("Please write a thought before submitting.");
+    return;
+  }
+
+  // Generate anonymous user name
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic1") || "[]");
+  var userNumber = storedThoughts.length + 1;
+  var userName = "Anonymous #" + userNumber;
+
+  // Create thought object
+  var thoughtObject = {
+    text: thought,
+    userName: userName,
+    timestamp: new Date().toISOString()
+  };
+
+  // Save to localStorage
+  storedThoughts.push(thoughtObject);
+  localStorage.setItem("reflectionThoughtsTopic1", JSON.stringify(storedThoughts));
+
+  // Clear textarea
+  textarea.value = "";
+  var counter = document.querySelector("#reflection-textarea-topic1").parentElement.parentElement.querySelector(".char-count-number");
+  if (counter) counter.textContent = "0";
+
+  // Update reflection wall display
+  displayReflectionsTopic1();
+
+  // Show success message
+  var submitBtn = document.querySelector(".reflection-box-submit-btn");
+  submitBtn.innerHTML = "Shared!";
+  submitBtn.disabled = true;
+  setTimeout(function () {
+    submitBtn.innerHTML = "Submit Thought";
+    submitBtn.disabled = false;
+  }, 2000);
+}
+
+function toggleCommunityThoughts() {
+  var wall = document.getElementById("reflection-wall");
+  var viewBtn = document.querySelector(".reflection-box-view-btn");
+  
+  if (wall.style.display === "none" || wall.style.display === "") {
+    wall.style.display = "block";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
+    displayReflectionsTopic1();
+  } else {
+    wall.style.display = "none";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts';
+  }
+}
+
+function displayReflectionsTopic1() {
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic1") || "[]");
+  var wallGrid = document.getElementById("reflection-wall-grid");
+  var thoughtCount = document.querySelector(".thought-count");
+
+  if (thoughtCount) {
+    thoughtCount.textContent = storedThoughts.length + " thought" + (storedThoughts.length !== 1 ? "s" : "") + " shared";
+  }
+
+  if (wallGrid) {
+    if (storedThoughts.length === 0) {
+      wallGrid.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    } else {
+      var thoughtsHTML = '';
+      // Show most recent first
+      storedThoughts.slice().reverse().forEach(function (thought) {
+        thoughtsHTML +=
+          '<div class="reflection-thought-chip">' +
+          '<div class="thought-user">' + thought.userName + '</div>' +
+          '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
+          '</div>';
+      });
+      wallGrid.innerHTML = thoughtsHTML;
+    }
+  }
+}
+
+// Generic reflection function for other topics
 function submitReflection(button) {
   var container = button.closest(".reflection-box-inner");
   var textarea = container.querySelector(".reflection-box-textarea");
@@ -1752,7 +1850,7 @@ function submitReflection(button) {
   displayReflections();
 
   // Show success message
-  button.textContent = "✓ Posted!";
+  button.textContent = "Posted!";
   button.disabled = true;
   setTimeout(function () {
     button.textContent = "Submit Thought";
@@ -1762,7 +1860,7 @@ function submitReflection(button) {
 
 function displayReflections() {
   var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
-  var reflectionWalls = document.querySelectorAll(".reflection-box-wall");
+  var reflectionWalls = document.querySelectorAll(".reflection-box-wall:not(#reflection-wall)");
 
   reflectionWalls.forEach(function (wall) {
     if (storedThoughts.length === 0) {
