@@ -512,12 +512,28 @@ function initializePage() {
       pamitinanInfoInVideo.remove();
     }
 
-    // Create a section div for Mt. Pamitinan info to appear after the video
+    // Create a new styled Mt. Pamitinan section with video and info
     var pamitinanSection = document.createElement("div");
-    pamitinanSection.className = "pamitinan-section-standalone";
+    pamitinanSection.className = "pamitinan-section-new";
+    
+    // Get the video element from the video section if it exists
+    var videoSection = document.querySelector('.video-section');
+    var videoHTML = '';
+    if (videoSection) {
+      var videoContent = videoSection.querySelector('.video-wrapper');
+      if (videoContent) {
+        videoHTML = videoContent.innerHTML;
+      }
+    }
+    
     pamitinanSection.innerHTML =
-      '<h2 class="pamitinan-section-title">Mt. Pamitinan (Montalban, Rizal)</h2>' +
-      '<div class="pamitinan-content-wrapper">' +
+      '<div class="pamitinan-new-container">' +
+      '<h2 class="pamitinan-new-title">Mt. Pamitinan (Montalban, Rizal)</h2>' +
+      '<div class="pamitinan-video-wrapper">' +
+      videoHTML +
+      '<p class="pamitinan-video-caption">This 360° video was captured by one of the researchers above the 426+ MASL marker.</p>' +
+      '</div>' +
+      '<div class="pamitinan-info-content">' +
       '<p class="pamitinan-intro">Mt. Pamitinan is a limestone mountain located in Montalban (Rodriguez), Rizal, rising to 426+ meters above sea level. It forms part of the Sierra Madre mountain range and is officially recognized as a DENR‑protected landscape, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
       '<p class="pamitinan-subtitle">But Mt. Pamitinan is more than just a natural site. It is a <strong>multi‑layered landmark</strong>:</p>' +
       '<ul class="pamitinan-layers">' +
@@ -526,10 +542,10 @@ function initializePage() {
       '<li><strong>Mythical</strong> – local folklore imagines the mountain as enchanted, inhabited by mystical beings (engkanto), and sometimes linked to hidden realms similar to Biringan.</li>' +
       '</ul>' +
       '<p class="pamitinan-conclusion">Because of this blend of nature, nationhood, and myth, Mt. Pamitinan stands out among Luzon\'s protected areas. It is not only a hiking destination but also a <strong>living classroom</strong> where geology, history, and culture converge. Visiting Pamitinan means walking through layers of stone, memory, and imagination all in one place.</p>' +
+      '</div>' +
       '</div>';
 
     // Insert it right after the video section
-    var videoSection = document.querySelector('.video-section');
     if (videoSection) {
       videoSection.parentNode.insertBefore(pamitinanSection, videoSection.nextSibling);
     } else {
