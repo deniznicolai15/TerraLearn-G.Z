@@ -512,12 +512,25 @@ function initializePage() {
       pamitinanInfoInVideo.remove();
     }
 
-    // Create a section div for Mt. Pamitinan info to appear after the video
+    // Create a section div for Mt. Pamitinan info with video
     var pamitinanSection = document.createElement("div");
     pamitinanSection.className = "pamitinan-section-standalone";
+    
+    // Get the video URL from topicData
+    var videoIframe = '';
+    if (topicData.video && topicData.video.url) {
+      var videoUrl = topicData.video.url;
+      // Convert Google Drive URL to embed format
+      var videoId = videoUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
+      if (videoId && videoId[1]) {
+        videoIframe = '<iframe src="https://drive.google.com/file/d/' + videoId[1] + '/preview" width="100%" height="480" frameborder="0" allow="autoplay"></iframe>';
+      }
+    }
+    
     pamitinanSection.innerHTML =
       '<h2 class="pamitinan-section-title">Mt. Pamitinan (Montalban, Rizal)</h2>' +
       '<div class="pamitinan-content-wrapper">' +
+      (videoIframe ? '<div class="pamitinan-video-container">' + videoIframe + '</div>' : '') +
       '<p class="pamitinan-intro">Mt. Pamitinan is a limestone mountain located in Montalban (Rodriguez), Rizal, rising to 426+ meters above sea level. It forms part of the Sierra Madre mountain range and is officially recognized as a DENR‑protected landscape, which means visitors must secure permits before entry. Its rugged cliffs, sharp limestone rocks, and karst cave systems make it both a geological wonder and a challenging climb.</p>' +
       '<p class="pamitinan-subtitle">But Mt. Pamitinan is more than just a natural site. It is a <strong>multi‑layered landmark</strong>:</p>' +
       '<ul class="pamitinan-layers">' +

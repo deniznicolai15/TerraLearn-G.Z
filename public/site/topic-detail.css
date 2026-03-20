@@ -589,6 +589,21 @@ body.topic-2 .detail-section h3 {
   margin: 0 auto;
 }
 
+.pamitinan-video-container {
+  width: 100%;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pamitinan-video-container iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
+  display: block;
+}
+
 .pamitinan-intro {
   font-size: 16px;
   color: var(--secondary);
@@ -663,6 +678,10 @@ body.topic-2 .detail-section h3 {
   .pamitinan-section-title {
     font-size: 22px;
     margin-bottom: 24px;
+  }
+  
+  .pamitinan-video-container iframe {
+    height: 350px;
   }
   
   .pamitinan-intro,
