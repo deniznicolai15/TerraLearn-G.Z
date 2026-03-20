@@ -129,11 +129,11 @@ var topics = [
   {
     id: 5,
     label: "TOPIC 05",
-    name: "3G Lang: Grow, Glow and Green",
+    name: "For every action, there is an equal and opposite reaction",
     color: "#4B6B55",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
     description:
-      "Plants are the quiet architects of survival, producing oxygen, food, and balance for all living things. This topic highlights their essential role in ecosystems and how \"green goals\" connect to everyday life and sustainability.",
+      "Human actions shape the environment in powerful ways, reflecting the principle that every action brings a reaction. Deforestation, pollution, and habitat loss weaken ecosystems, while tree planting, river restoration, and sustainable practices foster resilience and renewal. In the Pamitinan Protected Landscape, community-led efforts show how responsible stewardship can restore biodiversity and secure forests and rivers for future generations.",
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
