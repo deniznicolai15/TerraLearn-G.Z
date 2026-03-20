@@ -91,15 +91,6 @@ var topics = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
     description:
       "Plants are the quiet architects of survival, producing oxygen, food, and balance for all living things. This topic highlights their essential role in ecosystems and how \"green goals\" connect to everyday life and sustainability.",
-    intro: {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aigeneger-wFkp9CoRVCkypZD8xljCX0WeVtZJ0C.png",
-      caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
-      text: "Plants form the foundation of life on Earth—they are the quiet architects of survival, producing oxygen, food, and balance for all living things. In the Pamitinan Protected Landscape, the flora represents a rich tapestry of biodiversity, from towering dipterocarp trees to medicinal herbs on the forest floor.<br><br>This topic highlights the essential role of plants in ecosystems and how \"green goals\" connect to everyday life and sustainability. Understanding plant diversity and conservation helps us appreciate why protecting these green spaces matters—not just for wildlife, but for our own future."
-    },
-    video: {
-      title: "Pamitinan Plant Life (Rodriguez, Rizal)",
-      url: "https://drive.google.com/file/d/1moI8bZClPbYLFjGc0iJ3mivAZ5Em6VvZ/view?usp=sharing"
-    },
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },

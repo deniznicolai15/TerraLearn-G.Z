@@ -190,8 +190,8 @@ function initializePage() {
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
     if (topicData.intro) {
-      if (topicData.id === 1 || topicData.id === 2 || topicData.id === 3) {
-        // Topic 1, 2 & 3: Two-column layout with small image left, text right
+      if (topicData.id === 1 || topicData.id === 2) {
+        // Topic 1 & 2: Two-column layout with small image left, text right
         var introHTML = '<div class="detail-intro-wrapper topic2-intro">';
         introHTML += '<div class="intro-image-section">';
         introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" />';
@@ -838,35 +838,20 @@ function initializePage() {
     }
   }
 
-  // ===== TOPIC 3: 3G Lang - Grow, Glow and Green =====
+  // ===== TOPIC 3: Tree Planting - Seeds of Equality =====
   if (topicData.id === 3) {
-    // Create a section div for 3G Lang Overview with video
+    // Create a section div for Tree Planting Overview with image
     var greenGoalsSection = document.createElement("div");
     greenGoalsSection.className = "pamitinan-section-standalone";
     
-    // Get the video URL from topicData
-    var videoIframe3 = '';
-    if (topicData.video && topicData.video.url) {
-      var videoUrl3 = topicData.video.url;
-      // Convert Google Drive URL to embed format
-      var videoId3 = videoUrl3.match(/\/d\/([a-zA-Z0-9-_]+)/);
-      if (videoId3 && videoId3[1]) {
-        videoIframe3 = '<iframe src="https://drive.google.com/file/d/' + videoId3[1] + '/preview" width="100%" height="480" frameborder="0" allow="autoplay"></iframe>';
-      }
-    }
-    
     greenGoalsSection.innerHTML =
-      '<h2 class="pamitinan-section-title">3G Lang: Grow, Glow and Green</h2>' +
+      '<h2 class="pamitinan-section-title">Tree Planting: Seeds of Equality</h2>' +
       '<div class="pamitinan-content-wrapper">' +
-      (videoIframe3 ? '<div class="pamitinan-video-container">' + videoIframe3 + '<p class="pamitinan-video-caption">Explore the plant life and green ecosystems of the Pamitinan Protected Landscape.</p></div>' : '') +
-      '<p class="pamitinan-intro">Plants are the silent architects of life on Earth. Through photosynthesis, they produce the oxygen we breathe, absorb carbon dioxide, and form the foundation of nearly every food chain. In the Pamitinan Protected Landscape, the flora represents centuries of ecological evolution—from towering dipterocarp trees to delicate orchids and medicinal herbs.</p>' +
-      '<p class="pamitinan-subtitle">The <strong>3G Framework</strong> represents three interconnected goals:</p>' +
-      '<ul class="pamitinan-layers">' +
-      '<li><strong>Grow</strong> – Supporting plant diversity and reforestation efforts to restore degraded ecosystems and expand green cover.</li>' +
-      '<li><strong>Glow</strong> – Highlighting the beauty and importance of plants through education, awareness, and appreciation of nature\'s wonders.</li>' +
-      '<li><strong>Green</strong> – Promoting sustainable practices and green goals that connect environmental conservation to everyday life.</li>' +
-      '</ul>' +
-      '<p class="pamitinan-conclusion">Understanding the role of plants helps us realize that protecting forests like Pamitinan is not just about preserving trees—it is about <strong>securing clean air, water, and a livable future</strong> for generations to come.</p>' +
+      '<div class="pamitinan-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree%20planting-nhHSBPADUYxrA7qUZyvutyBNFJk5aD.png" alt="National Women\'s Month Tree Planting Activity" class="pamitinan-featured-image" />' +
+      '<p class="pamitinan-image-caption">National Women\'s Month Celebration 2026 - Local Council of Women tree planting activity at Mt. Parawagan</p>' +
+      '</div>' +
+      '<p class="pamitinan-intro">In celebration of National Women\'s Month, more than 500 seedlings of Narra and fruit-bearing trees (langka, guyabano, duhat) were planted in Mt. Parawagan. Each participant placed a name tag and personal wish on their tree, symbolizing hope, equality, and care for nature. This initiative strengthens biodiversity while empowering communities to take part in reforestation.</p>' +
       '</div>';
 
     // Insert it right after the video section

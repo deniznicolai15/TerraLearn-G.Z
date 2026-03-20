@@ -623,6 +623,32 @@ body.topic-3 .detail-section h3 {
   line-height: 1.6;
 }
 
+.pamitinan-image-container {
+  width: 100%;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pamitinan-featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.pamitinan-image-caption {
+  font-size: 14px;
+  color: var(--secondary);
+  text-align: center;
+  padding: 16px;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.02);
+}
+
 .pamitinan-intro {
   font-size: 16px;
   color: var(--secondary);
