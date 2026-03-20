@@ -694,8 +694,8 @@ function initializePage() {
       '<h3>Quicky Lang!</h3>' +
       '<p>Why do you think communities create sabi‑sabi (like Bernardo Carpio causing earthquakes)? How do these stories help people understand natural events?</p>' +
       '<div class="reflection-input-wrapper">' +
-      '<textarea id="topic2-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="500"></textarea>' +
-      '<div class="char-counter"><span id="topic2-char-count">0</span>/500</div>' +
+      '<textarea id="topic2-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
+      '<div class="char-counter"><span id="topic2-char-count">0</span>/250</div>' +
       '</div>' +
       '<div class="reflection-buttons">' +
       '<button class="btn btn-primary btn-submit" id="topic2-reflection-submit">' +
@@ -716,12 +716,47 @@ function initializePage() {
       sectionsContainer.appendChild(reflectionBox);
     }
 
+    // Create reflection wall display
+    var reflectionWallDiv = document.createElement("div");
+    reflectionWallDiv.className = "reflection-box-wall";
+    reflectionWallDiv.id = "reflection-wall-topic2";
+    reflectionWallDiv.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    
+    if (reflectionBox.parentNode) {
+      reflectionBox.parentNode.insertBefore(reflectionWallDiv, reflectionBox.nextSibling);
+    }
+
     // Add event listeners for Topic 2 reflection box
     var topic2ReflectionInput = document.getElementById("topic2-reflection-input");
     var topic2SubmitBtn = document.getElementById("topic2-reflection-submit");
     var topic2ClearBtn = document.getElementById("topic2-reflection-clear");
     var topic2SavedMsg = document.getElementById("topic2-reflection-saved-msg");
     var topic2CharCount = document.getElementById("topic2-char-count");
+    var topic2ReflectionWall = document.getElementById("reflection-wall-topic2");
+
+    // Initialize community thoughts for Topic 2
+    var topic2Thoughts = JSON.parse(localStorage.getItem("topic2-thoughts")) || [];
+
+    // Function to display reflections in the wall
+    function displayTopic2Reflections() {
+      if (!topic2ReflectionWall) return;
+      
+      if (topic2Thoughts.length === 0) {
+        topic2ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+      } else {
+        var thoughtsHTML = '';
+        topic2Thoughts.forEach(function(thought) {
+          thoughtsHTML +=
+            '<div class="reflection-thought-chip">' +
+            '<p class="reflection-thought-text">' + thought.content + '</p>' +
+            '</div>';
+        });
+        topic2ReflectionWall.innerHTML = thoughtsHTML;
+      }
+    }
+
+    // Display initial reflections
+    displayTopic2Reflections();
 
     // Character counter
     if (topic2ReflectionInput && topic2CharCount) {
@@ -734,6 +769,18 @@ function initializePage() {
     if (topic2SubmitBtn) {
       topic2SubmitBtn.addEventListener("click", function () {
         if (topic2ReflectionInput && topic2ReflectionInput.value.trim()) {
+          var newThought = {
+            id: Date.now(),
+            content: topic2ReflectionInput.value.trim(),
+            timestamp: Date.now()
+          };
+
+          topic2Thoughts.push(newThought);
+          localStorage.setItem("topic2-thoughts", JSON.stringify(topic2Thoughts));
+
+          // Update wall display
+          displayTopic2Reflections();
+
           topic2SavedMsg.textContent = "Your thought has been shared anonymously!";
           topic2SavedMsg.className = "reflection-saved-msg success";
           topic2ReflectionInput.value = "";
