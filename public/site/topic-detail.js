@@ -220,8 +220,8 @@ function initializePage() {
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
     if (topicData.intro) {
-      if (topicData.id === 1 || topicData.id === 2) {
-        // Topic 1 & 2: Two-column layout with small image left, text right
+      if (topicData.id === 1 || topicData.id === 2 || topicData.id === 5) {
+        // Topic 1, 2 & 5: Two-column layout with small image left, text right
         var introHTML = '<div class="detail-intro-wrapper topic2-intro">';
         introHTML += '<div class="intro-image-section">';
         introHTML += '<img src="' + topicData.intro.image + '" alt="' + topicData.intro.caption + '" class="intro-image-small" />';
@@ -282,8 +282,8 @@ function initializePage() {
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
   }
 
-  // Add Topic 3/5 Human Impact Section at the top
-  if (topicData.id === 3 || topicData.id === 5) {
+  // Add Topic 3 Human Impact Section at the top
+  if (topicData.id === 3) {
     var introSection = document.getElementById("intro-section");
     var humanImpactSection = document.createElement("div");
     humanImpactSection.className = "topic3-human-impact-section";
