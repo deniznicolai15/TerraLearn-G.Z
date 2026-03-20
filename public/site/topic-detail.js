@@ -847,12 +847,11 @@ function initializePage() {
     greenGoalsSection.innerHTML =
       '<h2 class="pamitinan-section-title">Tree Planting: Seeds of Equality</h2>' +
       '<div class="pamitinan-content-wrapper">' +
-      '<div class="pamitinan-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree%20planting-nhHSBPADUYxrA7qUZyvutyBNFJk5aD.png" alt="National Women\'s Month Tree Planting Activity" class="pamitinan-featured-image" />' +
-      '<p class="pamitinan-image-caption">National Women\'s Month Celebration 2026 - Local Council of Women tree planting activity at Mt. Parawagan</p>' +
+      '<div class="geological-features-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree%20planting-nhHSBPADUYxrA7qUZyvutyBNFJk5aD.png" alt="National Women\'s Month Tree Planting Activity" class="geological-clearer-image" />' +
+      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>' +
       '<p class="pamitinan-intro">In celebration of National Women\'s Month, more than 500 seedlings of Narra and fruit-bearing trees (langka, guyabano, duhat) were planted in Mt. Parawagan. Each participant placed a name tag and personal wish on their tree, symbolizing hope, equality, and care for nature. This initiative strengthens biodiversity while empowering communities to take part in reforestation.</p>' +
-      '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
       '</div>';
 
     // Insert it right after the video section
@@ -871,10 +870,13 @@ function initializePage() {
       '<div class="geological-content-wrapper">' +
       '<div class="geological-features-image-container">' +
       '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cleanup-Rl86wjQd4hWfxWa4xO3oSppFQHu4fb.png" alt="Clean-Up Drive volunteers at Pamitinan Protected Landscape" class="geological-clearer-image" />' +
-      '<p class="geological-image-caption">February 9, 2026 - Over 50 volunteers joined forces for the Clean-Up Drive at Pamitinan Protected Landscape</p>' +
-      '</div>' +
-      '<p class="geological-intro-text">On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam. The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment. This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</p>' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
+      '</div>' +
+      '<ul class="geological-features-list">' +
+      '<li>On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam.</li>' +
+      '<li>The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment.</li>' +
+      '<li>This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</li>' +
+      '</ul>' +
       '</div>';
 
     // Insert after Tree Planting section
@@ -890,12 +892,15 @@ function initializePage() {
     photosynthesisSection.innerHTML =
       '<h2 class="historical-section-title">Sustainable Tourism & Education</h2>' +
       '<div class="historical-content-wrapper">' +
-      '<div class="historical-features-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sustainable-qhl2V8AUgYIJ0cv8mUVXEJbA6AeqIJ.png" alt="Fees paid in Pamitinan Protected Landscape" class="historical-featured-image" />' +
-      '<p class="historical-image-caption">Fee structure at Pamitinan Protected Landscape - funds supporting conservation programs</p>' +
-      '</div>' +
-      '<p class="historical-intro-text">Visitors contribute through entrance and trekking fees, which fund conservation programs. Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage. Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</p>' +
+      '<div class="historical-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sustainable-qhl2V8AUgYIJ0cv8mUVXEJbA6AeqIJ.png" alt="Fees paid in Pamitinan Protected Landscape" class="historical-clearer-image" />' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
+      '</div>' +
+      '<ul class="historical-features-list">' +
+      '<li>Visitors contribute through entrance and trekking fees, which fund conservation programs.</li>' +
+      '<li>Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage.</li>' +
+      '<li>Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</li>' +
+      '</ul>' +
       '</div>';
 
     // Insert after Clean-Up Drive section
@@ -912,11 +917,14 @@ function initializePage() {
       '<h2 class="myth-section-title">School-Based Tree Planting and Clean-Up</h2>' +
       '<div class="myth-content-wrapper">' +
       '<div class="myth-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/schoolbased-solljIRBIALKi7rsKgZkgHNAawmOpD.png" alt="School-Based Tree Planting at Wawa Elementary School" class="myth-featured-image" />' +
-      '<p class="myth-image-caption">Teachers, students, and parents of Wawa Elementary School with PAMO-PPL staff during the tree planting activity</p>' +
-      '</div>' +
-      '<p class="myth-intro-text">Teachers, students, and parents of Wawa Elementary School, together with PAMO–PPL staff, planted 50 native seedlings including Mulawin, Narra, Langka, and Santol. A demonstration on proper seedling handling was conducted, followed by a clean-up drive from Sitio Wawa to Sitio Kayrupa. This activity highlights the role of education and youth involvement in long-term forest conservation.</p>' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/schoolbased-solljIRBIALKi7rsKgZkgHNAawmOpD.png" alt="School-Based Tree Planting at Wawa Elementary School" class="myth-clearer-image" />' +
       '<p class="image-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
+      '</div>' +
+      '<ul class="myth-features-list">' +
+      '<li>Teachers, students, and parents of Wawa Elementary School, together with PAMO–PPL staff, planted 50 native seedlings including Mulawin, Narra, Langka, and Santol.</li>' +
+      '<li>A demonstration on proper seedling handling was conducted, followed by a clean-up drive from Sitio Wawa to Sitio Kayrupa.</li>' +
+      '<li>This activity highlights the role of education and youth involvement in long-term forest conservation.</li>' +
+      '</ul>' +
       '</div>';
 
     // Insert after Photosynthesis section
@@ -941,23 +949,7 @@ function initializePage() {
       sectionsContainer.appendChild(sustainableSection);
     }
 
-    // Add Why Plants Matter section
-    var whyPlantsMatterSection = document.createElement("div");
-    whyPlantsMatterSection.className = "why-it-matters-section-standalone";
-    whyPlantsMatterSection.innerHTML =
-      '<h2 class="why-it-matters-section-title">Why Plants Matter</h2>' +
-      '<div class="why-it-matters-content-wrapper">' +
-      '<p class="why-it-matters-text">Plants are more than just greenery—they are the foundation of life on Earth. From the oxygen we breathe to the food we eat, from the medicines that heal us to the materials that shelter us, plants make human civilization possible. By protecting forests like Pamitinan, we are not just preserving biodiversity—we are securing our own future.</p>' +
-      '</div>';
-
-    // Insert after Sustainable section
-    if (sustainableSection.parentNode) {
-      sustainableSection.parentNode.insertBefore(whyPlantsMatterSection, sustainableSection.nextSibling);
-    } else {
-      sectionsContainer.appendChild(whyPlantsMatterSection);
-    }
-
-    // Add reflection box after Why Plants Matter section
+    // Add reflection box after Conclusion section
     var reflectionBox3 = document.createElement("div");
     reflectionBox3.className = "forest-reflection-box";
     reflectionBox3.innerHTML =
@@ -980,9 +972,9 @@ function initializePage() {
       '</div>' +
       '<p class="reflection-saved-msg" id="topic3-reflection-saved-msg"></p>';
 
-    // Insert after Why Plants Matter section
-    if (whyPlantsMatterSection.parentNode) {
-      whyPlantsMatterSection.parentNode.insertBefore(reflectionBox3, whyPlantsMatterSection.nextSibling);
+    // Insert after Conclusion section
+    if (sustainableSection.parentNode) {
+      sustainableSection.parentNode.insertBefore(reflectionBox3, sustainableSection.nextSibling);
     } else {
       sectionsContainer.appendChild(reflectionBox3);
     }
