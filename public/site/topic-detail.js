@@ -862,20 +862,17 @@ function initializePage() {
       sectionsContainer.insertBefore(greenGoalsSection, sectionsContainer.firstChild);
     }
 
-    // Add Plant Diversity section
+    // Add Clean-Up Drive section
     var plantDiversitySection = document.createElement("div");
     plantDiversitySection.className = "geological-section-standalone";
     plantDiversitySection.innerHTML =
-      '<h2 class="geological-section-title">Plant Diversity</h2>' +
+      '<h2 class="geological-section-title">Clean-Up Drive: Bayanihan for Nature</h2>' +
       '<div class="geological-content-wrapper">' +
       '<div class="geological-features-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg" alt="Plant Diversity in Pamitinan" class="geological-clearer-image" />' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cleanup-Rl86wjQd4hWfxWa4xO3oSppFQHu4fb.png" alt="Clean-Up Drive volunteers at Pamitinan Protected Landscape" class="geological-clearer-image" />' +
+      '<p class="geological-image-caption">February 9, 2026 - Over 50 volunteers joined forces for the Clean-Up Drive at Pamitinan Protected Landscape</p>' +
       '</div>' +
-      '<ul class="geological-features-list">' +
-      '<li><strong>Dipterocarp Forests</strong> – The dominant forest type in the lowlands, featuring trees like lauan, apitong, and yakal that can grow up to 70 meters tall.</li>' +
-      '<li><strong>Epiphytes and Orchids</strong> – Plants that grow on other plants without harming them, including beautiful orchids, ferns, and mosses found in the canopy layer.</li>' +
-      '<li><strong>Medicinal Plants</strong> – Traditional healing plants used by indigenous communities, such as lagundi, sambong, and various forest herbs.</li>' +
-      '</ul>' +
+      '<p class="geological-intro-text">On February 9, 2026, over 50 volunteers joined forces to clean the riverbanks and forest trails from Sitio Kayrupa to Wawa Dam. The drive collected 20 sacks of waste, including 5 sacks of recyclables, ensuring proper disposal and a healthier environment. This activity demonstrates how collective responsibility reduces pollution and protects river ecosystems.</p>' +
       '</div>';
 
     // Insert after 3G Overview section
@@ -885,20 +882,17 @@ function initializePage() {
       sectionsContainer.appendChild(plantDiversitySection);
     }
 
-    // Add Photosynthesis & Oxygen Production section
+    // Add Sustainable Tourism & Education section
     var photosynthesisSection = document.createElement("div");
     photosynthesisSection.className = "historical-section-standalone";
     photosynthesisSection.innerHTML =
-      '<h2 class="historical-section-title">Photosynthesis & Oxygen Production</h2>' +
+      '<h2 class="historical-section-title">Sustainable Tourism & Education</h2>' +
       '<div class="historical-content-wrapper">' +
-      '<ul class="historical-features-list">' +
-      '<li><strong>Nature\'s Oxygen Factories</strong> – Through photosynthesis, plants convert sunlight into energy while releasing oxygen as a byproduct. A single mature tree can produce enough oxygen for 2-10 people per year.</li>' +
-      '<li><strong>Air Quality Improvement</strong> – Forest vegetation acts as natural air filters, absorbing pollutants and releasing clean oxygen. The extensive forest cover of Mt. Pamitinan contributes significantly to air quality in Metro Manila and surrounding areas.</li>' +
-      '<li><strong>Temperature Regulation</strong> – Through transpiration, forests release water vapor that cools the surrounding air, creating microclimates that benefit both wildlife and nearby human communities.</li>' +
-      '</ul>' +
-      '<div class="historical-narrative">' +
-      '<p class="historical-description">The forests of Pamitinan are not just beautiful landscapes—they are <strong>working ecosystems</strong> that produce the very air we breathe. Every hike through these trails is a journey through a living, breathing oxygen factory.</p>' +
+      '<div class="historical-features-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sustainable-qhl2V8AUgYIJ0cv8mUVXEJbA6AeqIJ.png" alt="Fees paid in Pamitinan Protected Landscape" class="historical-featured-image" />' +
+      '<p class="historical-image-caption">Fee structure at Pamitinan Protected Landscape - funds supporting conservation programs</p>' +
       '</div>' +
+      '<p class="historical-intro-text">Visitors contribute through entrance and trekking fees, which fund conservation programs. Guided hikes emphasize responsible tourism, teaching visitors about forest ecology and cultural heritage. Educational activities like video presentations and reflective essays connect classroom learning with real-world conservation practices, ensuring awareness translates into action.</p>' +
       '</div>';
 
     // Insert after Plant Diversity section

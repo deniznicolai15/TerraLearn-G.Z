@@ -795,6 +795,27 @@ body.topic-3 .detail-section h3 {
   box-shadow: 0 20px 50px rgba(45, 90, 61, 0.35);
 }
 
+.geological-section-standalone .geological-features-image-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.geological-image-caption {
+  font-size: 14px;
+  color: var(--secondary);
+  text-align: center;
+  margin-top: 12px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.geological-intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--foreground);
+  margin-top: 20px;
+}
+
 .geological-features-list {
   list-style: none;
   padding: 0;
@@ -899,6 +920,43 @@ body.topic-3 .detail-section h3 {
 .historical-section-standalone .historical-clearer-image:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(45, 90, 61, 0.35);
+  }
+
+.historical-features-image-container {
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historical-featured-image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(45, 90, 61, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historical-featured-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(45, 90, 61, 0.35);
+}
+
+.historical-image-caption {
+  font-size: 14px;
+  color: var(--secondary);
+  text-align: center;
+  margin-top: 12px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.historical-intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--foreground);
+  margin-top: 20px;
 }
 
 .historical-features-list {
