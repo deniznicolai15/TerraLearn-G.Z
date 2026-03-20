@@ -115,7 +115,7 @@ var topics = [
     color: "#7A9E8C",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic4-88GM4Y6ZCHWMBrNhlUF428cJE0GZzK.jpeg",
     description:
-      "Fauna bring the Pamitinan landscape to life, from small creatures to larger wildlife that shape the ecosystem. This section dives into the diversity of animals, and the importance of protecting them for ecological balance.",
+      "Encounter the key animal species that inhabit the landscape and discover their importance to the ecosystem. It’s a look at the delicate balance between human presence and wildlife survival.",
     sections: [
       { title: "Bird Species", text: "Mt. Pamitinan serves as a habitat for over 30 bird species, including the Philippine Hawk-Eagle, Luzon Hornbill, and various species of kingfishers. Birdwatching is best during the early morning hours when most species are active and foraging." },
       { title: "Reptiles & Amphibians", text: "The mountain's streams and forest floor are home to various lizard species, snakes, and frogs. The Philippine Sailfin Lizard, a species unique to the Philippines, can occasionally be spotted near the river systems at the base of the mountain." },
