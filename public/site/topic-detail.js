@@ -295,8 +295,9 @@ function initializePage() {
             '<div class="reflection-box-header">' +
             '<h3 class="reflection-box-title">Quicky lang!</h3>' +
             '</div>' +
-            '<div class="reflection-box-input-section">' +
-            '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="If forests hold mysteries like Biringan, what responsibilities do we have to protect them?" maxlength="250"></textarea>' +
+            '<span class="reflection-box-badge">If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</span>'
+          '<div class="reflection-box-input-section">' +
+            '<textarea class="reflection-box-textarea" id="reflection-textarea-' + Math.random() + '" placeholder="Share your reflection or thoughts about forest ecosystems..." maxlength="250"></textarea>' +
             '<div class="reflection-box-footer">' +
             '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
             '<button class="reflection-box-submit-btn" onclick="submitReflection(this)">Submit Thought</button>' +
