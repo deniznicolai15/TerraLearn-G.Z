@@ -533,12 +533,12 @@ function initializePage() {
 
     // Add Geological Features section after Mt. Pamitinan Overview
     var geologicalFeaturesSection = document.createElement("div");
-    geologicalFeaturesSection.className = "detail-section geological-features-section";
+    geologicalFeaturesSection.className = "geological-section-standalone";
     geologicalFeaturesSection.innerHTML =
-      '<h3>Geological Features</h3>' +
-      '<div class="geological-info-box">' +
+      '<h2 class="geological-section-title">Geological Features</h2>' +
+      '<div class="geological-content-wrapper">' +
       '<div class="geological-features-image-container">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-hKnyDECHJRQ8uPTPe1HCH4WAJLy710.jpg" alt="Geological Features - Limestone cliffs and Pamitinan Cave" class="geological-features-image" />' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Geological%20Features-hKnyDECHJRQ8uPTPe1HCH4WAJLy710.jpg" alt="Geological Features - Limestone cliffs and Pamitinan Cave" class="geological-clearer-image" />' +
       '</div>' +
       '<ul class="geological-features-list">' +
       '<li><strong>Limestone cliffs and karst formations</strong> shaped by water and rock interaction.</li>' +
