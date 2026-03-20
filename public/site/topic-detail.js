@@ -148,6 +148,33 @@ var quizzes = {
       correct: 1,
     },
   ],
+  5: [
+    {
+      question: "Which mountain range does the Wawa River originate from?",
+      options: ["Cordillera", "Sierra Madre", "Caraballo", "Zambales"],
+      correct: 1,
+    },
+    {
+      question: "What geographic feature does the Wawa River flow through?",
+      options: ["Valley", "Desert", "Limestone gorges", "Swamps"],
+      correct: 2,
+    },
+    {
+      question: "What is a riparian zone?",
+      options: ["A desert area", "Vegetation along riverbanks", "An underground cave", "A mountain peak"],
+      correct: 1,
+    },
+    {
+      question: "Which native fish species is found in the Wawa River?",
+      options: ["Salmon", "Ludong", "Tuna", "Catfish"],
+      correct: 1,
+    },
+    {
+      question: "What is the primary environmental threat to the Wawa River?",
+      options: ["Drought only", "Erosion only", "Illegal quarrying and domestic waste", "Plant overgrowth"],
+      correct: 2,
+    },
+  ],
 };
 
 // ===== PAGE INITIALIZATION =====
@@ -184,6 +211,9 @@ function initializePage() {
   }
   if (topicData.id === 3) {
   document.body.classList.add("topic-3");
+  }
+  if (topicData.id === 5) {
+  document.body.classList.add("topic-5");
   }
   
   // Populate introduction section
@@ -241,7 +271,7 @@ function initializePage() {
       videoCaption.textContent = "This 360° video was captured by one of the researchers above the 426+ MASL marker.";
       videoContainer.appendChild(videoCaption);
     }
-    if (topicData.id === 3) {
+    if (topicData.id === 3 || topicData.id === 5) {
       var videoCaption = document.createElement("p");
       videoCaption.className = "video-caption";
       videoCaption.textContent = "Explore the plant life and green ecosystems of the Pamitinan Protected Landscape.";
@@ -252,8 +282,8 @@ function initializePage() {
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
   }
 
-  // Add Topic 3 Human Impact Section at the top
-  if (topicData.id === 3) {
+  // Add Topic 3/5 Human Impact Section at the top
+  if (topicData.id === 3 || topicData.id === 5) {
     var introSection = document.getElementById("intro-section");
     var humanImpactSection = document.createElement("div");
     humanImpactSection.className = "topic3-human-impact-section";
@@ -838,8 +868,8 @@ function initializePage() {
     }
   }
 
-  // ===== TOPIC 3: Tree Planting - Seeds of Equality =====
-  if (topicData.id === 3) {
+  // ===== TOPIC 3/5: Tree Planting - Seeds of Equality =====
+  if (topicData.id === 3 || topicData.id === 5) {
     // Create a section div for Tree Planting Overview with image
     var greenGoalsSection = document.createElement("div");
     greenGoalsSection.className = "pamitinan-section-standalone";

@@ -241,7 +241,8 @@ body.topic-2 .detail-section h3 {
   margin-bottom: 16px;
 }
 
-body.topic-3 .detail-section h3 {
+body.topic-3 .detail-section h3,
+body.topic-5 .detail-section h3 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 24px;
   font-weight: 700;
@@ -2173,8 +2174,9 @@ body.topic-2 .detail-figure {
   display: none;
 }
 
-/* Hide Figure 1 for Topic 3 */
-body.topic-3 .detail-figure {
+/* Hide Figure 1 for Topic 3 and Topic 5 */
+body.topic-3 .detail-figure,
+body.topic-5 .detail-figure {
   display: none;
 }
 

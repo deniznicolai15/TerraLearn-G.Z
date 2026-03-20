@@ -126,6 +126,31 @@ var topics = [
     detail1: "30+ species documented",
     detail2: "Active conservation zone",
   },
+  {
+    id: 5,
+    label: "TOPIC 05",
+    name: "3G Lang: Grow, Glow and Green",
+    color: "#4B6B55",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
+    description:
+      "Plants are the quiet architects of survival, producing oxygen, food, and balance for all living things. This topic highlights their essential role in ecosystems and how \"green goals\" connect to everyday life and sustainability.",
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
+    ],
+    sections: [],
+    location: "Mt. Pamitinan Flora Zones",
+    detail1: "100+ plant species",
+    detail2: "Oxygen production hub",
+  },
 ];
 
 // ===== SVG ICONS =====
