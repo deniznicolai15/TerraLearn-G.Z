@@ -69,29 +69,54 @@ var quizzes = {
   ],
   2: [
     {
-      question: "What is the elevation of Mt. Pamitinan's summit?",
-      options: ["326+ meters", "426+ meters", "526+ meters", "626+ meters"],
-      correct: 1,
+      question: "Mt. Pamitinan is part of which major mountain range in Luzon?",
+      options: ["Cordillera Central", "Sierra Madre", "Zambales Range", "Caraballo Mountains"],
+      correct: 1, // B
     },
     {
-      question: "When did Andres Bonifacio and the Katipunan meet at Pamitinan Cave?",
-      options: ["April 12, 1893", "April 12, 1895", "April 12, 1897", "April 12, 1899"],
-      correct: 1,
+      question: "What is the official designation of Mt. Pamitinan under the DENR?",
+      options: ["National Park", "Protected Landscape", "Wildlife Sanctuary", "Forest Reserve"],
+      correct: 1, // B
     },
     {
-      question: "What was inscribed on Pamitinan Cave walls by Bonifacio?",
-      options: ["Mga salawikain", "Viva la Independencia Filipina", "Names of soldiers", "Mathematical formulas"],
-      correct: 1,
+      question: "Which historical figure inscribed \"Viva la Independencia Filipina\" inside Pamitinan Cave in 1895?",
+      options: ["Emilio Aguinaldo", "Andres Bonifacio", "Apolinario Mabini", "Jose Rizal"],
+      correct: 1, // B
     },
     {
-      question: "According to local folklore, who is trapped between Mt. Pamitinan and Mt. Binacayan?",
-      options: ["A princess", "Bernardo Carpio", "A mysterious spirit", "An ancient warrior"],
-      correct: 1,
+      question: "The inscription inside Pamitinan Cave is considered the first recorded declaration of independence. How many years before the Cry of Balintawak did it occur?",
+      options: ["More than one year", "Less than six months", "Exactly one year", "Two years"],
+      correct: 0, // A
     },
     {
-      question: "What geological feature makes Mt. Pamitinan geologically significant?",
-      options: ["Volcanic crater", "Limestone cliffs and karst cave systems", "Sand dunes", "Crystal formations"],
-      correct: 1,
+      question: "Which geological feature is most associated with Mt. Pamitinan?",
+      options: ["Volcanic cones", "Limestone cliffs and karst caves", "Granite outcrops", "Sandstone plateaus"],
+      correct: 1, // B
+    },
+    {
+      question: "In local folklore, Bernardo Carpio is said to be trapped between which two mountains?",
+      options: ["Mt. Pamitinan and Mt. Binacayan", "Mt. Arayat and Mt. Makiling", "Mt. Banahaw and Mt. Cristobal", "Mt. Pulag and Mt. Tabayoc"],
+      correct: 0, // A
+    },
+    {
+      question: "According to myth, Bernardo Carpio's struggle explains which natural phenomenon?",
+      options: ["Typhoons", "Earthquakes", "Volcanic eruptions", "Landslides"],
+      correct: 1, // B
+    },
+    {
+      question: "Why is the Sierra Madre range considered vital to Luzon's ecology?",
+      options: ["It is the largest source of geothermal energy", "It shields eastern Luzon from typhoons and regulates water systems", "It is the only volcanic chain in Luzon", "It is the site of the country's largest mining operations"],
+      correct: 1, // B
+    },
+    {
+      question: "Mt. Pamitinan is described as a \"living classroom.\" What does this phrase emphasize?",
+      options: ["Its role as a training ground for mountaineers", "Its integration of geology, history, and folklore for education", "Its use as a site for agricultural experiments", "Its function as a military training site during the revolution"],
+      correct: 1, // B
+    },
+    {
+      question: "Why do communities create sabi sabi (folk stories) about places like Mt. Pamitinan?",
+      options: ["To replace scientific explanations with superstition", "To provide entertainment during festivals", "To interpret natural events and embed cultural meaning in landscapes", "To discourage people from visiting dangerous sites"],
+      correct: 2, // C
     },
   ],
   3: [
@@ -744,7 +769,46 @@ function initializePage() {
       sectionsContainer.appendChild(whyItMattersSection);
     }
 
-    // Add reflection box after Why It Matters section
+    // Add quiz game box after Why It Matters section
+    var quizGameBox = document.createElement("div");
+    quizGameBox.className = "forest-game-box";
+    quizGameBox.id = "start-quiz-trigger";
+    quizGameBox.innerHTML =
+      '<div class="game-box-content" style="cursor: pointer;">' +
+      '<div class="game-box-icon">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+      '<path d="M2 17l10 5 10-5"></path>' +
+      '<path d="M2 12l10 5 10-5"></path>' +
+      '</svg>' +
+      '</div>' +
+      '<div class="game-box-text">' +
+      '<h3>Test Your Knowledge!</h3>' +
+      '<p>Take the quiz and see how well you know Mt. Pamitinan and the Sierra Madre.</p>' +
+      '</div>' +
+      '<div class="game-box-arrow">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+      '<polyline points="12 5 19 12 12 19"></polyline>' +
+      '</svg>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Why It Matters section
+    if (whyItMattersSection.parentNode) {
+      whyItMattersSection.parentNode.insertBefore(quizGameBox, whyItMattersSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(quizGameBox);
+    }
+
+    // Add click handler to show quiz
+    quizGameBox.addEventListener("click", function () {
+      document.getElementById("quiz-container").style.display = "block";
+      initializeQuiz();
+      quizGameBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    // Add reflection box after the quiz box
     var reflectionBox = document.createElement("div");
     reflectionBox.className = "forest-reflection-box";
     reflectionBox.innerHTML =
@@ -767,9 +831,9 @@ function initializePage() {
       '</div>' +
       '<p class="reflection-saved-msg" id="topic2-reflection-saved-msg"></p>';
 
-    // Insert after Why It Matters section
-    if (whyItMattersSection.parentNode) {
-      whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
+    // Insert after quiz box
+    if (quizGameBox.parentNode) {
+      quizGameBox.parentNode.insertBefore(reflectionBox, quizGameBox.nextSibling);
     } else {
       sectionsContainer.appendChild(reflectionBox);
     }
@@ -783,6 +847,45 @@ function initializePage() {
     if (reflectionBox.parentNode) {
       reflectionBox.parentNode.insertBefore(reflectionWallDiv, reflectionBox.nextSibling);
     }
+
+    // Add quiz game box after reflection wall
+    var topic2QuizGameBox = document.createElement("div");
+    topic2QuizGameBox.className = "forest-game-box";
+    topic2QuizGameBox.id = "start-quiz-trigger-topic2";
+    topic2QuizGameBox.innerHTML =
+      '<div class="game-box-content" style="cursor: pointer;">' +
+      '<div class="game-box-icon">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+      '<path d="M2 17l10 5 10-5"></path>' +
+      '<path d="M2 12l10 5 10-5"></path>' +
+      '</svg>' +
+      '</div>' +
+      '<div class="game-box-text">' +
+      '<h3>Test Your Knowledge!</h3>' +
+      '<p>Challenge yourself with this interactive quiz about Mt. Pamitinan and the Sierra Madre.</p>' +
+      '</div>' +
+      '<div class="game-box-arrow">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+      '<polyline points="12 5 19 12 12 19"></polyline>' +
+      '</svg>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after reflection wall
+    if (reflectionWallDiv.parentNode) {
+      reflectionWallDiv.parentNode.insertBefore(topic2QuizGameBox, reflectionWallDiv.nextSibling);
+    } else {
+      sectionsContainer.appendChild(topic2QuizGameBox);
+    }
+
+    // Add click handler to show quiz
+    topic2QuizGameBox.addEventListener("click", function () {
+      document.getElementById("quiz-container").style.display = "block";
+      initializeQuiz();
+      topic2QuizGameBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
 
     // Add event listeners for Topic 2 reflection box
     var topic2ReflectionInput = document.getElementById("topic2-reflection-input");
