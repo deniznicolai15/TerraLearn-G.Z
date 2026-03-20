@@ -207,15 +207,15 @@ function initializePage() {
     document.body.classList.add("topic-2");
   }
   if (topicData.id === 4) {
-  document.body.classList.add("topic-4");
+    document.body.classList.add("topic-4");
   }
   if (topicData.id === 3) {
-  document.body.classList.add("topic-3");
+    document.body.classList.add("topic-3");
   }
   if (topicData.id === 5) {
-  document.body.classList.add("topic-5");
+    document.body.classList.add("topic-5");
   }
-  
+
   // Populate introduction section
   var introElement = document.getElementById("detail-intro");
   if (introElement) {
@@ -287,14 +287,14 @@ function initializePage() {
     var introSection = document.getElementById("intro-section");
     var humanImpactSection = document.createElement("div");
     humanImpactSection.className = "topic3-human-impact-section";
-    humanImpactSection.innerHTML = 
+    humanImpactSection.innerHTML =
       '<div class="topic3-human-impact-container">' +
       '<p class="topic3-human-impact-quote">For every action, there is an equal and opposite reaction</p>' +
       '<div class="topic3-human-impact-divider"></div>' +
       '<p class="topic3-human-impact-body">Human activity has a profound impact on the environment, capable of causing deforestation, pollution, and biodiversity loss, yet also holding the power to drive renewal. Just as the law of interaction teaches that every action has an equal and opposite reaction, our movements in nature bring consequences that return to us. When forests are destroyed, ecosystems collapse; but when communities plant trees, clean rivers, and practice sustainable tourism, the environment responds with restored biodiversity, cleaner air, and resilience. In the Pamitinan Protected Landscape, these collective efforts show how human actions, when guided by responsibility, can reshape nature positively — ensuring that the reactions we set in motion today secure forests and rivers for generations to come.</p>' +
       '<p class="topic3-human-impact-body">These are some of the activities done in the Pamitinan communities to conserve the Pamitinan Protected Landscape. They show how human impact can be reshaped into positive conservation efforts, securing forests and rivers for generations to come.</p>' +
       '</div>';
-    
+
     // Insert before the intro section
     if (introSection) {
       introSection.parentNode.insertBefore(humanImpactSection, introSection);
@@ -348,7 +348,7 @@ function initializePage() {
         if (idx === 0) {
           var reflectionBox = document.createElement("div");
           reflectionBox.className = "reflection-box-container";
-          reflectionBox.innerHTML = 
+          reflectionBox.innerHTML =
             '<div class="reflection-box-inner">' +
             '<div class="reflection-box-header">' +
             '<span class="reflection-box-badge">Quicky lang! If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</span>' +
@@ -405,7 +405,7 @@ function initializePage() {
         // Add Personality Quiz Game Box after Vertical Structure
         var personalityGameBox = document.createElement("div");
         personalityGameBox.className = "forest-game-box personality-quiz-box";
-        personalityGameBox.innerHTML = 
+        personalityGameBox.innerHTML =
           '<a href="/site/games/forest-layer-personality.html" class="game-box-link">' +
           '<div class="game-box-content">' +
           '<div class="game-box-icon">' +
@@ -432,7 +432,7 @@ function initializePage() {
         // Add Functions and Environmental Balance section
         var functionsSection = document.createElement("div");
         functionsSection.className = "functions-environmental-section";
-        functionsSection.innerHTML = 
+        functionsSection.innerHTML =
           '<h2 class="functions-section-title">Functions and Environmental Balance of Philippine Forests</h2>' +
           '<div class="functions-grid">' +
           '<div class="function-card">' +
@@ -501,7 +501,7 @@ function initializePage() {
         // Add Biringan section (separate from forest layers)
         var biringanSection = document.createElement("div");
         biringanSection.className = "biringan-section-standalone";
-        biringanSection.innerHTML = 
+        biringanSection.innerHTML =
           '<h2 class="biringan-section-title">So what is Biringan?</h2>' +
           '<div class="biringan-content-wrapper">' +
           '<p class="biringan-description">Biringan is a legendary, hidden city said to exist in the forests of Samar, Philippines. In local folklore, it is described as a mystical place inhabited by <strong>engkanto</strong>—supernatural beings who live parallel to humans. The city is believed to be dazzling, full of light and modern wonders, yet invisible to ordinary eyes.</p>' +
@@ -516,7 +516,7 @@ function initializePage() {
         // Add Educational Game Box at the bottom of Topic 1
         var gameBox = document.createElement("div");
         gameBox.className = "forest-game-box";
-        gameBox.innerHTML = 
+        gameBox.innerHTML =
           '<a href="/site/games/topic1-quiz.html" class="game-box-link">' +
           '<div class="game-box-content">' +
           '<div class="game-box-icon">' +
@@ -597,7 +597,7 @@ function initializePage() {
     // Create a section div for Mt. Pamitinan info with video
     var pamitinanSection = document.createElement("div");
     pamitinanSection.className = "pamitinan-section-standalone";
-    
+
     // Get the video URL from topicData
     var videoIframe = '';
     if (topicData.video && topicData.video.url) {
@@ -608,7 +608,7 @@ function initializePage() {
         videoIframe = '<iframe src="https://drive.google.com/file/d/' + videoId[1] + '/preview" width="100%" height="480" frameborder="0" allow="autoplay"></iframe>';
       }
     }
-    
+
     pamitinanSection.innerHTML =
       '<h2 class="pamitinan-section-title">Mt. Pamitinan (Montalban, Rizal)</h2>' +
       '<div class="pamitinan-content-wrapper">' +
@@ -779,7 +779,7 @@ function initializePage() {
     reflectionWallDiv.className = "reflection-box-wall";
     reflectionWallDiv.id = "reflection-wall-topic2";
     reflectionWallDiv.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
-    
+
     if (reflectionBox.parentNode) {
       reflectionBox.parentNode.insertBefore(reflectionWallDiv, reflectionBox.nextSibling);
     }
@@ -798,12 +798,12 @@ function initializePage() {
     // Function to display reflections in the wall
     function displayTopic2Reflections() {
       if (!topic2ReflectionWall) return;
-      
+
       if (topic2Thoughts.length === 0) {
         topic2ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
       } else {
         var thoughtsHTML = '';
-        topic2Thoughts.forEach(function(thought) {
+        topic2Thoughts.forEach(function (thought) {
           thoughtsHTML +=
             '<div class="reflection-thought-chip">' +
             '<p class="reflection-thought-text">' + thought.content + '</p>' +
@@ -873,7 +873,7 @@ function initializePage() {
     // Create a section div for Tree Planting Overview with image
     var greenGoalsSection = document.createElement("div");
     greenGoalsSection.className = "pamitinan-section-standalone";
-    
+
     greenGoalsSection.innerHTML =
       '<h2 class="pamitinan-section-title">Tree Planting: Seeds of Equality</h2>' +
       '<div class="pamitinan-content-wrapper">' +
@@ -1002,7 +1002,7 @@ function initializePage() {
     reflectionWallDiv3.className = "reflection-box-wall";
     reflectionWallDiv3.id = "reflection-wall-topic3";
     reflectionWallDiv3.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
-    
+
     if (reflectionBox3.parentNode) {
       reflectionBox3.parentNode.insertBefore(reflectionWallDiv3, reflectionBox3.nextSibling);
     }
@@ -1021,12 +1021,12 @@ function initializePage() {
     // Function to display reflections in the wall
     function displayTopic3Reflections() {
       if (!topic3ReflectionWall) return;
-      
+
       if (topic3Thoughts.length === 0) {
         topic3ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
       } else {
         var thoughtsHTML = '';
-        topic3Thoughts.forEach(function(thought) {
+        topic3Thoughts.forEach(function (thought) {
           thoughtsHTML +=
             '<div class="reflection-thought-chip">' +
             '<p class="reflection-thought-text">' + thought.content + '</p>' +
@@ -1184,7 +1184,7 @@ function renderQuizQuestions() {
   var questionsHTML = '<div class="quiz-header-simple">' +
     '<h2>Test Your Knowledge</h2>' +
     '</div>';
-  
+
   currentQuiz.forEach(function (q, index) {
     questionsHTML += '<div class="quiz-question">' +
       '<div class="question-number">Question ' + (index + 1) + ' of ' + currentQuiz.length + '</div>' +
@@ -1329,10 +1329,10 @@ function showResults(correct, total, percentage) {
     quizAnswers = new Array(currentQuiz.length).fill(null);
     quizContent.style.display = "none";
     resultsDiv.style.display = "none";
-    
+
     // Hide quiz container
     document.getElementById("quiz-container").style.display = "none";
-    
+
     // Scroll back to the game box
     var gameBox = document.getElementById("start-quiz-trigger");
     if (gameBox) {
@@ -1389,7 +1389,7 @@ function initializeForest101() {
 
   // Initialize community thoughts if not exists
   var communityThoughts = JSON.parse(localStorage.getItem("community-thoughts")) || [];
-  
+
   // Seed with sample thoughts if empty
   if (communityThoughts.length === 0) {
     var sampleThoughts = [
@@ -1426,12 +1426,12 @@ function initializeForest101() {
   // Function to display reflections in the wall
   function displayReflections() {
     if (!reflectionWall) return;
-    
+
     if (communityThoughts.length === 0) {
       reflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
     } else {
       var thoughtsHTML = '';
-      communityThoughts.forEach(function(thought) {
+      communityThoughts.forEach(function (thought) {
         thoughtsHTML +=
           '<div class="reflection-thought-chip">' +
           '<p class="reflection-thought-text">' + thought.content + '</p>' +
@@ -1446,7 +1446,7 @@ function initializeForest101() {
 
   // Character counter
   if (reflectionInput && charCount) {
-    reflectionInput.addEventListener("input", function() {
+    reflectionInput.addEventListener("input", function () {
       charCount.textContent = reflectionInput.value.length;
     });
   }
@@ -1460,21 +1460,21 @@ function initializeForest101() {
           content: reflectionInput.value.trim(),
           timestamp: Date.now()
         };
-        
+
         communityThoughts.push(newThought);
         localStorage.setItem("community-thoughts", JSON.stringify(communityThoughts));
-        
+
         // Update wall display
         displayReflections();
-        
+
         // Show success message
         savedMsg.textContent = "Your thought has been shared anonymously!";
         savedMsg.className = "reflection-saved-msg success";
-        
+
         // Clear input
         reflectionInput.value = "";
         charCount.textContent = "0";
-        
+
         // Hide message after 4 seconds
         setTimeout(function () {
           savedMsg.className = "reflection-saved-msg";
@@ -1483,7 +1483,7 @@ function initializeForest101() {
         // Show error message
         savedMsg.textContent = "Please write something before submitting!";
         savedMsg.className = "reflection-saved-msg error";
-        
+
         setTimeout(function () {
           savedMsg.className = "reflection-saved-msg";
         }, 3000);
@@ -1512,7 +1512,7 @@ function renderAvifaunaSection() {
   var avifaunaIntro = document.getElementById("avifauna-intro");
 
   avifaunaContainer.style.display = "block";
-  avifaunaIntro.textContent = "Explore the diverse bird species that inhabit Mt. Pamitinan. Click on any species to learn more about their characteristics, habitat, and role in the ecosystem.";
+  avifaunaIntro.textContent = "Encounter the key animal species that inhabit the landscape and discover their importance to the ecosystem. It’s a look at the delicate balance between human presence and wildlife survival.";
 
   // Render species boxes (alphabetically arranged)
   avifaunaSpecies.forEach(function (species) {
@@ -1642,101 +1642,101 @@ speciesModal.addEventListener("click", function (e) {
   }
 });
 
-  // Close modal on Escape
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && speciesModal.classList.contains("active")) {
-      closeSpeciesModal();
-    }
-  });
+// Close modal on Escape
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && speciesModal.classList.contains("active")) {
+    closeSpeciesModal();
+  }
+});
 
-  // ===== REFLECTION BOX FUNCTIONALITY =====
-  function submitReflection(button) {
-    var container = button.closest(".reflection-box-inner");
-    var textarea = container.querySelector(".reflection-box-textarea");
-    var thought = textarea.value.trim();
+// ===== REFLECTION BOX FUNCTIONALITY =====
+function submitReflection(button) {
+  var container = button.closest(".reflection-box-inner");
+  var textarea = container.querySelector(".reflection-box-textarea");
+  var thought = textarea.value.trim();
 
-    if (!thought) {
-      alert("Please write a thought before submitting.");
-      return;
-    }
-
-    // Generate anonymous user name
-    var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
-    var userNumber = storedThoughts.length + 1;
-    var userName = "Anonymous User " + userNumber;
-
-    // Create thought object
-    var thoughtObject = {
-      text: thought,
-      userName: userName,
-      timestamp: new Date().toISOString()
-    };
-
-    // Save to localStorage
-    storedThoughts.push(thoughtObject);
-    localStorage.setItem("reflectionThoughts", JSON.stringify(storedThoughts));
-
-    // Clear textarea
-    textarea.value = "";
-    textarea.parentElement.parentElement.querySelector(".char-count-number").textContent = "0";
-
-    // Update reflection wall display
-    displayReflections();
-
-    // Show success message
-    button.textContent = "✓ Posted!";
-    button.disabled = true;
-    setTimeout(function() {
-      button.textContent = "Submit Thought";
-      button.disabled = false;
-    }, 2000);
+  if (!thought) {
+    alert("Please write a thought before submitting.");
+    return;
   }
 
-  function displayReflections() {
-    var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
-    var reflectionWalls = document.querySelectorAll(".reflection-box-wall");
+  // Generate anonymous user name
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
+  var userNumber = storedThoughts.length + 1;
+  var userName = "Anonymous User " + userNumber;
 
-    reflectionWalls.forEach(function(wall) {
-      if (storedThoughts.length === 0) {
-        wall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
-      } else {
-        var thoughtsHTML = '';
-        storedThoughts.forEach(function(thought) {
-          thoughtsHTML += 
-            '<div class="reflection-thought-chip">' +
-            '<div class="thought-user">' + thought.userName + '</div>' +
-            '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
-            '</div>';
-        });
-        wall.innerHTML = thoughtsHTML;
-      }
-    });
-  }
+  // Create thought object
+  var thoughtObject = {
+    text: thought,
+    userName: userName,
+    timestamp: new Date().toISOString()
+  };
 
-  function escapeHtml(text) {
-    var map = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#039;'
-    };
-    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-  }
+  // Save to localStorage
+  storedThoughts.push(thoughtObject);
+  localStorage.setItem("reflectionThoughts", JSON.stringify(storedThoughts));
 
-  // Initialize reflection wall on page load
+  // Clear textarea
+  textarea.value = "";
+  textarea.parentElement.parentElement.querySelector(".char-count-number").textContent = "0";
+
+  // Update reflection wall display
   displayReflections();
 
-  // Add character counter for textarea
-  document.addEventListener("input", function(e) {
-    if (e.target.classList.contains("reflection-box-textarea")) {
-      var count = e.target.value.length;
-      var counter = e.target.parentElement.parentElement.querySelector(".char-count-number");
-      if (counter) {
-        counter.textContent = count;
-      }
+  // Show success message
+  button.textContent = "✓ Posted!";
+  button.disabled = true;
+  setTimeout(function () {
+    button.textContent = "Submit Thought";
+    button.disabled = false;
+  }, 2000);
+}
+
+function displayReflections() {
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughts") || "[]");
+  var reflectionWalls = document.querySelectorAll(".reflection-box-wall");
+
+  reflectionWalls.forEach(function (wall) {
+    if (storedThoughts.length === 0) {
+      wall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    } else {
+      var thoughtsHTML = '';
+      storedThoughts.forEach(function (thought) {
+        thoughtsHTML +=
+          '<div class="reflection-thought-chip">' +
+          '<div class="thought-user">' + thought.userName + '</div>' +
+          '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
+          '</div>';
+      });
+      wall.innerHTML = thoughtsHTML;
     }
   });
+}
+
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, function (m) { return map[m]; });
+}
+
+// Initialize reflection wall on page load
+displayReflections();
+
+// Add character counter for textarea
+document.addEventListener("input", function (e) {
+  if (e.target.classList.contains("reflection-box-textarea")) {
+    var count = e.target.value.length;
+    var counter = e.target.parentElement.parentElement.querySelector(".char-count-number");
+    if (counter) {
+      counter.textContent = count;
+    }
+  }
+});
 
 // ===== AUDIO PLAYER SETUP =====
 function setupAudioPlayer(audioElement) {
