@@ -56,7 +56,7 @@ var topics = [
     color: "#A8B7B5",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%202-RzW37tOpY0pxkfvm40mAKuRz3iR6iM.jpeg",
     description:
-      "A limestone mountain where geology, history, and myth converge. Mt. Pamitinan in Rodriguez, Rizal, is more than a hiking destination—it's a living classroom where nature and nationhood intertwine.",
+      "Uncover the geological features of Mt. Pamitinan while tracing its historical and cultural significance. Myths and revolutionary stories intertwine here, giving the mountain its enduring identity.",
     intro: {
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aigeneger-wFkp9CoRVCkypZD8xljCX0WeVtZJ0C.png",
       caption: "Figure 1: An AI generated image illustrating protected areas and Landscapes in Luzon",
