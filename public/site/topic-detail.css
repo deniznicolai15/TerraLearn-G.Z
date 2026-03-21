@@ -4784,210 +4784,183 @@ body.topic-5 .detail-figure {
   }
 }
 
-/* ===== ALPINE FLORA SECTIONS (TOPIC 3) ===== */
+/* ===== ALPINE FLORA SECTIONS (TOPIC 3) - FIGMA DESIGN ===== */
 
 /* Featured Plants Section */
-.featured-plants-section {
+.alpine-featured-plants-section {
   padding: 60px 40px;
-  background: linear-gradient(135deg, rgba(124, 185, 168, 0.05) 0%, rgba(142, 176, 154, 0.05) 100%);
-  border-radius: 12px;
+  background: #f9fafb;
   margin: 40px 0;
 }
 
-.featured-plants-title {
+.alpine-featured-title {
   font-size: 32px;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 40px;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #7CB9A8;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 8px;
+  text-align: left;
 }
 
-.featured-plants-grid {
+.alpine-plants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
 }
 
-.featured-plant-card {
+.alpine-plant-card {
   background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-left: 4px solid #7CB9A8;
 }
 
-.featured-plant-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(124, 185, 168, 0.15);
+.alpine-plant-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.plant-card-header {
-  margin-bottom: 16px;
-  border-bottom: 2px solid #7CB9A8;
-  padding-bottom: 12px;
+.alpine-plant-image-placeholder {
+  width: 100%;
+  height: 240px;
+  background: #e8f0ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
 }
 
-.plant-card-name {
-  font-size: 18px;
-  font-weight: 700;
+.alpine-plant-image-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.alpine-plant-info {
+  padding: 24px;
+}
+
+.alpine-plant-name {
+  font-size: 16px;
+  font-weight: 600;
   color: #2c3e50;
-  margin: 0 0 4px 0;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
 }
 
-.plant-card-scientific {
+.alpine-plant-scientific {
   font-size: 14px;
-  font-style: italic;
   color: #666;
-  margin: 0;
-}
-
-.plant-card-details {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.plant-card-family,
-.plant-card-stations {
   margin: 8px 0;
-  color: #444;
+  font-style: italic;
 }
 
-.plant-card-family strong,
-.plant-card-stations strong {
-  color: #7CB9A8;
-}
-
-.plant-card-description {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-  color: #555;
+.alpine-plant-family,
+.alpine-plant-stations {
   font-size: 13px;
+  color: #555;
+  margin: 8px 0;
   line-height: 1.5;
 }
 
-/* Plant Catalog Section */
-.plant-catalog-section {
+.alpine-plant-description {
+  font-size: 13px;
+  color: #666;
+  margin: 12px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Complete Plant Catalog Section */
+.alpine-catalog-section {
   padding: 60px 40px;
   margin: 40px 0;
   background: white;
-  border-radius: 12px;
-  border: 1px solid #eee;
 }
 
-.catalog-section-title {
+.alpine-catalog-title {
   font-size: 32px;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 30px;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #7CB9A8;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 8px;
+  margin-bottom: 40px;
+  text-align: left;
 }
 
-.catalog-controls {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.plant-search-input {
-  width: 100%;
-  max-width: 500px;
-  padding: 12px 16px;
-  font-size: 14px;
-  border: 2px solid #7CB9A8;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.plant-search-input:focus {
-  outline: none;
-  border-color: #5fa08e;
-  box-shadow: 0 0 0 3px rgba(124, 185, 168, 0.1);
-}
-
-.plant-catalog-table {
+.alpine-catalog-table-wrapper {
   overflow-x: auto;
   border-radius: 8px;
   border: 1px solid #ddd;
 }
 
-#plant-catalog-table {
+.alpine-catalog-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
 }
 
-#plant-catalog-table thead {
-  background: linear-gradient(135deg, #7CB9A8 0%, #6a9b8f 100%);
+.alpine-catalog-table thead {
+  background: #7CB9A8;
   color: white;
 }
 
-#plant-catalog-table th {
-  padding: 16px;
+.alpine-catalog-table th {
+  padding: 16px 12px;
   text-align: left;
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
+  border-bottom: 2px solid #6a9b8f;
 }
 
-#plant-catalog-table td {
-  padding: 14px 16px;
+.alpine-catalog-table td {
+  padding: 14px 12px;
   border-bottom: 1px solid #eee;
   font-size: 13px;
   color: #555;
 }
 
-#plant-catalog-table tbody tr:hover {
-  background-color: rgba(124, 185, 168, 0.08);
+.alpine-catalog-table tbody tr:hover {
+  background-color: rgba(124, 185, 168, 0.05);
 }
 
-#plant-catalog-table tbody tr:nth-child(even) {
+.alpine-catalog-table tbody tr:nth-child(even) {
   background-color: rgba(124, 185, 168, 0.02);
 }
 
-#plant-catalog-table em {
+.alpine-catalog-table em {
   font-style: italic;
   color: #7CB9A8;
 }
 
 /* Responsive Design for Alpine Flora */
+@media (max-width: 1024px) {
+  .alpine-plants-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
-  .featured-plants-section {
+  .alpine-featured-plants-section,
+  .alpine-catalog-section {
     padding: 40px 20px;
   }
 
-  .featured-plants-grid {
+  .alpine-plants-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 
-  .featured-plants-title,
-  .catalog-section-title {
+  .alpine-featured-title,
+  .alpine-catalog-title {
     font-size: 24px;
+    margin-bottom: 30px;
   }
 
-  .plant-catalog-section {
-    padding: 40px 20px;
-  }
-
-  #plant-catalog-table th,
-  #plant-catalog-table td {
-    padding: 12px 8px;
+  .alpine-catalog-table th,
+  .alpine-catalog-table td {
+    padding: 10px 8px;
     font-size: 12px;
   }
 
-  .plant-search-input {
-    font-size: 13px;
-    padding: 10px 12px;
+  .alpine-plant-info {
+    padding: 16px;
   }
 }

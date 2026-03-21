@@ -1020,32 +1020,47 @@ function initializePage() {
 
   // ===== TOPIC 3: Alpine Mountain Flora =====
   if (topicData.id === 3) {
-    // Create Featured Plants section
+    // Create Featured Plants section with images
     var featuredPlantsSection = document.createElement("div");
-    featuredPlantsSection.className = "featured-plants-section";
-    featuredPlantsSection.innerHTML =
-      '<h2 class="featured-plants-title">Featured Alpine Plants</h2>' +
-      '<div class="featured-plants-grid">';
+    featuredPlantsSection.className = "alpine-featured-plants-section";
+    featuredPlantsSection.innerHTML = '<h2 class="alpine-featured-title">Featured Plants with Images</h2>';
 
-    // Add featured plants from topic data
-    if (topicData.featuredPlants && topicData.featuredPlants.length > 0) {
-      topicData.featuredPlants.forEach(function (plant) {
-        featuredPlantsSection.innerHTML +=
-          '<div class="featured-plant-card">' +
-          '<div class="plant-card-header">' +
-          '<h3 class="plant-card-name">' + plant.name + '</h3>' +
-          '<p class="plant-card-scientific">' + plant.scientificName + '</p>' +
-          '</div>' +
-          '<div class="plant-card-details">' +
-          '<p class="plant-card-family"><strong>Family:</strong> ' + plant.family + '</p>' +
-          '<p class="plant-card-stations"><strong>Stations:</strong> ' + plant.stations + '</p>' +
-          '<p class="plant-card-description">' + plant.description + '</p>' +
-          '</div>' +
-          '</div>';
-      });
-    }
+    // 12 featured plants from Figma design
+    var alpinePlants = [
+      { name: "Alpine Edelweiss", scientific: "Leontopodium alpinum", family: "Asteraceae", stations: "Station 1, Station 3", description: "A famous alpine flower known for its star-shaped, woolly white flowers. Symbol of mountain resilience and purity." },
+      { name: "Alpine Gentian", scientific: "Gentiana alpina", family: "Gentianaceae", stations: "Station 2, Station 4", description: "Stunning deep blue trumpet-shaped flowers that are among the most beautiful alpine blooms." },
+      { name: "Alpine Rose", scientific: "Rhododendron ferrugineum", family: "Ericaceae", stations: "Station 1, Station 5", description: "A compact evergreen shrub with clusters of pink to red flowers, creating spectacular displays on mountain slopes." },
+      { name: "Mountain Arnica", scientific: "Arnica montana", family: "Asteraceae", stations: "Station 3, Station 6", description: "A medicinal plant with bright yellow daisy-like flowers, traditionally used for healing bruises and inflammation." },
+      { name: "Alpine Poppy", scientific: "Papaver alpinum", family: "Papaveraceae", stations: "Station 2, Station 7", description: "Delicate white, yellow, or orange flowers that brave harsh alpine conditions with their papery petals." },
+      { name: "Alpine Primrose", scientific: "Primula auricula", family: "Primulaceae", stations: "Station 4, Station 8", description: "An early blooming mountain flower with fragrant yellow flowers and distinctive fleshy leaves dusted with white powder." },
+      { name: "Mountain Saxifrage", scientific: "Saxifraga oppositifolia", family: "Saxifragaceae", stations: "Station 1, Station 6", description: "Purple-pink flowers that form dense cushions on rocky surfaces, one of the earliest alpine bloomers." },
+      { name: "Alpine Cinquefoil", scientific: "Potentilla crantzii", family: "Rosaceae", stations: "Station 3, Station 5", description: "Bright yellow five-petaled flowers growing on alpine meadows and rocky slopes." },
+      { name: "Mountain Avens", scientific: "Dryas octopetala", family: "Rosaceae", stations: "Station 2, Station 9", description: "White eight-petaled flowers with yellow centers, found in arctic-alpine regions." },
+      { name: "Alpine Forget-me-not", scientific: "Myosotis alpestris", family: "Boraginaceae", stations: "Station 4, Station 7", description: "Small bright blue flowers with yellow centers, symbolizing true love and remembrance." },
+      { name: "Alpine Campion", scientific: "Silene acaulis", family: "Caryophyllaceae", stations: "Station 5, Station 8", description: "Pink cushion-forming flowers that create dense mats on rocky alpine terrain." },
+      { name: "Mountain Buttercup", scientific: "Ranunculus montanus", family: "Ranunculaceae", stations: "Station 6, Station 9", description: "Glossy yellow cup-shaped flowers that thrive in alpine meadows and grasslands." }
+    ];
 
-    featuredPlantsSection.innerHTML += '</div>';
+    // Build featured plants grid with image placeholders
+    var plantsGridHTML = '<div class="alpine-plants-grid">';
+    alpinePlants.forEach(function (plant) {
+      plantsGridHTML +=
+        '<div class="alpine-plant-card">' +
+        '<div class="alpine-plant-image-placeholder">' +
+        '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#e8f0ed"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#7CB9A8">Portrait Image Template</text><text x="50%" y="60%" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#a0b8b3">Upload plant photo here</text></svg>' +
+        '</div>' +
+        '<div class="alpine-plant-info">' +
+        '<h4 class="alpine-plant-name">Common Name: <strong>' + plant.name + '</strong></h4>' +
+        '<p class="alpine-plant-scientific">Scientific Name: <em>' + plant.scientific + '</em></p>' +
+        '<p class="alpine-plant-family">Family Name: <strong>' + plant.family + '</strong></p>' +
+        '<p class="alpine-plant-stations">Stations: ' + plant.stations + '</p>' +
+        '<p class="alpine-plant-description">Description: ' + plant.description + '</p>' +
+        '</div>' +
+        '</div>';
+    });
+    plantsGridHTML += '</div>';
+
+    featuredPlantsSection.innerHTML += plantsGridHTML;
 
     // Insert after video section
     var videoSection3 = document.querySelector('.video-section');
@@ -1055,26 +1070,25 @@ function initializePage() {
       sectionsContainer.insertBefore(featuredPlantsSection, sectionsContainer.firstChild);
     }
 
-    // Create Plant Catalog Table section
+    // Create Complete Plant Catalog section
     var catalogSection = document.createElement("div");
-    catalogSection.className = "plant-catalog-section";
+    catalogSection.className = "alpine-catalog-section";
     catalogSection.innerHTML =
-      '<h2 class="catalog-section-title">Complete Plant Catalog</h2>' +
-      '<div class="catalog-controls">' +
-      '<input type="text" id="plant-search" class="plant-search-input" placeholder="Search plants by name or family..." />' +
-      '</div>' +
-      '<div class="plant-catalog-table">' +
-      '<table id="plant-catalog-table">' +
+      '<h2 class="alpine-catalog-title">Complete Plant Catalog</h2>' +
+      '<div class="alpine-catalog-table-wrapper">' +
+      '<table class="alpine-catalog-table">' +
       '<thead>' +
       '<tr>' +
       '<th>Common Name</th>' +
       '<th>Scientific Name</th>' +
-      '<th>Family</th>' +
-      '<th>Altitude Range (m)</th>' +
+      '<th>Family Name</th>' +
+      '<th>Count</th>' +
+      '<th>Stations</th>' +
       '<th>Description</th>' +
+      '<th>Use</th>' +
       '</tr>' +
       '</thead>' +
-      '<tbody id="plant-table-body">' +
+      '<tbody id="alpine-catalog-body">' +
       '</tbody>' +
       '</table>' +
       '</div>';
@@ -1086,48 +1100,21 @@ function initializePage() {
       sectionsContainer.appendChild(catalogSection);
     }
 
-    // Populate plant catalog table
-    var tableBody = document.getElementById("plant-table-body");
-    if (tableBody && topicData.featuredPlants) {
-      topicData.featuredPlants.forEach(function (plant) {
+    // Populate catalog table with Figma data
+    var catalogBody = document.getElementById("alpine-catalog-body");
+    if (catalogBody) {
+      alpinePlants.forEach(function (plant, index) {
         var row = document.createElement("tr");
         row.innerHTML =
           '<td>' + plant.name + '</td>' +
-          '<td><em>' + plant.scientificName + '</em></td>' +
+          '<td><em>' + plant.scientific + '</em></td>' +
           '<td>' + plant.family + '</td>' +
+          '<td>' + (index + 1) + '</td>' +
           '<td>' + plant.stations + '</td>' +
-          '<td>' + plant.description + '</td>';
-        tableBody.appendChild(row);
+          '<td>' + plant.description + '</td>' +
+          '<td>Ornamental / Medicinal</td>';
+        catalogBody.appendChild(row);
       });
-    }
-
-    // Add search functionality
-    var searchInput = document.getElementById("plant-search");
-    if (searchInput) {
-      searchInput.addEventListener("keyup", function () {
-        var searchTerm = this.value.toLowerCase();
-        var rows = tableBody.querySelectorAll("tr");
-        rows.forEach(function (row) {
-          var text = row.textContent.toLowerCase();
-          row.style.display = text.includes(searchTerm) ? "" : "none";
-        });
-      });
-    }
-
-    // Add Why It Matters section
-    var whyItMattersSection3 = document.createElement("div");
-    whyItMattersSection3.className = "why-it-matters-section-standalone";
-    whyItMattersSection3.innerHTML =
-      '<h2 class="why-it-matters-section-title">Why Alpine Flora Matters</h2>' +
-      '<div class="why-it-matters-content-wrapper">' +
-      '<p class="why-it-matters-text">Alpine plants are nature\'s engineers of resilience. Adapted to survive in extreme conditions—thin air, intense UV radiation, sudden temperature changes, and limited soil—these plants represent the frontier of life on mountains. By studying alpine flora, we learn how ecosystems adapt to climate challenges and discover that the survival strategies of mountain plants can inform our own approaches to environmental sustainability.</p>' +
-      '</div>';
-
-    // Insert after Catalog section
-    if (catalogSection.parentNode) {
-      catalogSection.parentNode.insertBefore(whyItMattersSection3, catalogSection.nextSibling);
-    } else {
-      sectionsContainer.appendChild(whyItMattersSection3);
     }
 
     // Add reflection box for Topic 3
@@ -1157,9 +1144,9 @@ function initializePage() {
       '</div>' +
       '</div>';
 
-    // Insert after Why It Matters section
-    if (whyItMattersSection3.parentNode) {
-      whyItMattersSection3.parentNode.insertBefore(reflectionBox3, whyItMattersSection3.nextSibling);
+    // Insert after Catalog section
+    if (catalogSection.parentNode) {
+      catalogSection.parentNode.insertBefore(reflectionBox3, catalogSection.nextSibling);
     } else {
       sectionsContainer.appendChild(reflectionBox3);
     }
