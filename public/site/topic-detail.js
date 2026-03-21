@@ -1026,18 +1026,19 @@ function initializePage() {
       { name: "Philippine Oak", scientific: "Quercus philippinensis", family: "Fagaceae", stations: "Station 3, Station 7", description: "Deciduous tree important to highland forest ecosystems. Provides acorns for wildlife and serves as a crucial structural element in the mountain forest canopy." }
     ];
 
-    // Build featured plants grid with real images (3 per section layout)
+    // Build featured plants grid with real images (5,5,4 section layout for 14 plants)
     var plantsGridHTML = '';
-    var itemsPerSection = 3;
+    var sectionSizes = [5, 5, 4];  // 5 per section for first two, 4 for last
+    var currentIndex = 0;
     
-    for (var section = 0; section < Math.ceil(alpinePlants.length / itemsPerSection); section++) {
+    for (var section = 0; section < sectionSizes.length; section++) {
       plantsGridHTML += '<div class="alpine-plants-grid">';
+      var itemsInThisSection = sectionSizes[section];
       
-      for (var i = 0; i < itemsPerSection; i++) {
-        var plantIndex = section * itemsPerSection + i;
-        if (plantIndex >= alpinePlants.length) break;
+      for (var i = 0; i < itemsInThisSection; i++) {
+        if (currentIndex >= alpinePlants.length) break;
         
-        var plant = alpinePlants[plantIndex];
+        var plant = alpinePlants[currentIndex];
         var imageHTML = plant.image ? 
           '<img src="' + plant.image + '" alt="' + plant.name + '" class="alpine-plant-actual-image" />' :
           '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#e8f0ed"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#7CB9A8">No image</text></svg>';
@@ -1055,6 +1056,8 @@ function initializePage() {
           '<p class="alpine-plant-description">Description: ' + plant.description + '</p>' +
           '</div>' +
           '</div>';
+        
+        currentIndex++;
       }
       
       plantsGridHTML += '</div>';
@@ -1084,8 +1087,6 @@ function initializePage() {
       '<th>Family Name</th>' +
       '<th>Count</th>' +
       '<th>Stations</th>' +
-      '<th>Description</th>' +
-      '<th>Use</th>' +
       '</tr>' +
       '</thead>' +
       '<tbody id="alpine-catalog-body">' +
@@ -1110,9 +1111,7 @@ function initializePage() {
           '<td><em>' + plant.scientific + '</em></td>' +
           '<td>' + plant.family + '</td>' +
           '<td>' + (index + 1) + '</td>' +
-          '<td>' + plant.stations + '</td>' +
-          '<td>' + plant.description + '</td>' +
-          '<td>Ornamental / Medicinal</td>';
+          '<td>' + plant.stations + '</td>';
         catalogBody.appendChild(row);
       });
     }
@@ -1425,45 +1424,47 @@ function initializePage() {
   document.getElementById("detail-detail1").textContent = topicData.detail1;
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
-  // Create gallery - use topic gallery if available, otherwise use default images
-  var galleryImages = [];
+  // Create gallery - skip for Topic 3 (Alpine Flora)
+  if (topicData.id !== 3) {
+    var galleryImages = [];
 
-  if (topicData.gallery && topicData.gallery.length > 0) {
-    // Use gallery from topic data
-    topicData.gallery.forEach(function (item) {
-      galleryImages.push(item.image);
-    });
-  } else {
-    // Default gallery images (Mt. Pamitinan)
-    galleryImages = [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7087.PNG-6K0l4UhRzwHIMHq41OX0jemra2zjPg.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7089.PNG-PAwUvvNckrLYJ7Ko40gWSwnG502o7j.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7092.PNG-CLFpcNspQ7BV2icaw6GSbRRXRVpyGn.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7088.PNG-NFq4fwNtOmFjLtrH77c6EV1ZPk66Da.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7093.PNG-rulFPZAvZFJ01s27AHHjsa4Ys5xcEB.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7090.PNG-Npy6PLe7NqLONJZu2odsCv1K126XGJ.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7091.PNG-leWjnQWbzjiVKkrHJFX9iyG1vHQe5c.jpeg"
-    ];
-  }
+    if (topicData.gallery && topicData.gallery.length > 0) {
+      // Use gallery from topic data
+      topicData.gallery.forEach(function (item) {
+        galleryImages.push(item.image);
+      });
+    } else {
+      // Default gallery images (Mt. Pamitinan)
+      galleryImages = [
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7087.PNG-6K0l4UhRzwHIMHq41OX0jemra2zjPg.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7089.PNG-PAwUvvNckrLYJ7Ko40gWSwnG502o7j.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7092.PNG-CLFpcNspQ7BV2icaw6GSbRRXRVpyGn.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7088.PNG-NFq4fwNtOmFjLtrH77c6EV1ZPk66Da.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7093.PNG-rulFPZAvZFJ01s27AHHjsa4Ys5xcEB.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7090.PNG-Npy6PLe7NqLONJZu2odsCv1K126XGJ.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7091.PNG-leWjnQWbzjiVKkrHJFX9iyG1vHQe5c.jpeg"
+      ];
+    }
 
-  var galleryGrid = document.getElementById("gallery-grid");
-  for (var i = 0; i < galleryImages.length; i++) {
-    var item = document.createElement("div");
-    item.className = "gallery-item";
-    var img = document.createElement("img");
-    img.src = galleryImages[i];
-    img.alt = topicData.name + ' gallery image ' + (i + 1);
-    // Hide gallery item if image fails to load
-    img.onerror = function () {
-      this.parentElement.style.display = 'none';
-    };
-    item.appendChild(img);
-    item.addEventListener("click", function (e) {
-      if (e.target.tagName === 'IMG') {
-        openLightbox(e.target.src);
-      }
-    });
-    galleryGrid.appendChild(item);
+    var galleryGrid = document.getElementById("gallery-grid");
+    for (var i = 0; i < galleryImages.length; i++) {
+      var item = document.createElement("div");
+      item.className = "gallery-item";
+      var img = document.createElement("img");
+      img.src = galleryImages[i];
+      img.alt = topicData.name + ' gallery image ' + (i + 1);
+      // Hide gallery item if image fails to load
+      img.onerror = function () {
+        this.parentElement.style.display = 'none';
+      };
+      item.appendChild(img);
+      item.addEventListener("click", function (e) {
+        if (e.target.tagName === 'IMG') {
+          openLightbox(e.target.src);
+        }
+      });
+      galleryGrid.appendChild(item);
+    }
   }
 
   // Initialize quiz

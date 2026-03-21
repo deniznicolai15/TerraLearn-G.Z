@@ -4817,9 +4817,14 @@ body.topic-5 .detail-figure {
 
 .alpine-plants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 32px;
   margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.alpine-featured-plants-section .alpine-plants-grid:last-child {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .alpine-plant-card {
