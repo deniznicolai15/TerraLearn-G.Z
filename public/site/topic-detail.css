@@ -97,14 +97,14 @@ p, li, span, div {
   border-radius: 3px;
 }
 
-  /* ===== DETAIL GRID (LEFT: CONTENT + FIGURE | RIGHT: GALLERY) ===== */
+  /* ===== DETAIL GRID (FULL WIDTH) ===== */
   .detail-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr;
   gap: 60px;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 80px 60px;
+  padding: 80px 80px;
   align-items: start;
   }
 
@@ -139,11 +139,14 @@ p, li, span, div {
   max-width: 280px;
   }
 
-.detail-main {
+  .detail-main {
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  }
 
 /* ===== DETAIL SECTIONS ===== */
 .detail-section {
@@ -1307,11 +1310,7 @@ body.topic-5 .detail-section h3 {
 
 /* ===== GALLERY SIDEBAR ===== */
 .detail-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  position: sticky;
-  top: 120px;
+  display: none;
 }
 
 .gallery-title {
