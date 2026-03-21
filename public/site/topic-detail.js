@@ -889,125 +889,36 @@ function initializePage() {
 
     // Add reflection box after Why It Matters section
     var reflectionBox = document.createElement("div");
-    reflectionBox.className = "forest-reflection-box";
+    reflectionBox.className = "reflection-box-container";
     reflectionBox.innerHTML =
-      '<div class="reflection-badge">Share Your Voice</div>' +
-      '<h3>Quicky Lang!</h3>' +
-      '<p>Why do you think communities create sabi‑sabi (like Bernardo Carpio causing earthquakes)? How do these stories help people understand natural events?</p>' +
-      '<div class="reflection-input-wrapper">' +
-      '<textarea id="topic2-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
-      '<div class="char-counter"><span id="topic2-char-count">0</span>/250</div>' +
+      '<div class="reflection-box-inner">' +
+      '<div class="reflection-box-header">' +
+      '<span class="reflection-box-badge">Quicky lang! Mt. Pamitinan is a fusion of nature, history, and myth—what does this place teach us about how Filipinos relate to their environment?</span>' +
+      '<h3 class="reflection-box-title">What did you learn?</h3>' +
       '</div>' +
-      '<div class="reflection-buttons">' +
-      '<button class="btn btn-primary btn-submit" id="topic2-reflection-submit">' +
-      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-      '<line x1="22" y1="2" x2="11" y2="13"></line>' +
-      '<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>' +
-      '</svg>' +
-      'Submit Anonymously' +
-      '</button>' +
-      '<button class="btn btn-secondary" id="topic2-reflection-clear">Clear</button>' +
+      '<div class="reflection-box-input-section">' +
+      '<textarea class="reflection-box-textarea" id="reflection-textarea-topic2" placeholder="Share your reflection or thoughts about Mt. Pamitinan..." maxlength="250"></textarea>' +
+      '<div class="reflection-box-footer">' +
+      '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
+      '<div class="reflection-box-buttons">' +
+      '<button class="reflection-box-submit-btn" onclick="submitReflectionTopic2()">Submit Thought</button>' +
+      '<button class="reflection-box-view-btn" onclick="toggleCommunityThoughtsTopic2()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts</button>' +
       '</div>' +
-      '<p class="reflection-saved-msg" id="topic2-reflection-saved-msg"></p>';
+      '</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="reflection-box-wall" id="reflection-wall-topic2" style="display: none;">' +
+      '<div class="reflection-wall-header"><h4>Community Thoughts</h4><span class="thought-count">0 thoughts shared</span></div>' +
+      '<div class="reflection-wall-grid" id="reflection-wall-grid-topic2">' +
+      '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+      '</div>' +
+      '</div>';
 
     // Insert after Why It Matters section
     if (whyItMattersSection.parentNode) {
-      whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
+    whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
     } else {
       sectionsContainer.appendChild(reflectionBox);
-    }
-
-    // Create reflection wall display
-    var reflectionWallDiv = document.createElement("div");
-    reflectionWallDiv.className = "reflection-box-wall";
-    reflectionWallDiv.id = "reflection-wall-topic2";
-    reflectionWallDiv.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
-
-    if (reflectionBox.parentNode) {
-      reflectionBox.parentNode.insertBefore(reflectionWallDiv, reflectionBox.nextSibling);
-    }
-
-    // Add event listeners for Topic 2 reflection box
-    var topic2ReflectionInput = document.getElementById("topic2-reflection-input");
-    var topic2SubmitBtn = document.getElementById("topic2-reflection-submit");
-    var topic2ClearBtn = document.getElementById("topic2-reflection-clear");
-    var topic2SavedMsg = document.getElementById("topic2-reflection-saved-msg");
-    var topic2CharCount = document.getElementById("topic2-char-count");
-    var topic2ReflectionWall = document.getElementById("reflection-wall-topic2");
-
-    // Initialize community thoughts for Topic 2
-    var topic2Thoughts = JSON.parse(localStorage.getItem("topic2-thoughts")) || [];
-
-    // Function to display reflections in the wall
-    function displayTopic2Reflections() {
-      if (!topic2ReflectionWall) return;
-
-      if (topic2Thoughts.length === 0) {
-        topic2ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
-      } else {
-        var thoughtsHTML = '';
-        topic2Thoughts.forEach(function (thought) {
-          thoughtsHTML +=
-            '<div class="reflection-thought-chip">' +
-            '<p class="reflection-thought-text">' + thought.content + '</p>' +
-            '</div>';
-        });
-        topic2ReflectionWall.innerHTML = thoughtsHTML;
-      }
-    }
-
-    // Display initial reflections
-    displayTopic2Reflections();
-
-    // Character counter
-    if (topic2ReflectionInput && topic2CharCount) {
-      topic2ReflectionInput.addEventListener("input", function () {
-        topic2CharCount.textContent = topic2ReflectionInput.value.length;
-      });
-    }
-
-    // Submit button
-    if (topic2SubmitBtn) {
-      topic2SubmitBtn.addEventListener("click", function () {
-        if (topic2ReflectionInput && topic2ReflectionInput.value.trim()) {
-          var newThought = {
-            id: Date.now(),
-            content: topic2ReflectionInput.value.trim(),
-            timestamp: Date.now()
-          };
-
-          topic2Thoughts.push(newThought);
-          localStorage.setItem("topic2-thoughts", JSON.stringify(topic2Thoughts));
-
-          // Update wall display
-          displayTopic2Reflections();
-
-          topic2SavedMsg.textContent = "Your thought has been shared anonymously!";
-          topic2SavedMsg.className = "reflection-saved-msg success";
-          topic2ReflectionInput.value = "";
-          topic2CharCount.textContent = "0";
-          setTimeout(function () {
-            topic2SavedMsg.className = "reflection-saved-msg";
-          }, 4000);
-        } else {
-          topic2SavedMsg.textContent = "Please write something before submitting!";
-          topic2SavedMsg.className = "reflection-saved-msg error";
-          setTimeout(function () {
-            topic2SavedMsg.className = "reflection-saved-msg";
-          }, 3000);
-        }
-      });
-    }
-
-    // Clear button
-    if (topic2ClearBtn) {
-      topic2ClearBtn.addEventListener("click", function () {
-        if (topic2ReflectionInput) {
-          topic2ReflectionInput.value = "";
-          if (topic2CharCount) topic2CharCount.textContent = "0";
-          topic2SavedMsg.className = "reflection-saved-msg";
-        }
-      });
     }
 
     // Add Quiz Section after reflection wall
@@ -1035,9 +946,9 @@ function initializePage() {
       '</div>' +
       '</div>';
 
-    // Insert after reflection wall
-    if (reflectionWallDiv.parentNode) {
-      reflectionWallDiv.parentNode.insertBefore(quizGameBox, reflectionWallDiv.nextSibling);
+    // Insert after reflection box
+    if (reflectionBox.parentNode) {
+      reflectionBox.parentNode.insertBefore(quizGameBox, reflectionBox.nextSibling);
     } else {
       sectionsContainer.appendChild(quizGameBox);
     }
@@ -1916,6 +1827,91 @@ function displayReflectionsTopic1() {
   }
 }
 
+// Topic 2 specific reflection functionality
+function submitReflectionTopic2() {
+  var textarea = document.getElementById("reflection-textarea-topic2");
+  var thought = textarea.value.trim();
+
+  if (!thought) {
+    alert("Please write a thought before submitting.");
+    return;
+  }
+
+  // Generate anonymous user name
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic2") || "[]");
+  var userNumber = storedThoughts.length + 1;
+  var userName = "Anonymous #" + userNumber;
+
+  // Create thought object
+  var thoughtObject = {
+    text: thought,
+    userName: userName,
+    timestamp: new Date().toISOString()
+  };
+
+  // Save to localStorage
+  storedThoughts.push(thoughtObject);
+  localStorage.setItem("reflectionThoughtsTopic2", JSON.stringify(storedThoughts));
+
+  // Clear textarea
+  textarea.value = "";
+  var counter = document.querySelector("#reflection-textarea-topic2").parentElement.parentElement.querySelector(".char-count-number");
+  if (counter) counter.textContent = "0";
+
+  // Update reflection wall display
+  displayReflectionsTopic2();
+
+  // Show success message
+  var submitBtn = document.querySelector("#reflection-wall-topic2").previousElementSibling.querySelector(".reflection-box-submit-btn");
+  submitBtn.innerHTML = "Shared!";
+  submitBtn.disabled = true;
+  setTimeout(function () {
+    submitBtn.innerHTML = "Submit Thought";
+    submitBtn.disabled = false;
+  }, 2000);
+}
+
+function toggleCommunityThoughtsTopic2() {
+  var wall = document.getElementById("reflection-wall-topic2");
+  var viewBtn = wall.previousElementSibling.querySelector(".reflection-box-view-btn");
+  
+  if (wall.style.display === "none" || wall.style.display === "") {
+    wall.style.display = "block";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
+    displayReflectionsTopic2();
+  } else {
+    wall.style.display = "none";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts';
+  }
+}
+
+function displayReflectionsTopic2() {
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic2") || "[]");
+  var wallGrid = document.getElementById("reflection-wall-grid-topic2");
+  var thoughtCount = document.querySelector("#reflection-wall-topic2 .thought-count");
+
+  if (thoughtCount) {
+    thoughtCount.textContent = storedThoughts.length + " thought" + (storedThoughts.length !== 1 ? "s" : "") + " shared";
+  }
+
+  if (wallGrid) {
+    if (storedThoughts.length === 0) {
+      wallGrid.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    } else {
+      var thoughtsHTML = '';
+      // Show most recent first
+      storedThoughts.slice().reverse().forEach(function (thought) {
+        thoughtsHTML +=
+          '<div class="reflection-thought-chip">' +
+          '<div class="thought-user">' + thought.userName + '</div>' +
+          '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
+          '</div>';
+      });
+      wallGrid.innerHTML = thoughtsHTML;
+    }
+  }
+}
+
 // Generic reflection function for other topics
 function submitReflection(button) {
   var container = button.closest(".reflection-box-inner");
@@ -1991,8 +1987,11 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, function (m) { return map[m]; });
 }
 
-// Initialize reflection wall on page load
+// Initialize reflection walls on page load
 displayReflections();
+if (topicData.id === 2) {
+  displayReflectionsTopic2();
+}
 
 // Add character counter for textarea
 document.addEventListener("input", function (e) {
