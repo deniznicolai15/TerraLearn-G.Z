@@ -1026,9 +1026,9 @@ function initializePage() {
       { name: "Philippine Oak", scientific: "Quercus philippinensis", family: "Fagaceae", stations: "Station 3, Station 7", description: "Deciduous tree important to highland forest ecosystems. Provides acorns for wildlife and serves as a crucial structural element in the mountain forest canopy." }
     ];
 
-    // Build featured plants grid with real images (5,5,4 section layout for 14 plants)
+    // Build featured plants grid with real images (5 boxes per section)
     var plantsGridHTML = '';
-    var sectionSizes = [5, 5, 4];  // 5 per section for first two, 4 for last
+    var sectionSizes = [5, 5, 4];  // 5 per section for all sections
     var currentIndex = 0;
     
     for (var section = 0; section < sectionSizes.length; section++) {
