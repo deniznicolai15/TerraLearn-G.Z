@@ -1101,16 +1101,116 @@ function initializePage() {
       sectionsContainer.appendChild(catalogSection);
     }
 
-    // Populate catalog table with Figma data
+    // Complete Plant Catalog Data (100 plants from PDF)
+    var completePlantCatalog = [
+      { name: "Alagaw", scientific: "Premna odorata", family: "Lamiaceae", count: 1, stations: "5-6" },
+      { name: "Alibangbang", scientific: "Bauhinia malabarica", family: "Fabaceae", count: 19, stations: "0-6" },
+      { name: "Amlong", scientific: "Epipremnum pinnatum", family: "Araceae", count: 6, stations: "1-2" },
+      { name: "Anabiong", scientific: "Treama orientalis", family: "Cannabaceae", count: 1, stations: "5-6" },
+      { name: "Anahaw", scientific: "Saribus rotundifolius", family: "Arecaceae", count: 26, stations: "2-3, 5-6, 6-7" },
+      { name: "Anonas", scientific: "Annona reticulata", family: "Annonaceae", count: 1, stations: "2-3" },
+      { name: "Antipolo", scientific: "Artocarpus blancoi", family: "Moraceae", count: 6, stations: "0-1, 2-3, 4-5, 7-8" },
+      { name: "Atis", scientific: "Annona squamosa", family: "Annonaceae", count: 2, stations: "0-1" },
+      { name: "Avocado", scientific: "Persea americana", family: "Lauraceae", count: 13, stations: "0-5" },
+      { name: "Balete", scientific: "Ficus benjamina", family: "Moraceae", count: 18, stations: "2-4" },
+      { name: "Bamban", scientific: "Donax canniformis", family: "Marantaceae", count: 1, stations: "7-8" },
+      { name: "Banaba", scientific: "Lagerstroemia speciosa", family: "Lythraceae", count: 4, stations: "5-6" },
+      { name: "Banana", scientific: "Musa Sp.", family: "Musaceae", count: 74, stations: "1-2, 4-5, 5-6, 6-7" },
+      { name: "Baston de Sajose", scientific: "Cordyline fruticosa", family: "Asparagaceae", count: 44, stations: "0-1, 5-6, 6-7" },
+      { name: "Bayabas", scientific: "Psidium guajava", family: "Myrtaceae", count: 7, stations: "5-6" },
+      { name: "Bayag Usa", scientific: "Voacanga globosa", family: "Apocynaceae", count: 2, stations: "2-3" },
+      { name: "Bayog", scientific: "Bambusa merrilliana", family: "Poaceae", count: 29, stations: "1-3, 4-7" },
+      { name: "Big Leaf Mahogany", scientific: "Swietenia macrophylla", family: "Meliaceae", count: 101, stations: "1-8" },
+      { name: "Bigonia", scientific: "Bigonia Sp.", family: "Begoniaceae", count: 3, stations: "3-4" },
+      { name: "Binunga", scientific: "Macaranga tanarius", family: "Euphorbiaceae", count: 6, stations: "0-1, 2-3, 5-6" },
+      { name: "Bitonghol", scientific: "Flacourtia rukam", family: "Salicaceae", count: 1, stations: "7-8" },
+      { name: "Bogus", scientific: "Acalypha amentacea", family: "Euphorbiaceae", count: 75, stations: "0-5" },
+      { name: "Botong", scientific: "Gigantochloa levis", family: "Poaceae", count: 21, stations: "5-6, 7-8" },
+      { name: "Bowstring", scientific: "Dracaena trifasciata", family: "Asparagaceae", count: 40, stations: "5-6" },
+      { name: "Buho", scientific: "Schizostachyum lumampao", family: "Poaceae", count: 43, stations: "0-2, 7-8" },
+      { name: "Bukawe", scientific: "Cyrtochloa toppingii", family: "Poaceae", count: 8, stations: "2-3" },
+      { name: "Bunga", scientific: "Areca catechu", family: "Arecaceae", count: 5, stations: "0-1" },
+      { name: "Butong", scientific: "Gigantochloa levis", family: "Poaceae", count: 18, stations: "1-2, 5-6" },
+      { name: "Cabalero", scientific: "Caesalpinia pulcherrima", family: "Fabaceae", count: 1, stations: "2-3" },
+      { name: "Cacao", scientific: "Theobroma cacao", family: "Malvaceae", count: 9, stations: "0-1, 4-7" },
+      { name: "Cainito", scientific: "Chrysophyllum cainito", family: "Sapotaceae", count: 45, stations: "0-8" },
+      { name: "Chesa", scientific: "Pouteria campechiana", family: "Sapotaceae", count: 1, stations: "0-1" },
+      { name: "Chiko", scientific: "Manilkara zapota", family: "Sapotaceae", count: 1, stations: "1-2" },
+      { name: "Chinese Burr", scientific: "Triumfetta rhomboidea", family: "Malvaceae", count: 19, stations: "0-1" },
+      { name: "Coconut", scientific: "Cocos nucifera", family: "Arecaceae", count: 5, stations: "5-8" },
+      { name: "Coffee", scientific: "Coffea arabica", family: "Rubiaceae", count: 5, stations: "7-8" },
+      { name: "Colombian Flag", scientific: "Sanchezia speciosa", family: "Acanthaceae", count: 18, stations: "0-1, 4-5" },
+      { name: "Corn", scientific: "Zea Mays", family: "Poaceae", count: 50, stations: "6-7" },
+      { name: "Croton", scientific: "Codiaeum variegatum", family: "Euphorbiaceae", count: 51, stations: "0-1, 3-4, 6-8" },
+      { name: "Cupang", scientific: "Parkia timoriana", family: "Fabaceae", count: 1, stations: "7-8" },
+      { name: "Datiles", scientific: "Muntingia calabura", family: "Muntingiaceae", count: 2, stations: "4-5" },
+      { name: "Durian", scientific: "Durio zibethinus", family: "Malvaceae", count: 1, stations: "4-5" },
+      { name: "Fortune Plant", scientific: "Dracaena fragrans", family: "Asparagaceae", count: 81, stations: "0-1, 2-8" },
+      { name: "Gabi", scientific: "Colocasia esculenta", family: "Araceae", count: 28, stations: "0-2, 3-4, 6-7" },
+      { name: "Guyabano", scientific: "Annona muricata", family: "Annonaceae", count: 13, stations: "0-6" },
+      { name: "Hagimit", scientific: "Ficus minahassae", family: "Moraceae", count: 3, stations: "2-3, 5-6, 7-8" },
+      { name: "Hauli", scientific: "Ficus Septica", family: "Moraceae", count: 41, stations: "0-5" },
+      { name: "Himbabao", scientific: "Allaeanthus luzonicus", family: "Moraceae", count: 1, stations: "2-3" },
+      { name: "Ikmo", scientific: "Piper betle", family: "Piperaceae", count: 15, stations: "1-2" },
+      { name: "Indian Lanutan", scientific: "Monoon longifolium", family: "Annonaceae", count: 1, stations: "3-4" },
+      { name: "Insulin Plant", scientific: "Chamaecostus cuspidatus", family: "Costaceae", count: 23, stations: "0-3, 6-7" },
+      { name: "Ipil-ipil", scientific: "Leucaena leucocephala", family: "Fabaceae", count: 24, stations: "1-8" },
+      { name: "Is-is", scientific: "Ficus variegata", family: "Moraceae", count: 1, stations: "5-6" },
+      { name: "Jade Vine", scientific: "Strongylodon macrobotrys", family: "Fabaceae", count: 1, stations: "2-3" },
+      { name: "Kabkab", scientific: "Drynaria quercifolia", family: "Polypodiaceae", count: 2, stations: "0-2" },
+      { name: "Kai-kai", scientific: "Adiantum philippense", family: "Pteridaceae", count: 12, stations: "2-3, 4-5" },
+      { name: "Kakaaute", scientific: "Gliricidia sepium", family: "Faboideae", count: 3, stations: "2-3" },
+      { name: "Kamagong", scientific: "Diospyros blancoi", family: "Ebenaceae", count: 10, stations: "0-1, 3-4, 5-6, 7-8" },
+      { name: "Kamay Kastila", scientific: "Syngonium podophyllum", family: "Araceae", count: 104, stations: "2-3, 4-6, 7-8" },
+      { name: "Kamyas", scientific: "Averrhoa bilimbi", family: "Oxalidaceae", count: 1, stations: "7-8" },
+      { name: "Kawayang Kiling", scientific: "Bambusa vulgaris", family: "Poaceae", count: 6, stations: "5-6" },
+      { name: "Lipang Kalabau", scientific: "Dendrocnide meyeniana", family: "Urticaceae", count: 1, stations: "3-4" },
+      { name: "Makaasim", scientific: "Syzygium nitidum", family: "Myrtaceae", count: 1, stations: "3-4" },
+      { name: "Malabulak", scientific: "Bombax ceiba", family: "Malvaceae", count: 4, stations: "0-1, 2-3" },
+      { name: "Manggo", scientific: "Mangifera indica", family: "Anacardiaceae", count: 19, stations: "0-1, 3-4, 5-6, 6-7" },
+      { name: "Manila Palm", scientific: "Adonidia merrillii", family: "Arecaceae", count: 1, stations: "4-5" },
+      { name: "Mayana", scientific: "Coleus scutellarioides", family: "Lamiaceae", count: 3, stations: "0-1" },
+      { name: "Molave", scientific: "Vitex parviflora", family: "Verbenaceae", count: 1, stations: "3-4" },
+      { name: "Mulberry", scientific: "Morus alba", family: "Moraceae", count: 3, stations: "5-6" },
+      { name: "Nangka", scientific: "Artocarpus heterophyllus", family: "Moraceae", count: 10, stations: "0-1, 3-4, 5-7" },
+      { name: "Neem Tree", scientific: "Azadirachta indica", family: "Meliaceae", count: 5, stations: "2-3" },
+      { name: "Niog-Niogan", scientific: "Ficus pseudopalma", family: "Moraceae", count: 5, stations: "0-1, 4-6" },
+      { name: "Pakiling", scientific: "Ficus odorata", family: "Moraceae", count: 10, stations: "4-6" },
+      { name: "Palmera", scientific: "Dypsis lutescens", family: "Arecaceae", count: 1, stations: "5-6" },
+      { name: "Palosanto", scientific: "Triplaris cumingiana", family: "Burseraceae", count: 7, stations: "0-1, 4-5" },
+      { name: "Pandan Banguhan", scientific: "Pandanus amaryllifolius", family: "Pandanaceae", count: 18, stations: "5-6" },
+      { name: "Papaya", scientific: "Carica papaya", family: "Caricaceae", count: 3, stations: "1-2, 4-6" },
+      { name: "Prickly Narra", scientific: "Pterocarpus indicus forma echinatus", family: "Fabaceae", count: 3, stations: "0-1, 5-6" },
+      { name: "Pugahan", scientific: "Caryota mitis", family: "Arecaceae", count: 7, stations: "1-3" },
+      { name: "Rain Tree", scientific: "Samanea saman", family: "Fabaceae", count: 5, stations: "2-4, 7-8" },
+      { name: "Rambutan", scientific: "Nephelium lappaceum", family: "Sapindaceae", count: 3, stations: "7-8" },
+      { name: "Rimas", scientific: "Artocarpus altilis", family: "Moraceae", count: 2, stations: "0-1, 2-3" },
+      { name: "Royal Palm", scientific: "Roystonea regia", family: "Arecaceae", count: 1, stations: "4-5" },
+      { name: "Santol", scientific: "Sandoricum koetjape", family: "Meliaceae", count: 13, stations: "0-2, 3-5, 7-8" },
+      { name: "Small Leaf Mahogany", scientific: "Swietenia mahogani", family: "Meliaceae", count: 38, stations: "0-1, 5-6" },
+      { name: "Smooth Narra", scientific: "Pterocarpus indicus forma indicus", family: "Fabaceae", count: 26, stations: "0-1, 5-6, 7-8" },
+      { name: "Spider Lily", scientific: "Hymenocallis littoralis", family: "Asparagales", count: 2, stations: "6-7" },
+      { name: "Suha", scientific: "Citrus maxima", family: "Rutaceae", count: 15, stations: "3-7" },
+      { name: "Talisay", scientific: "Terminalia catappa", family: "Combretaceae", count: 1, stations: "2-3" },
+      { name: "Tamarind", scientific: "Tamarindus indica", family: "Fabaceae", count: 6, stations: "0-1, 2-3" },
+      { name: "Tangisang Bayawak", scientific: "Ficus variegata", family: "Moraceae", count: 1, stations: "7-8" },
+      { name: "Tibig", scientific: "Ficus nota", family: "Moraceae", count: 5, stations: "2-5" },
+      { name: "Vidals Lanutan", scientific: "Hibiscus campylosiphon", family: "Malvaceae", count: 1, stations: "4-5" },
+      { name: "Wild Dracaena", scientific: "Dracaena multiflora", family: "Asparagaceae", count: 17, stations: "0-1, 2-3, 4-5" },
+      { name: "Wild Hops", scientific: "Flemingia strobilifera", family: "Fabaceae", count: 5, stations: "1-3" },
+      { name: "Yautia", scientific: "Xanthosoma sagittifolium", family: "Araceae", count: 4, stations: "5-6" }
+    ];
+
+    // Populate catalog table with complete PDF data
     var catalogBody = document.getElementById("alpine-catalog-body");
     if (catalogBody) {
-      alpinePlants.forEach(function (plant, index) {
+      completePlantCatalog.forEach(function (plant) {
         var row = document.createElement("tr");
         row.innerHTML =
           '<td>' + plant.name + '</td>' +
           '<td><em>' + plant.scientific + '</em></td>' +
           '<td>' + plant.family + '</td>' +
-          '<td>' + (index + 1) + '</td>' +
+          '<td>' + plant.count + '</td>' +
           '<td>' + plant.stations + '</td>';
         catalogBody.appendChild(row);
       });
