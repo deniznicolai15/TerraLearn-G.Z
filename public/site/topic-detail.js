@@ -926,7 +926,8 @@ function initializePage() {
     quizGameBox.className = "forest-game-box";
     quizGameBox.id = "start-quiz-trigger-topic2";
     quizGameBox.innerHTML =
-      '<div class="game-box-content" style="cursor: pointer;">' +
+      '<a href="games/topic2-quiz.html" class="game-box-link">' +
+      '<div class="game-box-content">' +
       '<div class="game-box-icon">' +
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
       '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
@@ -944,7 +945,8 @@ function initializePage() {
       '<polyline points="12 5 19 12 12 19"></polyline>' +
       '</svg>' +
       '</div>' +
-      '</div>';
+      '</div>' +
+      '</a>';
 
     // Insert after reflection box
     if (reflectionBox.parentNode) {
@@ -952,11 +954,6 @@ function initializePage() {
     } else {
       sectionsContainer.appendChild(quizGameBox);
     }
-
-    // Add click handler to navigate to quiz page
-    quizGameBox.addEventListener("click", function () {
-      window.location.href = "games/topic2-quiz.html";
-    });
   }
 
   // ===== TOPIC 3/5: Tree Planting - Seeds of Equality =====
