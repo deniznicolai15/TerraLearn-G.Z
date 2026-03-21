@@ -481,24 +481,7 @@ function initializePage() {
     sectionsContainer.parentNode.insertBefore(videoContainer, sectionsContainer);
   }
 
-  // Add Topic 3 Human Impact Section at the top
-  if (topicData.id === 3) {
-    var introSection = document.getElementById("intro-section");
-    var humanImpactSection = document.createElement("div");
-    humanImpactSection.className = "topic3-human-impact-section";
-    humanImpactSection.innerHTML =
-      '<div class="topic3-human-impact-container">' +
-      '<p class="topic3-human-impact-quote">For every action, there is an equal and opposite reaction</p>' +
-      '<div class="topic3-human-impact-divider"></div>' +
-      '<p class="topic3-human-impact-body">Human activity has a profound impact on the environment, capable of causing deforestation, pollution, and biodiversity loss, yet also holding the power to drive renewal. Just as the law of interaction teaches that every action has an equal and opposite reaction, our movements in nature bring consequences that return to us. When forests are destroyed, ecosystems collapse; but when communities plant trees, clean rivers, and practice sustainable tourism, the environment responds with restored biodiversity, cleaner air, and resilience. In the Pamitinan Protected Landscape, these collective efforts show how human actions, when guided by responsibility, can reshape nature positively — ensuring that the reactions we set in motion today secure forests and rivers for generations to come.</p>' +
-      '<p class="topic3-human-impact-body">These are some of the activities done in the Pamitinan communities to conserve the Pamitinan Protected Landscape. They show how human impact can be reshaped into positive conservation efforts, securing forests and rivers for generations to come.</p>' +
-      '</div>';
 
-    // Insert before the intro section
-    if (introSection) {
-      introSection.parentNode.insertBefore(humanImpactSection, introSection);
-    }
-  }
 
   // Populate sections
   var sectionsContainer = document.getElementById("detail-sections-container");
@@ -1025,40 +1008,57 @@ function initializePage() {
     featuredPlantsSection.className = "alpine-featured-plants-section";
     featuredPlantsSection.innerHTML = '<h2 class="alpine-featured-title">Featured Plants Captured in Mt. Pamitinan</h2>';
 
-    // 12 featured plants from Figma design
+    // 14 featured plants with real images
     var alpinePlants = [
-      { name: "Papaya", scientific: "Carica papaya", family: "Caricaceae", stations: "Station 1, Station 3", description: "A fast-growing, short-lived tree with a hollow, soft trunk and large palmate leaves divided into 5–9 lobes. The leaves are borne on long petioles and radiate from the crown, giving the plant a distinctive tropical appearance. Papaya produces clusters of small flowers and bears large, fleshy fruits" },
-      { name: "Balete ", scientific: "Ficus benjamina", family: "Moraceae", stations: "Station 2, Station 4", description: "Balete is a large fig tree characterized by its glossy green leaves and extensive aerial roots that descend from branches to the ground, creating a complex network of trunks and supports. It thrives in humid, tropical forests and is often found along riverbanks and forest edges. The tree can grow very tall and wide, forming dense canopies that provide shade." },
-      { name: "Bukawé", scientific: "Schizostachyum lima (Blanco) Merr", family: "Poaceae", stations: "Station 1, Station 5", description: "A native bamboo species found in Philippine forests. It grows in clumps with tall, slender culms and narrow leaves. The culms are hollow, segmented, and flexible, making them suitable for weaving and construction. Bukawé thrives in humid, tropical environments and is often found along slopes and riverbanks." },
-      { name: "Gabi", scientific: "Colocasia esculenta", family: "Araceae", stations: "Station 3, Station 6", description: "A tropical plant with large, heart-shaped leaves borne on long petioles. The leaves are broad, with a prominent central vein and radiating lateral veins, giving them a symmetrical appearance. It thrives in moist soils and shaded areas, often near streams or damp forest floors." },
-      { name: "(no widely recognized local name recorded)", scientific: "Sterculia rugibinosa", family: "Malvaceae (formerly Sterculiaceae)", stations: "Station 2, Station 7", description: "A small tree that grows in specialized forest habitats. It reaches about 1.5 meters tall with a slender trunk. The leaves are obovate and leathery, while the flowers are yellowish-green with purple spots. Fruits are capsules containing winged seeds." },
-      { name: "Bigonia (Begonia)", scientific: "Begonia spp", family: "Begoniaceae", stations: "Station 4, Station 8", description: "A herbaceous plant often found in shaded, moist, rocky habitats. It has fleshy stems and rounded to asymmetrical leaves with distinct venation. In early growth stages, the leaves appear broad and simple, thriving even in narrow crevices of rocks. Mature plants produce small, colorful flowers and thrive in humid forest understories." },
-      { name: "Bracket fungus / Lingzhi (Reishi)", scientific: "Ganoderma spp", family: "Polyporaceae", stations: "Station 1, Station 6", description: "A large, woody, shelf like mushroom with a broad brown cap and pale margin. It grows horizontally from tree bases, stumps, or compacted soil in forested areas. The underside contains pores instead of gills, releasing spores into the air." },
-      { name: "Saging (Banana)", scientific: "Musa spp", family: "Musaceae", stations: "Station 3, Station 5", description: ": A fast growing herbaceous plant with large, elongated green leaves that grow in spirals from a central pseudostem. It thrives in tropical forests and disturbed areas, often forming clumps. The plant produces hanging clusters of fruits (bananas) after flowering, then dies back while new shoots emerge from the base." },
-      { name: "Coral Ardisia", scientific: "Ardisia crenata", family: "Primulaceae", stations: "Station 2, Station 9", description: "A small evergreen shrub with glossy, dark green leaves and upright stalks bearing compact clusters of bright red berries. The fruits persist for long periods, making them highly visible against the foliage. It thrives in shaded forest understories and rocky, humid environments." },
-      { name: "Pheasant’s Tail Fern / Pakpak lawin", scientific: "Asplenium nidus", family: "Aspleniaceae ", stations: "Station 4, Station 7", description: ": A large epiphytic fern with long, feather like fronds that radiate from a central rosette. The fronds are glossy green with a prominent midrib, resembling the tail feathers of a pheasant. It thrives in humid tropical forests, often growing on tree trunks or forest floors." },
-      { name: "Sambong", scientific: "Blumea balsamifera", family: "Asteraceae", stations: "Station 5, Station 8", description: "A perennial shrub with aromatic, hairy leaves and small white to yellowish flower clusters. It grows in open fields, forest edges, and disturbed areas." },
-      { name: "Siam Weed", scientific: "Chromolaena odorata", family: "Asteraceae", stations: "Station 6, Station 9", description: "A fast growing invasive shrub with triangular leaves and clusters of small white to pale purple flowers. It thrives in disturbed soils and spreads rapidly along trails and forest edges." }
+      { name: "Papaya", scientific: "Carica papaya", family: "Caricaceae", stations: "Station 1, Station 3", description: "A fast-growing, short-lived tree with a hollow, soft trunk and large palmate leaves divided into 5–9 lobes. Papaya produces clusters of small flowers and bears large, fleshy fruits.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/papaya-T97n0RXhT8fSyiWepozbe8TWr8vN8O.png" },
+      { name: "Saging (Banana)", scientific: "Musa spp", family: "Musaceae", stations: "Station 3, Station 5", description: "A fast growing herbaceous plant with large, elongated green leaves that grow in spirals from a central pseudostem. The plant produces hanging clusters of fruits after flowering.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saging-JGNE6ZWSFR3Om0E3DGKuWv8z8KHVtr.png" },
+      { name: "Gabi", scientific: "Colocasia esculenta", family: "Araceae", stations: "Station 3, Station 6", description: "A tropical plant with large, heart-shaped leaves borne on long petioles. The leaves are broad, with a prominent central vein and radiating lateral veins. It thrives in moist soils and shaded areas.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gabi-O6enVATQSC6KPZVFcCg4VxKLApNi7A.png" },
+      { name: "Bracket Fungus / Lingzhi", scientific: "Ganoderma spp", family: "Polyporaceae", stations: "Station 1, Station 6", description: "A large, woody, shelf-like mushroom with a broad brown cap and pale margin. It grows horizontally from tree bases and stumps in forested areas. The underside contains pores instead of gills.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bracket%20fungus-OjGXzGbjfGr3UYCuLi7OhwJqIAWn6t.png" },
+      { name: "Sterculia rugibinosa", scientific: "Sterculia rugibinosa", family: "Malvaceae", stations: "Station 2, Station 7", description: "A small tree that grows in specialized forest habitats. It reaches about 1.5 meters tall with a slender trunk. The leaves are obovate and leathery, while the flowers are yellowish-green with purple spots.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/no%20widely%20recognized%20local%20name%20recordedd-0JdI32wlFmHVfrud90qkiDCcfQRpXp.png" },
+      { name: "Coral Ardisia", scientific: "Ardisia crenata", family: "Primulaceae", stations: "Station 2, Station 9", description: "A small evergreen shrub with glossy, dark green leaves and upright stalks bearing compact clusters of bright red berries. It thrives in shaded forest understories and rocky, humid environments.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coral%20ardisia-VGOc7NgouQmfLOCpMJ1PeejkN01KFA.png" },
+      { name: "Bukawé", scientific: "Schizostachyum lima (Blanco) Merr", family: "Poaceae", stations: "Station 1, Station 5", description: "A native bamboo species found in Philippine forests. It grows in clumps with tall, slender culms and narrow leaves. The culms are hollow, segmented, and flexible, making them suitable for weaving.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bukawe-cMNdP1Di9WboFdirXKJt8js9NyWXIq.png" },
+      { name: "Sambong", scientific: "Blumea balsamifera", family: "Asteraceae", stations: "Station 5, Station 8", description: "A perennial shrub with aromatic, hairy leaves and small white to yellowish flower clusters. It grows in open fields, forest edges, and disturbed areas throughout the Philippines.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sambong-Q8n1on3wTsknWDYF34R7NNR6txSt0u.png" },
+      { name: "Siam Weed", scientific: "Chromolaena odorata", family: "Asteraceae", stations: "Station 6, Station 9", description: "A fast growing invasive shrub with triangular leaves and clusters of small white to pale purple flowers. It thrives in disturbed soils and spreads rapidly along trails and forest edges.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siam%20weed-8bBbYsCqceF2KzbL7SrkS7xbMmr2ku.png" },
+      { name: "Mt. Pamitinan Forest", scientific: "Mixed species ecosystem", family: "Various", stations: "Panoramic view", description: "The lush, dense forest ecosystem of Mt. Pamitinan showcasing the rich biodiversity and complex interactions of multiple plant species thriving in its protected landscape.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mt%20pamitinan-KUL0i6a2QEYdQVoLAjBOw0wUbHNQX0.jpg" },
+      { name: "Balete", scientific: "Ficus benjamina", family: "Moraceae", stations: "Station 2, Station 4", description: "A large fig tree characterized by its glossy green leaves and extensive aerial roots that descend from branches to the ground, creating a complex network of trunks and supports." },
+      { name: "Mountain Laurel", scientific: "Rhododendron lyi", family: "Ericaceae", stations: "Station 2, Station 5", description: "Shrub with vibrant flowers found in alpine meadows and cloud forests. Important for alpine biodiversity and often serves as a food source for mountain birds and insects." },
+      { name: "Cloud Forest Fern", scientific: "Polystichum retrosopaleaceum", family: "Dryopteridaceae", stations: "Station 1, Station 4", description: "Fern species abundant in misty mountain regions. Thrives in humid conditions and grows on forest floors and tree trunks, contributing to the rich understory vegetation." },
+      { name: "Philippine Oak", scientific: "Quercus philippinensis", family: "Fagaceae", stations: "Station 3, Station 7", description: "Deciduous tree important to highland forest ecosystems. Provides acorns for wildlife and serves as a crucial structural element in the mountain forest canopy." }
     ];
 
-    // Build featured plants grid with image placeholders
-    var plantsGridHTML = '<div class="alpine-plants-grid">';
-    alpinePlants.forEach(function (plant) {
-      plantsGridHTML +=
-        '<div class="alpine-plant-card">' +
-        '<div class="alpine-plant-image-placeholder">' +
-        '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#e8f0ed"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#7CB9A8">Portrait Image Template</text><text x="50%" y="60%" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#a0b8b3">Upload plant photo here</text></svg>' +
-        '</div>' +
-        '<div class="alpine-plant-info">' +
-        '<h4 class="alpine-plant-name">Common Name: <strong>' + plant.name + '</strong></h4>' +
-        '<p class="alpine-plant-scientific">Scientific Name: <em>' + plant.scientific + '</em></p>' +
-        '<p class="alpine-plant-family">Family Name: <strong>' + plant.family + '</strong></p>' +
-        '<p class="alpine-plant-stations">Stations: ' + plant.stations + '</p>' +
-        '<p class="alpine-plant-description">Description: ' + plant.description + '</p>' +
-        '</div>' +
-        '</div>';
-    });
-    plantsGridHTML += '</div>';
+    // Build featured plants grid with real images (3 per section layout)
+    var plantsGridHTML = '';
+    var itemsPerSection = 3;
+    
+    for (var section = 0; section < Math.ceil(alpinePlants.length / itemsPerSection); section++) {
+      plantsGridHTML += '<div class="alpine-plants-grid">';
+      
+      for (var i = 0; i < itemsPerSection; i++) {
+        var plantIndex = section * itemsPerSection + i;
+        if (plantIndex >= alpinePlants.length) break;
+        
+        var plant = alpinePlants[plantIndex];
+        var imageHTML = plant.image ? 
+          '<img src="' + plant.image + '" alt="' + plant.name + '" class="alpine-plant-actual-image" />' :
+          '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#e8f0ed"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#7CB9A8">No image</text></svg>';
+        
+        plantsGridHTML +=
+          '<div class="alpine-plant-card">' +
+          '<div class="alpine-plant-image-placeholder">' +
+          imageHTML +
+          '</div>' +
+          '<div class="alpine-plant-info">' +
+          '<h4 class="alpine-plant-name">Common Name: <strong>' + plant.name + '</strong></h4>' +
+          '<p class="alpine-plant-scientific">Scientific Name: <em>' + plant.scientific + '</em></p>' +
+          '<p class="alpine-plant-family">Family Name: <strong>' + plant.family + '</strong></p>' +
+          '<p class="alpine-plant-stations">Stations: ' + plant.stations + '</p>' +
+          '<p class="alpine-plant-description">Description: ' + plant.description + '</p>' +
+          '</div>' +
+          '</div>';
+      }
+      
+      plantsGridHTML += '</div>';
+    }
 
     featuredPlantsSection.innerHTML += plantsGridHTML;
 

@@ -4852,6 +4852,13 @@ body.topic-5 .detail-figure {
   height: 100%;
 }
 
+.alpine-plant-actual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .alpine-plant-info {
   padding: 24px;
 }
