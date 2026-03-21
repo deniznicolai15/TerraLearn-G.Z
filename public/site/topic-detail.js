@@ -124,6 +124,64 @@ var topicsData = [
       { name: "Alpine Thistle", scientificName: "Cirsium", family: "Asteraceae", stations: "2000-2700m", description: "Purple flowers dotting the alpine landscape." },
       { name: "Mountain Lupine", scientificName: "Lupinus covillei", family: "Fabaceae", stations: "1900-2600m", description: "Nitrogen-fixing plant important for soil health in highlands." }
     ]
+  },
+  {
+    id: 4,
+    label: "TOPIC 04",
+    name: "Wild Side: Tayo o Sila?",
+    color: "#7A9E8C",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic4-88GM4Y6ZCHWMBrNhlUF428cJE0GZzK.jpeg",
+    description: "Encounter the key animal species that inhabit the landscape and discover their importance to the ecosystem. It's a look at the delicate balance between human presence and wildlife survival.",
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
+    ],
+    sections: [
+      { title: "Bird Species", text: "Mt. Pamitinan serves as a habitat for over 30 bird species, including the Philippine Hawk-Eagle, Luzon Hornbill, and various species of kingfishers. Birdwatching is best during the early morning hours when most species are active and foraging." },
+      { title: "Reptiles & Amphibians", text: "The mountain's streams and forest floor are home to various lizard species, snakes, and frogs. The Philippine Sailfin Lizard, a species unique to the Philippines, can occasionally be spotted near the river systems at the base of the mountain." },
+      { title: "Insects & Invertebrates", text: "The rich insect diversity includes colorful butterflies, beetles, and various species of ants. These invertebrates play crucial roles as pollinators, decomposers, and food sources for larger animals in the ecosystem." },
+      { title: "Mammalian Wildlife", text: "While larger mammals are rare due to habitat fragmentation, the mountain still supports populations of fruit bats, Philippine deer mice, and civets. Nocturnal surveys have revealed a surprisingly rich mammalian community that emerges after dark." }
+    ],
+    location: "Montalban, Rizal",
+    detail1: "30+ species documented",
+    detail2: "Active conservation zone"
+  },
+  {
+    id: 5,
+    label: "TOPIC 05",
+    name: "Save Now or Suffer Later",
+    color: "#4B6B55",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
+    description: "Examine strategies for forest conservation and sustainable development, alongside the human role in shaping and reshaping nature. The focus is on responsibility today to secure forests and rivers for future generations.",
+    intro: {
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg",
+      caption: "Figure 1: Conservation efforts in the Pamitinan Protected Landscape",
+      text: "Human actions shape the environment in powerful ways, reflecting the principle that every action brings a reaction. Deforestation, pollution, and habitat loss weaken ecosystems, while tree planting, river restoration, and sustainable practices foster resilience and renewal.<br><br>In the Pamitinan Protected Landscape, community-led efforts show how responsible stewardship can restore biodiversity and secure forests and rivers for future generations."
+    },
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
+    ],
+    sections: [],
+    location: "Mt. Pamitinan Flora Zones",
+    detail1: "100+ plant species",
+    detail2: "Oxygen production hub"
   }
 ];
 
