@@ -87,6 +87,43 @@ var topicsData = [
     location: "Montalban (Rodriguez), Rizal",
     detail1: "426+ meters MASL",
     detail2: "DENR Protected Landscape",
+  },
+  {
+    id: 3,
+    label: "TOPIC 03",
+    name: "Alpine Mountain Flora: Life at the Peak",
+    color: "#7CB9A8",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-alpine-flora.jpeg",
+    description: "Explore the unique plant species that thrive in high-altitude environments of the Philippine mountains. Discover the remarkable adaptations that allow plants to survive in alpine conditions.",
+    gallery: [
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-1.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-2.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-3.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-4.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-5.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-6.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-7.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-8.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alpine-9.jpg" }
+    ],
+    sections: [],
+    location: "Philippine Mountains",
+    detail1: "300+ species documented",
+    detail2: "High-altitude ecosystem",
+    featuredPlants: [
+      { name: "Moss Pine", scientificName: "Pinus kesiya", family: "Pinaceae", stations: "2100-2800m", description: "Coniferous tree adapted to high-altitude conditions with needle-like leaves." },
+      { name: "Philippine Bush Cherry", scientificName: "Prunus serrulata", family: "Rosaceae", stations: "1800-2400m", description: "Small tree with white flowers, important for mountain biodiversity." },
+      { name: "Mountain Laurel", scientificName: "Rhododendron lyi", family: "Ericaceae", stations: "2000-2700m", description: "Shrub with vibrant flowers found in alpine meadows." },
+      { name: "Dudleya", scientificName: "Dudleya ceespitosa", family: "Crassulaceae", stations: "2200-2900m", description: "Succulent plant adapted to dry alpine conditions." },
+      { name: "Alpine Bistorta", scientificName: "Bistorta japonica", family: "Polygonaceae", stations: "1900-2600m", description: "Herbaceous plant with pink flowers in mountain grasslands." },
+      { name: "Mountain Bamboo", scientificName: "Bambusa oldhamii", family: "Poaceae", stations: "1500-2400m", description: "Bamboo species thriving in cooler mountain elevations." },
+      { name: "Philippine Oak", scientificName: "Quercus philippinensis", family: "Fagaceae", stations: "1800-2500m", description: "Deciduous tree important to highland forest ecosystems." },
+      { name: "Cloud Forest Fern", scientificName: "Polystichum retrosopaleaceum", family: "Dryopteridaceae", stations: "1600-2300m", description: "Fern species abundant in misty mountain regions." },
+      { name: "Moss Heath", scientificName: "Styphelia tameiameiae", family: "Ericaceae", stations: "2100-2800m", description: "Low-growing shrub forming dense mats on alpine slopes." },
+      { name: "Edelweiss", scientificName: "Leontopodium", family: "Asteraceae", stations: "2300-3000m", description: "Iconic alpine flower known for its silvery appearance." },
+      { name: "Alpine Thistle", scientificName: "Cirsium", family: "Asteraceae", stations: "2000-2700m", description: "Purple flowers dotting the alpine landscape." },
+      { name: "Mountain Lupine", scientificName: "Lupinus covillei", family: "Fabaceae", stations: "1900-2600m", description: "Nitrogen-fixing plant important for soil health in highlands." }
+    ]
   }
 ];
 
@@ -228,29 +265,54 @@ var quizzes = {
   ],
   3: [
     {
-      question: "Which mountain range does the Wawa River originate from?",
-      options: ["Cordillera", "Sierra Madre", "Caraballo", "Zambales"],
-      correct: 1,
-    },
-    {
-      question: "What geographic feature does the Wawa River flow through?",
-      options: ["Valley", "Desert", "Limestone gorges", "Swamps"],
+      question: "At what altitude range do most alpine plants in the Philippines thrive?",
+      options: ["Below 1000m", "1000-1500m", "1500m and above", "Only at sea level"],
       correct: 2,
     },
     {
-      question: "What is a riparian zone?",
-      options: ["A desert area", "Vegetation along riverbanks", "An underground cave", "A mountain peak"],
-      correct: 1,
-    },
-    {
-      question: "Which native fish species is found in the Wawa River?",
-      options: ["Salmon", "Ludong", "Tuna", "Catfish"],
-      correct: 1,
-    },
-    {
-      question: "What is the primary environmental threat to the Wawa River?",
-      options: ["Drought only", "Erosion only", "Illegal quarrying and domestic waste", "Plant overgrowth"],
+      question: "Which of the following is a key adaptation of alpine plants to harsh mountain conditions?",
+      options: ["Growing tall and woody", "Deep root systems", "Low-growing, dense growth patterns", "Large leaves"],
       correct: 2,
+    },
+    {
+      question: "What does Moss Pine require to thrive in its natural habitat?",
+      options: ["Tropical lowland climate", "High-altitude conditions above 2100m", "Permanent water coverage", "Volcanic soil"],
+      correct: 1,
+    },
+    {
+      question: "Which plant family includes mountain laurels and moss heath found in Philippine alpine zones?",
+      options: ["Rosaceae", "Ericaceae", "Asteraceae", "Fabaceae"],
+      correct: 1,
+    },
+    {
+      question: "What is the primary ecological importance of nitrogen-fixing alpine plants like Mountain Lupine?",
+      options: ["They provide oxygen", "They enrich soil and support plant growth", "They attract insects", "They produce medicinal compounds"],
+      correct: 1,
+    },
+    {
+      question: "Which feature makes cloud forest ferns abundant in misty mountain regions?",
+      options: ["Their ability to absorb moisture from fog and air", "Their deep root systems", "Their large flower production", "Their resistance to direct sunlight"],
+      correct: 0,
+    },
+    {
+      question: "How do alpine plants survive extreme temperature fluctuations on mountain peaks?",
+      options: ["They migrate seasonally", "They develop thick protective leaves and specialized tissues", "They only grow underground", "They enter permanent dormancy"],
+      correct: 1,
+    },
+    {
+      question: "Which of the following is NOT typical of alpine plant communities?",
+      options: ["Low plant stature", "Dense clustering", "Rapid growth rates", "Adaptation to thin soil"],
+      correct: 2,
+    },
+    {
+      question: "What ecological role do alpine flowers like Edelweiss play in their ecosystem?",
+      options: ["They are purely decorative", "They provide nectar for pollinators and stabilize soil", "They are toxic to animals", "They have no ecological function"],
+      correct: 1,
+    },
+    {
+      question: "Why are Philippine alpine ecosystems considered important for biodiversity conservation?",
+      options: ["They occupy large land areas", "They contain unique endemic species adapted to specific conditions", "They are easily accessible to humans", "They have unlimited natural resources"],
+      correct: 1,
     },
   ],
   4: [
@@ -956,8 +1018,189 @@ function initializePage() {
     }
   }
 
-  // ===== TOPIC 3/5: Tree Planting - Seeds of Equality =====
-  if (topicData.id === 3 || topicData.id === 5) {
+  // ===== TOPIC 3: Alpine Mountain Flora =====
+  if (topicData.id === 3) {
+    // Create Featured Plants section
+    var featuredPlantsSection = document.createElement("div");
+    featuredPlantsSection.className = "featured-plants-section";
+    featuredPlantsSection.innerHTML =
+      '<h2 class="featured-plants-title">Featured Alpine Plants</h2>' +
+      '<div class="featured-plants-grid">';
+
+    // Add featured plants from topic data
+    if (topicData.featuredPlants && topicData.featuredPlants.length > 0) {
+      topicData.featuredPlants.forEach(function (plant) {
+        featuredPlantsSection.innerHTML +=
+          '<div class="featured-plant-card">' +
+          '<div class="plant-card-header">' +
+          '<h3 class="plant-card-name">' + plant.name + '</h3>' +
+          '<p class="plant-card-scientific">' + plant.scientificName + '</p>' +
+          '</div>' +
+          '<div class="plant-card-details">' +
+          '<p class="plant-card-family"><strong>Family:</strong> ' + plant.family + '</p>' +
+          '<p class="plant-card-stations"><strong>Stations:</strong> ' + plant.stations + '</p>' +
+          '<p class="plant-card-description">' + plant.description + '</p>' +
+          '</div>' +
+          '</div>';
+      });
+    }
+
+    featuredPlantsSection.innerHTML += '</div>';
+
+    // Insert after video section
+    var videoSection3 = document.querySelector('.video-section');
+    if (videoSection3) {
+      videoSection3.parentNode.insertBefore(featuredPlantsSection, videoSection3.nextSibling);
+    } else {
+      sectionsContainer.insertBefore(featuredPlantsSection, sectionsContainer.firstChild);
+    }
+
+    // Create Plant Catalog Table section
+    var catalogSection = document.createElement("div");
+    catalogSection.className = "plant-catalog-section";
+    catalogSection.innerHTML =
+      '<h2 class="catalog-section-title">Complete Plant Catalog</h2>' +
+      '<div class="catalog-controls">' +
+      '<input type="text" id="plant-search" class="plant-search-input" placeholder="Search plants by name or family..." />' +
+      '</div>' +
+      '<div class="plant-catalog-table">' +
+      '<table id="plant-catalog-table">' +
+      '<thead>' +
+      '<tr>' +
+      '<th>Common Name</th>' +
+      '<th>Scientific Name</th>' +
+      '<th>Family</th>' +
+      '<th>Altitude Range (m)</th>' +
+      '<th>Description</th>' +
+      '</tr>' +
+      '</thead>' +
+      '<tbody id="plant-table-body">' +
+      '</tbody>' +
+      '</table>' +
+      '</div>';
+
+    // Insert after Featured Plants section
+    if (featuredPlantsSection.parentNode) {
+      featuredPlantsSection.parentNode.insertBefore(catalogSection, featuredPlantsSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(catalogSection);
+    }
+
+    // Populate plant catalog table
+    var tableBody = document.getElementById("plant-table-body");
+    if (tableBody && topicData.featuredPlants) {
+      topicData.featuredPlants.forEach(function (plant) {
+        var row = document.createElement("tr");
+        row.innerHTML =
+          '<td>' + plant.name + '</td>' +
+          '<td><em>' + plant.scientificName + '</em></td>' +
+          '<td>' + plant.family + '</td>' +
+          '<td>' + plant.stations + '</td>' +
+          '<td>' + plant.description + '</td>';
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Add search functionality
+    var searchInput = document.getElementById("plant-search");
+    if (searchInput) {
+      searchInput.addEventListener("keyup", function () {
+        var searchTerm = this.value.toLowerCase();
+        var rows = tableBody.querySelectorAll("tr");
+        rows.forEach(function (row) {
+          var text = row.textContent.toLowerCase();
+          row.style.display = text.includes(searchTerm) ? "" : "none";
+        });
+      });
+    }
+
+    // Add Why It Matters section
+    var whyItMattersSection3 = document.createElement("div");
+    whyItMattersSection3.className = "why-it-matters-section-standalone";
+    whyItMattersSection3.innerHTML =
+      '<h2 class="why-it-matters-section-title">Why Alpine Flora Matters</h2>' +
+      '<div class="why-it-matters-content-wrapper">' +
+      '<p class="why-it-matters-text">Alpine plants are nature\'s engineers of resilience. Adapted to survive in extreme conditions—thin air, intense UV radiation, sudden temperature changes, and limited soil—these plants represent the frontier of life on mountains. By studying alpine flora, we learn how ecosystems adapt to climate challenges and discover that the survival strategies of mountain plants can inform our own approaches to environmental sustainability.</p>' +
+      '</div>';
+
+    // Insert after Catalog section
+    if (catalogSection.parentNode) {
+      catalogSection.parentNode.insertBefore(whyItMattersSection3, catalogSection.nextSibling);
+    } else {
+      sectionsContainer.appendChild(whyItMattersSection3);
+    }
+
+    // Add reflection box for Topic 3
+    var reflectionBox3 = document.createElement("div");
+    reflectionBox3.className = "reflection-box-container";
+    reflectionBox3.innerHTML =
+      '<div class="reflection-box-inner">' +
+      '<div class="reflection-box-header">' +
+      '<span class="reflection-box-badge">Quicky lang! Alpine plants thrive where few can survive—what can their resilience teach us about adaptation and thriving in challenging conditions?</span>' +
+      '<h3 class="reflection-box-title">What inspires you?</h3>' +
+      '</div>' +
+      '<div class="reflection-box-input-section">' +
+      '<textarea class="reflection-box-textarea" id="reflection-textarea-topic3" placeholder="Share your thoughts about alpine plants and adaptation..." maxlength="250"></textarea>' +
+      '<div class="reflection-box-footer">' +
+      '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
+      '<div class="reflection-box-buttons">' +
+      '<button class="reflection-box-submit-btn" onclick="submitReflectionTopic3()">Submit Thought</button>' +
+      '<button class="reflection-box-view-btn" onclick="toggleCommunityThoughtsTopic3()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts</button>' +
+      '</div>' +
+      '</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="reflection-box-wall" id="reflection-wall-topic3" style="display: none;">' +
+      '<div class="reflection-wall-header"><h4>Community Thoughts</h4><span class="thought-count">0 thoughts shared</span></div>' +
+      '<div class="reflection-wall-grid" id="reflection-wall-grid-topic3">' +
+      '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
+      '</div>' +
+      '</div>';
+
+    // Insert after Why It Matters section
+    if (whyItMattersSection3.parentNode) {
+      whyItMattersSection3.parentNode.insertBefore(reflectionBox3, whyItMattersSection3.nextSibling);
+    } else {
+      sectionsContainer.appendChild(reflectionBox3);
+    }
+
+    // Add Quiz Section for Topic 3
+    var quizGameBox3 = document.createElement("div");
+    quizGameBox3.className = "forest-game-box";
+    quizGameBox3.id = "start-quiz-trigger-topic3";
+    quizGameBox3.innerHTML =
+      '<a href="games/topic3-quiz.html" class="game-box-link">' +
+      '<div class="game-box-content">' +
+      '<div class="game-box-icon">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+      '<path d="M2 17l10 5 10-5"></path>' +
+      '<path d="M2 12l10 5 10-5"></path>' +
+      '</svg>' +
+      '</div>' +
+      '<div class="game-box-text">' +
+      '<h3>Test Your Knowledge!</h3>' +
+      '<p>Challenge yourself with this interactive quiz about alpine plants and high-altitude ecosystems. Answer all 10 questions and see your score!</p>' +
+      '</div>' +
+      '<div class="game-box-arrow">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+      '<polyline points="12 5 19 12 12 19"></polyline>' +
+      '</svg>' +
+      '</div>' +
+      '</div>' +
+      '</a>';
+
+    // Insert after reflection box
+    if (reflectionBox3.parentNode) {
+      reflectionBox3.parentNode.insertBefore(quizGameBox3, reflectionBox3.nextSibling);
+    } else {
+      sectionsContainer.appendChild(quizGameBox3);
+    }
+  }
+
+  // ===== TOPIC 5: Tree Planting - Seeds of Equality =====
+  if (topicData.id === 5) {
     // Create a section div for Tree Planting Overview with image
     var greenGoalsSection = document.createElement("div");
     greenGoalsSection.className = "pamitinan-section-standalone";
@@ -973,9 +1216,9 @@ function initializePage() {
       '</div>';
 
     // Insert it right after the video section
-    var videoSection3 = document.querySelector('.video-section');
-    if (videoSection3) {
-      videoSection3.parentNode.insertBefore(greenGoalsSection, videoSection3.nextSibling);
+    var videoSection5 = document.querySelector('.video-section');
+    if (videoSection5) {
+      videoSection5.parentNode.insertBefore(greenGoalsSection, videoSection5.nextSibling);
     } else {
       sectionsContainer.insertBefore(greenGoalsSection, sectionsContainer.firstChild);
     }
@@ -1056,124 +1299,124 @@ function initializePage() {
     }
 
     // Add reflection box after Conclusion section
-    var reflectionBox3 = document.createElement("div");
-    reflectionBox3.className = "forest-reflection-box";
-    reflectionBox3.innerHTML =
+    var reflectionBox5 = document.createElement("div");
+    reflectionBox5.className = "forest-reflection-box";
+    reflectionBox5.innerHTML =
       '<div class="reflection-badge">Share Your Voice</div>' +
       '<h3>Quicky Lang!</h3>' +
       '<p>Reflection: How do your everyday actions — whether in your community, school, or personal life — contribute to shaping and reshaping the environment, and what changes can you make to ensure that future generations inherit a healthier, more sustainable world?</p>' +
       '<div class="reflection-input-wrapper">' +
-      '<textarea id="topic3-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
-      '<div class="char-counter"><span id="topic3-char-count">0</span>/250</div>' +
+      '<textarea id="topic5-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap" maxlength="250"></textarea>' +
+      '<div class="char-counter"><span id="topic5-char-count">0</span>/250</div>' +
       '</div>' +
       '<div class="reflection-buttons">' +
-      '<button class="btn btn-primary btn-submit" id="topic3-reflection-submit">' +
+      '<button class="btn btn-primary btn-submit" id="topic5-reflection-submit">' +
       '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
       '<line x1="22" y1="2" x2="11" y2="13"></line>' +
       '<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>' +
       '</svg>' +
       'Submit Anonymously' +
       '</button>' +
-      '<button class="btn btn-secondary" id="topic3-reflection-clear">Clear</button>' +
+      '<button class="btn btn-secondary" id="topic5-reflection-clear">Clear</button>' +
       '</div>' +
-      '<p class="reflection-saved-msg" id="topic3-reflection-saved-msg"></p>';
+      '<p class="reflection-saved-msg" id="topic5-reflection-saved-msg"></p>';
 
     // Insert after Conclusion section
     if (sustainableSection.parentNode) {
-      sustainableSection.parentNode.insertBefore(reflectionBox3, sustainableSection.nextSibling);
+      sustainableSection.parentNode.insertBefore(reflectionBox5, sustainableSection.nextSibling);
     } else {
-      sectionsContainer.appendChild(reflectionBox3);
+      sectionsContainer.appendChild(reflectionBox5);
     }
 
     // Create reflection wall display
-    var reflectionWallDiv3 = document.createElement("div");
-    reflectionWallDiv3.className = "reflection-box-wall";
-    reflectionWallDiv3.id = "reflection-wall-topic3";
-    reflectionWallDiv3.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    var reflectionWallDiv5 = document.createElement("div");
+    reflectionWallDiv5.className = "reflection-box-wall";
+    reflectionWallDiv5.id = "reflection-wall-topic5";
+    reflectionWallDiv5.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
 
-    if (reflectionBox3.parentNode) {
-      reflectionBox3.parentNode.insertBefore(reflectionWallDiv3, reflectionBox3.nextSibling);
+    if (reflectionBox5.parentNode) {
+      reflectionBox5.parentNode.insertBefore(reflectionWallDiv5, reflectionBox5.nextSibling);
     }
 
-    // Add event listeners for Topic 3 reflection box
-    var topic3ReflectionInput = document.getElementById("topic3-reflection-input");
-    var topic3SubmitBtn = document.getElementById("topic3-reflection-submit");
-    var topic3ClearBtn = document.getElementById("topic3-reflection-clear");
-    var topic3SavedMsg = document.getElementById("topic3-reflection-saved-msg");
-    var topic3CharCount = document.getElementById("topic3-char-count");
-    var topic3ReflectionWall = document.getElementById("reflection-wall-topic3");
+    // Add event listeners for Topic 5 reflection box
+    var topic5ReflectionInput = document.getElementById("topic5-reflection-input");
+    var topic5SubmitBtn = document.getElementById("topic5-reflection-submit");
+    var topic5ClearBtn = document.getElementById("topic5-reflection-clear");
+    var topic5SavedMsg = document.getElementById("topic5-reflection-saved-msg");
+    var topic5CharCount = document.getElementById("topic5-char-count");
+    var topic5ReflectionWall = document.getElementById("reflection-wall-topic5");
 
-    // Initialize community thoughts for Topic 3
-    var topic3Thoughts = JSON.parse(localStorage.getItem("topic3-thoughts")) || [];
+    // Initialize community thoughts for Topic 5
+    var topic5Thoughts = JSON.parse(localStorage.getItem("topic5-thoughts")) || [];
 
     // Function to display reflections in the wall
-    function displayTopic3Reflections() {
-      if (!topic3ReflectionWall) return;
+    function displayTopic5Reflections() {
+      if (!topic5ReflectionWall) return;
 
-      if (topic3Thoughts.length === 0) {
-        topic3ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+      if (topic5Thoughts.length === 0) {
+        topic5ReflectionWall.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
       } else {
         var thoughtsHTML = '';
-        topic3Thoughts.forEach(function (thought) {
+        topic5Thoughts.forEach(function (thought) {
           thoughtsHTML +=
             '<div class="reflection-thought-chip">' +
             '<p class="reflection-thought-text">' + thought.content + '</p>' +
             '</div>';
         });
-        topic3ReflectionWall.innerHTML = thoughtsHTML;
+        topic5ReflectionWall.innerHTML = thoughtsHTML;
       }
     }
 
     // Display initial reflections
-    displayTopic3Reflections();
+    displayTopic5Reflections();
 
     // Character counter
-    if (topic3ReflectionInput && topic3CharCount) {
-      topic3ReflectionInput.addEventListener("input", function () {
-        topic3CharCount.textContent = topic3ReflectionInput.value.length;
+    if (topic5ReflectionInput && topic5CharCount) {
+      topic5ReflectionInput.addEventListener("input", function () {
+        topic5CharCount.textContent = topic5ReflectionInput.value.length;
       });
     }
 
     // Submit button
-    if (topic3SubmitBtn) {
-      topic3SubmitBtn.addEventListener("click", function () {
-        if (topic3ReflectionInput && topic3ReflectionInput.value.trim()) {
+    if (topic5SubmitBtn) {
+      topic5SubmitBtn.addEventListener("click", function () {
+        if (topic5ReflectionInput && topic5ReflectionInput.value.trim()) {
           var newThought = {
             id: Date.now(),
-            content: topic3ReflectionInput.value.trim(),
+            content: topic5ReflectionInput.value.trim(),
             timestamp: Date.now()
           };
 
-          topic3Thoughts.push(newThought);
-          localStorage.setItem("topic3-thoughts", JSON.stringify(topic3Thoughts));
+          topic5Thoughts.push(newThought);
+          localStorage.setItem("topic5-thoughts", JSON.stringify(topic5Thoughts));
 
           // Update wall display
-          displayTopic3Reflections();
+          displayTopic5Reflections();
 
-          topic3SavedMsg.textContent = "Your thought has been shared anonymously!";
-          topic3SavedMsg.className = "reflection-saved-msg success";
-          topic3ReflectionInput.value = "";
-          topic3CharCount.textContent = "0";
+          topic5SavedMsg.textContent = "Your thought has been shared anonymously!";
+          topic5SavedMsg.className = "reflection-saved-msg success";
+          topic5ReflectionInput.value = "";
+          topic5CharCount.textContent = "0";
           setTimeout(function () {
-            topic3SavedMsg.className = "reflection-saved-msg";
+            topic5SavedMsg.className = "reflection-saved-msg";
           }, 4000);
         } else {
-          topic3SavedMsg.textContent = "Please write something before submitting!";
-          topic3SavedMsg.className = "reflection-saved-msg error";
+          topic5SavedMsg.textContent = "Please write something before submitting!";
+          topic5SavedMsg.className = "reflection-saved-msg error";
           setTimeout(function () {
-            topic3SavedMsg.className = "reflection-saved-msg";
+            topic5SavedMsg.className = "reflection-saved-msg";
           }, 3000);
         }
       });
     }
 
     // Clear button
-    if (topic3ClearBtn) {
-      topic3ClearBtn.addEventListener("click", function () {
-        if (topic3ReflectionInput) {
-          topic3ReflectionInput.value = "";
-          if (topic3CharCount) topic3CharCount.textContent = "0";
-          topic3SavedMsg.className = "reflection-saved-msg";
+    if (topic5ClearBtn) {
+      topic5ClearBtn.addEventListener("click", function () {
+        if (topic5ReflectionInput) {
+          topic5ReflectionInput.value = "";
+          if (topic5CharCount) topic5CharCount.textContent = "0";
+          topic5SavedMsg.className = "reflection-saved-msg";
         }
       });
     }
@@ -1909,6 +2152,91 @@ function displayReflectionsTopic2() {
   }
 }
 
+// Topic 3 specific reflection functionality
+function submitReflectionTopic3() {
+  var textarea = document.getElementById("reflection-textarea-topic3");
+  var thought = textarea.value.trim();
+
+  if (!thought) {
+    alert("Please write a thought before submitting.");
+    return;
+  }
+
+  // Generate anonymous user name
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic3") || "[]");
+  var userNumber = storedThoughts.length + 1;
+  var userName = "Anonymous #" + userNumber;
+
+  // Create thought object
+  var thoughtObject = {
+    text: thought,
+    userName: userName,
+    timestamp: new Date().toISOString()
+  };
+
+  // Save to localStorage
+  storedThoughts.push(thoughtObject);
+  localStorage.setItem("reflectionThoughtsTopic3", JSON.stringify(storedThoughts));
+
+  // Clear textarea
+  textarea.value = "";
+  var counter = document.querySelector("#reflection-textarea-topic3").parentElement.parentElement.querySelector(".char-count-number");
+  if (counter) counter.textContent = "0";
+
+  // Update reflection wall display
+  displayReflectionsTopic3();
+
+  // Show success message
+  var submitBtn = document.querySelector("#reflection-wall-topic3").previousElementSibling.querySelector(".reflection-box-submit-btn");
+  submitBtn.innerHTML = "Shared!";
+  submitBtn.disabled = true;
+  setTimeout(function () {
+    submitBtn.innerHTML = "Submit Thought";
+    submitBtn.disabled = false;
+  }, 2000);
+}
+
+function toggleCommunityThoughtsTopic3() {
+  var wall = document.getElementById("reflection-wall-topic3");
+  var viewBtn = wall.previousElementSibling.querySelector(".reflection-box-view-btn");
+  
+  if (wall.style.display === "none" || wall.style.display === "") {
+    wall.style.display = "block";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
+    displayReflectionsTopic3();
+  } else {
+    wall.style.display = "none";
+    viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts';
+  }
+}
+
+function displayReflectionsTopic3() {
+  var storedThoughts = JSON.parse(localStorage.getItem("reflectionThoughtsTopic3") || "[]");
+  var wallGrid = document.getElementById("reflection-wall-grid-topic3");
+  var thoughtCount = document.querySelector("#reflection-wall-topic3 .thought-count");
+
+  if (thoughtCount) {
+    thoughtCount.textContent = storedThoughts.length + " thought" + (storedThoughts.length !== 1 ? "s" : "") + " shared";
+  }
+
+  if (wallGrid) {
+    if (storedThoughts.length === 0) {
+      wallGrid.innerHTML = '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>';
+    } else {
+      var thoughtsHTML = '';
+      // Show most recent first
+      storedThoughts.slice().reverse().forEach(function (thought) {
+        thoughtsHTML +=
+          '<div class="reflection-thought-chip">' +
+          '<div class="thought-user">' + thought.userName + '</div>' +
+          '<div class="thought-text">' + escapeHtml(thought.text) + '</div>' +
+          '</div>';
+      });
+      wallGrid.innerHTML = thoughtsHTML;
+    }
+  }
+}
+
 // Generic reflection function for other topics
 function submitReflection(button) {
   var container = button.closest(".reflection-box-inner");
@@ -1988,6 +2316,9 @@ function escapeHtml(text) {
 displayReflections();
 if (topicData.id === 2) {
   displayReflectionsTopic2();
+}
+if (topicData.id === 3) {
+  displayReflectionsTopic3();
 }
 
 // Add character counter for textarea
