@@ -4961,103 +4961,13 @@ body.topic-5 .detail-figure {
   font-weight: 600;
 }
 
-/* Transect Map Section */
-.transect-map-section {
-  padding: 60px;
-  margin: 50px 0;
-  background: linear-gradient(145deg, rgba(17, 42, 28, 0.98) 0%, rgba(23, 54, 38, 0.97) 40%, rgba(20, 48, 33, 0.98) 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(142, 176, 154, 0.2);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
-  position: relative;
-  overflow: hidden;
+/* Transect Map Section - uses geological features styles */
+.transect-map-standalone {
+  /* Inherits from geological-section-standalone */
 }
 
-.transect-map-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 15% 20%, rgba(142, 176, 154, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(124, 185, 168, 0.03) 0%, transparent 35%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.transect-map-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #8EB09A;
-  margin-bottom: 40px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  font-family: 'Playfair Display', Georgia, serif;
-  letter-spacing: 0.5px;
-}
-
-.transect-map-title::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #8EB09A, transparent);
-  border-radius: 2px;
-}
-
-.transect-map-content {
-  display: flex;
-  flex-direction: row;
-  gap: 48px;
-  margin-top: 40px;
-  align-items: stretch;
-  position: relative;
-  z-index: 1;
-}
-
-.transect-map-image-wrapper {
-  flex: 1;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(142, 176, 154, 0.25);
-  background: rgba(20, 45, 32, 0.6);
-}
-
-.transect-map-image {
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: contain;
-  display: block;
-  background: rgba(248, 250, 249, 0.95);
-}
-
-.transect-map-text-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
-
-.transect-map-description {
-  font-size: 16px;
-  color: rgba(232, 240, 235, 0.92);
-  line-height: 1.9;
-  text-align: justify;
-  padding: 32px 36px;
-  background: linear-gradient(145deg, rgba(35, 70, 50, 0.6) 0%, rgba(28, 58, 42, 0.5) 100%);
-  border-radius: 16px;
-  border-left: 5px solid #8EB09A;
-  backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+.transect-map-standalone .geological-clearer-image {
+  max-width: 750px;
 }
 
 /* Complete Plant Catalog Section */
@@ -5163,36 +5073,23 @@ body.topic-5 .detail-figure {
     max-width: 100%;
   }
   
-  .transect-map-content {
-    flex-direction: column;
-    gap: 32px;
-  }
-  
-  .transect-map-image-wrapper,
-  .transect-map-text-wrapper {
-    flex: 1;
-    width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
   .alpine-featured-plants-section,
-  .alpine-catalog-section,
-  .transect-map-section {
+  .alpine-catalog-section {
     padding: 32px 20px;
     margin: 24px 0;
   }
 
   .alpine-featured-title,
-  .alpine-catalog-title,
-  .transect-map-title {
+  .alpine-catalog-title {
     font-size: 24px;
     margin-bottom: 32px;
   }
 
   .alpine-featured-title::after,
-  .alpine-catalog-title::after,
-  .transect-map-title::after {
+  .alpine-catalog-title::after {
     bottom: -10px;
   }
 

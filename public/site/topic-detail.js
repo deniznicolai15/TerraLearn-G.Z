@@ -1133,19 +1133,22 @@ function initializePage() {
       sectionsContainer.insertBefore(featuredPlantsSection, sectionsContainer.firstChild);
     }
 
-    // Create Transect Map section
+    // Create Transect Map section - matches Geological Features design
     var transectMapSection = document.createElement("div");
-    transectMapSection.className = "transect-map-section";
-transectMapSection.innerHTML =
-  '<h2 class="transect-map-title">Transect Map of PPL</h2>' +
-  '<div class="transect-map-content">' +
-  '<div class="transect-map-image-wrapper">' +
-  '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/map.jfif-3ZEOXju00Axa4G6p1JpSUPgL9yVarL.jpeg" alt="Transect Map of Pamitinan Protected Landscape showing BMS stations and transect routes" class="transect-map-image">' +
-  '</div>' +
-  '<div class="transect-map-text-wrapper">' +
-  '<p class="transect-map-description">The Pamitinan Protected Landscape (PPL) maintains a more comprehensive record of biodiversity through systematic monitoring. Based on the 1st Semester Biodiversity Monitoring System (BMS) conducted last January 28–29, 2026, documented species lists reflect the plants and animals found specifically within designated transect lines. These records highlight the importance of continuous monitoring and conservation, ensuring that the flora and fauna of Mt. Pamitinan are preserved for future generations.</p>' +
-  '</div>' +
-  '</div>';
+    transectMapSection.className = "geological-section-standalone transect-map-standalone";
+    transectMapSection.innerHTML =
+      '<h2 class="geological-section-title">Transect Map of PPL</h2>' +
+      '<div class="geological-content-wrapper">' +
+      '<div class="geological-features-image-container">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/map.jfif-3ZEOXju00Axa4G6p1JpSUPgL9yVarL.jpeg" alt="Transect Map of Pamitinan Protected Landscape showing BMS stations and transect routes" class="geological-clearer-image" />' +
+      '</div>' +
+      '<ul class="geological-features-list">' +
+      '<li><strong>Systematic biodiversity monitoring</strong> through the Biodiversity Monitoring System (BMS) ensures comprehensive documentation of flora and fauna within designated transect lines.</li>' +
+      '<li><strong>1st Semester BMS Report (January 28–29, 2026)</strong> provides updated species lists that reflect the current state of biodiversity within the Pamitinan Protected Landscape.</li>' +
+      '<li><strong>Transect stations</strong> are strategically placed to capture diverse ecosystems, from forest floor to canopy layers, enabling accurate population counts and species identification.</li>' +
+      '<li><strong>Conservation importance</strong> is highlighted through continuous monitoring, ensuring that the rich flora and fauna of Mt. Pamitinan are preserved for future generations.</li>' +
+      '</ul>' +
+      '</div>';
 
     // Insert after Featured Plants section
     if (featuredPlantsSection.parentNode) {
