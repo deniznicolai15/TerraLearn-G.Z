@@ -1084,13 +1084,14 @@ function initializePage() {
       { name: "Gabuyo Malaikmo", scientific: "Ficus nota", family: "Moraceae", stations: "Station 2, Station 5", description: "A tree species found throughout the Philippines. Seeds yield an edible oil. Roots are used for treatment of diarrhea, and leaf sap is used for parasitic infections. Wood is used for construction, furniture, and various tools. Status: Least Concern based on IUCN Red List.", ecosystemImpact: "Multi-purpose tree providing food, medicine, and timber. Fruits support wildlife. Contributes to forest canopy structure and biodiversity.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gabuyo%20malaikmo-MOs72X463Ibg2xTdDn0Zvapnl8dLL0.jpg" }
     ];
 
-    // Build featured plants grid with real images (5 boxes per section)
+    // Build featured plants grid with real images (3x3x3x3x2 format)
     var plantsGridHTML = '';
-    var sectionSizes = [5, 5, 4];  // 5 per section for all sections
+    var sectionSizes = [3, 3, 3, 3, 2];  // 3-3-3-3-2 format for 14 plants
     var currentIndex = 0;
     
     for (var section = 0; section < sectionSizes.length; section++) {
-      plantsGridHTML += '<div class="alpine-plants-grid">';
+      var gridClass = sectionSizes[section] === 2 ? 'alpine-plants-grid alpine-plants-grid-last' : 'alpine-plants-grid';
+      plantsGridHTML += '<div class="' + gridClass + '">';
       var itemsInThisSection = sectionSizes[section];
       
       for (var i = 0; i < itemsInThisSection; i++) {
@@ -1111,7 +1112,7 @@ function initializePage() {
           '<p class="alpine-plant-scientific">Scientific Name: <em>' + plant.scientific + '</em></p>' +
           '<p class="alpine-plant-family">Family Name: <strong>' + plant.family + '</strong></p>' +
           '<p class="alpine-plant-stations">Stations: ' + plant.stations + '</p>' +
-          '<p class="alpine-plant-description">Description: ' + plant.description + '</p>' +
+          '<p class="alpine-plant-description">' + plant.description + '</p>' +
           '<p class="alpine-plant-ecosystem"><strong>Use and Impact to Ecosystem:</strong> ' + (plant.ecosystemImpact || 'Information not available.') + '</p>' +
           '</div>' +
           '</div>';
