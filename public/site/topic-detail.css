@@ -107,16 +107,23 @@ body.topic-3 h6 {
   border-radius: 3px;
 }
 
-  /* ===== DETAIL GRID (FULL WIDTH) ===== */
-  .detail-grid {
+/* ===== DETAIL GRID (2 COLUMN LAYOUT) ===== */
+.detail-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 60px;
-  max-width: 100%;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 80px;
+  padding: 60px 40px;
   align-items: start;
-  }
+}
+
+/* Hide gallery sidebar for Topic 3 - make single column */
+body.topic-3 .detail-grid {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  padding: 80px 80px;
+}
 
   .detail-figure {
   display: flex;
@@ -1320,6 +1327,14 @@ body.topic-5 .detail-section h3 {
 
 /* ===== GALLERY SIDEBAR ===== */
 .detail-gallery {
+  display: block;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+/* Hide gallery for Topic 3 (Alpine Flora) */
+body.topic-3 .detail-gallery {
   display: none;
 }
 
@@ -1328,11 +1343,14 @@ body.topic-5 .detail-section h3 {
   font-weight: 600;
   color: var(--fg);
   letter-spacing: 0.3px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 

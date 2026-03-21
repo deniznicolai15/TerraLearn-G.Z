@@ -1525,7 +1525,13 @@ function initializePage() {
   document.getElementById("detail-detail2").textContent = topicData.detail2;
 
   // Create gallery - skip for Topic 3 (Alpine Flora)
+  var galleryContainer = document.getElementById("detail-gallery");
   if (topicData.id !== 3) {
+    // Show gallery for all topics except Topic 3
+    if (galleryContainer) {
+      galleryContainer.style.display = "block";
+    }
+    
     var galleryImages = [];
 
     if (topicData.gallery && topicData.gallery.length > 0) {
@@ -1547,23 +1553,30 @@ function initializePage() {
     }
 
     var galleryGrid = document.getElementById("gallery-grid");
-    for (var i = 0; i < galleryImages.length; i++) {
-      var item = document.createElement("div");
-      item.className = "gallery-item";
-      var img = document.createElement("img");
-      img.src = galleryImages[i];
-      img.alt = topicData.name + ' gallery image ' + (i + 1);
-      // Hide gallery item if image fails to load
-      img.onerror = function () {
-        this.parentElement.style.display = 'none';
-      };
-      item.appendChild(img);
-      item.addEventListener("click", function (e) {
-        if (e.target.tagName === 'IMG') {
-          openLightbox(e.target.src);
-        }
-      });
-      galleryGrid.appendChild(item);
+    if (galleryGrid) {
+      for (var i = 0; i < galleryImages.length; i++) {
+        var item = document.createElement("div");
+        item.className = "gallery-item";
+        var img = document.createElement("img");
+        img.src = galleryImages[i];
+        img.alt = topicData.name + ' gallery image ' + (i + 1);
+        // Hide gallery item if image fails to load
+        img.onerror = function () {
+          this.parentElement.style.display = 'none';
+        };
+        item.appendChild(img);
+        item.addEventListener("click", function (e) {
+          if (e.target.tagName === 'IMG') {
+            openLightbox(e.target.src);
+          }
+        });
+        galleryGrid.appendChild(item);
+      }
+    }
+  } else {
+    // Hide gallery for Topic 3
+    if (galleryContainer) {
+      galleryContainer.style.display = "none";
     }
   }
 
@@ -1577,9 +1590,13 @@ function initializePage() {
   // initializeForest101();
 
   // Back button - navigate to homepage
-  document.getElementById("back-btn").addEventListener("click", function () {
-    window.location.href = "index.html";
-  });
+  var backBtn = document.getElementById("back-btn");
+  if (backBtn) {
+    backBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "index.html";
+    });
+  }
 
 }
 
