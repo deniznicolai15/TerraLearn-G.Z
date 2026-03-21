@@ -130,7 +130,7 @@ var topicsData = [
 // ===== GET TOPIC DATA FROM URL =====
 function getTopicData() {
   var params = new URLSearchParams(window.location.search);
-  
+
   // First check for direct topic ID parameter (e.g., ?topic=1)
   var topicId = params.get("topic");
   if (topicId) {
@@ -143,7 +143,7 @@ function getTopicData() {
     console.error("Topic not found for id:", id);
     return null;
   }
-  
+
   // Fallback to data parameter (JSON encoded)
   var data = params.get("data");
   if (data) {
@@ -978,7 +978,7 @@ function initializePage() {
 
     // Insert after Why It Matters section
     if (whyItMattersSection.parentNode) {
-    whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
+      whyItMattersSection.parentNode.insertBefore(reflectionBox, whyItMattersSection.nextSibling);
     } else {
       sectionsContainer.appendChild(reflectionBox);
     }
@@ -1023,7 +1023,7 @@ function initializePage() {
     // Create Featured Plants section with images
     var featuredPlantsSection = document.createElement("div");
     featuredPlantsSection.className = "alpine-featured-plants-section";
-    featuredPlantsSection.innerHTML = '<h2 class="alpine-featured-title">Featured Plants with Images</h2>';
+    featuredPlantsSection.innerHTML = '<h2 class="alpine-featured-title">Featured Plants Captured in Mt. Pamitinan</h2>';
 
     // 12 featured plants from Figma design
     var alpinePlants = [
@@ -2016,7 +2016,7 @@ function submitReflectionTopic1() {
 function toggleCommunityThoughts() {
   var wall = document.getElementById("reflection-wall");
   var viewBtn = document.querySelector(".reflection-box-view-btn");
-  
+
   if (wall.style.display === "none" || wall.style.display === "") {
     wall.style.display = "block";
     viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
@@ -2101,7 +2101,7 @@ function submitReflectionTopic2() {
 function toggleCommunityThoughtsTopic2() {
   var wall = document.getElementById("reflection-wall-topic2");
   var viewBtn = wall.previousElementSibling.querySelector(".reflection-box-view-btn");
-  
+
   if (wall.style.display === "none" || wall.style.display === "") {
     wall.style.display = "block";
     viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
@@ -2186,7 +2186,7 @@ function submitReflectionTopic3() {
 function toggleCommunityThoughtsTopic3() {
   var wall = document.getElementById("reflection-wall-topic3");
   var viewBtn = wall.previousElementSibling.querySelector(".reflection-box-view-btn");
-  
+
   if (wall.style.display === "none" || wall.style.display === "") {
     wall.style.display = "block";
     viewBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Hide Thoughts';
