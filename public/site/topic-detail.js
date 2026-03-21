@@ -323,54 +323,54 @@ var quizzes = {
   ],
   3: [
     {
-      question: "At what altitude range do most alpine plants in the Philippines thrive?",
-      options: ["Below 1000m", "1000-1500m", "1500m and above", "Only at sea level"],
-      correct: 2,
+      question: "Which plant is known for its hollow, soft trunk and large palmate leaves?",
+      options: ["Balete", "Papaya", "Gabi", "Sambong"],
+      correct: 1, // B - Papaya
     },
     {
-      question: "Which of the following is a key adaptation of alpine plants to harsh mountain conditions?",
-      options: ["Growing tall and woody", "Deep root systems", "Low-growing, dense growth patterns", "Large leaves"],
-      correct: 2,
+      question: "Which tree is deeply tied to Philippine folklore and produces figs eaten by birds and bats?",
+      options: ["Tabebuia rosea", "Balete", "Santol", "Mango"],
+      correct: 1, // B - Balete
     },
     {
-      question: "What does Moss Pine require to thrive in its natural habitat?",
-      options: ["Tropical lowland climate", "High-altitude conditions above 2100m", "Permanent water coverage", "Volcanic soil"],
-      correct: 1,
+      question: "Which native bamboo species is used for weaving and stabilizes soil on slopes?",
+      options: ["Bukawé (Schizostachyum lima)", "Bayog (Bambusa merrilliana)", "Buho (Schizostachyum lumampao)", "Botong (Gigantochloa levis)"],
+      correct: 0, // A - Bukawé
     },
     {
-      question: "Which plant family includes mountain laurels and moss heath found in Philippine alpine zones?",
-      options: ["Rosaceae", "Ericaceae", "Asteraceae", "Fabaceae"],
-      correct: 1,
+      question: "Which plant has large, heart-shaped leaves and is cultivated for its edible corms?",
+      options: ["Gabi (Colocasia esculenta)", "Papaya (Carica papaya)", "Sambong (Blumea balsamifera)", "Alagaw (Premna odorata)"],
+      correct: 0, // A - Gabi
     },
     {
-      question: "What is the primary ecological importance of nitrogen-fixing alpine plants like Mountain Lupine?",
-      options: ["They provide oxygen", "They enrich soil and support plant growth", "They attract insects", "They produce medicinal compounds"],
-      correct: 1,
+      question: "Which species produces compact clusters of bright red berries that persist long on the plant?",
+      options: ["Coral Ardisia (Ardisia crenata)", "Bigonia (Begonia spp.)", "Pheasant's Tail Fern (Asplenium nidus)", "Tabebuia rosea"],
+      correct: 0, // A - Coral Ardisia
     },
     {
-      question: "Which feature makes cloud forest ferns abundant in misty mountain regions?",
-      options: ["Their ability to absorb moisture from fog and air", "Their deep root systems", "Their large flower production", "Their resistance to direct sunlight"],
-      correct: 0,
+      question: "Which fern has fronds resembling pheasant tail feathers?",
+      options: ["Kabkab (Drynaria quercifolia)", "Kai-kai (Adiantum philippense)", "Pheasant's Tail Fern (Asplenium nidus)", "Lipang Kalabau (Dendrocnide meyeniana)"],
+      correct: 2, // C - Pheasant's Tail Fern
     },
     {
-      question: "How do alpine plants survive extreme temperature fluctuations on mountain peaks?",
-      options: ["They migrate seasonally", "They develop thick protective leaves and specialized tissues", "They only grow underground", "They enter permanent dormancy"],
-      correct: 1,
+      question: "Which shrub is widely used in Philippine traditional medicine, especially for kidney health?",
+      options: ["Sambong (Blumea balsamifera)", "Siam Weed (Chromolaena odorata)", "Santol (Sandoricum koetjape)", "Banaba (Lagerstroemia speciosa)"],
+      correct: 0, // A - Sambong
     },
     {
-      question: "Which of the following is NOT typical of alpine plant communities?",
-      options: ["Low plant stature", "Dense clustering", "Rapid growth rates", "Adaptation to thin soil"],
-      correct: 2,
+      question: "Which invasive shrub spreads rapidly along trails and forest edges?",
+      options: ["Sambong", "Siam Weed (Chromolaena odorata)", "Santol", "Tabebuia rosea"],
+      correct: 1, // B - Siam Weed
     },
     {
-      question: "What ecological role do alpine flowers like Edelweiss play in their ecosystem?",
-      options: ["They are purely decorative", "They provide nectar for pollinators and stabilize soil", "They are toxic to animals", "They have no ecological function"],
-      correct: 1,
+      question: "Which tree produces showy clusters of pink to lavender trumpet-shaped flowers?",
+      options: ["Tabebuia rosea", "Balete", "Mango", "Banaba"],
+      correct: 0, // A - Tabebuia rosea
     },
     {
-      question: "Why are Philippine alpine ecosystems considered important for biodiversity conservation?",
-      options: ["They occupy large land areas", "They contain unique endemic species adapted to specific conditions", "They are easily accessible to humans", "They have unlimited natural resources"],
-      correct: 1,
+      question: "Which plant is a decomposer, breaking down dead wood and recycling nutrients?",
+      options: ["Bigonia (Begonia spp.)", "Bracket Fungus (Ganoderma spp.)", "Coral Ardisia (Ardisia crenata)", "Papaya (Carica papaya)"],
+      correct: 1, // B - Bracket Fungus
     },
   ],
   4: [
@@ -1296,40 +1296,6 @@ transectMapSection.innerHTML =
       });
     }
 
-    // Add reflection box for Topic 3
-    var reflectionBox3 = document.createElement("div");
-    reflectionBox3.className = "reflection-box-container";
-    reflectionBox3.innerHTML =
-      '<div class="reflection-box-inner">' +
-      '<div class="reflection-box-header">' +
-      '<span class="reflection-box-badge">Quicky lang! Alpine plants thrive where few can survive—what can their resilience teach us about adaptation and thriving in challenging conditions?</span>' +
-      '<h3 class="reflection-box-title">What inspires you?</h3>' +
-      '</div>' +
-      '<div class="reflection-box-input-section">' +
-      '<textarea class="reflection-box-textarea" id="reflection-textarea-topic3" placeholder="Share your thoughts about alpine plants and adaptation..." maxlength="250"></textarea>' +
-      '<div class="reflection-box-footer">' +
-      '<span class="reflection-box-char-count"><span class="char-count-number">0</span>/250</span>' +
-      '<div class="reflection-box-buttons">' +
-      '<button class="reflection-box-submit-btn" onclick="submitReflectionTopic3()">Submit Thought</button>' +
-      '<button class="reflection-box-view-btn" onclick="toggleCommunityThoughtsTopic3()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> View Community Thoughts</button>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '<div class="reflection-box-wall" id="reflection-wall-topic3" style="display: none;">' +
-      '<div class="reflection-wall-header"><h4>Community Thoughts</h4><span class="thought-count">0 thoughts shared</span></div>' +
-      '<div class="reflection-wall-grid" id="reflection-wall-grid-topic3">' +
-      '<p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>' +
-      '</div>' +
-      '</div>';
-
-    // Insert after Catalog section
-    if (catalogSection.parentNode) {
-      catalogSection.parentNode.insertBefore(reflectionBox3, catalogSection.nextSibling);
-    } else {
-      sectionsContainer.appendChild(reflectionBox3);
-    }
-
     // Add Quiz Section for Topic 3
     var quizGameBox3 = document.createElement("div");
     quizGameBox3.className = "forest-game-box";
@@ -1346,7 +1312,7 @@ transectMapSection.innerHTML =
       '</div>' +
       '<div class="game-box-text">' +
       '<h3>Test Your Knowledge!</h3>' +
-      '<p>Challenge yourself with this interactive quiz about alpine plants and high-altitude ecosystems. Answer all 10 questions and see your score!</p>' +
+      '<p>Challenge yourself with this interactive quiz about the Featured Plants Captured in Mt. Pamitinan. Answer all 10 questions and see your score!</p>' +
       '</div>' +
       '<div class="game-box-arrow">' +
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
@@ -1357,9 +1323,9 @@ transectMapSection.innerHTML =
       '</div>' +
       '</a>';
 
-    // Insert after reflection box
-    if (reflectionBox3.parentNode) {
-      reflectionBox3.parentNode.insertBefore(quizGameBox3, reflectionBox3.nextSibling);
+    // Insert after Catalog section
+    if (catalogSection.parentNode) {
+      catalogSection.parentNode.insertBefore(quizGameBox3, catalogSection.nextSibling);
     } else {
       sectionsContainer.appendChild(quizGameBox3);
     }
