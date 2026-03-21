@@ -1099,12 +1099,12 @@ function initializePage() {
         
         var plant = alpinePlants[currentIndex];
         var imageHTML = plant.image ? 
-          '<img src="' + plant.image + '" alt="' + plant.name + '" class="alpine-plant-actual-image" />' :
+          '<img src="' + plant.image + '" alt="' + plant.name + '" class="alpine-plant-actual-image" data-fullscreen-src="' + plant.image + '" data-plant-name="' + plant.name + '" />' :
           '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#e8f0ed"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#7CB9A8">No image</text></svg>';
         
         plantsGridHTML +=
           '<div class="alpine-plant-card">' +
-          '<div class="alpine-plant-image-placeholder">' +
+          '<div class="alpine-plant-image-placeholder alpine-plant-image-clickable">' +
           imageHTML +
           '</div>' +
           '<div class="alpine-plant-info">' +
@@ -1133,6 +1133,56 @@ function initializePage() {
       sectionsContainer.insertBefore(featuredPlantsSection, sectionsContainer.firstChild);
     }
 
+    // Create fullscreen image modal
+    var fullscreenModal = document.createElement('div');
+    fullscreenModal.className = 'plant-fullscreen-modal';
+    fullscreenModal.innerHTML =
+      '<div class="plant-fullscreen-overlay"></div>' +
+      '<div class="plant-fullscreen-content">' +
+      '<button class="plant-fullscreen-close">&times;</button>' +
+      '<img src="" alt="" class="plant-fullscreen-image" />' +
+      '<p class="plant-fullscreen-caption"></p>' +
+      '</div>';
+    document.body.appendChild(fullscreenModal);
+
+    // Add click handlers for plant images
+    var plantImages = featuredPlantsSection.querySelectorAll('.alpine-plant-actual-image[data-fullscreen-src]');
+    plantImages.forEach(function(img) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function() {
+        var src = this.getAttribute('data-fullscreen-src');
+        var name = this.getAttribute('data-plant-name');
+        var modalImg = fullscreenModal.querySelector('.plant-fullscreen-image');
+        var caption = fullscreenModal.querySelector('.plant-fullscreen-caption');
+        modalImg.src = src;
+        modalImg.alt = name;
+        caption.textContent = name;
+        fullscreenModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal handlers
+    var closeBtn = fullscreenModal.querySelector('.plant-fullscreen-close');
+    var overlay = fullscreenModal.querySelector('.plant-fullscreen-overlay');
+    
+    closeBtn.addEventListener('click', function() {
+      fullscreenModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    overlay.addEventListener('click', function() {
+      fullscreenModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && fullscreenModal.classList.contains('active')) {
+        fullscreenModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
     // Create Transect Map section - matches Geological Features design
     var transectMapSection = document.createElement("div");
     transectMapSection.className = "geological-section-standalone transect-map-standalone";
@@ -1142,12 +1192,7 @@ function initializePage() {
       '<div class="geological-features-image-container">' +
       '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/map.jfif-3ZEOXju00Axa4G6p1JpSUPgL9yVarL.jpeg" alt="Transect Map of Pamitinan Protected Landscape showing BMS stations and transect routes" class="geological-clearer-image" />' +
       '</div>' +
-      '<ul class="geological-features-list">' +
-      '<li><strong>Systematic biodiversity monitoring</strong> through the Biodiversity Monitoring System (BMS) ensures comprehensive documentation of flora and fauna within designated transect lines.</li>' +
-      '<li><strong>1st Semester BMS Report (January 28–29, 2026)</strong> provides updated species lists that reflect the current state of biodiversity within the Pamitinan Protected Landscape.</li>' +
-      '<li><strong>Transect stations</strong> are strategically placed to capture diverse ecosystems, from forest floor to canopy layers, enabling accurate population counts and species identification.</li>' +
-      '<li><strong>Conservation importance</strong> is highlighted through continuous monitoring, ensuring that the rich flora and fauna of Mt. Pamitinan are preserved for future generations.</li>' +
-      '</ul>' +
+      '<p class="transect-map-paragraph">The Pamitinan Protected Landscape (PPL) maintains a more comprehensive record of biodiversity through systematic monitoring. Based on the 1st Semester Biodiversity Monitoring System (BMS) conducted last January 28–29, 2026, documented species lists reflect the plants and animals found specifically within designated transect lines. These records highlight the importance of continuous monitoring and conservation, ensuring that the flora and fauna of Mt. Pamitinan are preserved for future generations.</p>' +
       '</div>';
 
     // Insert after Featured Plants section

@@ -4970,6 +4970,132 @@ body.topic-5 .detail-figure {
   max-width: 750px;
 }
 
+.transect-map-paragraph {
+  font-size: 16px;
+  color: rgba(232, 240, 235, 0.92);
+  line-height: 1.9;
+  text-align: justify;
+  padding: 28px 32px;
+  background: linear-gradient(145deg, rgba(35, 70, 50, 0.5) 0%, rgba(28, 58, 42, 0.4) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #8EB09A;
+  margin-top: 24px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Plant Image Fullscreen Modal */
+.alpine-plant-image-clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.alpine-plant-image-clickable::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.alpine-plant-image-clickable:hover::after {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.alpine-plant-image-clickable:hover .alpine-plant-actual-image {
+  transform: scale(1.02);
+}
+
+.alpine-plant-actual-image {
+  transition: transform 0.3s ease;
+}
+
+.plant-fullscreen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.plant-fullscreen-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.plant-fullscreen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  cursor: pointer;
+}
+
+.plant-fullscreen-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plant-fullscreen-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(142, 176, 154, 0.2);
+  border: 1px solid rgba(142, 176, 154, 0.4);
+  border-radius: 50%;
+  color: #e8f0eb;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.plant-fullscreen-close:hover {
+  background: rgba(142, 176, 154, 0.4);
+  transform: scale(1.1);
+}
+
+.plant-fullscreen-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.plant-fullscreen-caption {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #8EB09A;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 /* Complete Plant Catalog Section */
 .alpine-catalog-section {
   padding: 60px;
