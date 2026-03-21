@@ -1135,14 +1135,16 @@ function initializePage() {
     // Create Transect Map section
     var transectMapSection = document.createElement("div");
     transectMapSection.className = "transect-map-section";
-    transectMapSection.innerHTML =
-      '<h2 class="transect-map-title">Transect Map of PPL</h2>' +
-      '<div class="transect-map-content">' +
-      '<div class="transect-map-image-wrapper">' +
-      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/map.jfif-3ZEOXju00Axa4G6p1JpSUPgL9yVarL.jpeg" alt="Transect Map of Pamitinan Protected Landscape showing BMS stations and transect routes" class="transect-map-image">' +
-      '</div>' +
-      '<p class="transect-map-description">The Pamitinan Protected Landscape (PPL) maintains a more comprehensive record of biodiversity through systematic monitoring. Based on the 1st Semester Biodiversity Monitoring System (BMS) conducted last January 28–29, 2026, documented species lists reflect the plants and animals found specifically within designated transect lines. These records highlight the importance of continuous monitoring and conservation, ensuring that the flora and fauna of Mt. Pamitinan are preserved for future generations.</p>' +
-      '</div>';
+transectMapSection.innerHTML =
+  '<h2 class="transect-map-title">Transect Map of PPL</h2>' +
+  '<div class="transect-map-content">' +
+  '<div class="transect-map-image-wrapper">' +
+  '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/map.jfif-3ZEOXju00Axa4G6p1JpSUPgL9yVarL.jpeg" alt="Transect Map of Pamitinan Protected Landscape showing BMS stations and transect routes" class="transect-map-image">' +
+  '</div>' +
+  '<div class="transect-map-text-wrapper">' +
+  '<p class="transect-map-description">The Pamitinan Protected Landscape (PPL) maintains a more comprehensive record of biodiversity through systematic monitoring. Based on the 1st Semester Biodiversity Monitoring System (BMS) conducted last January 28–29, 2026, documented species lists reflect the plants and animals found specifically within designated transect lines. These records highlight the importance of continuous monitoring and conservation, ensuring that the flora and fauna of Mt. Pamitinan are preserved for future generations.</p>' +
+  '</div>' +
+  '</div>';
 
     // Insert after Featured Plants section
     if (featuredPlantsSection.parentNode) {
