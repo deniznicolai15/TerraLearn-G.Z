@@ -1622,10 +1622,11 @@ function initializePage() {
   // Create gallery - skip for Topic 3 (Alpine Flora)
   var galleryContainer = document.getElementById("detail-gallery");
   if (topicData.id !== 3) {
-    // Show gallery for all topics except Topic 3
-    if (galleryContainer) {
-      galleryContainer.style.display = "block";
-    }
+  // Show gallery for all topics except Topic 3
+  if (galleryContainer) {
+  // Use flex display to match CSS expectations for Topics 1, 2, and 5
+  galleryContainer.style.display = "flex";
+  }
     
     var galleryImages = [];
 
