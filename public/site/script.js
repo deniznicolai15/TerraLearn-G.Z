@@ -140,7 +140,7 @@ var topics = [
       text: "Human actions shape the environment in powerful ways, reflecting the principle that every action brings a reaction. Deforestation, pollution, and habitat loss weaken ecosystems, while tree planting, river restoration, and sustainable practices foster resilience and renewal.<br><br>In the Pamitinan Protected Landscape, community-led efforts show how responsible stewardship can restore biodiversity and secure forests and rivers for future generations."
     },
     gallery: [
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9cfff74f-df19-440f-b88d-7fd8e897e7fe-8PQR4IdzQVfoCQLwnv1V3FDtIhykRU.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
