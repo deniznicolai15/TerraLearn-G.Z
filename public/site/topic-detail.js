@@ -1581,6 +1581,66 @@ function initializePage() {
       sectionsContainer.appendChild(quizGameBox5);
     }
 
+    // Add Image Gallery Section for Topic 5
+    var gallerySection5 = document.createElement("div");
+    gallerySection5.className = "topic5-gallery-section";
+    gallerySection5.innerHTML =
+      '<div class="topic5-gallery-wrapper">' +
+      '<h2 class="topic5-gallery-title">Conservation in Action</h2>' +
+      '<p class="topic5-gallery-subtitle">Snapshots from our community-led environmental efforts at Pamitinan Protected Landscape</p>' +
+      '<div class="topic5-gallery-grid">' +
+      '<div class="topic5-gallery-item" data-index="0">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9cfff74f-df19-440f-b88d-7fd8e897e7fe-8PQR4IdzQVfoCQLwnv1V3FDtIhykRU.jpg" alt="Conservation activity 1" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="1">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3a8c7dbd-8d32-4aa2-b03d-70e85d74d933-8ETVDLrXNoSgLH7uiuNclS9RWKs2iL.jpg" alt="Conservation activity 2" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="2">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/979ec1fc-4162-4751-9bf9-1684b4649403-R1bltlSmcxyhCXX1RZCd3flqodg8AG.jpg" alt="Conservation activity 3" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="3">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/be69ecbf-3f37-42ab-8115-fdf1e1208015-NLK8xbUvPYQS2iANdUpEbEauFYQc9c.jpg" alt="Conservation activity 4" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="4">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f4d60a3b-bf0f-408e-a4eb-db8bcec50383-uIE8e2SxR5UtlOsuaYlGG8y5r56p4W.jpg" alt="Conservation activity 5" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="5">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1b4a5c70-ec54-49f0-9a9d-0a8f6cdf5daa-0RYDKdAcu83pJS7LIlSxEC5WXV4DPj.jpg" alt="Conservation activity 6" />' +
+      '</div>' +
+      '<div class="topic5-gallery-item" data-index="6">' +
+      '<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/84c16e0b-d809-4741-9d91-82383a66cfec-CAJn4bSZws1JjepUoL7NLkRhfPKqU7.jpg" alt="Conservation activity 7" />' +
+      '</div>' +
+      '</div>' +
+      '<p class="topic5-gallery-credit">We give full credits to DENR Pamitinan Protected Landscape for the pictures taken during these events.</p>' +
+      '</div>';
+
+    // Insert after quiz box
+    if (quizGameBox5.parentNode) {
+      quizGameBox5.parentNode.insertBefore(gallerySection5, quizGameBox5.nextSibling);
+    } else {
+      sectionsContainer.appendChild(gallerySection5);
+    }
+
+    // Add lightbox functionality for gallery
+    var galleryItems5 = document.querySelectorAll('.topic5-gallery-item');
+    galleryItems5.forEach(function(item) {
+      item.addEventListener('click', function() {
+        var img = this.querySelector('img');
+        if (img) {
+          var lightbox = document.createElement('div');
+          lightbox.className = 'topic5-lightbox';
+          lightbox.innerHTML = '<div class="topic5-lightbox-content"><img src="' + img.src + '" alt="' + img.alt + '" /><button class="topic5-lightbox-close">&times;</button></div>';
+          document.body.appendChild(lightbox);
+          
+          lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('topic5-lightbox-close')) {
+              lightbox.remove();
+            }
+          });
+        }
+      });
+    });
+
     // Add event listeners for Topic 5 reflection box
     var topic5ReflectionInput = document.getElementById("topic5-reflection-input");
     var topic5SubmitBtn = document.getElementById("topic5-reflection-submit");
