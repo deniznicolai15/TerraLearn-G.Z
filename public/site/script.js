@@ -135,8 +135,8 @@ var topics = [
     description:
       "Examine strategies for forest conservation and sustainable development, alongside the human role in shaping and reshaping nature. The focus is on responsibility today to secure forests and rivers for future generations.",
     intro: {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg",
-      caption: "Figure 1: Conservation efforts in the Pamitinan Protected Landscape",
+      image: "",
+      caption: "",
       text: "Human actions shape the environment in powerful ways, reflecting the principle that every action brings a reaction. Deforestation, pollution, and habitat loss weaken ecosystems, while tree planting, river restoration, and sustainable practices foster resilience and renewal.<br><br>In the Pamitinan Protected Landscape, community-led efforts show how responsible stewardship can restore biodiversity and secure forests and rivers for future generations."
     },
     gallery: [
