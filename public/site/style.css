@@ -626,6 +626,23 @@ div {
   flex-direction: column;
   gap: 6px;
   transition: opacity 0.3s;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.topic-card-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.topic-card-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.topic-card-body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
 }
 
 .topic-card.collapsed .topic-card-body {
