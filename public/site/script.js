@@ -142,9 +142,9 @@ var topics = [
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9cfff74f-df19-440f-b88d-7fd8e897e7fe-8PQR4IdzQVfoCQLwnv1V3FDtIhykRU.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3a8c7dbd-8d32-4aa2-b03d-70e85d74d933-8ETVDLrXNoSgLH7uiuNclS9RWKs2iL.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/979ec1fc-4162-4751-9bf9-1684b4649403-R1bltlSmcxyhCXX1RZCd3flqodg8AG.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/be69ecbf-3f37-42ab-8115-fdf1e1208015-NLK8xbUvPYQS2iANdUpEbEauFYQc9c.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f4d60a3b-bf0f-408e-a4eb-db8bcec50383-uIE8e2SxR5UtlOsuaYlGG8y5r56p4W.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
