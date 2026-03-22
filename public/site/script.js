@@ -90,7 +90,7 @@ var topics = [
     color: "#4B6B55",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic%203-e1rADcvd9zu2RRJXxzW1cHh4imby4t.jpeg",
     description:
-      " Mount Pamitinan in Montalban, Rizal is recognized not only for its cultural and historical significance but also for its rich biodiversity. Within its forested slopes, a variety of plant species thrive, contributing to the ecological balance of the protected landscape. A few photographs of plants were captured during field activities, representing only the species that were directly observed and identified on-site. These images provide a glimpse into the flora diversity of the mountain, though they do not encompass the full range of species present.",
+      "Plants are the foundation of ecosystems, producing oxygen, food, and balance for all living things. They symbolize resilience and sustainability, reminding us that “green goals” are essential for both survival and everyday life.",
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6164-PvzwNcJeyVnF3GAV3RxJInRj9WcQtf.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
@@ -115,7 +115,7 @@ var topics = [
     color: "#7A9E8C",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/topic4-88GM4Y6ZCHWMBrNhlUF428cJE0GZzK.jpeg",
     description:
-      " Mount Pamitinan in Montalban, Rizal is a sanctuary for birds that serve as its key animal species. These avifauna, like the Philippine bulbul and tailorbird, are vital to the forest's health, acting as pollinators, seed dispersers, and insect controllers. By focusing on the mountain's birdlife, we see how biodiversity sustains the balance of this protected landscape.",
+      " Fauna animate the Pamitinan landscape, from small creatures to larger wildlife that shape ecological balance. Protecting them safeguards biodiversity, ensures ecosystem health, and preserves the living heritage of the area.",
     sections: [
       { title: "Bird Species", text: "Mt. Pamitinan serves as a habitat for over 30 bird species, including the Philippine Hawk-Eagle, Luzon Hornbill, and various species of kingfishers. Birdwatching is best during the early morning hours when most species are active and foraging." },
       { title: "Reptiles & Amphibians", text: "The mountain's streams and forest floor are home to various lizard species, snakes, and frogs. The Philippine Sailfin Lizard, a species unique to the Philippines, can occasionally be spotted near the river systems at the base of the mountain." },
