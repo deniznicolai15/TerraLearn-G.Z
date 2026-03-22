@@ -2421,7 +2421,7 @@ body.topic-5 .topic2-intro .intro-image-section {
 
 body.topic-5 .topic2-intro .intro-text {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #6b7f7333 (255, 255, 255, 0.85);
   line-height: 1.9;
   text-align: justify;
   max-width: 100%;
@@ -2794,7 +2794,7 @@ body.topic-4 #avifauna-container {
   text-align: justify;
   max-width: 800px;
   margin: 0 auto;
-  }
+}
 
 #avifauna-pre-intro {
   padding-bottom: 24px;
