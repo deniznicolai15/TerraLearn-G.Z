@@ -2408,8 +2408,11 @@ body.topic-5 .detail-figure {
 /* ===== TOPIC 5 INTRO - CENTERED LIKE TOPIC 4 ===== */
 body.topic-5 .topic2-intro {
   display: block;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 40px 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(168, 213, 168, 0.2);
 }
 
 body.topic-5 .topic2-intro .intro-image-section {
@@ -2417,12 +2420,13 @@ body.topic-5 .topic2-intro .intro-image-section {
 }
 
 body.topic-5 .topic2-intro .intro-text {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.9;
   text-align: justify;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  letter-spacing: 0.2px;
 }
 
 /* ===== TOPIC 3 TREE PLANTING SECTION ===== */
