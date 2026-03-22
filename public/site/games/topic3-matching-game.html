@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpine Plants Matching Game | TerraLearn G.Z</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #a8d5a8;
@@ -25,13 +28,13 @@
       --wrong: #ff6b6b;
       --wrong-bg: rgba(255, 107, 107, 0.15);
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
@@ -39,12 +42,12 @@
       color: var(--text-light);
       padding: 40px 20px;
     }
-    
+
     .game-wrapper {
       max-width: 1000px;
       margin: 0 auto;
     }
-    
+
     /* Back Button */
     .back-button {
       display: inline-flex;
@@ -61,19 +64,19 @@
       margin-bottom: 24px;
       transition: all 0.3s ease;
     }
-    
+
     .back-button:hover {
       color: var(--primary);
       border-color: var(--primary);
       background: rgba(26, 74, 46, 0.4);
       transform: translateX(-4px);
     }
-    
+
     .back-button svg {
       width: 18px;
       height: 18px;
     }
-    
+
     /* ===== ROUND SELECTION SCREEN ===== */
     .round-selection {
       display: grid;
@@ -81,7 +84,7 @@
       gap: 24px;
       margin-top: 40px;
     }
-    
+
     .round-card {
       background: linear-gradient(135deg, rgba(15, 42, 28, 0.8) 0%, rgba(26, 74, 46, 0.6) 100%);
       border: 1px solid var(--border);
@@ -93,7 +96,7 @@
       overflow: hidden;
       text-align: center;
     }
-    
+
     .round-card::before {
       content: '';
       position: absolute;
@@ -102,39 +105,39 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
+
     .round-card:hover {
       transform: translateY(-8px);
       border-color: var(--primary);
       box-shadow: 0 12px 32px rgba(168, 213, 168, 0.15);
     }
-    
+
     .round-card:hover::before {
       opacity: 1;
     }
-    
+
     .round-card.locked {
       opacity: 0.5;
       cursor: not-allowed;
     }
-    
+
     .round-card.locked:hover {
       transform: none;
       border-color: var(--border);
       box-shadow: none;
     }
-    
+
     .round-icon {
       font-size: 48px;
       margin-bottom: 16px;
     }
-    
+
     .round-card h3 {
       font-size: 24px;
       margin-bottom: 8px;
       color: var(--primary);
     }
-    
+
     .round-difficulty {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
@@ -147,33 +150,33 @@
       letter-spacing: 1px;
       margin-bottom: 12px;
     }
-    
+
     .round-pairs {
       font-size: 13px;
       color: var(--secondary);
       margin-top: 12px;
     }
-    
+
     .round-card.locked .round-icon::after {
       content: '🔒';
       font-size: 24px;
       margin-left: 8px;
     }
-    
+
     /* ===== GAME SCREEN ===== */
     .game-screen {
       display: none;
     }
-    
+
     .game-screen.active {
       display: block;
     }
-    
+
     .game-header {
       text-align: center;
       margin-bottom: 40px;
     }
-    
+
     .game-badge {
       display: inline-flex;
       align-items: center;
@@ -189,20 +192,20 @@
       margin-bottom: 20px;
       border: 1px solid var(--border);
     }
-    
+
     .game-header h1 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(32px, 5vw, 48px);
       color: var(--text-white);
       margin-bottom: 12px;
     }
-    
+
     .game-header p {
       font-size: 15px;
       color: var(--secondary);
       margin-top: 12px;
     }
-    
+
     /* Progress Bar */
     .progress-container {
       background: rgba(15, 42, 28, 0.6);
@@ -214,12 +217,12 @@
       gap: 24px;
       align-items: center;
     }
-    
+
     .progress-stat {
       flex: 1;
       text-align: center;
     }
-    
+
     .progress-stat-label {
       font-size: 12px;
       color: var(--secondary);
@@ -227,24 +230,24 @@
       letter-spacing: 1px;
       margin-bottom: 6px;
     }
-    
+
     .progress-stat-value {
       font-size: 28px;
       font-weight: 700;
       color: var(--primary);
     }
-    
+
     .progress-bar {
       flex: 2;
     }
-    
+
     .progress-bar-fill {
       height: 6px;
       background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
       border-radius: 3px;
       transition: width 0.3s ease;
     }
-    
+
     /* Matching Grid */
     .matching-container {
       display: grid;
@@ -252,13 +255,13 @@
       gap: 32px;
       margin-bottom: 40px;
     }
-    
+
     .matching-column {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    
+
     .matching-column-title {
       font-size: 13px;
       font-weight: 700;
@@ -268,7 +271,7 @@
       margin-bottom: 8px;
       padding-left: 4px;
     }
-    
+
     .match-card {
       background: linear-gradient(135deg, rgba(15, 42, 28, 0.8) 0%, rgba(26, 74, 46, 0.6) 100%);
       border: 2px solid var(--border);
@@ -283,26 +286,26 @@
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .match-card:hover:not(.locked) {
       border-color: var(--primary);
       background: linear-gradient(135deg, rgba(26, 74, 46, 0.9) 0%, rgba(45, 90, 61, 0.7) 100%);
       transform: translateX(4px);
       box-shadow: 0 8px 24px rgba(168, 213, 168, 0.1);
     }
-    
+
     .match-card.selected {
       border-color: var(--primary);
       background: linear-gradient(135deg, rgba(45, 90, 61, 0.95) 0%, rgba(61, 107, 77, 0.75) 100%);
       box-shadow: 0 0 20px rgba(168, 213, 168, 0.2);
     }
-    
+
     .match-card.locked {
       border-color: var(--correct);
       background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
       cursor: default;
     }
-    
+
     .match-card.locked::before {
       content: '✓';
       position: absolute;
@@ -311,38 +314,48 @@
       font-size: 20px;
       font-weight: 700;
     }
-    
+
     .match-card.locked .card-text {
       margin-left: 24px;
     }
-    
+
     .match-card.error {
       border-color: var(--wrong);
       background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 107, 107, 0.05) 100%);
       animation: shake 0.4s ease-in-out;
     }
-    
+
     @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-8px); }
-      75% { transform: translateX(8px); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-8px);
+      }
+
+      75% {
+        transform: translateX(8px);
+      }
     }
-    
+
     .card-text {
       font-size: 15px;
       color: var(--text-light);
       font-weight: 500;
       transition: color 0.3s ease;
     }
-    
+
     .match-card.selected .card-text {
       color: var(--primary);
     }
-    
+
     .match-card.locked .card-text {
       color: var(--correct);
     }
-    
+
     .card-indicator {
       width: 8px;
       height: 8px;
@@ -350,12 +363,12 @@
       background: transparent;
       transition: all 0.3s ease;
     }
-    
+
     .match-card.selected .card-indicator {
       background: var(--primary);
       box-shadow: 0 0 12px var(--primary);
     }
-    
+
     /* Action Buttons */
     .game-actions {
       display: flex;
@@ -363,7 +376,7 @@
       margin-bottom: 32px;
       justify-content: center;
     }
-    
+
     button {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 14px;
@@ -376,64 +389,71 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
+
     .btn-primary {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: var(--bg-dark);
       border: none;
     }
-    
+
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 32px rgba(168, 213, 168, 0.3);
     }
-    
+
     .btn-primary:disabled {
       opacity: 0.5;
       cursor: not-allowed;
       transform: none;
     }
-    
+
     .btn-secondary {
       background: transparent;
       color: var(--secondary);
       border: 2px solid var(--border);
     }
-    
+
     .btn-secondary:hover {
       border-color: var(--secondary);
       color: var(--primary);
     }
-    
+
     /* ===== RESULTS SCREEN ===== */
     .results-screen {
       display: none;
       text-align: center;
       padding: 60px 20px;
     }
-    
+
     .results-screen.active {
       display: block;
     }
-    
+
     .results-badge {
       font-size: 80px;
       margin-bottom: 24px;
       animation: bounce 1s ease-in-out infinite;
     }
-    
+
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
-    
+
     .results-screen h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 48px;
       color: var(--text-white);
       margin-bottom: 16px;
     }
-    
+
     .results-stats {
       background: linear-gradient(135deg, rgba(15, 42, 28, 0.8) 0%, rgba(26, 74, 46, 0.6) 100%);
       border: 1px solid var(--border);
@@ -444,25 +464,25 @@
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 24px;
     }
-    
+
     .results-stat {
       text-align: center;
     }
-    
+
     .results-stat-value {
       font-size: 36px;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 8px;
     }
-    
+
     .results-stat-label {
       font-size: 13px;
       color: var(--secondary);
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
+
     .results-actions {
       display: flex;
       gap: 16px;
@@ -470,64 +490,67 @@
       margin-top: 40px;
       flex-wrap: wrap;
     }
-    
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       body {
         padding: 20px 16px;
       }
-      
+
       .matching-container {
         grid-template-columns: 1fr;
         gap: 16px;
       }
-      
+
       .round-selection {
         grid-template-columns: 1fr;
       }
-      
+
       .progress-container {
         flex-direction: column;
         gap: 12px;
       }
-      
+
       .match-card {
         padding: 12px;
         min-height: 50px;
       }
-      
+
       .card-text {
         font-size: 13px;
       }
-      
+
       .game-actions {
         flex-direction: column;
       }
-      
+
       button {
         width: 100%;
       }
-      
+
       .results-stats {
         grid-template-columns: 1fr;
       }
-      
+
       .results-screen h2 {
         font-size: 32px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="game-wrapper">
-      <a href="../topic-detail.html?topic=3" onclick="sessionStorage.setItem('scrollToTop', 'true'); return true;" class="back-button">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <a href="../topic-detail.html?topic=3" onclick="sessionStorage.setItem('scrollToTop', 'true'); return true;"
+      class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
         <line x1="19" y1="12" x2="5" y2="12"></line>
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
       Back to Alpine Topic
     </a>
-    
+
     <!-- Round Selection Screen -->
     <div id="roundSelection" class="round-selection-screen">
       <div class="game-header" style="margin-bottom: 32px;">
@@ -535,41 +558,41 @@
         <h1>Choose Your Challenge</h1>
         <p>Match Alpine plant common names with their scientific names</p>
       </div>
-      
+
       <div class="round-selection">
         <div class="round-card" onclick="startRound('easy')">
           <div class="round-icon">🌱</div>
           <h3>Easy</h3>
           <div class="round-difficulty">Beginner</div>
           <p style="font-size: 13px; color: var(--secondary); margin-top: 8px;">2 Plant Pairs</p>
-          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;">Papaya, Balete</p>
+          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;"></p>
         </div>
-        
+
         <div class="round-card" onclick="startRound('medium')">
           <div class="round-icon">🌿</div>
           <h3>Medium</h3>
           <div class="round-difficulty">Intermediate</div>
           <p style="font-size: 13px; color: var(--secondary); margin-top: 8px;">4 Plant Pairs</p>
-          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;">Bukawé, Gabi, Begonia, Banana</p>
+          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;"></p>
         </div>
-        
+
         <div class="round-card" onclick="startRound('hard')">
           <div class="round-icon">🌲</div>
           <h3>Hard</h3>
           <div class="round-difficulty">Advanced</div>
           <p style="font-size: 13px; color: var(--secondary); margin-top: 8px;">5 Plant Pairs</p>
-          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;">Coral Ardisia, Sambong, Trumpet Tree</p>
+          <p style="font-size: 12px; color: var(--secondary); margin-top: 4px;"></p>
         </div>
       </div>
     </div>
-    
+
     <!-- Game Screen -->
     <div id="gameScreen" class="game-screen">
       <div class="game-header">
         <div class="game-badge" id="roundBadge">🎮 Game</div>
         <h1 id="roundTitle">Easy Round</h1>
       </div>
-      
+
       <div class="progress-container">
         <div class="progress-stat">
           <div class="progress-stat-label">Progress</div>
@@ -579,7 +602,7 @@
           <div class="progress-bar-fill" id="progressBar" style="width: 0%;"></div>
         </div>
       </div>
-      
+
       <div class="matching-container">
         <div class="matching-column">
           <div class="matching-column-title">Common Names</div>
@@ -590,19 +613,19 @@
           <div id="scientificNamesColumn"></div>
         </div>
       </div>
-      
+
       <div class="game-actions">
         <button class="btn-secondary" onclick="resetRound()">Reset</button>
         <button class="btn-primary" onclick="submitMatch()" id="submitBtn">Check Match</button>
       </div>
     </div>
-    
+
     <!-- Results Screen -->
     <div id="resultsScreen" class="results-screen">
       <div class="results-badge" id="resultsBadge">🎉</div>
       <h2>You Did It!</h2>
       <p style="font-size: 18px; color: var(--secondary); margin-bottom: 24px;">All plants matched perfectly!</p>
-      
+
       <div class="results-stats">
         <div class="results-stat">
           <div class="results-stat-value" id="finalMatches">2</div>
@@ -617,14 +640,14 @@
           <div class="results-stat-label">Accuracy</div>
         </div>
       </div>
-      
+
       <div class="results-actions">
         <button class="btn-secondary" onclick="backToRounds()">Back to Rounds</button>
         <button class="btn-primary" onclick="startNextRound()">Next Challenge →</button>
       </div>
     </div>
   </div>
-  
+
   <script>
     // Game Data
     const rounds = {
@@ -655,44 +678,44 @@
         ]
       }
     };
-    
+
     let currentRound = null;
     let currentPairs = [];
     let selectedCommon = null;
     let selectedScientific = null;
     let matchedPairs = [];
     let startTime = null;
-    
+
     function startRound(roundKey) {
       currentRound = roundKey;
       const roundData = rounds[roundKey];
-      
+
       // Shuffle scientific names
       currentPairs = roundData.pairs.map(p => ({ ...p }));
       const scientificShuffled = currentPairs.map(p => p.scientific).sort(() => Math.random() - 0.5);
-      
+
       // Reset game state
       selectedCommon = null;
       selectedScientific = null;
       matchedPairs = [];
       startTime = Date.now();
-      
+
       // Update UI
       document.getElementById('roundSelection').style.display = 'none';
       document.getElementById('gameScreen').classList.add('active');
       document.getElementById('roundTitle').textContent = `${roundData.name} Round`;
       document.getElementById('roundBadge').textContent = `🎮 ${roundData.name} Challenge`;
-      
+
       // Render cards
       renderCommonNames(currentPairs);
       renderScientificNames(scientificShuffled);
       updateProgress();
     }
-    
+
     function renderCommonNames(pairs) {
       const container = document.getElementById('commonNamesColumn');
       container.innerHTML = '';
-      
+
       pairs.forEach((pair, index) => {
         const card = document.createElement('div');
         card.className = 'match-card';
@@ -706,11 +729,11 @@
         container.appendChild(card);
       });
     }
-    
+
     function renderScientificNames(scientificNames) {
       const container = document.getElementById('scientificNamesColumn');
       container.innerHTML = '';
-      
+
       scientificNames.forEach((name, index) => {
         const card = document.createElement('div');
         card.className = 'match-card';
@@ -725,51 +748,51 @@
         container.appendChild(card);
       });
     }
-    
+
     function selectCard(index, type, element) {
       if (element.classList.contains('locked')) return;
-      
+
       // Remove previous selection from same column
       document.querySelectorAll(`.match-card[data-type="${type}"]`).forEach(card => {
         if (!card.classList.contains('locked')) {
           card.classList.remove('selected');
         }
       });
-      
+
       element.classList.add('selected');
-      
+
       if (type === 'common') {
         selectedCommon = index;
       } else {
         selectedScientific = index;
       }
-      
+
       // Auto-check if both selected
       if (selectedCommon !== null && selectedScientific !== null) {
         setTimeout(() => submitMatch(), 300);
       }
     }
-    
+
     function submitMatch() {
       if (selectedCommon === null || selectedScientific === null) return;
-      
+
       const commonCard = document.querySelector(`[data-type="common"][data-index="${selectedCommon}"]`);
       const scientificCard = document.querySelector(`[data-type="scientific"][data-index="${selectedScientific}"]`);
-      
+
       // Check if match is correct
       const correctScientific = currentPairs[selectedCommon].scientific;
       const selectedScientificName = scientificCard.dataset.name;
-      
+
       if (correctScientific === selectedScientificName) {
         // Correct match!
         commonCard.classList.add('locked');
         scientificCard.classList.add('locked');
         matchedPairs.push({ common: selectedCommon, scientific: selectedScientific });
-        
+
         selectedCommon = null;
         selectedScientific = null;
         updateProgress();
-        
+
         if (matchedPairs.length === currentPairs.length) {
           showResults();
         }
@@ -777,7 +800,7 @@
         // Wrong match
         commonCard.classList.add('error');
         scientificCard.classList.add('error');
-        
+
         setTimeout(() => {
           commonCard.classList.remove('error', 'selected');
           scientificCard.classList.remove('error', 'selected');
@@ -786,39 +809,39 @@
         }, 600);
       }
     }
-    
+
     function updateProgress() {
       const total = currentPairs.length;
       const matched = matchedPairs.length;
       const percentage = (matched / total) * 100;
-      
+
       document.getElementById('matchedCount').textContent = `${matched}/${total}`;
       document.getElementById('progressBar').style.width = `${percentage}%`;
     }
-    
+
     function resetRound() {
       selectedCommon = null;
       selectedScientific = null;
       matchedPairs = [];
-      
+
       document.querySelectorAll('.match-card').forEach(card => {
         card.classList.remove('selected', 'locked', 'error');
       });
-      
+
       updateProgress();
     }
-    
+
     function showResults() {
       const elapsed = Math.floor((Date.now() - startTime) / 1000);
       const minutes = Math.floor(elapsed / 60);
       const seconds = elapsed % 60;
       const timeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-      
+
       document.getElementById('gameScreen').classList.remove('active');
       document.getElementById('resultsScreen').classList.add('active');
       document.getElementById('finalMatches').textContent = currentPairs.length;
       document.getElementById('finalTime').textContent = timeString;
-      
+
       // Show next button if not hard round
       const nextBtn = document.querySelector('.results-actions button:last-child');
       if (currentRound === 'hard') {
@@ -826,7 +849,7 @@
         nextBtn.onclick = () => startRound('hard');
       }
     }
-    
+
     function startNextRound() {
       if (currentRound === 'easy') {
         startRound('medium');
@@ -838,7 +861,7 @@
       document.getElementById('resultsScreen').classList.remove('active');
       document.getElementById('gameScreen').classList.add('active');
     }
-    
+
     function backToRounds() {
       document.getElementById('resultsScreen').classList.remove('active');
       document.getElementById('gameScreen').classList.remove('active');
@@ -846,4 +869,5 @@
     }
   </script>
 </body>
+
 </html>
