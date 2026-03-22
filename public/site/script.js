@@ -141,7 +141,7 @@ var topics = [
     },
     gallery: [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9cfff74f-df19-440f-b88d-7fd8e897e7fe-8PQR4IdzQVfoCQLwnv1V3FDtIhykRU.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6152-hByfbL91Etuen2qHCHdGVjUbL3Qnna.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3a8c7dbd-8d32-4aa2-b03d-70e85d74d933-8ETVDLrXNoSgLH7uiuNclS9RWKs2iL.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6150-xqg0Spc7jcxRqKZDMtQo9f9YqV1lrx.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6153-45Wll5rOriVHJFxCPA2YwNANJGWB8m.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6137-xLXEH91gFALvIZrqAE23zw1xLYfuoB.jpg" },
