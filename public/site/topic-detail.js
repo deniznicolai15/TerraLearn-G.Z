@@ -1547,6 +1547,40 @@ function initializePage() {
       sectionsContainer.appendChild(reflectionBox5);
     }
 
+    // Add Educational Game Box (Test Your Knowledge) for Topic 5
+    var quizGameBox5 = document.createElement("div");
+    quizGameBox5.className = "forest-game-box";
+    quizGameBox5.id = "start-quiz-trigger-topic5";
+    quizGameBox5.innerHTML =
+      '<a href="games/topic5-quiz.html" class="game-box-link">' +
+      '<div class="game-box-content">' +
+      '<div class="game-box-icon">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M12 2L2 7l10 5 10-5-10-5z"></path>' +
+      '<path d="M2 17l10 5 10-5"></path>' +
+      '<path d="M2 12l10 5 10-5"></path>' +
+      '</svg>' +
+      '</div>' +
+      '<div class="game-box-text">' +
+      '<h3>Test Your Knowledge!</h3>' +
+      '<p>Take the quiz and see how well you understand environmental conservation and sustainability efforts.</p>' +
+      '</div>' +
+      '<div class="game-box-arrow">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<line x1="5" y1="12" x2="19" y2="12"></line>' +
+      '<polyline points="12 5 19 12 12 19"></polyline>' +
+      '</svg>' +
+      '</div>' +
+      '</div>' +
+      '</a>';
+
+    // Insert after reflection box
+    if (reflectionBox5.parentNode) {
+      reflectionBox5.parentNode.insertBefore(quizGameBox5, reflectionBox5.nextSibling);
+    } else {
+      sectionsContainer.appendChild(quizGameBox5);
+    }
+
     // Add event listeners for Topic 5 reflection box
     var topic5ReflectionInput = document.getElementById("topic5-reflection-input");
     var topic5SubmitBtn = document.getElementById("topic5-reflection-submit");
