@@ -425,11 +425,7 @@ body.topic-5 .detail-section h3 {
 }
 
 .detail-description {
-  font-size: 15px;
-  color: var(--secondary);
-  line-height: 1.9;
-  margin-bottom: 8px !important;
-  text-align: justify;
+  display: none;
 }
 
 /* ===== INTRO SECTION ===== */
