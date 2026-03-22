@@ -2,14 +2,14 @@ import { Trees } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-6 md:px-16 border-t border-border bg-background">
+    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 md:px-16 border-t border-border bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 mb-8">
-          <Trees className="h-5 w-5 text-primary" />
+          <Trees className="h-5 w-5 text-primary flex-shrink-0" />
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">ABOUT US</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
           <div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               TerraLearn G.Z is dedicated to sharing knowledge about the natural world,
@@ -17,7 +17,7 @@ export function AboutSection() {
             </p>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold text-sm mb-3 tracking-wide uppercase">Quick Links</h3>
+            <h3 className="text-foreground font-semibold text-xs sm:text-sm mb-3 tracking-wide uppercase">Quick Links</h3>
             <ul className="flex flex-col gap-2">
               <li><a href="#home" className="text-muted-foreground text-sm hover:text-primary transition-colors">Home</a></li>
               <li><a href="#treks" className="text-muted-foreground text-sm hover:text-primary transition-colors">Treks</a></li>
@@ -26,7 +26,7 @@ export function AboutSection() {
             </ul>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold text-sm mb-3 tracking-wide uppercase">Contact</h3>
+            <h3 className="text-foreground font-semibold text-xs sm:text-sm mb-3 tracking-wide uppercase">Contact</h3>
             <ul className="flex flex-col gap-2 text-muted-foreground text-sm">
               <li>info@terralearn.gz</li>
               <li>+1 234 567 890</li>
@@ -35,7 +35,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border text-center">
           <p className="text-muted-foreground text-xs">
             &copy; 2026 TerraLearn G.Z All rights reserved.
           </p>

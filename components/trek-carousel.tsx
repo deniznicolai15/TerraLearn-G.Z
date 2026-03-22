@@ -73,27 +73,27 @@ export function TrekCarousel() {
   }, [])
 
   return (
-    <section id="treks" className="py-20 px-6 md:px-16 bg-background">
+    <section id="treks" className="py-12 sm:py-20 px-4 sm:px-6 md:px-16 bg-background">
       {/* Section header */}
-      <div className="flex items-center justify-between mb-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-12">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
           Explore Topics
         </h2>
-        <span className="text-muted-foreground text-sm">
+        <span className="text-muted-foreground text-xs sm:text-sm">
           {currentIndex + 1} / {treks.length}
         </span>
       </div>
 
       {/* Carousel with side buttons */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Prev button - vertically centered beside the image */}
         <button
           type="button"
           onClick={handlePrev}
-          className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full border border-border items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+          className="hidden sm:flex flex-shrink-0 w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-border items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 sm:h-5 w-4 sm:w-5" />
         </button>
 
         {/* Carousel viewport */}
