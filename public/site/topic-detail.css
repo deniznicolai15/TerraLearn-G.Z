@@ -2035,7 +2035,6 @@ body.topic-1 .detail-grid {
 
 body.topic-1 .detail-main {
   padding-top: 40px;
-  border-top: 2px solid rgba(107, 127, 115, 0.15);
 }
 
 body.topic-1 .detail-gallery {
@@ -2340,7 +2339,6 @@ body.topic-5 .detail-grid {
 body.topic-2 .detail-main,
 body.topic-5 .detail-main {
   padding-top: 40px;
-  border-top: 2px solid rgba(107, 127, 115, 0.15);
 }
 
 body.topic-2 .detail-gallery,
