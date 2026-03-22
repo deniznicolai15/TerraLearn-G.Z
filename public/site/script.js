@@ -145,11 +145,9 @@ var topics = [
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/979ec1fc-4162-4751-9bf9-1684b4649403-R1bltlSmcxyhCXX1RZCd3flqodg8AG.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/be69ecbf-3f37-42ab-8115-fdf1e1208015-NLK8xbUvPYQS2iANdUpEbEauFYQc9c.jpg" },
       { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f4d60a3b-bf0f-408e-a4eb-db8bcec50383-uIE8e2SxR5UtlOsuaYlGG8y5r56p4W.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6135-tdlJB1cmQxFeGRN19bozuKcynoX6LT.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6162-5asyT6NoJE8BPmv47k3YyZ2eSkWT4O.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6167-PFK2N4h8T60x5QhbRTsLjnzXp8HWS7.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6165-C390rblh30cI1cgKmv39rFvOyKHf2y.jpg" },
-      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6163%20%281%29-mtTAPdvPAuwNAE7uDkXk4wAgFn15uh.jpg" }
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1b4a5c70-ec54-49f0-9a9d-0a8f6cdf5daa-0RYDKdAcu83pJS7LIlSxEC5WXV4DPj.jpg" },
+      { image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/84c16e0b-d809-4741-9d91-82383a66cfec-CAJn4bSZws1JjepUoL7NLkRhfPKqU7.jpg" },
+
     ],
     sections: [],
     location: "Mt. Pamitinan Flora Zones",
