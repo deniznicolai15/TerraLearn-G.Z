@@ -2407,6 +2407,26 @@ body.topic-5 .detail-figure {
   display: none;
 }
 
+/* ===== TOPIC 5 INTRO - CENTERED LIKE TOPIC 4 ===== */
+body.topic-5 .topic2-intro {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.topic-5 .topic2-intro .intro-image-section {
+  display: none;
+}
+
+body.topic-5 .topic2-intro .intro-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* ===== TOPIC 3 TREE PLANTING SECTION ===== */
 .tree-planting-section {
   padding: 50px 30px;
