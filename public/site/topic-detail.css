@@ -2769,10 +2769,10 @@ body.topic-4 #avifauna-container {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
-  text-align: center;
+  text-align: justify;
   max-width: 800px;
   margin: 0 auto;
-}
+  }
 
 #avifauna-pre-intro {
   padding-bottom: 24px;
