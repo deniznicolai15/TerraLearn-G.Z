@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraLearn G.Z - Topic Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="topic-detail.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
+        <path d="M7 16v6" />
+        <path d="M13 19v3" />
+        <path d="M15.7 14.4A5 5 0 0 0 19 8a5 5 0 0 0-10 0 5 5 0 0 0 3.3 6.4" />
+        <path d="M13 16v-4" />
+      </svg>
+      <span>TerraLearn G.Z</span>
+    </div>
+    <button class="back-btn" id="back-btn" aria-label="Go back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      Back
+    </button>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="topic-detail-container">
+    <!-- Hero section with image -->
+    <div class="detail-hero" id="detail-hero">
+      <img id="detail-hero-img" src="" alt="" />
+      <div class="detail-hero-overlay"></div>
+      <div class="detail-hero-content">
+        <div class="detail-hero-label" id="detail-label"></div>
+        <h1 class="detail-hero-title" id="detail-title"></h1>
+        <div class="detail-hero-swatch" id="detail-swatch"></div>
+      </div>
+    </div>
+
+    <!-- Introduction Section (Old Design - shown for non-Forest topics) -->
+    <div id="intro-section"
+      style="background: rgba(23, 64, 42, 0.1); padding: 40px; border-bottom: 1px solid rgba(168, 213, 168, 0.2);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <p id="detail-intro"
+          style="font-size: 16px; color: var(--secondary); line-height: 1.9; text-align: justify; margin: 0;"></p>
+      </div>
+    </div>
+
+    <!-- Content grid: 2-column layout (Left: Content | Right: Gallery) -->
+    <div class="detail-grid" id="detail-grid">
+      <!-- Left Column: Figure 1 Image + Main content -->
+      <div class="detail-main">
+        <!-- Figure 1 -->
+        <div class="detail-figure">
+          <div class="figure-image-container">
+            <img id="detail-figure-img" src="" alt="Figure 1" class="figure-image" />
+          </div>
+          <p class="figure-caption" id="figure-caption"></p>
+        </div>
+
+        <!-- Description -->
+        <div class="detail-section">
+          <p class="detail-description" id="detail-description"></p>
+        </div>
+
+        <!-- Sections -->
+        <div id="detail-sections-container"></div>
+
+        <!-- Details bar -->
+        <div class="detail-info-bar">
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span id="detail-location"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.5 6.5c2.5-.5 5-1 6.5-1.5-1 2.5-3.5 5-7 7.5" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+            <span id="detail-detail1"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span id="detail-detail2"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Gallery Sidebar -->
+      <div class="detail-gallery" id="detail-gallery">
+        <h3 class="gallery-title">Gallery</h3>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery images populated dynamically -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== FOREST 101 SPECIAL SECTION ===== -->
+    <div class="forest-101-container" id="forest-101-container" style="display: none;">
+      <!-- Introduction Section - Styled like Biringan section with forest theme -->
+      <div class="forest-ecosystem-section">
+        <h2 class="forest-ecosystem-title">What is a Forest Ecosystem?</h2>
+        <div class="forest-ecosystem-wrapper">
+          <p class="forest-ecosystem-description">Forests in the Philippines are diverse and vital. From the dipterocarp forests of Luzon and Mindanao, to
+            the mangroves protecting coastal communities, and the montane forests of the Cordilleras, these ecosystems
+            sustain life, regulate climate, and protect communities. They are often called the <strong>lungs of the
+              Earth</strong> because they produce oxygen and store carbon, making them essential for both local and
+            global balance.</p>
+
+          <div class="forest-ecosystem-image-container">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/forest-4xiQnvIiVSEZ9pIgIiE6zMJ7HahGHH.jpg"
+              alt="Philippine forest landscape with mountains and lush vegetation" class="forest-ecosystem-image" />
+          </div>
+
+          <p class="forest-ecosystem-description forest-ecosystem-description-bottom">The Sierra Madre mountain range, the longest in the Philippines, is a critical forest ecosystem that
+            protects Luzon from typhoons and provides water to millions.</p>
+        </div>
+      </div>
+
+      <!-- Reflection box -->
+      <div class="forest-reflection-box">
+        <div class="reflection-badge">Share Your Voice</div>
+        <h3>Quicky Lang!</h3>
+        <p>If forests hold mysteries like Biringan, what responsibilities do we have to protect them?</p>
+        <div class="reflection-input-wrapper">
+          <textarea id="forest-reflection-input" class="reflection-input" placeholder="Drop your thoughts here... be real, no cap"
+            maxlength="250"></textarea>
+          <div class="char-counter"><span id="char-count">0</span>/250</div>
+        </div>
+        <div class="reflection-buttons">
+          <button class="btn btn-primary btn-submit" id="forest-reflection-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            Submit Anonymously
+          </button>
+          <button class="btn btn-secondary" id="forest-reflection-clear">Clear</button>
+        </div>
+        <p class="reflection-saved-msg" id="reflection-saved-msg"></p>
+      </div>
+      <!-- Reflection wall - displays community thoughts -->
+      <div class="reflection-box-wall" id="reflection-wall-topic1">
+        <p class="reflection-wall-empty">No thoughts yet... be the first to share!</p>
+      </div>
+
+      <!-- Forest Structure Section -->
+      <div class="forest-structure-section">
+        <h2>Structure of Philippine Forest Ecosystems</h2>
+        <p class="forest-structure-text">Forests here are layered systems, each with distinct ecological roles:</p>
+
+        <!-- Forest layers alternating layout -->
+        <div class="forest-layers-container">
+          <!-- Emergent Layer - Image Left -->
+          <div class="forest-layer-item layer-item-1">
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nMJp9XdMFIMhQwzPciPb2CZheWkxqI.png"
+                alt="Emergent layer with tallest trees rising above forest" />
+            </div>
+            <div class="layer-text-wrapper">
+              <h3>Emergent Layer</h3>
+              <p>Towering trees like <em>lauan</em> and <em>apitong</em> rise above all others, capturing sunlight.
+                Birds of prey such as the Philippine eagle soar here.</p>
+            </div>
+          </div>
+
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-1" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 100 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Canopy Layer - Text Left, Image Right -->
+          <div class="forest-layer-item layer-item-2">
+            <div class="layer-text-wrapper">
+              <h3>Canopy</h3>
+              <p>A dense roof of leaves that shelters hornbills, fruit bats, and monkeys. It creates a humid
+                microclimate essential for orchids and epiphytes.</p>
+            </div>
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XDHHndDKIsbSIXxQAdudWgXT0UCZso.png"
+                alt="Dense canopy roof of forest with lush green leaves" />
+            </div>
+          </div>
+
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-2" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 400 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Understory Layer - Image Left -->
+          <div class="forest-layer-item layer-item-3">
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-92ClPUvBczigwy1aBdWZPpwXKHRNNx.png"
+                alt="Understory with shaded shrubs and small trees" />
+            </div>
+            <div class="layer-text-wrapper">
+              <h3>Understory</h3>
+              <p>Shaded shrubs and small trees, home to reptiles, amphibians, and medicinal plants used in traditional
+                healing.</p>
+            </div>
+          </div>
+
+          <!-- Connecting line -->
+          <svg class="forest-connector forest-connector-3" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M 250 0 Q 100 75 250 150" stroke="#6B7F73" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+          </svg>
+
+          <!-- Forest Floor - Text Left, Image Right -->
+          <div class="forest-layer-item layer-item-4">
+            <div class="layer-text-wrapper">
+              <h3>Forest Floor</h3>
+              <p>Dark, damp, and nutrient-rich. Decomposers recycle organic matter, while wild boars and deer forage
+                among fallen leaves.</p>
+            </div>
+            <div class="layer-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I1JvKYCj9j92rKSej09N6DpgWNEWCT.png"
+                alt="Forest floor with moss, decomposing leaves, and forest ecosystem" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AVIFAUNA SECTION ===== -->
+    <div class="avifauna-container" id="avifauna-container" style="display: none;">
+      <div class="avifauna-header">
+        <p class="avifauna-intro" id="avifauna-pre-intro"></p>
+        <h2 class="avifauna-title">AVIFAUNA</h2>
+        <p class="avifauna-intro" id="avifauna-intro"></p>
+      </div>
+      <div class="avifauna-grid" id="avifauna-grid">
+        <!-- Species boxes populated dynamically -->
+      </div>
+    </div>
+
+    <!-- ===== QUIZ SECTION ===== -->
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+      <div class="quiz-content" id="quiz-content">
+        <!-- Quiz questions populated dynamically -->
+      </div>
+
+      <div class="quiz-results" id="quiz-results" style="display: none;">
+        <div class="results-card">
+          <h3 id="results-title">Quiz Complete!</h3>
+          <div class="results-score">
+            <div class="score-circle">
+              <span class="score-text" id="score-text">0%</span>
+            </div>
+          </div>
+          <p class="results-message" id="results-message"></p>
+          <button class="btn btn-primary" id="close-btn">Back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== GIZMO QUIZ BOX (Topic 4) ===== -->
+    <div class="forest-game-box gizmo-quiz-box" id="gizmo-quiz-box" style="display: none;">
+      <a href="https://app.gizmo.ai/quiz/175768792" target="_blank" rel="noopener noreferrer" class="game-box-link">
+        <div class="game-box-content">
+          <div class="game-box-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="game-box-text">
+            <h3>Take the Quiz on Gizmo!</h3>
+            <p>Test your knowledge about wildlife and ecosystem balance.</p>
+          </div>
+          <div class="game-box-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- ===== SPECIES MODAL ===== -->
+  <div class="species-modal" id="species-modal">
+    <div class="species-modal-content">
+      <button class="species-modal-close" id="species-modal-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="species-modal-image" src="" alt="" class="species-modal-image" />
+      <div class="species-modal-details">
+        <h3 class="species-modal-title" id="species-modal-name"></h3>
+        <p class="species-modal-scientific" id="species-modal-scientific"></p>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Family</div>
+          <p class="species-detail-text" id="species-modal-family"></p>
+        </div>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Description</div>
+          <p class="species-detail-text" id="species-modal-description"></p>
+        </div>
+        <!-- Details bar -->
+        <div class="detail-info-bar">
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span id="detail-location"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.5 6.5c2.5-.5 5-1 6.5-1.5-1 2.5-3.5 5-7 7.5" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+            <span id="detail-detail1"></span>
+          </div>
+          <div class="detail-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span id="detail-detail2"></span>
+          </div>
+        </div>
+      </div>
+
+      </div>
+        <div class="species-detail-item">
+          <div class="species-detail-label">Role in Ecosystem</div>
+          <p class="species-detail-text" id="species-modal-role"></p>
+        </div>
+        <div class="species-detail-item" id="audio-player-container" style="display: none;">
+          <div class="species-detail-label">Sound Recording</div>
+          <div class="audio-player">
+            <button class="audio-play-btn" id="audio-play-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+            <div class="audio-progress-container">
+              <span class="audio-time" id="audio-current-time">0:00</span>
+              <div class="audio-progress-bar">
+                <div class="audio-progress-fill" id="audio-progress-fill"></div>
+                <input type="range" class="audio-progress-slider" id="audio-progress-slider" min="0" max="100"
+                  value="0">
+              </div>
+              <span class="audio-time" id="audio-duration">0:00</span>
+            </div>
+            <audio id="species-audio" style="display: none;"></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX FOR GALLERY ===== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- ===== FLOATING AUDIO PLAYER MODAL ===== -->
+  <!-- Dynamically created by JavaScript -->
+
+  <script src="script.js"></script>
+  <script src="topic-detail.js"></script>
+</body>
+
+</html>

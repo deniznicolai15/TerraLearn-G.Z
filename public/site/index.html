@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraLearn G.Z</title>
+  <meta name="description" content="Explore the biodiversity and heritage of Mt. Pamitinan with TerraLearn G.Z" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
+        <path d="M7 16v6" />
+        <path d="M13 19v3" />
+        <path d="M15.7 14.4A5 5 0 0 0 19 8a5 5 0 0 0-10 0 5 5 0 0 0 3.3 6.4" />
+        <path d="M13 16v-4" />
+      </svg>
+      <span>TerraLearn G.Z</span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="#home">HOME</a>
+      <a href="#topics">TOPICS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <img class="hero-bg"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/homepage%20picture-NJy10XYyLiaY13ORncXmjRPdOEhMGu.jpeg"
+      alt="Mt. Pamitinan with river and lush green vegetation" />
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <!-- Left: text -->
+      <div class="hero-content">
+        <p class="hero-tag">Discover</p>
+        <h1 class="hero-title">
+          Terra Learn<br /><em>at Mt. Pamitinan</em>
+        </h1>
+        <a href="#topics" class="hero-btn">Ano tara?</a>
+      </div>
+      <!-- Right: Philippines outline map (PNG image with pin overlay) -->
+      <div class="hero-map-wrapper">
+        <div class="hero-map" id="hero-map">
+          <!-- Actual Philippines outline PNG - transparent via CSS -->
+          <img class="ph-map-img" src="/images/ph-outline-map.png" alt="Outline map of the Philippines"
+            draggable="false" />
+          <!-- SVG overlay for tree pin only -->
+          <svg class="ph-map-pin-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tree Pin at Mt. Pamitinan (Rizal, northeast of Manila on Luzon) -->
+            <g class="map-pin" id="map-pin" transform="translate(46, 32)">
+              <!-- Pulse ring animation -->
+              <circle class="pin-pulse" cx="0" cy="2" r="2.5" fill="none" stroke="#8EB09A" stroke-width="0.5"
+                opacity="0.6" />
+
+              <!-- Tree icon group (shrinks/grows on interaction) -->
+              <g class="tree-icon" id="tree-icon">
+                <!-- Tree trunk -->
+                <rect x="-0.8" y="0" width="1.6" height="4" rx="0.5" fill="#6B4226" />
+                <!-- Tree canopy - bottom layer (widest) -->
+                <polygon points="0,-2 -4,2 4,2" fill="#4B6B55" />
+                <!-- Tree canopy - middle layer -->
+                <polygon points="0,-5 -3,0 3,0" fill="#5a8a6a" />
+                <!-- Tree canopy - top layer (smallest) -->
+                <polygon points="0,-7 -2,-3 2,-3" fill="#8EB09A" />
+              </g>
+
+              <!-- Clickable hit area -->
+              <rect x="-10" y="-11" width="12" height="16" fill="transparent" class="pin-hitarea"
+                style="cursor:pointer" />
+            </g>
+
+            <!-- Label for Mt. Pamitinan -->
+            <text x="52" y="31" class="pin-label" style="font-size:2.8px;">Mt. Pamitinan</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP SIDE PANEL (guide panel) ===== -->
+  <div class="map-panel-overlay" id="map-panel-overlay"></div>
+  <div class="map-panel" id="map-panel">
+    <button class="map-panel-close tree-close-btn" id="map-panel-close" aria-label="Close guide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <!-- Trunk -->
+        <rect x="18" y="28" width="4" height="6" rx="1" fill="#8B5E3C" />
+        <!-- Bottom canopy -->
+        <polygon points="20,14 10,26 30,26" fill="#4B6B55" />
+        <!-- Middle canopy -->
+        <polygon points="20,9 12,20 28,20" fill="#5a8a6a" />
+        <!-- Top canopy -->
+        <polygon points="20,4 14,14 26,14" fill="#8EB09A" />
+        <!-- Small X mark -->
+        <line x1="16" y1="17" x2="24" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"
+          stroke-linecap="round" />
+        <line x1="24" y1="17" x2="16" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"
+          stroke-linecap="round" />
+      </svg>
+    </button>
+    <div class="map-panel-scroll">
+      <!-- Trail image -->
+      <div class="map-panel-image">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/inside%20the%20functional%20map-oI4elFulZZoYpfi1cnXGFxE8XK44UT.jpeg"
+          alt="Mt. Pamitinan entrance gateway to trail" />
+      </div>
+      <!-- Guide content -->
+      <div class="map-panel-content">
+        <h2>How to Get to Mt. Pamitinan</h2>
+        <p class="map-panel-subtitle">Complete trail guide &mdash; Montalban, Rizal</p>
+
+        <h3>Step 1: Getting to Montalban</h3>
+        <p>From Cubao FX terminal, take an FX bound for Montalban. Early trips usually start around 4:00 AM. Fare is
+          about ₱50 (regular) or ₱45 (student). Travel time is less than an hour. From Montalban town proper, ride a
+          tricycle to the DENR Protected Landscape Office (10 minutes, ₱15 per person).</p>
+
+        <h3>Step 2: Registration and Fee</h3>
+        <p>Secure a permit at the DENR office (₱20) DENR personnel may accompany visitors and provide information about
+          the mountain’s geology, biodiversity, and history. Then about a minute or two walk away from the DENR is the
+          Barangay where you will be paying for the Tourist Guide and Other fees. Gloves are highly recommended for the
+          rugged limestone terrain — buy them on-site if you don’t have any (around ₱100).</p>
+
+        <h3>Step 3: The Trail to the Summit</h3>
+        <p>The hike usually begins and is recommended around sunrise. Expect a mix of river trekking, rock scrambling,
+          and jungle hiking. Steep rocky sections may require ropes or gloves. The summit stands at 426+ meters above
+          sea level, reached in about 2–3 hours at a moderate pace.</p>
+
+        <h3>Step 4: At the Summit</h3>
+        <p>Enjoy panoramic views of Montalban, the Sierra Madre range, Wawa Dam, and Metro Manila. Visit Pamitinan Cave,
+          a historic site where Andres Bonifacio and the Katipuneros declared “Long Live the Philippines!” in 1896.</p>
+
+        <h3>Step 5: Return Trip</h3>
+        <p>Descend via the same trail back to Wawa Dam, usually taking 1.5–2 hours. Visitors often cool off at Wawa Dam
+          before heading back to Manila.</p>
+
+        <h3>What to Bring</h3>
+        <ul>
+          <li>At least 2 liters of water</li>
+          <li>Trail food and packed lunch</li>
+          <li>Comfortable hiking shoes with good grip</li>
+          <li>Rain jacket or poncho (during wet season)</li>
+          <li>Sunscreen and insect repellent</li>
+          <li>Extra clothes and towel</li>
+          <li>Gloves (buy on-site if you don’t have)</li>
+          <li>Flashlight or headlamp</li>
+          <li>First aid kit</li>
+          <li>Trash bag (Leave No Trace)</li>
+          <li>Valid ID for registration</li>
+        </ul>
+
+        <h3>Important Reminders</h3>
+        <ul>
+          <li>Secure a permit at the DENR office</li>
+          <li>Always hike with a registered local guide</li>
+          <li>Check weather conditions before your trip</li>
+          <li>Do not litter &mdash; practice Leave No Trace</li>
+          <li>Respect the local community and wildlife</li>
+          <li>Best months to visit: November to May (dry season)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOPICS (Cards + Side Panel) ===== -->
+  <section class="topics-section" id="topics">
+    <div class="topics-header">
+      <h2>Tara Explore</h2>
+    </div>
+    <div class="topics-grid" id="topics-grid">
+      <!-- Cards built by JS -->
+    </div>
+  </section>
+
+  <!-- ===== TOPIC SIDE PANEL ===== -->
+  <div class="topic-panel-overlay" id="topic-panel-overlay"></div>
+  <div class="topic-panel" id="topic-panel">
+    <button class="topic-panel-close tree-close-btn" id="topic-panel-close" aria-label="Close topic">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40" fill="none">
+        <!-- Trunk -->
+        <rect x="18" y="28" width="4" height="6" rx="1" fill="#8B5E3C" />
+        <!-- Bottom canopy -->
+        <polygon points="20,14 10,26 30,26" fill="#4B6B55" />
+        <!-- Middle canopy -->
+        <polygon points="20,9 12,20 28,20" fill="#5a8a6a" />
+        <!-- Top canopy -->
+        <polygon points="20,4 14,14 26,14" fill="#8EB09A" />
+        <!-- Small X mark -->
+        <line x1="16" y1="17" x2="24" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"
+          stroke-linecap="round" />
+        <line x1="24" y1="17" x2="16" y2="23" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"
+          stroke-linecap="round" />
+      </svg>
+    </button>
+    <div class="topic-panel-scroll" id="topic-panel-scroll">
+      <!-- Filled dynamically by JS -->
+    </div>
+  </div>
+
+  <!-- ===== MEDIA ATTRIBUTION ===== -->
+  <section class="media-attribution" id="media-attribution">
+    <div class="media-attribution-inner">
+      <h2>Media Attribution & Credits</h2>
+      <div class="media-attribution-content">
+        <p>
+          The pictures and sound recordings featured on this website come from a mix of our own fieldwork in the mountains and free online platforms that provide automatic credits to original creators. While we were able to document certain aspects of the forest ecosystem firsthand, photographing fauna proved challenging in natural conditions. To complete the visualization, we included properly credited media from free sources.
+        </p>
+        <p>
+          We give rightful credits to the owners of any uncredited pictures used. All materials are acknowledged accordingly and are used strictly for educational purposes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / FOOTER ===== -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-heading">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
+          <path d="M7 16v6" />
+          <path d="M13 19v3" />
+          <path d="M15.7 14.4A5 5 0 0 0 19 8a5 5 0 0 0-10 0 5 5 0 0 0 3.3 6.4" />
+          <path d="M13 16v-4" />
+        </svg>
+        <h2>ABOUT US</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>TerraLearn G.Z is a web-based tool that explores the biodiversity and heritage of Mt. Pamitinan in
+            Montalban, Rizal. It uses interactive modules and real-world documentation to connect students with
+            conservation challenges and inspire environmental responsibility.</p>
+          <p class="about-tagline">TerraLearn, Tara learn!</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#topics">Topics</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" id="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+              <span>DENR Pamitinan Protected Landscape</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <!-- Gmail-style envelope -->
+                <rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <!-- Top triangle flap -->
+                <path d="M 2 5 L 12 12.5 L 22 5" fill="currentColor" opacity="0.8" />
+                <!-- Bottom left triangle -->
+                <polygon points="2,19 2,11 7,15" fill="currentColor" opacity="0.5" />
+                <!-- Bottom right triangle -->
+                <polygon points="22,19 22,11 17,15" fill="currentColor" opacity="0.5" />
+              </svg>
+              <span>pamoppl.rizal@gmail.com</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>+63 907 966 0747</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-footer">
+        &copy; 2026 TerraLearn G.Z All rights reserved.
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

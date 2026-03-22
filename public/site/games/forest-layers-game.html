@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Ecosystem Quiz | TerraLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a8d5a8;
+      --secondary: #8EB09A;
+      --text-light: #c4d4c4;
+      --bg-dark: #17402a;
+      --bg-darker: #0f2a1c;
+      --bg-card: #1a3a2a;
+      --accent: #2d7a4a;
+      --accent-light: #3d9a5a;
+      --correct: #2d7a4a;
+      --incorrect: #8b3a3a;
+      --border: rgba(142, 176, 154, 0.3);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
+      min-height: 100vh;
+      color: var(--text-light);
+      padding: 40px 20px;
+    }
+    
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .quiz-header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    
+    .quiz-header p {
+      font-size: 16px;
+      color: var(--secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .quiz-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 58, 42, 0.8) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .quiz-card.correct {
+      border-color: var(--correct);
+      background: linear-gradient(135deg, rgba(45, 122, 74, 0.2) 0%, rgba(26, 58, 42, 0.8) 100%);
+    }
+    
+    .quiz-card.incorrect {
+      border-color: var(--incorrect);
+      background: linear-gradient(135deg, rgba(139, 58, 58, 0.15) 0%, rgba(26, 58, 42, 0.8) 100%);
+    }
+    
+    .question-number {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    
+    .question-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(15, 42, 28, 0.6);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .option:hover {
+      background: rgba(45, 122, 74, 0.15);
+      border-color: var(--border);
+    }
+    
+    .option.selected {
+      background: rgba(45, 122, 74, 0.25);
+      border-color: var(--accent);
+    }
+    
+    .option.correct-answer {
+      background: rgba(45, 122, 74, 0.3);
+      border-color: var(--correct);
+    }
+    
+    .option.wrong-answer {
+      background: rgba(139, 58, 58, 0.2);
+      border-color: var(--incorrect);
+    }
+    
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      background: rgba(142, 176, 154, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--secondary);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .option.selected .option-letter {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .option.correct-answer .option-letter {
+      background: var(--correct);
+      color: white;
+    }
+    
+    .option.wrong-answer .option-letter {
+      background: var(--incorrect);
+      color: white;
+    }
+    
+    .option-text {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+    
+    .submit-section {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .btn-submit {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      color: white;
+      border: none;
+      padding: 18px 48px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(45, 122, 74, 0.4);
+    }
+    
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .btn-retry {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--border);
+      padding: 16px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: 16px;
+    }
+    
+    .btn-retry:hover {
+      background: rgba(142, 176, 154, 0.1);
+      border-color: var(--secondary);
+    }
+    
+    .results-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(45, 122, 74, 0.2) 100%);
+      border: 2px solid var(--accent);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 30px;
+      display: none;
+    }
+    
+    .results-card.show {
+      display: block;
+      animation: slideUp 0.5s ease;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 32px rgba(45, 122, 74, 0.4);
+    }
+    
+    .score-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+    }
+    
+    .score-label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 4px;
+    }
+    
+    .results-message {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    
+    .results-subtitle {
+      font-size: 16px;
+      color: var(--secondary);
+      margin-bottom: 24px;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 40px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--primary);
+      background: rgba(142, 176, 154, 0.1);
+    }
+    
+    @media (max-width: 600px) {
+      .quiz-header h1 {
+        font-size: 26px;
+      }
+      
+      .quiz-card {
+        padding: 24px 20px;
+      }
+      
+      .question-text {
+        font-size: 16px;
+      }
+      
+      .option {
+        padding: 14px 16px;
+      }
+      
+      .option-text {
+        font-size: 14px;
+      }
+      
+      .btn-submit, .btn-retry {
+        padding: 14px 32px;
+        font-size: 14px;
+      }
+      
+      .btn-retry {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Forest Ecosystem Quiz</h1>
+      <p>Test your knowledge about Philippine forests! Answer all 10 questions and see your score.</p>
+    </div>
+    
+    <div id="quiz-questions">
+      <!-- Questions will be inserted here by JavaScript -->
+    </div>
+    
+    <div class="submit-section">
+      <button class="btn-submit" id="btn-submit" onclick="submitQuiz()">Submit Answers</button>
+      <button class="btn-retry" id="btn-retry" onclick="retryQuiz()" style="display: none;">Try Again</button>
+    </div>
+    
+    <div class="results-card" id="results-card">
+      <div class="score-circle">
+        <span class="score-number" id="final-score">0</span>
+        <span class="score-label">out of 10</span>
+      </div>
+      <h2 class="results-message" id="results-message">Great job!</h2>
+      <p class="results-subtitle" id="results-subtitle">You've completed the Forest Ecosystem Quiz.</p>
+    </div>
+    
+    <a href="../topic-detail.html?topic=1" onclick="sessionStorage.setItem('scrollToTop', 'true'); return true;" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Topic
+    </a>
+  </div>
+  
+  <script>
+    const questions = [
+      {
+        question: "What is a key function of forest ecosystems?",
+        options: [
+          "Increase air pollution",
+          "Produce oxygen and store carbon",
+          "Reduce biodiversity",
+          "Cause soil erosion"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which mountain range in the Philippines is known for protecting Luzon from typhoons?",
+        options: [
+          "Cordillera Central",
+          "Sierra Madre",
+          "Zambales Mountains",
+          "Kitanglad Range"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which forest layer contains the tallest trees that rise above the rest?",
+        options: [
+          "Canopy",
+          "Emergent Layer",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "The dense roof of leaves that shelters hornbills and fruit bats is called the:",
+        options: [
+          "Emergent Layer",
+          "Canopy",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which layer is home to shaded shrubs, reptiles, and medicinal plants?",
+        options: [
+          "Emergent Layer",
+          "Canopy",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 2 // C
+      },
+      {
+        question: "Which layer is dark, damp, nutrient-rich, and where decomposers recycle organic matter?",
+        options: [
+          "Emergent Layer",
+          "Canopy",
+          "Understory",
+          "Forest Floor"
+        ],
+        correct: 3 // D
+      },
+      {
+        question: "Which watershed supplies clean drinking water to Metro Manila?",
+        options: [
+          "Angat",
+          "Pantabangan",
+          "La Mesa",
+          "Magat"
+        ],
+        correct: 2 // C
+      },
+      {
+        question: "Which forest type acts as natural seawalls protecting coastal communities from storm surges?",
+        options: [
+          "Dipterocarp forests",
+          "Mangroves",
+          "Montane forests",
+          "Pine forests"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "Which of the following are iconic endemic species found in Philippine forests?",
+        options: [
+          "Bengal tiger and lotus flower",
+          "Philippine eagle and rafflesia",
+          "Panda and bamboo",
+          "Koala and eucalyptus"
+        ],
+        correct: 1 // B
+      },
+      {
+        question: "In local folklore, Biringan is described as:",
+        options: [
+          "A hidden city inhabited by engkanto",
+          "A sacred mountain for rituals",
+          "An ancient burial ground",
+          "A legendary underwater kingdom"
+        ],
+        correct: 0 // A
+      }
+    ];
+    
+    let userAnswers = new Array(questions.length).fill(null);
+    let submitted = false;
+    
+    function renderQuestions() {
+      const container = document.getElementById('quiz-questions');
+      container.innerHTML = questions.map((q, index) => `
+        <div class="quiz-card" id="question-${index}">
+          <span class="question-number">Question ${index + 1}</span>
+          <p class="question-text">${q.question}</p>
+          <div class="options-container">
+            ${q.options.map((opt, optIndex) => `
+              <div class="option" data-question="${index}" data-option="${optIndex}" onclick="selectOption(${index}, ${optIndex})">
+                <span class="option-letter">${String.fromCharCode(65 + optIndex)}</span>
+                <span class="option-text">${opt}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function selectOption(questionIndex, optionIndex) {
+      if (submitted) return;
+      
+      userAnswers[questionIndex] = optionIndex;
+      
+      // Update UI
+      const options = document.querySelectorAll(`[data-question="${questionIndex}"]`);
+      options.forEach(opt => opt.classList.remove('selected'));
+      options[optionIndex].classList.add('selected');
+    }
+    
+    function submitQuiz() {
+      // Check if all questions answered
+      const unanswered = userAnswers.filter(a => a === null).length;
+      if (unanswered > 0) {
+        alert(`Please answer all questions. You have ${unanswered} unanswered question(s).`);
+        return;
+      }
+      
+      submitted = true;
+      let score = 0;
+      
+      // Check answers and show feedback
+      questions.forEach((q, index) => {
+        const card = document.getElementById(`question-${index}`);
+        const options = card.querySelectorAll('.option');
+        
+        if (userAnswers[index] === q.correct) {
+          score++;
+          card.classList.add('correct');
+          options[userAnswers[index]].classList.add('correct-answer');
+        } else {
+          card.classList.add('incorrect');
+          options[userAnswers[index]].classList.add('wrong-answer');
+          options[q.correct].classList.add('correct-answer');
+        }
+      });
+      
+      // Show results
+      document.getElementById('final-score').textContent = score;
+      
+      let message, subtitle;
+      if (score === 10) {
+        message = "Perfect Score!";
+        subtitle = "You're a forest ecosystem expert!";
+      } else if (score >= 8) {
+        message = "Excellent!";
+        subtitle = "You have great knowledge about forest ecosystems!";
+      } else if (score >= 6) {
+        message = "Good Job!";
+        subtitle = "You know quite a bit about forests. Keep learning!";
+      } else if (score >= 4) {
+        message = "Keep Learning!";
+        subtitle = "Review the lesson and try again to improve your score.";
+      } else {
+        message = "Don't Give Up!";
+        subtitle = "Go back to the lesson and learn more about forest ecosystems.";
+      }
+      
+      document.getElementById('results-message').textContent = message;
+      document.getElementById('results-subtitle').textContent = subtitle;
+      document.getElementById('results-card').classList.add('show');
+      
+      // Show retry button, hide submit
+      document.getElementById('btn-submit').style.display = 'none';
+      document.getElementById('btn-retry').style.display = 'inline-block';
+      
+      // Scroll to results
+      document.getElementById('results-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    function retryQuiz() {
+      submitted = false;
+      userAnswers = new Array(questions.length).fill(null);
+      
+      // Reset UI
+      document.querySelectorAll('.quiz-card').forEach(card => {
+        card.classList.remove('correct', 'incorrect');
+      });
+      document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected', 'correct-answer', 'wrong-answer');
+      });
+      
+      document.getElementById('results-card').classList.remove('show');
+      document.getElementById('btn-submit').style.display = 'inline-block';
+      document.getElementById('btn-retry').style.display = 'none';
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Initialize
+    renderQuestions();
+  </script>
+</body>
+</html>
